@@ -21,7 +21,7 @@
             </div>
             <button type="submit" class="submit-button" onclick="window.location.href='https://www.google.com'">Masuk</button>
             <div class="belum-password-container">
-                <a href="p" class="belum-password">Belum memiliki akun? Daftar</a>
+                <a href="http://localhost:8000/register" class="belum-password">Belum memiliki akun? Daftar</a>
             </div>
         </div>
         </div>
