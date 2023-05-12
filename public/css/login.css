@@ -67,7 +67,7 @@ body {
   }
   .form-input:focus {
     outline: none;
-    background-color: #E5E5E5;
+    background-color: #ffffff;
   }
   .form-input::placeholder {
     font-family: 'Poppins', sans-serif;
