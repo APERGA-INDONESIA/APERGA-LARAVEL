@@ -15,9 +15,10 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-  <title>Aperga</title>
+  <title>APERGA</title>
 </head>
 <body>
+@yield('navbar')
   <nav class="navbar">
     <img src="{{ asset('images/aperga.png') }}" alt="Logo" class="logo" style="margin-left: 100px;">
     <ul class="menu">
@@ -28,9 +29,10 @@
       <li class="menu-item" style="margin-right: 100px;"><a href="#">Log Out</a></li>
     </ul>
   </nav>
-  @yield('atas')
+  @yield('konten')
     <br />
     <br />
-  @yield('bawah')
+  @yield('footer')
+  @stack('styles')
 </body>
 </html>
