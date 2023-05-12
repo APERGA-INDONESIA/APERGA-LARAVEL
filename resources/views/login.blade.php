@@ -19,7 +19,7 @@
             <div class="forgot-password-container">
                 <a href="#" class="forgot-password">Lupa kata sandi?</a>
             </div>
-            <button type="submit" class="submit-button" onclick="window.location.href='https://www.google.com'">Masuk</button>
+            <button type="submit" class="submit-button" onclick="window.location.href='http://localhost:8000/dashboard'">Masuk</button>
             <div class="belum-password-container">
                 <a href="http://localhost:8000/register" class="belum-password">Belum memiliki akun? Daftar</a>
             </div>
