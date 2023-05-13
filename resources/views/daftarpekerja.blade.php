@@ -16,20 +16,34 @@
     </div>
     <div class="List-Pekerja">
         <div class="list-pekerja-1">
-            <div class="kotak-abu"></div>
+            <div class="kotak-abu">
+                <img src="{{ asset('images/person.png') }}" alt="person" class="profile-image">
+                <p class="nama-pekerja">Abdul Ghafur</p>
+            </div>
             <div class="tombol-detail">Detail</div>
         </div>
         <div class="list-pekerja-2">
-            <div class="kotak-abu"></div>
+            <div class="kotak-abu">
+                <img src="{{ asset('images/person.png') }}" alt="person" class="profile-image">
+                <p class="nama-pekerja">Abdul Ghafur</p>
+            </div>
             <div class="tombol-detail">Detail</div>
         </div>
         <div class="list-pekerja-3">
-            <div class="kotak-abu"></div>
+            <div class="kotak-abu">
+                <img src="{{ asset('images/person.png') }}" alt="person" class="profile-image">
+                <p class="nama-pekerja">Abdul Ghafur</p>
+            </div>
             <div class="tombol-detail">Detail</div>
         </div>
         <div class="list-pekerja-4">
-            <div class="kotak-abu"></div>
-            <div class="tombol-detail">Detail</div>
+            <div class="kotak-abu">
+                <img src="{{ asset('images/person.png') }}" alt="person" class="profile-image">
+                <p class="nama-pekerja">Abdul Ghafur</p>
+            </div>
+            <div class="tombol-detail">
+                <a href="https://www.google.com">Detail</a>
+            </div>
         </div>
     </div>
 @endsection

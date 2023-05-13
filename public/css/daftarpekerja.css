@@ -50,10 +50,11 @@
 
   .profile-image {
     position: absolute;
-    width: 47.32px;
-    height: 49.15px;
-    top: 10px;
-    left: 17.04px;
+    width: 46px;
+    height: 39px;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .halo-username {
@@ -89,13 +90,12 @@
   }
 
   .kotak-abu {
+    position: relative;
     width: 867px;
     height: 55.79px;
     background: #DDDDDD;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
-
-    /* Penambahan jarak dengan kotak detail */
     margin-right: 20px;
   }
 
@@ -113,8 +113,6 @@
     flex: none;
     order: 0;
     flex-grow: 0;
-
-    /* Perubahan untuk tulisan "Detail" */
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
@@ -122,4 +120,30 @@
     line-height: 19px;
     text-align: center;
     color: #FFFFFF;
+    text-decoration: none;
+  }
+
+  .tombol-detail a {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
+
+  .tombol-detail a:visited {
+    color: #FFFFFF;
+  }
+
+
+  .nama-pekerja {
+    position: absolute;
+    width: 800px;
+    height: 25px;
+    left: 99px;
+    top: 16px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: left;
+    color: #1B2223;
   }
