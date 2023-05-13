@@ -13,7 +13,24 @@
     <div class="kotak-hitam">
         <img src="{{ asset('images/Profile 1.png') }}" alt="Profile 1" class="profile-image">
         <p class="halo-username">Halo, username</p>
-        //
+    </div>
+    <div class="List-Pekerja">
+        <div class="list-pekerja-1">
+            <div class="kotak-abu"></div>
+            <div class="tombol-detail">Detail</div>
+        </div>
+        <div class="list-pekerja-2">
+            <div class="kotak-abu"></div>
+            <div class="tombol-detail">Detail</div>
+        </div>
+        <div class="list-pekerja-3">
+            <div class="kotak-abu"></div>
+            <div class="tombol-detail">Detail</div>
+        </div>
+        <div class="list-pekerja-4">
+            <div class="kotak-abu"></div>
+            <div class="tombol-detail">Detail</div>
+        </div>
     </div>
 @endsection
 
