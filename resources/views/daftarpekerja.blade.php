@@ -36,7 +36,7 @@
         <div class="list-pekerja-3">
             <div class="kotak-abu">
                 <img src="{{ asset('images/person.png') }}" alt="person" class="profile-image">
-                <p class="http://localhost:8000/detailpekerja">Abdul Ghafur</p>
+                <p class="nama-pekerja">Abdul Ghafur</p>
             </div>
             <div class="tombol-detail">
                 <a href="http://localhost:8000/detailpekerja">Detail</a>
