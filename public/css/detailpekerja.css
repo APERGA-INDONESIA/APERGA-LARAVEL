@@ -1,0 +1,59 @@
+.kotak-hitam {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 970px;
+    height: 77px;
+    background: #1B2223;
+    border-radius: 12px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 198px;
+    margin-right: 198px;
+}
+
+.detail-pekerja {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 57px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.infopekerja {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    margin-left: 198px;
+}
+
+.big-profile {
+    width: 509px;
+    height: 436px;
+    border-radius: 23px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.deskripsi {
+    flex: 1;
+}
+
+.nama-pekerja {
+    width: 400px;
+    height: 49px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 49px;
+    text-align: left;
+    color: #1B2223;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
