@@ -23,4 +23,5 @@ Route::post('/register', [AuthController::class, 'register'])->name('register.po
 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/daftarpekerja', [KontrakController::class, 'index'])->name('daftarpekerja');
+Route::get('/daftarpekerja', [KontrakController::class, 'showDaftarPekerja'])->name('daftarpekerja');
+Route::get('/detailpekerja', [KontrakController::class, 'showDetailPekerja'])->name('detailpekerja');
