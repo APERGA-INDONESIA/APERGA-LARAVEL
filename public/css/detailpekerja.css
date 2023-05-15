@@ -13,7 +13,7 @@
 }
 
 .detail-pekerja {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 800;
     font-size: 42px;
@@ -45,7 +45,7 @@
 .nama-pekerja {
     width: 400px;
     height: 49px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 36px;
