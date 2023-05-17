@@ -40,7 +40,7 @@
                 <span>Catatan Khusus</span>
             </div>
             <div class="deskripsi-catatan-khusus">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Lorem ipsum dolor sit amet lorem ipsum</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. </p>
             </div>
         </div>
         <div class="rincian-biaya">
@@ -59,6 +59,5 @@
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/detailpekerja.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 @endpush
 
