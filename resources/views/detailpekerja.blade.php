@@ -35,7 +35,6 @@
                 </div>
             </div>
         </div>
-        <!-- Tambahkan div Catatan Khusus -->
         <div class="catatan-khusus">
             <div class="catatan-khusus-textbox">
                 <span>Catatan Khusus</span>
@@ -43,6 +42,9 @@
             <div class="deskripsi-catatan-khusus">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Lorem ipsum dolor sit amet lorem ipsum</p>
             </div>
+        </div>
+        <div class="rincian-biaya">
+            <div class="subtotal-biaya">Subtotal Biaya: <br> Rp.5.000.000,00 </div>
         </div>
     </div>
 </div>

@@ -143,11 +143,11 @@
 }
 
 .jam-kerja-text {
-    margin-left: 20px; /* Tambahkan baris ini */
+    margin-left: 20px;
 }
 
 .durasi-kerja-text {
-    margin-left: 20px; /* Tambahkan baris ini */
+    margin-left: 20px;
 }
 
 .catatan-khusus {
@@ -156,7 +156,7 @@
     align-items: flex-start;
     padding: 0px;
     gap: 12px;
-    width: 427px; /* Samakan dengan width dari div "deskripsi-jam-kerja" */
+    width: 427px;
     height: 147px;
     margin-top: 20px;
 }
@@ -164,7 +164,7 @@
 .catatan-khusus-textbox {
     width: 200px;
     height: 25px;
-    font-family: 'Poppins', sans-serif; /* Mengganti font-family menjadi Poppins */
+    font-family: 'Poppins', sans-serif;
     position: relative;
 }
 
@@ -174,7 +174,7 @@
     height: 100%;
     left: 0px;
     top: 0px;
-    font-family: 'Poppins', sans-serif; /* Mengganti font-family menjadi Poppins */
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
@@ -202,7 +202,7 @@
 .deskripsi-catatan-khusus p {
     width: 400px;
     height: 75px;
-    font-family: 'Poppins'; /* Mengganti font-family menjadi Poppins */
+    font-family: 'Poppins';
     font-weight: 100;
     font-size: 14px;
     line-height: 25px;
@@ -210,4 +210,33 @@
     flex: none;
     order: 0;
     flex-grow: 0;
+}
+
+.rincian-biaya {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 27px;
+    margin-top: 20px;
+    width: 118px;
+    height: 47px;
+    left: 0px;
+    top: 366px;
+}
+
+.subtotal-biaya {
+    width: 200px;
+    height: 22px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: left;
+    color: #1B2223;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
 }
