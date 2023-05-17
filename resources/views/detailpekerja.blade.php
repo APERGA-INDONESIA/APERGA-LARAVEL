@@ -46,6 +46,10 @@
         <div class="rincian-biaya">
             <div class="subtotal-biaya">Subtotal Biaya: <br> Rp.5.000.000,00 </div>
         </div>
+        <div class="button-group">
+            <button class="Batalkan">Batalkan kontrak</button>
+            <button class="return">Kembali</button>
+        </div>
     </div>
 </div>
 @endsection
@@ -57,3 +61,4 @@
     <link rel="stylesheet" href="{{ asset('css/detailpekerja.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 @endpush
+
