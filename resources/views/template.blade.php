@@ -26,7 +26,8 @@
       <li class="menu-item"><a href="#">Tentang Kami</a></li>
       <li class="menu-item"><a href="#">Bantuan</a></li>
       <li class="menu-item"><a href="#">Profil</a></li>
-      <li class="menu-item" style="margin-right: 100px;"><a href="#">Log Out</a></li>
+      <li class="menu-item" style="margin-right: 100px;"><a href="http://127.0.0.1:8000/login">Log Out</a></li>
+
     </ul>
   </nav>
   @yield('konten')
@@ -34,5 +35,6 @@
     <br />
   @yield('footer')
   @stack('styles')
+  @stack('scripts')
 </body>
 </html>

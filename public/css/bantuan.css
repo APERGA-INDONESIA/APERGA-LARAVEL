@@ -1,0 +1,71 @@
+.dashboard-kotak {
+    position: absolute;
+    width: 957px;
+    height: 147px;
+    left: 242px;
+    top: 155px;
+    background: #1B2223;
+    box-shadow: 0px 6.14966px 6.14966px rgba(63, 61, 86, 0.2);
+    border-radius: 30.7483px;
+}
+
+.profile-img {
+    position: absolute;
+    width: 76.87px;
+    height: 75.57px;
+    left: 292px;
+    top: 191px;
+}
+
+.greeting {
+    position: absolute;
+    width: 201px;
+    height: 88px;
+    left: 426px;
+    top: 181px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 22.8101px;
+    line-height: 31px;
+    color: #FFFFFF;
+}
+
+.username {
+    position: absolute;
+    width: 209px;
+    height: 100px;
+    left: 426px;
+    top: 225px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 34px;
+    color: #FFFFFF;
+}
+
+.FAQ {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 2px;
+    position: absolute;
+    width: 607px;
+    height: 222px;
+    left: 366px;
+    top: 380px;
+}
+
+.FAQ-with-Icon {
+    display: flex;
+
+}
+
+.FAQ-item{
+    margin-right: 35px;
+    width: 587px;
+    height: 24px;
+
+}
