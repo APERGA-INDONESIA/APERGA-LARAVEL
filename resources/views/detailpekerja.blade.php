@@ -66,7 +66,6 @@
     </div>
   </div>
 
-
 @endsection
 
 @section('footer')
@@ -77,27 +76,5 @@
 @endpush
 
 @push('scripts')
-<script>
-    // Menangkap tombol "Batalkan kontrak" dan popup
-    var batalkanKontrakBtn = document.getElementById('batalkanKontrakBtn');
-    var popup = document.getElementById('popup');
-    var confirmBtn = document.getElementById('confirmBtn');
-    var cancelBtn = document.getElementById('cancelBtn');
-
-    // Menambahkan event listener untuk menampilkan dan menyembunyikan popup saat tombol diklik
-    batalkanKontrakBtn.addEventListener('click', function() {
-        popup.classList.add('active');
-    });
-
-    confirmBtn.addEventListener('click', function() {
-        var confirmation = confirm("Apakah Anda yakin ingin membatalkan kontrak?");
-        if (confirmation) {
-            // Logika untuk membatalkan kontrak
-        }
-    });
-
-    cancelBtn.addEventListener('click', function() {
-        popup.classList.remove('active');
-    });
-</script>
+<script src="{{ asset('js/batalkanpekerja.js') }}"></script>
 @endpush
