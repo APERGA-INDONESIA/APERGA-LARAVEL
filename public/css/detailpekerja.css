@@ -294,3 +294,26 @@
 .button-group button.return:hover {
     background: #0f456e;
 }
+
+/* Gaya popup peringatan */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 9999;
+  }
+
+  /* Gaya tombol dalam popup */
+  .popup button {
+    margin-right: 10px;
+  }
+
+  /* Tampilkan popup saat diperlukan */
+  .popup.active {
+    display: block;
+  }
