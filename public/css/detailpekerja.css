@@ -270,7 +270,7 @@
     color: #1B2223;
 }
 
-.button-group button.Batalkan {
+.button-group button.batalkan {
     border-color: rgba(19, 85, 137, 1);
     background: #ffffff;
 }
@@ -295,25 +295,82 @@
     background: #0f456e;
 }
 
-/* Gaya popup peringatan */
 .popup {
     display: none;
     position: fixed;
+    width: 401px;
+    height: 316px;
+    justify-content: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
+    background-color: #ffffff; /* Ganti dengan kode warna biru yang Anda inginkan */
     padding: 20px;
-    border: 1px solid #ccc;
+    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
     z-index: 9999;
   }
 
-  /* Gaya tombol dalam popup */
-  .popup button {
-    margin-right: 10px;
-  }
-
-  /* Tampilkan popup saat diperlukan */
   .popup.active {
     display: block;
   }
+
+  .popup-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 337px;
+    height: 233.26px;
+    margin-left: 12px;
+    margin-right: 32px;
+  }
+
+  .popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .popup-field p {
+    margin-bottom: 20px;
+  }
+
+  .button-container {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+  }
+
+  .popup-field button {
+    width: 82px;
+    height: 35px;
+    background: #135589;
+    border: none;
+    border-radius: 20px;
+    color: #ffffff;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+  }
+
+  #cancelBtn {
+    background: none;
+    border: 1px solid #135589;
+    color: #135589;
+  }
+
+  .popup-content .star-img {
+    width: 119.26px;
+    height: 119.26px;
+    margin-bottom: 6px;
+  }
+
+
+
+
+

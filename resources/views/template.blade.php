@@ -35,5 +35,6 @@
     <br />
   @yield('footer')
   @stack('styles')
+  @stack('scripts')
 </body>
 </html>
