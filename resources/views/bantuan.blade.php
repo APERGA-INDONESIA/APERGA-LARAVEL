@@ -11,7 +11,24 @@
     <p class="username">Username</p>
 
     <div class="FAQ">
-        <p class="">
+        <div class="FAQ-with-Icon">
+        </div>
+        <div class="FAQ-items">
+            <div class="FAQ-items-1">
+                <p class="">
+                <img src="">
+            </div>
+            <div class="FAQ-items-2">
+                <p class="">
+                <img src="">
+            </div>
+            <div class="FAQ-items-3">
+                <p class="">
+                <img src="">
+            </div>
+        </div>
+    </div>
+
 
 
 </div>
