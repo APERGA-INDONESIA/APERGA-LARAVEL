@@ -1,4 +1,3 @@
-
 .dashboard-kotak {
     position: absolute;
     width: 957px;
@@ -32,20 +31,6 @@
     color: #FFFFFF;
 }
 
-.greeting {
-    position: absolute;
-    width: 209px;
-    height: 100px;
-    left: 426px;
-    top: 181px;
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 22.8101px;
-    line-height: 31px;
-    color: #FFFFFF;
-}
-
 .username {
     position: absolute;
     width: 209px;
@@ -60,25 +45,27 @@
     color: #FFFFFF;
 }
 
-
-.faq {
-/* Auto layout */
-
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-gap: 2px;
-
-position: absolute;
-width: 182px;
-height: 75px;
-left: 469px;
-top: 377px;
+.FAQ {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 2px;
+    position: absolute;
+    width: 607px;
+    height: 222px;
+    left: 366px;
+    top: 380px;
 }
 
+.FAQ-with-Icon {
+    display: flex;
 
+}
 
+.FAQ-item{
+    margin-right: 35px;
+    width: 587px;
+    height: 24px;
 
-
-
+}

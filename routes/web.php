@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KontrakController;
+use App\Http\Controllers\BantuanController;
 
 
 
@@ -26,6 +27,7 @@ Route::post('/register', [AuthController::class, 'register'])->name('register.po
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/daftarpekerja', [KontrakController::class, 'index'])->name('daftarpekerja');
+Route::get('/bantuan', [BantuanController::class, 'index'])->name('bantuan');
 
 
 
