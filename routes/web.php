@@ -30,4 +30,4 @@ Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashb
 Route::get('cariPRT', [FilterController::class, 'filterPRT'])->name('cariPRT');
 Route::get('/daftarpekerja', [KontrakController::class, 'showDaftarPekerja'])->name('daftarpekerja');
 Route::get('/detailpekerja', [KontrakController::class, 'showDetailPekerja'])->name('detailpekerja');
-
+Route::get('/pembayaran', [MencariPekerjaController::class, 'showPesanan'])->name('pembayaran');
