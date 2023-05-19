@@ -30,4 +30,3 @@ Route::get('cariPRT', [FilterController::class, 'filterPRT'])->name('cariPRT');
 Route::get('/daftarpekerja', [KontrakController::class, 'showDaftarPekerja'])->name('daftarpekerja');
 Route::get('/detailpekerja', [KontrakController::class, 'showDetailPekerja'])->name('detailpekerja');
 
-
