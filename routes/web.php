@@ -10,7 +10,7 @@ use App\Http\Controllers\KontrakController;
 use App\Http\Controllers\BantuanController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

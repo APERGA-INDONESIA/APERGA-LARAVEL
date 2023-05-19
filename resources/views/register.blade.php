@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Register</title>
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/login.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/register.css') }}">
 </head>
 <body>
     <div class="login-frame">
@@ -24,6 +24,13 @@
               <input type="password" class="form-input form-input-no-border" placeholder="Password">
               <div class="form-input-underline"></div>
             </div>
+            <div class="forgot-password-container">
+                <a href="http://localhost:8000/login" class="forgot-password">sudah memiliki akun? masuk</a>
+            </div>
+            <form>
+                <input type="checkbox" id="checkbox" name="checkbox" value="checkboxValue">
+                <label for="checkbox" class="forgot-password">saya setuju dengan syarat dan ketentuan</label>
+              </form>
             <button type="submit" class="submit-button" onclick="window.location.href='http://localhost:8000/login'">Daftar</button>
         </div>
     </div>

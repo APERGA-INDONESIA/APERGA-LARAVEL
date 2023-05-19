@@ -70,7 +70,7 @@ body {
     background-color: #ffffff;
   }
   .form-input::placeholder {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
@@ -84,7 +84,7 @@ body {
   }
 
 .form-label {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
@@ -95,7 +95,7 @@ body {
 }
 
 .submit-button {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-weight: 400px;
     font-size: 16px;
     line-height: 24px;
