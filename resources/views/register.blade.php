@@ -27,13 +27,10 @@
             <div class="forgot-password-container">
                 <a href="http://localhost:8000/login" class="forgot-password">sudah memiliki akun? masuk</a>
             </div>
-            <div>
-                <form>
-                    <input type="checkbox" id="checkbox" name="checkbox" value="checkboxValue">
-                    <label for="checkbox" class="forgot-password">saya setuju dengan syarat dan ketentuan</label>
-                  </form>
-            </div>
-
+            <form>
+                <input type="checkbox" id="checkbox" name="checkbox" value="checkboxValue">
+                <label for="checkbox" class="forgot-password">saya setuju dengan syarat dan ketentuan</label>
+              </form>
             <button type="submit" class="submit-button" onclick="window.location.href='http://localhost:8000/login'">Daftar</button>
         </div>
     </div>
