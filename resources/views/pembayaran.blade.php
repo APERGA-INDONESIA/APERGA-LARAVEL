@@ -17,35 +17,37 @@
     </div>
     <div class="deskripsi">
         <div class="metode-pembayaran-title">Metode Pembayaran</div>
-        
-        <div class="metode-pembayaran">
-            <div class="debit-kredit">
-                <div class="debit-kredit-box">
-                    <div class="debit-kredit-icon">4 jam/hari</div>
-                    <div class="debit-kredit-title">Debit/Kredit</div>
-                </div>
-            </div>
-            <div class="virtual-account">
-                <div class="virtual-account-box">
-                    <div class="virtual-account-icon">1 Bulan</div>
-                    <div class="virtual-account-title">Durasi Kerja</div>
-                </div>
-            </div>
+        <div class="debit-kredit-button">
+            <button type="button" class="btn btn-primary btn-lg btn-block">
+            <img src="{{ asset('images/debit-kredit.svg') }}" alt="Debit-Kredit" class="debit-kredit-img">
+            Debit/Kredit</button>
+        </div> 
+        <br>
+        <div class="virtual-account-button">
+            <button type="button" class="btn btn-primary btn-lg btn-block">
+            <img src="{{ asset('images/virtual-account.svg') }}" alt="virtual-account" class="virtual-account-img">
+            Virtual Account</button>
         </div>
-        <div class="catatan-khusus">
-            <div class="catatan-khusus-textbox">
-                <span>Catatan Khusus</span>
-            </div>
-            <div class="deskripsi-catatan-khusus">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. </p>
-            </div>
+        <br>
+
+        <div class="ringkasan-pembayaran-title">Ringkasan Pembayaran</div>
+        <div class="total-tagihan-box">
+            <div class="total-tagihan-text">Total Tagihan</div>
+            <div class="total-tagihan">Rp 5.000.000,00 </div>
         </div>
-        <div class="rincian-biaya">
-            <div class="subtotal-biaya">Subtotal Biaya: <br> Rp.5.000.000,00 </div>
+        <div class="biaya-layanan-box">
+            <div class="biaya-layanan-text">Biaya Layanan</div>
+            <div class="biaya-layanan">Rp 250.000,00 </div>
+        </div>
+
+        <div class="line"></div>
+        <div class="total-bayar-box">
+            <div class="total-bayar-title">Total Bayar</div>
+            <div class="total-bayar">Rp 5.250.000,00</div>
         </div>
         <div class="button-group">
-            <button class="Batalkan">Batalkan kontrak</button>
-            <button class="return">Kembali</button>
+            <button class="kembali">Kembali</button>
+            <button class="bayar">Bayar</button>
         </div>
     </div>
 </div>
