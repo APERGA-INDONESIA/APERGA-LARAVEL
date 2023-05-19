@@ -10,10 +10,8 @@
     <p class="greeting">Halo,</p>
     <p class="username">Username</p>
 
-<div class="FAQ">
-    <img src="{{ asset('images/faq.png') }}" alt="faq" class="faq">
-    <img src="{{ asset('images/tulisandibawahfaq.png') }}" class="tulisandibawahfaq">
-
+    <div class="FAQ">
+        <p class="">
 
 
 </div>
