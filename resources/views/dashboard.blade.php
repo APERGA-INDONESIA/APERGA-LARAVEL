@@ -1,5 +1,6 @@
 @extends('template')
-
+@section('favicon')
+@endsection
 @section('navbar')
 @endsection
 
