@@ -47,7 +47,7 @@
             <div class="subtotal-biaya">Subtotal Biaya: <br> Rp.5.000.000,00 </div>
         </div>
         <div class="button-group">
-            <button class="Batalkan">Batalkan kontrak</button>
+            <button id="batalkanKontrakBtn" class="Batalkan">Batalkan kontrak</button>
             <button class="return">Kembali</button>
         </div>
     </div>
@@ -61,3 +61,21 @@
     <link rel="stylesheet" href="{{ asset('css/detailpekerja.css') }}">
 @endpush
 
+@push('scripts')
+    <script>
+        // Menangkap tombol "Batalkan kontrak" dan popup
+        var batalkanKontrakBtn = document.getElementById('batalkanKontrakBtn');
+        var popup = document.getElementById('popup');
+
+        // Menambahkan event listener untuk menampilkan dan menyembunyikan popup saat tombol diklik
+        batalkanKontrakBtn.addEventListener('click', function() {
+            var confirmation = confirm("Apakah Anda yakin ingin membatalkan kontrak?");
+            if (confirmation) {
+                // Tombol "Batalkan" diklik, lakukan tindakan yang sesuai di sini
+                // Contoh: mengirim permintaan AJAX ke server untuk membatalkan kontrak
+            } else {
+                // Tombol "Kembali" diklik atau popup ditutup, tidak ada tindakan tambahan yang diambil
+            }
+        });
+    </script>
+@endpush

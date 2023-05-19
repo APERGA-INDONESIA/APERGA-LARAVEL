@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KontrakController;
-use App\Http\Controllers\FilterController;
+
+
 
 Route::get('/', function () {
     return redirect('/login');
@@ -23,8 +24,12 @@ Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('
 Route::post('/register', [AuthController::class, 'register'])->name('register.post');
 
 
+<<<<<<< HEAD
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('cariPRT', [FilterController::class, 'filterPRT'])->name('cariPRT');
+=======
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+>>>>>>> 35e6959b9b524d9c175cbe4cc874436527beab43
 Route::get('/daftarpekerja', [KontrakController::class, 'showDaftarPekerja'])->name('daftarpekerja');
 Route::get('/detailpekerja', [KontrakController::class, 'showDetailPekerja'])->name('detailpekerja');
 
