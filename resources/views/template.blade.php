@@ -22,9 +22,9 @@
   <nav class="navbar">
     <img src="{{ asset('images/aperga.png') }}" alt="Logo" class="logo" style="margin-left: 100px;">
     <ul class="menu">
-      <li class="menu-item"><a href="#">Cari PRT</a></li>
+      <li class="menu-item"><a href="http://localhost:8000/cariPRT">Cari PRT</a></li>
       <li class="menu-item"><a href="#">Tentang Kami</a></li>
-      <li class="menu-item"><a href="#">Bantuan</a></li>
+      <li class="menu-item"><a href="http://localhost:8000/bantuan">Bantuan</a></li>
       <li class="menu-item"><a href="#">Profil</a></li>
       <li class="menu-item" style="margin-right: 100px;"><a href="http://127.0.0.1:8000/login">Log Out</a></li>
 
