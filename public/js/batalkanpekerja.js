@@ -9,6 +9,7 @@
     });
 
     confirmBtn.addEventListener('click', function() {
+
         if (confirmation) {
             // Logika untuk membatalkan kontrak
         }
