@@ -40,18 +40,32 @@
                 <span>Catatan Khusus</span>
             </div>
             <div class="deskripsi-catatan-khusus">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. </p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
             </div>
         </div>
         <div class="rincian-biaya">
             <div class="subtotal-biaya">Subtotal Biaya: <br> Rp.5.000.000,00 </div>
         </div>
         <div class="button-group">
-            <button id="batalkanKontrakBtn" class="Batalkan">Batalkan kontrak</button>
+            <button id="batalkanKontrakBtn" class="batalkan">Batalkan kontrak</button>
             <button class="return">Kembali</button>
         </div>
     </div>
 </div>
+
+<div id="popup" class="popup">
+    <div class="popup-field">
+      <div class="popup-content">
+        <img src="{{ asset('images/alert-triangle.png') }}" alt="alert-triangle" class="star-img">
+        <p>Apakah Anda yakin ingin membatalkan kontrak?</p>
+        <div class="button-container">
+          <button id="confirmBtn">Kembali</button>
+          <button id="cancelBtn">Batalkan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 @endsection
 
 @section('footer')
@@ -62,20 +76,5 @@
 @endpush
 
 @push('scripts')
-    <script>
-        // Menangkap tombol "Batalkan kontrak" dan popup
-        var batalkanKontrakBtn = document.getElementById('batalkanKontrakBtn');
-        var popup = document.getElementById('popup');
-
-        // Menambahkan event listener untuk menampilkan dan menyembunyikan popup saat tombol diklik
-        batalkanKontrakBtn.addEventListener('click', function() {
-            var confirmation = confirm("Apakah Anda yakin ingin membatalkan kontrak?");
-            if (confirmation) {
-                // Tombol "Batalkan" diklik, lakukan tindakan yang sesuai di sini
-                // Contoh: mengirim permintaan AJAX ke server untuk membatalkan kontrak
-            } else {
-                // Tombol "Kembali" diklik atau popup ditutup, tidak ada tindakan tambahan yang diambil
-            }
-        });
-    </script>
+<script src="{{ asset('js/batalkanpekerja.js') }}"></script>
 @endpush
