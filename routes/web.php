@@ -10,7 +10,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KontrakController;
 use App\Http\Controllers\FilterController;
 use App\Http\Controllers\BantuanController;
-
+use App\Http\Controllers\MencariPekerjaController;
 
 
 Route::get('/', function () {
@@ -30,6 +30,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/detailpekerja', [KontrakController::class, 'showDetailPekerja'])->name('detailpekerja');
     Route::get('/pembayaran', [MencariPekerjaController::class, 'showPesanan'])->name('pembayaran');
     Route::get('/bantuan', [BantuanController::class, 'showBantuan'])->name('bantuan');
+    Route::get('/pembayaran', [BantuanController::class, 'showPesanan'])->name('pembayaran');
 
 });
 

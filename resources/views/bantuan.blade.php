@@ -7,8 +7,8 @@
 <div class="container">
     <div class="dashboard-kotak"></div>
     <img src="{{ asset('images/profile 1.png') }}" alt="Profile Image" class="profile-img">
-    <p class="greeting">Halo,</p>
-    <p class="username">Username</p>
+    <p class="greeting">Halo, Selamat Datang</p>
+    <p class="username">{{ Auth::user()->name }}</p>
 
     <div class="FAQ">
         <div class="FAQ-with-Icon">
