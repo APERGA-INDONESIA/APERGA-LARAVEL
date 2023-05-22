@@ -19,17 +19,25 @@
 </head>
 <body>
 @yield('navbar')
-  <nav class="navbar">
-    <img src="{{ asset('images/aperga.png') }}" alt="Logo" class="logo" style="margin-left: 100px;">
+<nav class="navbar">
+    <a href="http://localhost:8000/home">
+        <img src="{{ asset('images/aperga.png') }}" alt="Logo" class="logo" style="margin-left: 100px;">
+    </a>
     <ul class="menu">
-      <li class="menu-item"><a href="http://localhost:8000/cariPRT">Cari PRT</a></li>
-      <li class="menu-item"><a href="#">Tentang Kami</a></li>
-      <li class="menu-item"><a href="http://localhost:8000/bantuan">Bantuan</a></li>
-      <li class="menu-item"><a href="#">Profil</a></li>
-      <li class="menu-item" style="margin-right: 100px;"><a href="http://127.0.0.1:8000/login">Log Out</a></li>
-
+        <li class="menu-item"><a href="http://localhost:8000/cariPRT">Cari PRT</a></li>
+        <li class="menu-item"><a href="#">Tentang Kami</a></li>
+        <li class="menu-item"><a href="http://localhost:8000/bantuan">Bantuan</a></li>
+        <li class="menu-item"><a href="#">Profil</a></li>
+        <li class="menu-item" style="margin-right: 100px;">
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+        </li>
     </ul>
-  </nav>
+</nav>
+
+
   @yield('konten')
     <br />
     <br />

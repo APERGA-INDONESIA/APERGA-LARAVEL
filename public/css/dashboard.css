@@ -33,22 +33,22 @@
 
 .greeting {
     position: absolute;
-    width: 209px;
+    width: 400px;
     height: 100px;
     left: 426px;
     top: 181px;
-    font-family: 'Open Sans';
+    font-family: 'Poppins';
     font-style: normal;
-    font-weight: 900;
-    font-size: 22.8101px;
+    font-weight: 400;
+    font-size: 18px;
     line-height: 31px;
     color: #FFFFFF;
 }
 
 .username {
     position: absolute;
-    width: 209px;
-    height: 100px;
+    width: 700px;
+    height: 50px;
     left: 426px;
     top: 225px;
     font-family: 'Open Sans';

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class BantuanController extends Controller
 {
-    public function index()
+    public function showBantuan()
     {
         return view('bantuan');
     }

@@ -1,14 +1,14 @@
 @extends('layouts.app')
-
+@section('title', 'Daftar')
 @section('content')
     <div class="login-frame">
         <div class="login-form">
-            <div class="form-title">Daftar</div>
+            <div class="form-title">{{ __('Daftar') }}</div>
             <form method="POST" action="{{ route('register') }}">
                 @csrf
 
                 <div class="form-input-container">
-                    <input type="text" class="form-input form-input-no-border" placeholder="Nama Lengkap" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                    <input type="text" class="form-input form-input-no-border" placeholder="{{ __('Name') }}" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                     <div class="form-input-underline"></div>
                     @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="form-input-container">
-                    <input type="text" class="form-input form-input-no-border" placeholder="Nomor Telepon" name="phone" value="{{ old('phone') }}" required>
+                    <input type="text" class="form-input form-input-no-border" placeholder="{{ __('Phone Number') }}" name="phone" value="{{ old('phone') }}" required>
                     <div class="form-input-underline"></div>
                     @error('phone')
                         <span class="invalid-feedback" role="alert">
@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="form-input-container">
-                    <input type="email" class="form-input form-input-no-border" placeholder="Email" name="email" value="{{ old('email') }}" required autocomplete="email">
+                    <input type="email" class="form-input form-input-no-border" placeholder="{{ __('Email Address') }}" name="email" value="{{ old('email') }}" required autocomplete="email">
                     <div class="form-input-underline"></div>
                     @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="form-input-container">
-                    <input type="password" class="form-input form-input-no-border" placeholder="Password" name="password" required autocomplete="new-password">
+                    <input type="password" class="form-input form-input-no-border" placeholder="{{ __('Password') }}" name="password" required autocomplete="new-password">
                     <div class="form-input-underline"></div>
                     @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -48,17 +48,17 @@
                 </div>
 
                 <div class="form-input-container">
-                    <input type="password" class="form-input form-input-no-border" placeholder="Masukkan Ulang Password" name="password_confirmation" required autocomplete="new-password">
+                    <input type="password" class="form-input form-input-no-border" placeholder="{{ __('Confirm Password') }}" name="password_confirmation" required autocomplete="new-password">
                     <div class="form-input-underline"></div>
                 </div>
 
                 <button type="submit" class="submit-button">
-                    {{ __('register') }}
+                    {{ __('Register') }}
                 </button>
             </form>
 
             <div class="forgot-password-container">
-                <a href="{{ route('login') }}" class="forgot-password">Sudah memiliki akun? Masuk</a>
+                <a href="{{ route('login') }}" class="forgot-password">{{ __('Already have an account? Log in') }}</a>
             </div>
         </div>
     </div>

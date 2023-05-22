@@ -12,7 +12,7 @@
     </div>
     <div class="kotak-hitam">
         <img src="{{ asset('images/Profile 1.png') }}" alt="Profile 1" class="profile-image">
-        <p class="halo-username">Halo, username</p>
+        <p class="halo-username">Halo, {{ Auth::user()->name }}</p>
     </div>
     <div class="List-Pekerja">
         <div class="list-pekerja-1">
