@@ -25,7 +25,7 @@
     </a>
     <ul class="menu">
         <li class="menu-item"><a href="http://localhost:8000/cariPRT">Cari PRT</a></li>
-        <li class="menu-item"><a href="http://localhost:8000/tentangaplikasi">Tentang Kami</a></li>
+        <li class="menu-item"><a href="http://localhost:8000/tentangaplikasi">Tentang Aplikasi</a></li>
         <li class="menu-item"><a href="http://localhost:8000/bantuan">Bantuan</a></li>
         <li class="menu-item"><a href="#">Profil</a></li>
         <li class="menu-item" style="margin-right: 100px;">

@@ -48,7 +48,9 @@
         </div>
         <div class="button-group">
             <button id="batalkanKontrakBtn" class="batalkan">Batalkan kontrak</button>
-            <button class="return">Kembali</button>
+            <a href="javascript:void(0);" onclick="window.history.back();">
+                <button class="return">Kembali</button>
+            </a>
         </div>
     </div>
 </div>

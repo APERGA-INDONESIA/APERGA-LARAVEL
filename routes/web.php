@@ -14,7 +14,7 @@ use App\Http\Controllers\MencariPekerjaController;
 use App\Http\Controllers\TentangAplikasiController;
 
 Route::get('/', function () {
-    return redirect('/');
+    return redirect('/dashboard');
 });
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');

@@ -6,7 +6,9 @@
 @section('konten')
     <div class="pekerja-container">
         <div class="pekerja-text">
-            <img src="{{ asset('images/arrow.png') }}" alt="Arrow" class="arrow">
+            <a href="javascript:void(0);" onclick="window.history.back();">
+                <img src="{{ asset('images/arrow.png') }}" alt="Arrow" class="arrow">
+            </a>
             <h1 class="pekerja-anda">Pekerja Anda</h1>
         </div>
     </div>
