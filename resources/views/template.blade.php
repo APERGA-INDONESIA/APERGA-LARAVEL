@@ -20,12 +20,12 @@
 <body>
 @yield('navbar')
 <nav class="navbar">
-    <a href="http://localhost:8000/home">
+    <a href="http://localhost:8000/dashboard">
         <img src="{{ asset('images/aperga.png') }}" alt="Logo" class="logo" style="margin-left: 100px;">
     </a>
     <ul class="menu">
         <li class="menu-item"><a href="http://localhost:8000/cariPRT">Cari PRT</a></li>
-        <li class="menu-item"><a href="#">Tentang Kami</a></li>
+        <li class="menu-item"><a href="http://localhost:8000/tentangaplikasi">Tentang Kami</a></li>
         <li class="menu-item"><a href="http://localhost:8000/bantuan">Bantuan</a></li>
         <li class="menu-item"><a href="#">Profil</a></li>
         <li class="menu-item" style="margin-right: 100px;">

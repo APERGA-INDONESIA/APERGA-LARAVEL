@@ -2,7 +2,7 @@ body {
     background: #1B2223;
 }
 
-.login-frame {
+.register-frame {
     position: absolute;
     width: 438px;
     height: 420px;
@@ -29,7 +29,7 @@ body {
     z-index: 1;
 }
 
-.login-form {
+.register-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,7 +67,7 @@ body {
   }
   .form-input:focus {
     outline: none;
-    background-color: #E5E5E5;
+    background-color: #ffffff;
   }
   .form-input::placeholder {
     font-family: 'Poppins';

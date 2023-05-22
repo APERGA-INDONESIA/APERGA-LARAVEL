@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Daftar')
 @section('content')
-    <div class="login-frame">
-        <div class="login-form">
-            <div class="form-title">{{ __('Daftar') }}</div>
+    <div class="register-frame">
+        <div class="register-form">
+            <div class="register-title">{{ __('Daftar') }}</div>
             <form method="POST" action="{{ route('register') }}">
                 @csrf
 
@@ -62,7 +62,7 @@
             </div>
         </div>
     </div>
-    <div class="title">APERGA</div>
+<div class="title">APERGA</div>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/register.css') }}">
 @endsection

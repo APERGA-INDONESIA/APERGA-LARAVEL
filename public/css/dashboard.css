@@ -1,68 +1,120 @@
 .dashboard-kotak {
     position: absolute;
-    width: 957px;
-    height: 147px;
-    left: 242px;
-    top: 155px;
+    width: 659px;
+    height: 106px;
+    left: 290px;
+    top: 150px;
     background: #1B2223;
-    box-shadow: 0px 6.14966px 6.14966px rgba(63, 61, 86, 0.2);
-    border-radius: 30.7483px;
+    border-radius: 20px;
+}
+
+.search-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 41px;
+    top: 35px;
+    bottom: 35px;
+}
+
+.cari-prt {
+    position: absolute;
+    width: 489px;
+    height: 36px;
+    left: 90px;
+    top: 33px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 40px;
+    color: #FFFFFF;
+    margin-left: 15px; /* Tambahkan properti margin-left */
+}
+
+.dashboard-kotak-2 {
+    position: absolute;
+    width: 659px;
+    height: 106px;
+    left: 290px;
+    top: 290px;
+    background: #1B2223;
+    border-radius: 20px;
 }
 
 .profile-img {
     position: absolute;
-    width: 76.87px;
-    height: 75.57px;
-    left: 292px;
-    top: 191px;
-}
-
-.greeting {
-    position: absolute;
-    width: 201px;
-    height: 88px;
-    left: 426px;
-    top: 181px;
-    font-family: 'Nunito Sans';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 22.8101px;
-    line-height: 31px;
-    color: #FFFFFF;
+    width: 56px;
+    height: 55px;
+    left: 35px;
+    top: 25px;
 }
 
 .greeting {
     position: absolute;
     width: 400px;
     height: 100px;
-    left: 426px;
-    top: 181px;
+    left: 112px;
+    Top: 18px;
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 12px;
     line-height: 31px;
     color: #FFFFFF;
 }
+
 
 .username {
     position: absolute;
     width: 700px;
     height: 50px;
-    left: 426px;
-    top: 225px;
+    left: 108px;
+    Top: 45px;
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 900;
-    font-size: 40px;
+    font-size: 32px;
     line-height: 34px;
     color: #FFFFFF;
 }
 
-.arrow {
+.dashboard-kotak-3 {
     position: absolute;
-    width: 49px;
-    height: 49px;
-    left: 100px;
-    top: 200px;
+    width: 659px;
+    height: 106px;
+    left: 290px;
+    top: 430px;
+    background: #1B2223;
+    border-radius: 20px;
+}
+
+
+.jumlahpekerja-text {
+    position: absolute;
+    width: 400px;
+    height: 100px;
+    left: 108px;
+    Top: 18px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 31px;
+    color: #FFFFFF;
+}
+
+
+.jumlahpekerja {
+    position: absolute;
+    width: 700px;
+    height: 50px;
+    left: 108px;
+    Top: 45px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 34px;
+    color: #FFFFFF;
 }

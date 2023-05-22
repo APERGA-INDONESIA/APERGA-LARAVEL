@@ -11,10 +11,10 @@ use App\Http\Controllers\KontrakController;
 use App\Http\Controllers\FilterController;
 use App\Http\Controllers\BantuanController;
 use App\Http\Controllers\MencariPekerjaController;
-
+use App\Http\Controllers\TentangAplikasiController;
 
 Route::get('/', function () {
-    return redirect('/login');
+    return redirect('/');
 });
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -31,11 +31,12 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/pembayaran', [MencariPekerjaController::class, 'showPesanan'])->name('pembayaran');
     Route::get('/bantuan', [BantuanController::class, 'showBantuan'])->name('bantuan');
     Route::get('/pembayaran', [MencariPekerjaController::class, 'showPesanan'])->name('pembayaran');
+    Route::get('/tentangaplikasi', [tentangaplikasiController::class, 'showTentangAplikasi'])->name('tentangaplikasi');
 
 });
 
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
 
 //get untuk mengeksekusi method showLoginForm pada AuthController sehingga mendapatkan data atau menampilkan halaman
