@@ -35,7 +35,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100%;
-    padding: 20px;
+    padding: 10px;
 }
 
 .form-title {
@@ -107,7 +107,7 @@ body {
     height: 40px;
     cursor: pointer;
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 .submit-button:hover {
@@ -118,8 +118,8 @@ body {
     display: flex;
     justify-content: flex-start;
     width: 100%;
-    margin-top: -10px;
-    margin-left: 125px;
+    margin-top: -60px;
+    margin-left: 250px;
 }
 
 .forgot-password {
