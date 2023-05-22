@@ -30,7 +30,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/detailpekerja', [KontrakController::class, 'showDetailPekerja'])->name('detailpekerja');
     Route::get('/pembayaran', [MencariPekerjaController::class, 'showPesanan'])->name('pembayaran');
     Route::get('/bantuan', [BantuanController::class, 'showBantuan'])->name('bantuan');
-    Route::get('/pembayaran', [BantuanController::class, 'showPesanan'])->name('pembayaran');
+    Route::get('/pembayaran', [MencariPekerjaController::class, 'showPesanan'])->name('pembayaran');
 
 });
 
