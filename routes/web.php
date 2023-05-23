@@ -12,6 +12,7 @@ use App\Http\Controllers\FilterController;
 use App\Http\Controllers\BantuanController;
 use App\Http\Controllers\MencariPekerjaController;
 use App\Http\Controllers\TentangAplikasiController;
+use App\Http\Controllers\ResetController;
 
 Route::get('/', function () {
     return redirect('/dashboard');
@@ -38,6 +39,7 @@ Route::middleware(['auth'])->group(function(){
 Auth::routes();
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
+Route::get('/reset', [ResetController::class, 'showReset'])->name('reset');
 
 //get untuk mengeksekusi method showLoginForm pada AuthController sehingga mendapatkan data atau menampilkan halaman
 //post untuk mengirimkan data ke server untuk diproses, misalnya ketika pengguna mengisi formulir.
