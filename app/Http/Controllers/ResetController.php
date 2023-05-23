@@ -11,4 +11,9 @@ class ResetController extends Controller
         // Menampilkan formulir pendaftaran
     }
 
+    public function showInputNewPassword()
+    {
+        return view('inputnewpasssword');
+        // Menampilkan formulir pendaftaran
+    }
 }
