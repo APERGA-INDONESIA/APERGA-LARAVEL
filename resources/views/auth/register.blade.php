@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="form-input-container">
-                    <input type="text" class="form-input form-input-no-border" placeholder="{{ __('Phone Number') }}" name="phone" value="{{ old('phone') }}" required>
+                    <input type="tel" class="form-input form-input-no-border" placeholder="{{ __('Phone Number') }}" name="phone" value="{{ old('phone') }}" required>
                     <div class="form-input-underline"></div>
                     @error('phone')
                         <span class="invalid-feedback" role="alert">
@@ -50,6 +50,11 @@
                 <div class="form-input-container">
                     <input type="password" class="form-input form-input-no-border" placeholder="{{ __('Confirm Password') }}" name="password_confirmation" required autocomplete="new-password">
                     <div class="form-input-underline"></div>
+                    @error('password_confirmation')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
                 <button type="submit" class="submit-button">
@@ -62,7 +67,7 @@
             </div>
         </div>
     </div>
-<div class="title">APERGA</div>
+    <div class="title">APERGA</div>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/register.css') }}">
 @endsection

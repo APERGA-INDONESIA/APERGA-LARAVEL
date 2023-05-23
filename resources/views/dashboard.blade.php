@@ -26,7 +26,7 @@
     <a href="http://localhost:8000/daftarpekerja">
         <img src="{{ asset('images/worker.png') }}" alt="Profile Image" class="profile-img">
         <p class="jumlahpekerja-text">Jumlah Pekerja</p>
-        <p class="jumlahpekerja">2 Orang</p>
+        <p class="jumlahpekerja">4 Orang</p>
     </a>
 </div>
 
