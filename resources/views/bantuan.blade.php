@@ -62,14 +62,13 @@
         </div>
         <div class="CallCenter-items">
             <div class="CallCenter-item">
-                <p class="question">Telepon Kami</p>
+                <button onclick="window.open('https://wa.me/+6283111111', '_blank')">Telepon Kami</button>
             </div>
             <div class="CallCenter-item">
-                <p class="question">Telepon Kami</p>
+                <button onclick="window.open('mailto:contoh@gmail.com', '_blank')">Email Kami</button>
             </div>
         </div>
     </div>
-</div>
 @endsection
 
 @section('footer')
