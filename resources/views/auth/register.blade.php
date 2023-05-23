@@ -69,5 +69,5 @@
     </div>
     <div class="title">APERGA</div>
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/register.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/register.css') }}">
 @endsection

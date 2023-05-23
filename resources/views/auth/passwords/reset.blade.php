@@ -63,4 +63,6 @@
     </div>
 </div>
 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/resetpassword.css') }}">
 @endsection
+
