@@ -38,6 +38,11 @@ Route::middleware(['auth'])->group(function(){
 Auth::routes();
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
 
+//checkbox register
+Route::get('/terms', function () {
+    return view('terms');
+})->name('terms');
+
 
 //get untuk mengeksekusi method showLoginForm pada AuthController sehingga mendapatkan data atau menampilkan halaman
 //post untuk mengirimkan data ke server untuk diproses, misalnya ketika pengguna mengisi formulir.
