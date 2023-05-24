@@ -52,11 +52,24 @@
                     <div class="form-input-underline"></div>
                 </div>
 
+                <div>
+                    <a href="{{ route('login') }}" class="belum-password">{{ __('Belum memiliki akun? Daftar') }}</a>
+                </div>
 
-                <button type="submit" class="submit-button">
-                    {{ __('Daftar') }}
-                </button>
+                <div class="checkbox">
+                <form method="post" action="proses.php">
+                    <input  type="checkbox" name="terms" id="terms" value="1">
+                    <label  for="terms">Saya Menyetujui Syarat dan Ketentuan</label>
+                </form>
+                </div>
+
+
+
             </form>
+
+            <button type="submit" class="submit-button">
+                {{ __('Daftar') }}
+            </button>
 
 
         </div>
