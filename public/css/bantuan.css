@@ -54,18 +54,149 @@
     position: absolute;
     width: 607px;
     height: 222px;
-    left: 366px;
-    top: 380px;
+    left: 275px;
+    top: 350px;
+    margin-bottom: 20px; /* Tambahkan margin-bottom sebesar 20px */
 }
 
 .FAQ-with-Icon {
     display: flex;
-
+    margin-left: -260px;
 }
 
-.FAQ-item{
+.FAQ-with-Icon img {
+    transform: scale(0.6);
+}
+
+.FAQ-item {
     margin-right: 35px;
     width: 587px;
     height: 24px;
+    margin-bottom: 15px;
+}
 
+.faq-button {
+    display: flex;
+    align-items: center;
+    width: 573px;
+    height: 24px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #135589;
+    background: none;
+    border: none;
+    padding: 0;
+    position: relative;
+    margin-right: 100px; /* Tambahkan margin-right sebesar 100px */
+}
+
+.dropdown-icon {
+    position: absolute;
+    top: 50%;
+    right: -175px; /* Geser ke kanan sejauh -100px */
+    transform: translateY(-50%);
+}
+
+.faq-button::after {
+    content: "";
+    display: inline-block;
+    background-image: url("{{ asset('images/dropdownbantuan.png') }}");
+    width: 14px;
+    height: 9px;
+    position: absolute;
+    top: 50%;
+    right: 0; /* Pindahkan ke sisi kanan */
+    transform: translateY(-50%);
+}
+
+.dropdown-menu {
+    background-color: #f8f9fa;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    width: 748px;
+    position: absolute;
+    top: 100%; /* Posisikan dropdown-menu di bawah faq-button */
+    left: 0;
+    z-index: 1; /* Atur z-index untuk menghindari tumpang tindih */
+}
+
+.dropdown-menu .dropdown-item {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #135589;
+    padding: 5px;
+    word-break: break-word;
+
+}
+
+
+.dropdown {
+    position: relative; /* Tambahkan ini untuk mengatur posisi relatif */
+}
+
+.CallCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 15px;
+    position: absolute;
+    width: 607px;
+    height: 222px;
+    left: 275px;
+    top: 620px; /* Ubah posisi top menjadi 592px untuk memberikan jarak 20px dari FAQ */
+}
+
+.CallCenter-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; /* Mengisi lebar kontainer dengan 100% */
+    gap: 15px;
+}
+
+.dropdown.show .faq-button::after {
+    display: none; /* Sembunyikan ikon dropdown saat dropdown-menu sedang ditampilkan */
+}
+
+.dropdown-menu {
+    margin-top: 5px; /* Tambahkan margin-top agar tidak menutupi dropdown item */
+    max-height: 200px; /* Atur tinggi maksimum untuk dropdown-menu */
+    overflow-y: auto; /* Tambahkan overflow-y agar bisa di-scroll jika kontennya melebihi tinggi maksimum */
+}
+
+.dropdown-menu .dropdown-item {
+    white-space: normal; /* Biarkan teks dropdown-item berada dalam baris baru jika melewati kotak */
+}
+
+.dropdown .faq-button::after {
+    display: none;
+}
+
+.CallCenter-with-Icon img {
+
+    margin-left: -10px;
+    height: 63px;
+}
+
+.CallCenter-item button {
+    width: 100%; /* Mengisi lebar tombol dengan 100% */
+    height: 24px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #135589;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-bottom: 0; /* Menghapus margin bawah pada tombol */
 }

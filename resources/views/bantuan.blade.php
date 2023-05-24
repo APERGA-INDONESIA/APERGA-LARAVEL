@@ -1,5 +1,7 @@
 @extends('template')
+
 @section('title', 'Bantuan')
+
 @section('navbar')
 @endsection
 
@@ -16,43 +18,62 @@
         </div>
         <div class="FAQ-items">
             <div class="FAQ-item">
-                <p class="question">Bagaimana saya membatalkan Pesanan?</p>
-                <img src="{{ asset('images/dropdownbantuan.png') }}" alt="Gambar 1" class="image">
+                <div class="dropdown">
+                    <button class="faq-button dropdown-toggle" type="button" id="faqDropdown" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Bagaimana saya membatalkan Pesanan?
+                        <img src="{{ asset('images/dropdownbantuan.png') }}" alt="Dropdown Icon" class="dropdown-icon">
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="faqDropdown">
+                        <a class="dropdown-item" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non luctus dolor. Quisque vitae risus vel orci feugiat rutru.</a>
+                    </div>
+                </div>
             </div>
             <div class="FAQ-item">
-                <p class="question">Bagaimana saya membatalkan Pesanan?</p>
-                <img src="{{ asset('images/dropdownbantuan.png') }}" alt="Gambar 2" class="image">
+                <div class="dropdown">
+                    <button class="faq-button dropdown-toggle" type="button" id="faqDropdown2" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Bagaimana saya membatalkan Pesanan?
+                        <img src="{{ asset('images/dropdownbantuan.png') }}" alt="Dropdown Icon" class="dropdown-icon">
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="faqDropdown2">
+                        <a class="dropdown-item" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non luctus dolor. Quisque vitae risus vel orci feugiat rutru.</a>
+                    </div>
+                </div>
             </div>
             <div class="FAQ-item">
-                <p class="question">Bagaimana saya membatalkan Pesanan?</p>
-                <img src="{{ asset('images/dropdownbantuan.png') }}" alt="Gambar 3" class="image">
+                <div class="dropdown">
+                    <button class="faq-button dropdown-toggle" type="button" id="faqDropdown3" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Bagaimana saya membatalkan Pesanan?
+                        <img src="{{ asset('images/dropdownbantuan.png') }}" alt="Dropdown Icon" class="dropdown-icon">
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="faqDropdown3">
+                        <a class="dropdown-item" href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non luctus dolor. Quisque vitae risus vel orci feugiat rutru.</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="Call Center">
+    <div class="CallCenter">
         <div class="CallCenter-with-Icon">
             <img src="{{ asset('images/CallCenter.png') }}" alt="Call Center" class="icon">
         </div>
         <div class="CallCenter-items">
             <div class="CallCenter-item">
-                <p class="question">Telepon Kami</p>
+                <button onclick="window.open('https://wa.me/+6283111111', '_blank')">Telepon Kami</button>
             </div>
             <div class="CallCenter-item">
-                <p class="question">Telepon Kami</p>
+                <button onclick="window.open('mailto:contoh@gmail.com', '_blank')">Email Kami</button>
             </div>
         </div>
     </div>
-
-
-
-</div>
-
 @endsection
 
 @section('footer')
 @endsection
 
 @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/bantuan.css') }}">
+<link rel="stylesheet" href="{{ asset('css/bantuan.css') }}">
 @endpush

@@ -15,7 +15,7 @@
 </div>
 
 <div class="dashboard-kotak-2">
-    <a href="http://localhost:8000/">
+    <a href="http://localhost:8000/profil">
         <img src="{{ asset('images/profile 1.png') }}" alt="Profile Image" class="profile-img">
         <p class="greeting">Halo, Selamat Datang</p>
         <p class="username">{{ Auth::user()->name }}</p>
@@ -26,7 +26,7 @@
     <a href="http://localhost:8000/daftarpekerja">
         <img src="{{ asset('images/worker.png') }}" alt="Profile Image" class="profile-img">
         <p class="jumlahpekerja-text">Jumlah Pekerja</p>
-        <p class="jumlahpekerja">2 Orang</p>
+        <p class="jumlahpekerja">4 Orang</p>
     </a>
 </div>
 

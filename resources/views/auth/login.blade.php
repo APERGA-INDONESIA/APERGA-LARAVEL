@@ -30,9 +30,7 @@
             </div>
 
             <div class="forgot-password-container">
-                @if (Route::has('password.request'))
-                    <a href="{{ route('password.request') }}" class="forgot-password">{{ __('Forgot Your Password?') }}</a>
-                @endif
+                <a href="http://localhost:8000/reset" class="forgot-password">{{ __('Forgot Your Password?') }}</a>
             </div>
 
             <button type="submit" class="submit-button">

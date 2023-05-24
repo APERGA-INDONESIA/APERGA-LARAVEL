@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="form-input-container">
-                    <input type="text" class="form-input form-input-no-border" placeholder="{{ __('Nomor telepon') }}" name="phone" value="{{ old('phone') }}" required>
+                    <input type="text" class="form-input form-input-no-border" placeholder="{{ __('Phone Number') }}" name="phone" value="{{ old('phone') }}" required>
                     <div class="form-input-underline"></div>
                     @error('phone')
                         <span class="invalid-feedback" role="alert">
@@ -52,17 +52,6 @@
                     <div class="form-input-underline"></div>
                 </div>
 
-                <div class="form-input-container">
-                    <a href="{{ route('login') }}" class="forgot-password">{{ __('Sudah memiliki akun? Masuk') }}</a>
-                </div>
-
-                <div class="form-check">
-                    <input class="checkbox" type="checkbox" name="terms" id="terms">
-                    <label class="checkbox" for="terms">
-                        Setuju dengan syarat dan ketentuan
-                    </label>
-                </div>
-
 
                 <button type="submit" class="submit-button">
                     {{ __('Daftar') }}
@@ -72,7 +61,7 @@
 
         </div>
     </div>
-<div class="title">APERGA</div>
+    <div class="title">APERGA</div>
 
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/register.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/register.css') }}">
 @endsection
