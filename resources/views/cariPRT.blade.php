@@ -14,6 +14,21 @@
     <div><input class="search-button" id="cari-text" type="submit" value="Cari"></div>
 </form>
 
+<form action="{{ route('filter') }}" method="GET">
+
+    <div class="btn-group" role="group" aria-label="Filter">
+
+        <div>
+        <p class="filter-text">filter berdasarkan</p>
+        <button class="filter-button" type="submit" name="filter" value="gaji" class="btn btn-primary">Gaji</button>
+        <button class="filter-button" type="submit" name="filter" value="umur" class="btn btn-primary">Umur</button>
+        <button class="filter-button" type="submit" name="filter" value="lokasi" class="btn btn-primary">Lokasi</button>
+    </div>
+</form>
+
+
+
+
 
 @endsection
 
