@@ -26,7 +26,15 @@
     <a href="http://localhost:8000/daftarpekerja">
         <img src="{{ asset('images/worker.png') }}" alt="Profile Image" class="profile-img">
         <p class="jumlahpekerja-text">Jumlah Pekerja</p>
-        <p class="jumlahpekerja">4 Orang</p>
+        @php
+            use App\Models\Prt;
+            
+            $userId = auth()->id();
+            $jumlahPekerja = Prt::where('user_id', $userId)
+                ->whereBetween('id', [16, 166])
+                ->count();
+        @endphp
+        <p class="jumlahpekerja">{{ $jumlahPekerja }} Orang</p>
     </a>
 </div>
 

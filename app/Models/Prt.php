@@ -9,6 +9,11 @@ class Prt extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
         'nama',
         'gaji',
@@ -19,5 +24,15 @@ class Prt extends Model
         'catatan',
         'harga',
         'no_telepon',
+        'profile_image',
+        'user_id',
     ];
+
+    /**
+     * Get the user that owns the Prt.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
