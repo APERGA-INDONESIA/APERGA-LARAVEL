@@ -43,5 +43,7 @@ Route::fallback(function () {
 });
 
 
+
+
 //get untuk mengeksekusi method showLoginForm pada AuthController sehingga mendapatkan data atau menampilkan halaman
 //post untuk mengirimkan data ke server untuk diproses, misalnya ketika pengguna mengisi formulir.

@@ -39,6 +39,7 @@ body {
     justify-content: center;
     height: 100%;
     padding: 10px;
+
 }
 
 .register-title {
@@ -158,4 +159,13 @@ body {
     text-decoration: none;
     margin-left: 60px;
     margin-top: -30px;
+    text-align: left;
 }
+
+.checkbox {
+    font-size: 12px;
+    font-family: 'Poppins';
+    text-align: center;
+}
+
+
