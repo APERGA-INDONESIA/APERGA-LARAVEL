@@ -42,10 +42,7 @@ Route::fallback(function () {
     return redirect('/dashboard'); // Mengarahkan ke halaman dashboard jika rute tidak ditemukan
 });
 
-//checkbox register
-Route::get('/terms', function () {
-    return view('terms');
-})->name('terms');
+
 
 
 //get untuk mengeksekusi method showLoginForm pada AuthController sehingga mendapatkan data atau menampilkan halaman
