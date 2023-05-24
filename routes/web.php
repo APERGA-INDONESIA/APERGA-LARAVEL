@@ -33,9 +33,8 @@ Route::middleware(['auth'])->group(function () {
 Auth::routes();
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
-Route::get('/reset', [ResetController::class, 'showReset'])->name('reset');
+Route::get('/reset', [ResetController::class, 'showReset'])->name('reset.show');
 Route::post('/reset-password', [ResetController::class, 'resetPassword'])->name('reset.password');
-
 Route::get('/input-new-password/{token}', [ResetController::class, 'showInputNewPassword'])->name('input.newpassword');
 Route::post('/update-password', [ResetController::class, 'updatePassword'])->name('update.password');
 
