@@ -6,7 +6,9 @@
 
 @section('konten')
 <div class="tentangaplikasi">
+    <a href="javascript:void(0);" onclick="window.history.back();">
     <img src="{{ asset('images/arrow.png') }}" class="arrow-img" alt="Arrow">
+    </a>
     <div class="tentangaplikasi-title">Tentang Aplikasi</div>
 </div>
 
