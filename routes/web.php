@@ -23,9 +23,9 @@ Route::post('/register', [PendaftaranController::class, 'register'])->name('regi
 
 Route::middleware(['auth'])->group(function () {
     Route::get('cariPRT', [FilterController::class, 'filterPRT'])->name('cariPRT'); // Menghandle permintaan pencarian PRT
-    Route::get('/filter', 'FilterController@filter')->name('filter'); //button filter
-    Route::get('/daftarpekerja', [KontrakController::class, 'showDaftarPekerja'])->name('daftarpekerja'); // Menampilkan halaman daftar pekerja
-    Route::get('/detailpekerja', [KontrakController::class, 'showDetailPekerja'])->name('detailpekerja'); // Menampilkan halaman detail pekerja
+    Route::get('/filter', [FilterController::class, 'filter'])->name('filter');
+    Route::get('/daftarpekerja', [KontrakController::class, 'showDaftarPekerja'])->name('daftarpekerja');
+    Route::get('/detailpekerja/{id}', [KontrakController::class, 'showDetailPekerja'])->name('detailpekerja');
     Route::get('/pembayaran', [MencariPekerjaController::class, 'showPesanan'])->name('pembayaran'); // Menampilkan halaman pembayaran
     Route::get('/bantuan', [BantuanController::class, 'showBantuan'])->name('bantuan'); // Menampilkan halaman bantuan
     Route::get('/tentangaplikasi', [TentangAplikasiController::class, 'showTentangAplikasi'])->name('tentangaplikasi'); // Menampilkan halaman tentang aplikasi

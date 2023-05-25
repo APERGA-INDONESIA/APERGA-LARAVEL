@@ -2,18 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Prt;
 use Illuminate\Http\Request;
 
 class KontrakController extends Controller
 {
     public function showDaftarPekerja()
     {
-        return view('daftarpekerja');
+        $userId = auth()->id();
+        $prts = Prt::where('user_id', $userId)
+            ->whereBetween('id', [16, 166])
+            ->paginate(4);
+
+        return view('daftarpekerja', compact('prts'));
     }
 
-    public function showDetailPekerja()
+    public function showDetailPekerja($id)
     {
-        return view('detailpekerja');
-    }
+        $pekerja = Prt::findOrFail($id);
 
+        return view('detailpekerja', compact('pekerja'));
+    }
 }

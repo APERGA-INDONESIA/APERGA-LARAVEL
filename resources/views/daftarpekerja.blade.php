@@ -17,42 +17,56 @@
         <p class="halo-username">Halo, {{ Auth::user()->name }}</p>
     </div>
     <div class="List-Pekerja">
-        <div class="list-pekerja-1">
-            <div class="kotak-abu">
-                <img src="{{ asset('images/person.png') }}" alt="person" class="profile-image">
-                <p class="nama-pekerja">Abdul Ghafur</p>
+
+        @php
+            $userId = auth()->id();
+            $pekerja = App\Models\Prt::where('user_id', $userId)
+                ->whereBetween('id', [16, 166])
+                ->paginate(4);
+        @endphp
+
+        @foreach ($pekerja as $prt)
+            <div class="list-pekerja">
+                <div class="kotak-abu">
+                    <img src="{{ asset('images/person.png') }}" alt="person" class="profile-image">
+                    <p class="nama-pekerja">{{ $prt->nama }}</p>
+                </div>
+
             </div>
             <div class="tombol-detail">
-                <a href="http://localhost:8000/detailpekerja">Detail</a>
+                <a href="{{ route('detailpekerja', ['id' => $prt->id]) }}">Detail</a>
             </div>
-        </div>
-        <div class="list-pekerja-2">
-            <div class="kotak-abu">
-                <img src="{{ asset('images/person.png') }}" alt="person" class="profile-image">
-                <p class="nama-pekerja">Abdul Ghafur</p>
-            </div>
-            <div class="tombol-detail">
-                <a href="http://localhost:8000/detailpekerja">Detail</a>
-            </div>
-        </div>
-        <div class="list-pekerja-3">
-            <div class="kotak-abu">
-                <img src="{{ asset('images/person.png') }}" alt="person" class="profile-image">
-                <p class="nama-pekerja">Abdul Ghafur</p>
-            </div>
-            <div class="tombol-detail">
-                <a href="http://localhost:8000/detailpekerja">Detail</a>
-            </div>
-        </div>
-        <div class="list-pekerja-4">
-            <div class="kotak-abu">
-                <img src="{{ asset('images/person.png') }}" alt="person" class="profile-image">
-                <p class="nama-pekerja">Abdul Ghafur</p>
-            </div>
-            <div class="tombol-detail">
-                <a href="http://localhost:8000/detailpekerja">Detail</a>
-            </div>
-        </div>
+        @endforeach
+
+        <nav aria-label="...">
+            <ul class="pagination pagination-sm">
+                @if ($pekerja->currentPage() > 1)
+                    <li class="page-item">
+                        <a class="page-link" href="{{ $pekerja->previousPageUrl() }}" tabindex="-1">Previous</a>
+                    </li>
+                @else
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                @endif
+
+                @for ($page = 1; $page <= $pekerja->lastPage(); $page++)
+                    <li class="page-item {{ $page === $pekerja->currentPage() ? 'active' : '' }}">
+                        <a class="page-link" href="{{ $pekerja->url($page) }}">{{ $page }}</a>
+                    </li>
+                @endfor
+
+                @if ($pekerja->currentPage() < $pekerja->lastPage())
+                    <li class="page-item">
+                        <a class="page-link" href="{{ $pekerja->nextPageUrl() }}">Next</a>
+                    </li>
+                @else
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-disabled="true">Next</a>
+                    </li>
+                @endif
+            </ul>
+        </nav>
     </div>
 @endsection
 
