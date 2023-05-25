@@ -71,8 +71,15 @@
             <img src="{{ asset('images/alert-triangle.png') }}" alt="alert-triangle" class="star-img">
             <p>Apakah Anda yakin ingin membatalkan kontrak?</p>
             <div class="button-container">
-                <button id="confirmBtn">Kembali</button>
-                <button id="cancelBtn" data-pekerja-id="{{ $pekerja->id }}">Batalkan</button>
+                <div class="button-group">
+                    <form action="{{ route('update.pekerja') }}" method="POST">
+                        @csrf
+
+                        <button type="submit" id="cancelBtn">Batalkan</button>
+                        <input type="hidden" name="pekerjaId" value="{{ $pekerja->id }}">
+                        <button id="confirmBtn">Kembali</button>
+
+                    </form>
             </div>
         </div>
     </div>
@@ -95,5 +102,55 @@
 @endpush
 
 @push('scripts')
-<script src="{{ asset('js/batalkanpekerja.js') }}"></script>
+<script>
+    // Mendapatkan tombol batalkanKontrakBtn
+    var batalkanKontrakBtn = document.getElementById('batalkanKontrakBtn');
+
+    // Mendapatkan elemen popup
+    var popup = document.getElementById('popup');
+
+    // Mendapatkan tombol cancelBtn di dalam popup
+    var cancelBtn = document.getElementById('cancelBtn');
+
+    // Menambahkan event listener untuk klik pada tombol batalkanKontrakBtn
+    batalkanKontrakBtn.addEventListener('click', function() {
+        // Menampilkan popup
+        popup.style.display = 'block';
+    });
+
+    // Menambahkan event listener untuk klik pada tombol cancelBtn di dalam popup
+    cancelBtn.addEventListener('click', function() {
+        // Mendapatkan pekerja id dari atribut data-pekerja-id
+        var pekerjaId = batalkanKontrakBtn.getAttribute('data-pekerja-id');
+
+        // Mengirim permintaan HTTP POST ke endpoint yang mengubah user_id menjadi 0
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/update-pekerja', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                // Sukses mengubah user_id menjadi 0
+                console.log('Kontrak dibatalkan.');
+            } else {
+                // Gagal mengubah user_id menjadi 0
+                console.log('Gagal membatalkan kontrak.');
+            }
+        };
+
+        // Mengirim data pekerja id sebagai payload
+        var params = 'pekerjaId=' + encodeURIComponent(pekerjaId);
+        xhr.send(params);
+
+        // Menutup popup setelah proses selesai
+        popup.style.display = 'none';
+    });
+
+    // Menambahkan event listener untuk klik pada tombol confirmBtn di dalam popup
+    var confirmBtn = document.getElementById('confirmBtn');
+    confirmBtn.addEventListener('click', function() {
+        // Menutup popup tanpa melakukan apa pun
+        popup.style.display = 'none';
+    });
+
+</script>
 @endpush

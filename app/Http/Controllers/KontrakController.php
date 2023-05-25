@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Prt;
 use Illuminate\Http\Request;
 
+
 class KontrakController extends Controller
 {
     public function showDaftarPekerja()
@@ -25,15 +26,30 @@ class KontrakController extends Controller
     }
 
 
+
     public function batalkanKontrak($id)
     {
         $pekerja = Prt::findOrFail($id);
-        $pekerja->user_id = 0; // Mengubah user_id menjadi nol
-        $pekerja->save();
+        $pekerja->update(['user_id' => 0]);
 
         // Lanjutkan dengan tindakan lain yang diperlukan setelah membatalkan kontrak
 
         return redirect()->back()->with('success', 'Kontrak berhasil dibatalkan.');
+    }
+
+
+    public function updatePekerja(Request $request)
+    {
+        // Mendapatkan pekerja id dari permintaan POST
+        $pekerjaId = $request->input('pekerjaId');
+
+        // Melakukan pembaruan pada database
+        try {
+            Prt::where('id', $pekerjaId)->update(['user_id' => 0]);
+            return response()->json(['message' => 'Kontrak berhasil dibatalkan.']);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Gagal membatalkan kontrak.'], 500);
+        }
     }
 
 
