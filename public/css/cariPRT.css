@@ -142,3 +142,13 @@
     position: relative;
     top: 150px;
 }
+
+.card {
+    margin-bottom: 20px;
+  }
+
+.container {
+    position: absolute;
+    left: 100px;
+    top: 210px;
+}

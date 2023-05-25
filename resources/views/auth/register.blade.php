@@ -69,7 +69,7 @@
                 </button>
 
                 <div class="belum-akun-container">
-                    <a href="{{ route('login') }}" class="belum-password">{{ __('Belum memiliki akun? Daftar') }}</a>
+                    <a href="{{ route('login') }}" class="belum-password">{{ __('Sudah memiliki akun? Masuk') }}</a>
                 </div>
 
             </form>
