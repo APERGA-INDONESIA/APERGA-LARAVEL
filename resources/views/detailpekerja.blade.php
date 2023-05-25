@@ -74,12 +74,10 @@
                 <div class="button-group">
                     <form action="{{ route('update.pekerja') }}" method="POST">
                         @csrf
-
                         <button type="submit" id="cancelBtn">Batalkan</button>
                         <input type="hidden" name="pekerjaId" value="{{ $pekerja->id }}">
-                        <button id="confirmBtn">Kembali</button>
-
                     </form>
+                    <button id="confirmBtn">Kembali</button>
             </div>
         </div>
     </div>
