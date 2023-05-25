@@ -13,7 +13,17 @@
 
 <div class="infopekerja">
     <div class="big-profile">
-        <img src="{{ asset('images/prt/prt' . $pekerja->id . '.jpg') }}" alt="Big Profile" class="big-profile-img" style="width: 509px; height: 436px; border-radius: 23px;">
+        <?php
+        $id = $pekerja->id;
+        $imagePath = 'images/prt/prt' . $id . '.jpg';
+
+        if (file_exists(public_path($imagePath))) {
+            $imageURL = asset($imagePath);
+        } else {
+            $imageURL = asset('images/bigprofile.png');
+        }
+        ?>
+        <img src="{{ $imageURL }}" alt="Big Profile" class="big-profile-img" style="width: 509px; height: 436px; border-radius: 23px;">
     </div>
     <div class="deskripsi">
         <div class="nama-pekerja">{{ $pekerja->nama }}</div>
@@ -25,7 +35,7 @@
             <div class="jam-kerja">
                 <div class="jam-kerja-title">Jam Kerja</div>
                 <div class="jam-kerja-box">
-                    <div class="jam-kerja-text">{{ $pekerja->durasi }} jam/hari</div>
+                    <div class="jam-kerja-text">{{ $pekerja->jamkerja }} jam/hari</div>
                 </div>
             </div>
             <div class="durasi-kerja">
@@ -75,6 +85,13 @@
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/detailpekerja.css') }}">
+    <style>
+        .big-profile-img {
+            width: 509px;
+            height: 436px;
+            border-radius: 23px;
+        }
+    </style>
 @endpush
 
 @push('scripts')
