@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Prt extends Model
 {
@@ -26,7 +27,9 @@ class Prt extends Model
         'no_telepon',
         'profile_image',
         'user_id',
+        'jamkerja',
     ];
+
 
     /**
      * Get the user that owns the Prt.

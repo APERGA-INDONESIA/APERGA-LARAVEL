@@ -26,6 +26,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/filter', [FilterController::class, 'filter'])->name('filter');
     Route::get('/daftarpekerja', [KontrakController::class, 'showDaftarPekerja'])->name('daftarpekerja');
     Route::get('/detailpekerja/{id}', [KontrakController::class, 'showDetailPekerja'])->name('detailpekerja');
+    Route::post('/kontrak/batalkan/{id}', [KontrakController::class, 'batalkanKontrak'])->name('batalkan.kontrak');
+    Route::post('/kontrak/batalkan/{id}', 'KontrakController@batalkanKontrak')->name('kontrak.batalkan');
     Route::get('/pembayaran', [MencariPekerjaController::class, 'showPesanan'])->name('pembayaran'); // Menampilkan halaman pembayaran
     Route::get('/bantuan', [BantuanController::class, 'showBantuan'])->name('bantuan'); // Menampilkan halaman bantuan
     Route::get('/tentangaplikasi', [TentangAplikasiController::class, 'showTentangAplikasi'])->name('tentangaplikasi'); // Menampilkan halaman tentang aplikasi

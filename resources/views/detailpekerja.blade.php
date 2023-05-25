@@ -13,7 +13,7 @@
 
 <div class="infopekerja">
     <div class="big-profile">
-        <img src="{{ asset('images/bigprofile.png') }}" alt="Big Profile" class="big-profile-img">
+        <img src="{{ asset('images/prt/prt' . $pekerja->id . '.jpg') }}" alt="Big Profile" class="big-profile-img" style="width: 509px; height: 436px; border-radius: 23px;">
     </div>
     <div class="deskripsi">
         <div class="nama-pekerja">{{ $pekerja->nama }}</div>
@@ -47,7 +47,7 @@
             <div class="subtotal-biaya">Subtotal Biaya: <br> Rp.{{ number_format($pekerja->harga, 2, ',', '.') }}</div>
         </div>
         <div class="button-group">
-            <button id="batalkanKontrakBtn" class="batalkan">Batalkan kontrak</button>
+            <button id="batalkanKontrakBtn" data-pekerja-id="{{ $pekerja->id }}">Batalkan Kontrak</button>
             <a href="javascript:void(0);" onclick="window.history.back();">
                 <button class="return">Kembali</button>
             </a>
@@ -62,7 +62,7 @@
             <p>Apakah Anda yakin ingin membatalkan kontrak?</p>
             <div class="button-container">
                 <button id="confirmBtn">Kembali</button>
-                <button id="cancelBtn">Batalkan</button>
+                <button id="cancelBtn" data-pekerja-id="{{ $pekerja->id }}">Batalkan</button>
             </div>
         </div>
     </div>

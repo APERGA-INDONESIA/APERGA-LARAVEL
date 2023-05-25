@@ -10,11 +10,11 @@ class KontrakController extends Controller
     public function showDaftarPekerja()
     {
         $userId = auth()->id();
-        $prts = Prt::where('user_id', $userId)
+        $pekerja = Prt::where('user_id', $userId)
             ->whereBetween('id', [16, 166])
             ->paginate(4);
 
-        return view('daftarpekerja', compact('prts'));
+        return view('daftarpekerja', compact('pekerja'));
     }
 
     public function showDetailPekerja($id)
@@ -23,4 +23,23 @@ class KontrakController extends Controller
 
         return view('detailpekerja', compact('pekerja'));
     }
+
+
+    public function batalkanKontrak($id)
+    {
+        $pekerja = Prt::findOrFail($id);
+        $pekerja->user_id = 0; // Mengubah user_id menjadi nol
+        $pekerja->save();
+
+        // Lanjutkan dengan tindakan lain yang diperlukan setelah membatalkan kontrak
+
+        return redirect()->back()->with('success', 'Kontrak berhasil dibatalkan.');
+    }
+
+
+
+
+
+
+
 }

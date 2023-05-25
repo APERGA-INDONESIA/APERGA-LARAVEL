@@ -28,10 +28,9 @@
         @foreach ($pekerja as $prt)
             <div class="list-pekerja">
                 <div class="kotak-abu">
-                    <img src="{{ asset('images/person.png') }}" alt="person" class="profile-image">
+                    <img src="{{ asset('images/prt/prt' . $prt->id . '.jpg') }}" alt="Profile Image" class="profile-img" style="position: absolute; width: 46px; height: 45px; left: 30px; top: 50%; transform: translateY(-50%); border-radius: 50%;">
                     <p class="nama-pekerja">{{ $prt->nama }}</p>
                 </div>
-
             </div>
             <div class="tombol-detail">
                 <a href="{{ route('detailpekerja', ['id' => $prt->id]) }}">Detail</a>

@@ -28,7 +28,7 @@
         <p class="jumlahpekerja-text">Jumlah Pekerja</p>
         @php
             use App\Models\Prt;
-            
+
             $userId = auth()->id();
             $jumlahPekerja = Prt::where('user_id', $userId)
                 ->whereBetween('id', [16, 166])
