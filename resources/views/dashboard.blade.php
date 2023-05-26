@@ -8,11 +8,12 @@
 
 @section('konten')
 <div class="dashboard-kotak">
-    <a href="http://localhost:8000/cariPRT">
+    <div class="search-container">
         <img src="{{ asset('images/search.png') }}" alt="Search" class="search-icon">
-        <span class="cari-prt">Pencarian PRT</span>
-    </a>
+        <input type="text" class="cari-input" placeholder="Cari PRT">
+    </div>
 </div>
+
 
 <div class="dashboard-kotak-2">
     <a href="http://localhost:8000/profil">
