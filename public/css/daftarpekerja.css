@@ -35,7 +35,7 @@
 
 .kotak-hitam {
     position: absolute;
-    width: 919px;
+    width: 906px;
     height: 71px;
     left: 170px;
     top: 137px;
@@ -138,5 +138,37 @@
 .pagination {
     position: absolute;
     left: 325px;
-    bottom: -55px;
 }
+
+.footer {
+    width: 1366px;
+    height: 50px;
+}
+
+.no-prt {
+    position: absolute;
+    width: 598px;
+    height: 409px;
+    left: 250px;
+    top: -50px;
+
+}
+.noprt-text {
+    position: absolute;
+    width: 460px;
+    height: 100px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 32px;
+    margin-top: 15px;
+    text-align: center;
+
+    /* Black */
+    color: #1B2223;
+
+
+}
+
+

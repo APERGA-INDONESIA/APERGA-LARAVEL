@@ -55,7 +55,7 @@
 
             $userId = auth()->id();
             $jumlahPekerja = Prt::where('user_id', $userId)
-                ->whereBetween('id', [16, 166])
+                ->whereBetween('id', [16, 269])
                 ->count();
         @endphp
         <p class="jumlahpekerja">{{ $jumlahPekerja }} Orang</p>
