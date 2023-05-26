@@ -11,4 +11,9 @@ class MencariPekerjaController extends Controller
         return view('pembayaran');
     }
 
+    public function showQRIS()
+    {
+        return view('pembayaranqris');
+    }
+
 }
