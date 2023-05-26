@@ -1,9 +1,10 @@
-.dashboard-kotak {
+
+.dashboard-kotak-4 {
     position: absolute;
     width: 659px;
     height: 106px;
     left: 340px;
-    top: 150px;
+    top: 400px;
     background: #1B2223;
     border-radius: 20px;
     display: flex;
@@ -11,53 +12,67 @@
     justify-content: center;
 }
 
-.search-icon {
+
+.dashboard-kotak {
     position: absolute;
-    left: 40px;
-    width: 40px;
-    height: 40px;
+    width: 659px;
+    height: 106px;
+    left: 340px;
+    top: 120px;
+    background: #1B2223;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.cari-input {
-    margin-left: 60px; /* Sesuaikan jarak sesuai kebutuhan */
-    height: 36px;
-    width: 500px;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 40px;
-    color: #FFFFFF;
-    background-color: transparent;
-    border: none;
-}
-
-
-
-.cari-prt {
-    position: absolute;
-    width: 489px;
-    height: 36px;
-    left: 90px;
-    top: 33px;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 40px;
-    color: #FFFFFF;
-    margin-left: 15px; /* Tambahkan properti margin-left */
-}
 
 .dashboard-kotak-2 {
     position: absolute;
     width: 659px;
     height: 106px;
     left: 340px;
-    top: 290px;
+    top: 260px;
     background: #1B2223;
     border-radius: 20px;
 }
+
+.Pointext {
+    position: absolute;
+    width: 400px;
+    height: 100px;
+    left: 118px;
+    Top: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 31px;
+    color: #FFFFFF;
+}
+
+.Saldotext {
+    position: absolute;
+    width: 400px;
+    height: 100px;
+    left: 118px;
+    Top: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 31px;
+    color: #FFFFFF;
+}
+
+.MyPoin {
+    position: absolute;
+    width: 56px;
+    height: 55px;
+    left: 35px;
+    top: 25px;
+}
+
 
 .profile-img {
     position: absolute;
@@ -101,7 +116,7 @@
     width: 659px;
     height: 106px;
     left: 340px;
-    top: 430px;
+    top: 540px;
     background: #1B2223;
     border-radius: 20px;
 }
@@ -134,4 +149,91 @@
     font-size: 32px;
     line-height: 34px;
     color: #FFFFFF;
+}
+
+.TotalPoin {
+    position: absolute;
+    width: 700px;
+    height: 50px;
+    left: 115px;
+    Top: 45px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 34px;
+    color: #FFFFFF;
+}
+
+.TotalSaldo {
+    position: absolute;
+    width: 700px;
+    height: 50px;
+    left: 115px;
+    Top: 45px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 34px;
+    color: #FFFFFF;
+}
+
+.isiulang {
+    position: absolute;
+    left: 465px;
+    top: 30px;
+    position: absolute;
+    width: 150px;
+    height: 45px;
+    background: #FFFFFF;
+    box-shadow: 0px 6.06421px 6.06421px rgba(63, 61, 86, 0.2);
+    border-radius: 19.7087px;
+}
+
+.isiulangtext {
+    position: absolute;
+    width: 109px;
+    height: 26px;
+    top: 4px;
+    left: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 33px;
+    text-align: center;
+
+    color: #1B2223;
+
+}
+
+
+.redeem {
+    position: absolute;
+    left: 465px;
+    top: 30px;
+    position: absolute;
+    width: 150px;
+    height: 45px;
+    background: #FFFFFF;
+    box-shadow: 0px 6.06421px 6.06421px rgba(106, 105, 117, 0.2);
+    border-radius: 19.7087px;
+}
+
+.redeemtext {
+    position: absolute;
+    width: 109px;
+    height: 26px;
+    top: 4px;
+    left: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 33px;
+    text-align: center;
+
+    color: #1B2223;
+
 }

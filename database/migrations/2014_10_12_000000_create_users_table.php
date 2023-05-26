@@ -23,7 +23,11 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->decimal('saldo', 10, 2)->default(0);
+            $table->integer('poin')->default(0);
         });
+
+
     }
 
     /**
