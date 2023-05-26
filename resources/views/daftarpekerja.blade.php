@@ -51,7 +51,7 @@
             <!-- User tidak memiliki pekerja, tampilkan div class: no-prt -->
             <div class="no-prt">
                 <img src="{{ asset('images/shopping.png') }}" alt="shopping" class="shopping">
-                <p class="noprt-text">Anda belum memiliki PRT nih, yuk mulai cari PRT! Klik Disini</p>
+                <p class="noprt-text">Anda belum memiliki PRT nih, yuk mulai cari PRT! <a href="{{ url('/cariPRT') }}" style="color: #135589; font-weight: bold;">Klik Disini</a></p>
             </div>
         @endif
 
