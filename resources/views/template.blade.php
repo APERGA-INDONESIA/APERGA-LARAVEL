@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/poppins@latest/css/poppins.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/navbar.css') }}">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
@@ -15,7 +16,8 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-  <title>@yield('title', 'Dashboard')</title>
+
+    <title>@yield('title', 'Dashboard')</title>
 </head>
 <body>
 @yield('navbar')
