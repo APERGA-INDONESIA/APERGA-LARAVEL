@@ -23,7 +23,7 @@
             $imageURL = asset('images/bigprofile.png');
         }
         ?>
-        <img src="{{ $imageURL }}" alt="Big Profile" class="big-profile-img" style="width: 509px; height: 436px; border-radius: 23px;">
+        <img src="{{ $imageURL }}" alt="Big Profile" class="big-profile-img">
     </div>
     <div class="deskripsi">
         <div class="nama-pekerja">{{ $pekerja->nama }}</div>
@@ -78,10 +78,22 @@
                         <input type="hidden" name="pekerjaId" value="{{ $pekerja->id }}">
                     </form>
                     <button id="confirmBtn">Kembali</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<div id="successPopup" class="popup">
+    <div class="popup-field">
+      <div class="popup-content">
+        <img src="{{ asset('images/centang.png') }}" alt="centang" class="centang">
+        <p>Kontrak berhasil dibatalkan. Silahkan periksa kembali daftar pekerja anda</p>
+      </div>
+      <button id="OKBtn">OK</button> <!-- Tombol OK ditempatkan di luar button-container -->
+    </div>
+  </div>
+
 
 @endsection
 
@@ -107,6 +119,9 @@
     // Mendapatkan elemen popup
     var popup = document.getElementById('popup');
 
+    // Mendapatkan elemen popup success
+    var successPopup = document.getElementById('successPopup');
+
     // Mendapatkan tombol cancelBtn di dalam popup
     var cancelBtn = document.getElementById('cancelBtn');
 
@@ -126,12 +141,24 @@
         xhr.open('POST', '/update-pekerja', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                // Sukses mengubah user_id menjadi 0
-                console.log('Kontrak dibatalkan.');
-            } else {
-                // Gagal mengubah user_id menjadi 0
-                console.log('Gagal membatalkan kontrak.');
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    // Sukses mengubah user_id menjadi 0
+                    console.log('Kontrak dibatalkan.');
+                    // Menampilkan popup success
+                    successPopup.style.display = 'block';
+                } else {
+                    // Gagal mengubah user_id menjadi 0
+                    console.log('Gagal membatalkan kontrak.');
+                    // Menampilkan popup success
+                    successPopup.style.display = 'block';
+                    // Mengatur teks popup success menjadi pesan kesalahan
+                    var successText = document.getElementById('successText');
+                    successText.textContent = 'Gagal membatalkan kontrak.';
+                    // Menghapus class successPopup dan menambahkan class errorPopup
+                    successPopup.classList.remove('successPopup');
+                    successPopup.classList.add('errorPopup');
+                }
             }
         };
 
@@ -150,5 +177,13 @@
         popup.style.display = 'none';
     });
 
+    // Menambahkan event listener untuk klik pada tombol OKBtn di dalam popup success
+    var OKBtn = document.getElementById('OKBtn');
+    OKBtn.addEventListener('click', function(event) {
+        event.preventDefault(); // Menghentikan tindakan default dari tombol OKBtn
+        // Mengarahkan halaman ke localhost:8000/daftarpekerja setelah menekan tombol OKBtn
+        window.location.href = 'http://localhost:8000/daftarpekerja';
+    });
 </script>
+
 @endpush
