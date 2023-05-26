@@ -4,15 +4,15 @@
     align-items: center;
     margin-top: 20px;
     margin-left: 198px;
-  }
+}
 
-  .pekerja-text {
+.pekerja-text {
     display: flex;
     align-items: center;
     margin-right: 20px;
-  }
+}
 
-  .pekerja-anda {
+.pekerja-anda {
     width: 300px;
     height: 64px;
     font-family: 'Poppins';
@@ -22,18 +22,18 @@
     line-height: 64px;
     color: #000000;
     margin-left: 16px;
-  }
+}
 
-  .arrow {
+.arrow {
     position: absolute;
     width: 20px;
     height: 20px;
     top: 45%;
     transform: translateY(-50%);
     left: -25px;
-  }
+}
 
-  .kotak-hitam {
+.kotak-hitam {
     position: absolute;
     width: 919px;
     height: 71px;
@@ -46,18 +46,18 @@
     display: flex;
     align-items: center;
     padding-left: 60px;
-  }
+}
 
-  .profile-image {
+.profile-image {
     position: absolute;
     width: 46px;
     height: 45px;
     left: 30px;
     top: 50%;
     transform: translateY(-50%);
-  }
+}
 
-  .halo-username {
+.halo-username {
     position: absolute;
     width: 600px;
     height: 33px;
@@ -69,50 +69,36 @@
     font-size: 24px;
     line-height: 33px;
     color: #FFFFFF;
-  }
+}
 
-  .List-Pekerja {
+.List-Pekerja {
     position: absolute;
     left: 170px;
-    top: 300px;
+    top: 285px;
     display: flex;
     flex-direction: column;
     gap: 30px;
-  }
+}
 
-  .list-pekerja-1,
-  .list-pekerja-2,
-  .list-pekerja-3,
-  .list-pekerja-4 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .kotak-abu {
+.kotak-abu {
     position: relative;
-    width: 867px;
+    width: 800px;
     height: 55.79px;
     background: #DDDDDD;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
-    margin-right: 20px;
-  }
+}
 
-  .tombol-detail {
+.tombol-detail {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
-    padding: 5px 10px;
-    gap: 30px;
+    padding: 5px 20px;
+    gap: 10px;
     width: 84px;
     height: 56px;
     background: #135589;
     border-radius: 20px;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+    flex-shrink: 0;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
@@ -121,21 +107,22 @@
     text-align: center;
     color: #FFFFFF;
     text-decoration: none;
-  }
+    margin-top: -85px;
+    margin-left: 825px; /* Menambahkan jarak sebelah kiri tombol-detail */
+}
 
-  .tombol-detail a {
+.tombol-detail a {
     color: #FFFFFF;
     text-decoration: none;
-  }
+}
 
-  .tombol-detail a:visited {
+.tombol-detail a:visited {
     color: #FFFFFF;
-  }
+}
 
-
-  .nama-pekerja {
+.nama-pekerja {
     position: absolute;
-    width: 800px;
+    width: 700px;
     height: 25px;
     left: 99px;
     top: 16px;
@@ -146,4 +133,10 @@
     line-height: 25px;
     text-align: left;
     color: #1B2223;
-  }
+}
+
+.pagination {
+    position: absolute;
+    left: 325px;
+    bottom: -55px;
+}

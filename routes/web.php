@@ -23,12 +23,17 @@ Route::post('/register', [PendaftaranController::class, 'register'])->name('regi
 
 Route::middleware(['auth'])->group(function () {
     Route::get('cariPRT', [FilterController::class, 'filterPRT'])->name('cariPRT'); // Menghandle permintaan pencarian PRT
-    Route::get('/daftarpekerja', [KontrakController::class, 'showDaftarPekerja'])->name('daftarpekerja'); // Menampilkan halaman daftar pekerja
-    Route::get('/detailpekerja', [KontrakController::class, 'showDetailPekerja'])->name('detailpekerja'); // Menampilkan halaman detail pekerja
+    Route::get('/filter', [FilterController::class, 'filter'])->name('filter');
+    Route::get('/daftarpekerja', [KontrakController::class, 'showDaftarPekerja'])->name('daftarpekerja');
+    Route::get('/detailpekerja/{id}', [KontrakController::class, 'showDetailPekerja'])->name('detailpekerja');
+    Route::post('/update-pekerja', [KontrakController::class, 'updatePekerja'])->name('update.pekerja');
+
+
     Route::get('/pembayaran', [MencariPekerjaController::class, 'showPesanan'])->name('pembayaran'); // Menampilkan halaman pembayaran
     Route::get('/bantuan', [BantuanController::class, 'showBantuan'])->name('bantuan'); // Menampilkan halaman bantuan
     Route::get('/tentangaplikasi', [TentangAplikasiController::class, 'showTentangAplikasi'])->name('tentangaplikasi'); // Menampilkan halaman tentang aplikasi
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard'); // Menampilkan halaman dashboard setelah login
+
 });
 
 Auth::routes(); // Menambahkan rute otorisasi bawaan Laravel
@@ -41,6 +46,9 @@ Route::post('/update-password', [ResetController::class, 'updatePassword'])->nam
 Route::fallback(function () {
     return redirect('/dashboard'); // Mengarahkan ke halaman dashboard jika rute tidak ditemukan
 });
+
+
+Route::get('/404', 'App\Http\Controllers\NotFoundController@index')->name('notfound');
 
 
 

@@ -6,7 +6,6 @@
         <div class="form-title">{{ __('Login') }}</div>
         <form method="POST" action="{{ route('login') }}">
             @csrf
-
             <div class="form-input-container">
                 <input id="email" type="email" class="form-input form-input-no-border @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="{{ __('Email Address') }}" required autocomplete="email" autofocus>
                 <div class="form-input-underline"></div>

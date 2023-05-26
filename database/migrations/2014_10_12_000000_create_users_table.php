@@ -18,11 +18,16 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone')->unique();
+            $table->string('profile_image')->nullable(); // Kolom untuk menyimpan gambar profil
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->decimal('saldo', 10, 2)->default(0);
+            $table->integer('poin')->default(0);
         });
+
+
     }
 
     /**
@@ -35,4 +40,3 @@ return new class extends Migration
         Schema::dropIfExists('users');
     }
 };
-

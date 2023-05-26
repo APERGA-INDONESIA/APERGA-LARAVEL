@@ -1,5 +1,7 @@
 @extends('layouts.app')
+
 @section('title', 'Daftar')
+
 @section('content')
     <div class="register-frame">
         <div class="register-form">
@@ -52,29 +54,28 @@
                     <div class="form-input-underline"></div>
                 </div>
 
-                <div>
-                    <a href="{{ route('login') }}" class="belum-password">{{ __('Belum memiliki akun? Daftar') }}</a>
-                </div>
-
                 <div class="checkbox">
-                <form method="post" action="proses.php">
-                    <input  type="checkbox" name="terms" id="terms" value="1">
-                    <label  for="terms">Saya Menyetujui Syarat dan Ketentuan</label>
-                </form>
+                    <input type="checkbox" name="terms" id="terms" value="1" required>
+                    <label for="terms">Saya Menyetujui Syarat dan Ketentuan</label>
+                    @error('terms')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
 
+                <button type="submit" class="submit-button">
+                    {{ __('Daftar') }}
+                </button>
 
+                <div class="belum-akun-container">
+                    <a href="{{ route('login') }}" class="belum-password">{{ __('Sudah memiliki akun? Masuk') }}</a>
+                </div>
 
             </form>
-
-            <button type="submit" class="submit-button">
-                {{ __('Daftar') }}
-            </button>
-
-
         </div>
     </div>
     <div class="title">APERGA</div>
 
-<link rel="stylesheet" type="text/css" href="{{ asset('css/register.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/register.css') }}">
 @endsection

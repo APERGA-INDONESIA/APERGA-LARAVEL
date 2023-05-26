@@ -18,7 +18,7 @@
 
 <div class="tentangaplikasiputih">
     <div class="tentangaplikasiputih-text">
-        APERGA, solusi ideal untuk pekerja rumah tangga terjangkau! Temukan keberagaman pekerja terampil dari bersih-bersih hingga memasak. Transaksi aman dengan penilaian dan ulasan yang memuaskan. Layanan pelanggan responsif, pemilihan pekerja mudah berdasarkan lokasi dan keahlian. Ciptakan kenyamanan dalam rumah tangga Anda dengan APERGA!
+        <strong>APERGA</strong>, solusi ideal untuk pekerja rumah tangga terjangkau! Temukan keberagaman pekerja terampil dari bersih-bersih hingga memasak. Transaksi aman dengan penilaian dan ulasan yang memuaskan. Layanan pelanggan responsif, pemilihan pekerja mudah berdasarkan lokasi dan keahlian. Ciptakan kenyamanan dalam rumah tangga Anda dengan <strong>APERGA!</strong>
     </div>
 </div>
 
