@@ -48,6 +48,7 @@ Route::fallback(function () {
 });
 
 
+Route::get('/404', 'App\Http\Controllers\NotFoundController@index')->name('notfound');
 
 
 

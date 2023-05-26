@@ -1,0 +1,13 @@
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img.background404 {
+    width: 876px;
+    height: 341px;
+    margin-top: -10px ;
+  }
