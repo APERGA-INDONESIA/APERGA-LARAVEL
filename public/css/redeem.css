@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 .RedeemPoint {
     position: relative;
-    margin-bottom: 20px;
 }
 
 .arrow-img {
@@ -26,10 +24,185 @@
     color: #000000;
 }
 
-.bigaperga-img {
+.RedeemContainer {
     position: absolute;
-    width: 588px;
-    height: 141px;
-    left: 398px;
-    top: 240px;
+    width: 546px;
+    height: 653px;
+    background: #1B2223;
+    border-radius: 45px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    top: 249px;
+    left: 410px;
+    margin-bottom: 50px;
+    bottom: -50px; /* Menggeser posisi elemen ke atas sejauh 50px dari batas bawah */
+  }
+
+
+.redeem-text {
+    position: absolute;
+    width: 314px;
+    height: 66px;
+    top: 55px;
+    left: 115px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 44px;
+    line-height: 66px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.redeem-description {
+    position: absolute;
+    width: 327px;
+    height: 81px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    left: 109px;
+    top: 110px;
+}
+
+.total-points-label {
+    position: absolute;
+    width: 512px;
+    height: 27px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    top: 230px;
+    left: 15px;
+}
+
+.TempatRedeem {
+    position: absolute;
+    width: 338px;
+    height: 64px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    left: 102px;
+    top: 265px;
+}
+
+.coin-img {
+    position: absolute;
+    width: 33px;
+    height: 32px;
+    top: 16px;
+    background: url(coin.png);
+}
+
+.masukkan-poin {
+    position: absolute;
+    width: 241px;
+    height: 45px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 45px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    left: 65px;
+    top: 10px;
+}
+
+.minimal-poin {
+    position: absolute;
+    width: 237px;
+    height: 27px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: #135589;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    left: 50px;
+    top: 70px;
+}
+
+.total-saldo-label {
+    position: absolute;
+    width: 512px;
+    height: 27px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    top: 400px;
+    left: 15px;
+}
+
+.TempatSaldo {
+    position: absolute;
+    width: 360px;
+    height: 66px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    left: 90px;
+    top:435px;
+}
+.saldo {
+    position: absolute;
+    width: 33px;
+    height: 32px;
+    top: 16px;
+    background: url(coin.png);
+}
+
+.hasilsaldo {
+    position: absolute;
+    width: 280px;
+    height: 45px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 45px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    left: 65px;
+    top: 10px;
+}
+
+.tukarkan-button {
+    position: absolute;
+    width: 284px;
+    height: 50px;
+    background: #FFFFFF;
+    box-shadow: 0px 6.06421px 6.06421px rgba(63, 61, 86, 0.2);
+    border-radius: 19.7087px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    text-align: center;
+    color: #1B2223;
+    top: 530px;
+    left: 131px;
+}
+
+
+.pembatas {
+    margin-top: 50px;
 }
