@@ -13,7 +13,7 @@ class KontrakController extends Controller
         $userId = auth()->id();
         $pekerja = Prt::where('user_id', $userId)
             ->whereBetween('id', [16, 269])
-            ->paginate(10);
+            ->paginate(20);
 
         return view('daftarpekerja', compact('pekerja'));
     }

@@ -28,7 +28,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/detailpekerja/{id}', [KontrakController::class, 'showDetailPekerja'])->name('detailpekerja');
     Route::post('/update-pekerja', [KontrakController::class, 'updatePekerja'])->name('update.pekerja');
 
-
+    Route::get('/pembayaranqris', [MencariPekerjaController::class, 'showQRIS'])->name('pembayaranqris');
     Route::get('/pembayaran', [MencariPekerjaController::class, 'showPesanan'])->name('pembayaran'); // Menampilkan halaman pembayaran
     Route::get('/bantuan', [BantuanController::class, 'showBantuan'])->name('bantuan'); // Menampilkan halaman bantuan
     Route::get('/tentangaplikasi', [TentangAplikasiController::class, 'showTentangAplikasi'])->name('tentangaplikasi'); // Menampilkan halaman tentang aplikasi
@@ -44,7 +44,7 @@ Route::get('/input-new-password/{token}', [ResetController::class, 'showInputNew
 Route::post('/update-password', [ResetController::class, 'updatePassword'])->name('update.password'); // Menangani permintaan update password melalui metode POST
 
 Route::fallback(function () {
-    return redirect('/dashboard'); // Mengarahkan ke halaman dashboard jika rute tidak ditemukan
+return redirect('/dashboard'); // Mengarahkan ke halaman dashboard jika rute tidak ditemukan
 });
 
 

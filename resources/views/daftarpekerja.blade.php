@@ -22,7 +22,7 @@
             $userId = auth()->id();
             $pekerja = App\Models\Prt::where('user_id', $userId)
                 ->whereBetween('id', [16, 269])
-                ->paginate(50);
+                ->paginate(20);
         @endphp
 
         @if ($pekerja->count() > 0)
@@ -88,6 +88,8 @@
             </ul>
         </nav>
     </div>
+<div class="footer">
+</div>
 @endsection
 
 @section('footer')
