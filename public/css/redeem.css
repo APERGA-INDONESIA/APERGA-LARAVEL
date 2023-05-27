@@ -1,6 +1,7 @@
 
 .RedeemPoint {
     position: relative;
+    top: 75px;
 }
 
 .arrow-img {
@@ -31,7 +32,7 @@
     background: #1B2223;
     border-radius: 45px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    top: 149px;
+    top: 230px;
     left: 410px;
     margin-bottom: 50px;
 }
@@ -203,16 +204,14 @@
 }
 
 
-.pembatas {
-    margin-top: 50px;
-}
+
 
 .space {
     position: absolute;
-    width: 1366px;
+    width: 80%;
     height: 80px;
     background: #00000000;
-    margin-top: 50px;
+    margin-top: 150px;
 }
 
 .masukkan-poin {
@@ -232,3 +231,5 @@
 .masukkan-poin[type="number"] {
     -moz-appearance: textfield;
 }
+
+

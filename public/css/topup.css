@@ -1,6 +1,6 @@
-
 .topup {
     position: relative;
+    top: 130px;
 }
 
 .arrow-img {
@@ -24,7 +24,58 @@
     color: #000000;
 }
 
+.paymentmethod {
+    position: absolute;
+    left: 160px;
+    top: 120px;
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+}
 
+.paymentmethod > div {
+    position: relative;
+    width: 175px;
+    height: 178px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    padding: 24px;
+}
+
+.paymentmethod .greybg {
+    position: absolute;
+    width: 110px;
+    height: 121px;
+    background: rgba(179, 179, 179, 0.43);
+    filter: blur(10px);
+    top: -10px;
+    left: -20px;
+    z-index: -1;
+}
+
+.paymentmethod img {
+    width: 92px;
+    height: 92px;
+    position: absolute;
+    top: 24px;
+    left: 42px;
+}
+
+.paymentmethod p {
+    width: 150px;
+    height: 24px;
+    position: absolute;
+    top: 134px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    left: 12px;
+    text-align: center;
+    color: #262B2A;
+}
 
 .space {
     position: absolute;
@@ -33,4 +84,3 @@
     background: #00000000;
     margin-top: 50px;
 }
-

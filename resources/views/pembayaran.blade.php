@@ -1,5 +1,6 @@
 @extends('template')
 @section('title', 'Pembayaran')
+@endsection
 
 @section('navbar')
 @endsection
@@ -21,7 +22,7 @@
             <button type="button" class="btn btn-primary btn-lg btn-block">
             <img src="{{ asset('images/debit-kredit.svg') }}" alt="Debit-Kredit" class="debit-kredit-img">
             Debit/Kredit</button>
-        </div> 
+        </div>
         <br>
         <div class="virtual-account-button">
             <button type="button" class="btn btn-primary btn-lg btn-block">
