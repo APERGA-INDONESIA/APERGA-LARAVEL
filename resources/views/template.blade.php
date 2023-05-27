@@ -44,8 +44,7 @@
     <br />
     <br />
   @yield('footer')
-  <div>
-  </div>
+
   @stack('styles')
   @stack('scripts')
 

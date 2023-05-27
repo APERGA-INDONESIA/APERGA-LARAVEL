@@ -26,7 +26,7 @@
     $totalPoin = $user->poin;
     @endphp
 
-    <p class="TotalPoin">{{ $totalPoin }} AP Point</p>
+    <p class="TotalPoin">{{ number_format($totalPoin, 0, ',', '.') }} AP Point</p>
     <button class="redeem" onclick="location.href='http://localhost:8000/redeem'">
         <p class="redeemtext">Redeem</p>
     </button>
@@ -40,7 +40,7 @@
     $saldo = $user->saldo;
     @endphp
 
-    <p class="TotalSaldo">Rp.{{ $saldo }}</p>
+    <p class="TotalSaldo">Rp {{ number_format($saldo, 0, ',', '.') }}</p>
     <button class="isiulang" onclick="location.href='http://localhost:8000/topup'">
         <p class="isiulangtext">Isi Ulang</p>
     </button>

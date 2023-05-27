@@ -25,17 +25,16 @@
 }
 
 .RedeemContainer {
-    position: absolute;
+    position: relative;
     width: 546px;
     height: 653px;
     background: #1B2223;
     border-radius: 45px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    top: 249px;
+    top: 149px;
     left: 410px;
     margin-bottom: 50px;
-    bottom: -50px; /* Menggeser posisi elemen ke atas sejauh 50px dari batas bawah */
-  }
+}
 
 
 .redeem-text {
@@ -60,13 +59,14 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 27px;
     text-align: center;
     color: #FFFFFF;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     left: 109px;
     top: 110px;
+    margin-top: 15px;
 }
 
 .total-points-label {
@@ -194,7 +194,7 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
     line-height: 33px;
     text-align: center;
     color: #1B2223;
@@ -205,4 +205,30 @@
 
 .pembatas {
     margin-top: 50px;
+}
+
+.space {
+    position: absolute;
+    width: 1366px;
+    height: 80px;
+    background: #00000000;
+    margin-top: 50px;
+}
+
+.masukkan-poin {
+    background-color: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    border: none;
+}
+
+.masukkan-poin::-webkit-inner-spin-button,
+.masukkan-poin::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.masukkan-poin[type="number"] {
+    -moz-appearance: textfield;
 }

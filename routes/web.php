@@ -35,6 +35,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/tentangaplikasi', [TentangAplikasiController::class, 'showTentangAplikasi'])->name('tentangaplikasi'); // Menampilkan halaman tentang aplikasi
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard'); // Menampilkan halaman dashboard setelah login
     Route::get('/redeem', [TransaksiController::class, 'showRedeem'])->name('redeem');
+    Route::post('/redeem', [TransaksiController::class, 'redeemSubmit'])->name('redeem.submit');
+
 });
 
 Auth::routes(); // Menambahkan rute otorisasi bawaan Laravel
