@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/poppins@latest/css/poppins.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/navbar.css') }}">
     <title>@yield('title', 'Dashboard')</title>
@@ -12,7 +11,7 @@
 
 <body>
     <div class="container-fluid">
-        <nav class="navbar navbar-expand navbar-dark bg-light sticky-top">
+        <nav class="navbar navbar-expand navbar-dark bg-white sticky-top">
             <a href="http://localhost:8000/dashboard">
                 <img src="{{ asset('images/aperga.png') }}" alt="Logo" class="logo">
             </a>
@@ -56,6 +55,9 @@
 
     </div>
 
+    <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     @stack('styles')
     @stack('scripts')
 </body>

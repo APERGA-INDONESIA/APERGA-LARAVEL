@@ -1,28 +1,32 @@
 
 .tentangaplikasi {
     position: relative;
-    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    margin-top: 120px;
+    margin-left: 183px;
 }
+
 
 .arrow-img {
     position: absolute;
-    left: 100px;
-    top: 20px;
-    scale: 0.6;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -25px;
 }
 
 .tentangaplikasi-title {
-    position: absolute;
-    width: 348px;
+    width: 300px;
     height: 64px;
-    left: 160px;
-    top: 16px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    font-size: 40px;
+    font-size: 32px;
     line-height: 64px;
     color: #000000;
+    margin-left: 16px;
 }
 
 .bigaperga-img {
@@ -136,3 +140,10 @@
     line-height: 30px;
     color: #135589;
 }
+
+.space {
+    position: relative;
+    width: 1366px;
+    height: 650px;
+}
+

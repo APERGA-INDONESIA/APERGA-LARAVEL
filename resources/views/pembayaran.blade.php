@@ -1,6 +1,5 @@
 @extends('template')
 @section('title', 'Pembayaran')
-@endsection
 
 @section('navbar')
 @endsection

@@ -32,6 +32,9 @@
     <div class="guidebook-text">Guidebook</div>
     <a href="#" class="download-button">Download Disini</a>
 </div>
+
+<div class="space">
+</div>
 @endsection
 
 @section('footer')
