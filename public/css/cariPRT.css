@@ -5,7 +5,7 @@
     border-radius: 20px 20px;
     position: absolute;
     width: 1366px;
-    height: 899px;
+    height: 1099px;
     left: 0px;
     top: 131px;
     background: #1B2223;
@@ -100,13 +100,13 @@
 
   .filter-button {
 
-    /* Auto layout */
+
 
 
     position: relative;
 
-    left: 260px;
-    top: 105px;
+    left: 110px;
+    top: 145px;
     width: 69px;
     height: 40px;
     border-radius: 20px;
@@ -145,10 +145,50 @@
 
 .card {
     margin-bottom: 20px;
+    width: 144px;
   }
 
 .container {
-    position: absolute;
-    left: 100px;
-    top: 210px;
+    position: relative;
+    left: 0px;
+    top: 160px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
+
+.col-md-1 {
+    flex-basis: 14.28%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .pagination a,
+  .pagination span {
+    color: #000;
+    text-decoration: none;
+    padding: 8px 12px;
+    margin: 0 4px;
+    border-radius: 4px;
+  }
+
+  .pagination .prev.disabled,
+  .pagination .next.disabled {
+    color: #aaa;
+  }
+
+  .pagination a.active {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .pagination a:hover {
+    background-color: #eee;
+  }
