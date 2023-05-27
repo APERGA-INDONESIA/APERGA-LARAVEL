@@ -55,6 +55,12 @@ class TransaksiController extends Controller
         return view('redeem');
     }
 
+    public function showTopup()
+    {
+        return view('topup');
+    }
+
+
 }
 
 

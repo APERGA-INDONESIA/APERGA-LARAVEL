@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 
 class LoginController extends Controller
 {
@@ -34,7 +35,7 @@ class LoginController extends Controller
     private function generateCSRFToken()
     {
         // Logic to generate CSRF token
-        // ...
+        $csrfToken = Str::random(40);
 
         return $csrfToken;
     }

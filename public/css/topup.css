@@ -1,0 +1,36 @@
+
+.topup {
+    position: relative;
+}
+
+.arrow-img {
+    position: absolute;
+    left: 100px;
+    top: 34px;
+    scale: 0.6;
+}
+
+.topup-title {
+    position: absolute;
+    width: 348px;
+    height: 64px;
+    left: 160px;
+    top: 30px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 64px;
+    color: #000000;
+}
+
+
+
+.space {
+    position: absolute;
+    width: 1366px;
+    height: 80px;
+    background: #00000000;
+    margin-top: 50px;
+}
+

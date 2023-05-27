@@ -36,7 +36,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard'); // Menampilkan halaman dashboard setelah login
     Route::get('/redeem', [TransaksiController::class, 'showRedeem'])->name('redeem');
     Route::post('/redeem', [TransaksiController::class, 'redeemSubmit'])->name('redeem.submit');
-
+    Route::get('/topup', [TransaksiController::class, 'showTopup'])->name('topup');
 });
 
 Auth::routes(); // Menambahkan rute otorisasi bawaan Laravel
