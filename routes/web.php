@@ -10,6 +10,7 @@ use App\Http\Controllers\BantuanController;
 use App\Http\Controllers\MencariPekerjaController;
 use App\Http\Controllers\TentangAplikasiController;
 use App\Http\Controllers\ResetController;
+use App\Http\Controllers\TransaksiController;
 
 Route::redirect('/', '/login'); // Mengarahkan ke halaman login jika mengakses akar situs
 
@@ -33,7 +34,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/bantuan', [BantuanController::class, 'showBantuan'])->name('bantuan'); // Menampilkan halaman bantuan
     Route::get('/tentangaplikasi', [TentangAplikasiController::class, 'showTentangAplikasi'])->name('tentangaplikasi'); // Menampilkan halaman tentang aplikasi
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard'); // Menampilkan halaman dashboard setelah login
-
+    Route::get('/redeem', [TransaksiController::class, 'showRedeem'])->name('redeem');
 });
 
 Auth::routes(); // Menambahkan rute otorisasi bawaan Laravel

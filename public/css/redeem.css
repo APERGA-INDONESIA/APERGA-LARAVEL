@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.RedeemPoint {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.arrow-img {
+    position: absolute;
+    left: 100px;
+    top: 34px;
+    scale: 0.6;
+}
+
+.redeem-title {
+    position: absolute;
+    width: 348px;
+    height: 64px;
+    left: 160px;
+    top: 30px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 64px;
+    color: #000000;
+}
+
+.bigaperga-img {
+    position: absolute;
+    width: 588px;
+    height: 141px;
+    left: 398px;
+    top: 240px;
+}
