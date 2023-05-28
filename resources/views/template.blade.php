@@ -31,7 +31,7 @@
                         <a class="nav-link" href="http://localhost:8000/bantuan">Bantuan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('edit-profil')}}">Profil</a>
+                        <a class="nav-link" href="http://localhost:8000/dashboard">Profil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}"

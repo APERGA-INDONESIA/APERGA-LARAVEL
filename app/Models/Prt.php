@@ -28,6 +28,7 @@ class Prt extends Model
         'profile_image',
         'user_id',
         'jamkerja',
+        'deskripsi',
     ];
 
 

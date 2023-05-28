@@ -9,27 +9,29 @@ class FilterController extends Controller
 {
     public function filterPRT(Request $request)
     {
-        $nama = $request->input('nama');
-        $lokasi = $request->input('lokasi', '');
+        $keyword = $request->input('keyword', '');
 
         // Logika untuk melakukan pencarian berdasarkan kriteria
 
-        $prts = Prt::where('nama', 'like', '%' . $nama . '%')
-            ->where('lokasi', 'like', '%' . $lokasi . '%')
+        $prts = Prt::where('nama', 'like', '%' . $keyword . '%')
+            ->orWhere('lokasi', 'like', '%' . $keyword . '%')
             ->paginate(36);
+
+        $request->session()->put('keyword', $keyword); // Simpan keyword di session
 
         return view('pencarian', compact('prts'));
     }
 
     public function filterPRTPost(Request $request)
     {
-        $keyword = $request->input('keyword');
+        $keyword = $request->input('keyword', '');
 
         $prts = Prt::where('nama', 'like', '%' . $keyword . '%')
             ->orWhere('lokasi', 'like', '%' . $keyword . '%')
             ->paginate(36);
 
+        $request->session()->put('keyword', $keyword); // Simpan keyword di session
+
         return view('pencarian', compact('prts'));
     }
-
 }

@@ -49,7 +49,7 @@
     height: 55px;
     margin-left: 80px;
     margin-top: 20px;
-    margin-bottom: 20px; /* Tambahkan margin-bottom 20px */
+    margin-bottom: 20px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(63, 61, 86, 0.2);
     border-radius: 45px;
@@ -67,7 +67,7 @@
 
 .search-bar {
     width: 100%;
-    height: 24px;
+    height: 100%;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
@@ -76,13 +76,13 @@
     color: #1B2223;
     border: none;
     outline: none;
+    background: transparent;
 }
-
-
 
 .kotakpencarian form {
     display: flex;
     align-items: center;
+    flex: 1;
 }
 
 .kotakpencarian form .search-bar {
@@ -91,11 +91,6 @@
 
 .kotakpencarian form .tombolcari {
     margin-left: 15px;
-}
-
-.kotakpencarian form .tombolcari-button {
-    height: auto;
-    padding: 5px 10px;
 }
 
 .kotakpencarian form .tombolcari-button {
@@ -108,7 +103,6 @@
     color: #FFFFFF;
     background: #135589;
     border: none;
-    margin-left: 80px;
     width: 130px;
     border-radius: 45px;
     height: 55px;
