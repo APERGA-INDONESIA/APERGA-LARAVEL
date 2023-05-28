@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:8000/cariPRT">Cari PRT</a>
+                        <a class="nav-link" href="http://localhost:8000/pencarian">Cari PRT</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="http://localhost:8000/tentangaplikasi">Tentang Aplikasi</a>

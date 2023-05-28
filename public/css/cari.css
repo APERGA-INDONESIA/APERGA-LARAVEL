@@ -133,7 +133,7 @@
 
 .prt-item {
     position: relative;
-    padding-top: 20px;
+    padding: 20px;
     width: 180px;
     height: 290px;
     top: 440px;
@@ -264,7 +264,7 @@
     color: #FFFFFF;
     border: none;
     font-family: 'Poppins';
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .pagination .page-item .page-link:hover {
