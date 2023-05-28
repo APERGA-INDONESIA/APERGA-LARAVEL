@@ -143,6 +143,21 @@
 
 }
 
+.pagination .page-item .page-link {
+    background-color: #135589;
+    color: #FFFFFF;
+    border: none;
+    font-family: 'Poppins';
+    font-size: 14px;
+}
+
+.pagination .page-item .page-link:hover {
+    background-color: #FFFFFF;
+    color: #135589;
+}
+
+
+
 .footer {
     width: 1366px;
     height: 100px;
