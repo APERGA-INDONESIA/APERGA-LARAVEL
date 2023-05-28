@@ -24,7 +24,7 @@ Route::post('/register', [PendaftaranController::class, 'register'])->name('regi
 
 Route::middleware(['auth'])->group(function () {
     Route::get('pencarian', [FilterController::class, 'filterPRT'])->name('pencarian'); // Menghandle permintaan pencarian PRT
-    Route::get('/filter', [FilterController::class, 'filter'])->name('filter');
+    Route::get('/filter-prt', 'FilterController@filterPRT')->name('filter.prt');
     Route::get('/daftarpekerja', [KontrakController::class, 'showDaftarPekerja'])->name('daftarpekerja');
     Route::get('/detailpekerja/{id}', [KontrakController::class, 'showDetailPekerja'])->name('detailpekerja');
     Route::post('/update-pekerja', [KontrakController::class, 'updatePekerja'])->name('update.pekerja');
