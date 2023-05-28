@@ -7,7 +7,6 @@
 
 @section('konten')
 <div class="kotak-hitam">
-
     <div class="carikan">
         <a href="javascript:void(0);" onclick="window.history.back();">
             <img src="{{ asset('images/arrowwhite.png') }}" class="arrows-img" alt="Arrow">
@@ -15,13 +14,15 @@
         <div class="cari-title">Pencarian PRT</div>
     </div>
 
-
     <div class="kotakpencarian">
         <img src="{{ asset('images/searchblack.png') }}" class="search-img" alt="Search Icon">
-        <input type="text" class="search-bar" id="search-input" placeholder="Ketikkan pencarian PRT">
-        <div class="tombolcari">
-            <button type="button" class="tombolcari-button" id="search-button">Search</button>
-        </div>
+        <form method="POST" action="{{ route('pencarian.post') }}">
+            @csrf
+            <input type="text" class="search-bar" id="search-input" name="keyword" placeholder="Ketikkan pencarian PRT">
+            <div class="tombolcari">
+                <button type="submit" class="tombolcari-button" id="search-button">Search</button>
+            </div>
+        </form>
     </div>
     <div class="filter-button">
         <img src="{{ asset('images/filterr.png') }}" class="filter-img" alt="Filter Icon">
@@ -30,36 +31,31 @@
 
 <div class="list-prt">
     <div class="row">
-        @foreach ($prts as $prt)
-        <?php
-        // Cek nilai kolom user_id
-        if ($prt->user_id != 0) {
-            continue; // Lewati jika nilai user_id bukan 0
-        }
+        @php
+            $prtsArray = $prts->toArray();
+            shuffle($prtsArray['data']); // Mengacak urutan data
+        @endphp
 
-        $imagePath = 'images/prt/prt' . $prt->id . '.jpg';
-        if (file_exists(public_path($imagePath))) {
-            $imageURL = asset($imagePath);
-        } else {
-            $imageURL = asset('images/bigprofile.png');
-        }
-        ?>
-        <div class="prt-item">
-            <img src="{{ $imageURL }}" alt="Profile Image" class="person-img">
-            <p class="nama-prt">{{ $prt->nama }}</p>
-            <img src="{{ asset('images/location.png') }}" class="lokasi-img" alt="Location Icon">
-            <p class="lokasi">{{ $prt->lokasi }}</p>
-            <img src="{{ asset('images/rating.png') }}" class="rating-img" alt="Rating Icon">
-            <p class="ratingtext">{{ $prt->rating }}/5</p>
-            <a href="http://localhost:8000/detail-pekerja/{{ $prt->id }}" class="cek-selengkapnya">
-                Cek Selengkapnya
-            </a>
-        </div>
+        @foreach ($prtsArray['data'] as $prt)
+            @php
+                $imagePath = 'images/prt/prt' . $prt['id'] . '.jpg';
+                $imageURL = file_exists(public_path($imagePath)) ? asset($imagePath) : asset('images/bigprofile.png');
+            @endphp
+            <div class="prt-item" data-nama="{{ $prt['nama'] }}" data-lokasi="{{ $prt['lokasi'] }}">
+                <img src="{{ $imageURL }}" alt="Profile Image" class="person-img">
+                <p class="nama-prt">{{ $prt['nama'] }}</p>
+                <img src="{{ asset('images/location.png') }}" class="lokasi-img" alt="Location Icon">
+                <p class="lokasi">{{ $prt['lokasi'] }}</p>
+                <img src="{{ asset('images/rating.png') }}" class="rating-img" alt="Rating Icon">
+                <p class="ratingtext">{{ $prt['rating'] }}/5</p>
+                <a href="http://localhost:8000/detail-pekerja/{{ $prt['id'] }}" class="cek-selengkapnya">
+                    Cek Selengkapnya
+                </a>
+            </div>
         @endforeach
     </div>
-
-
 </div>
+
 <nav aria-label="Page navigation example">
     <ul class="pagination pagination-sm">
         <li class="page-item"><a class="page-link" href="{{ $prts->previousPageUrl() }}">Previous</a></li>
@@ -69,8 +65,6 @@
         <li class="page-item"><a class="page-link" href="{{ $prts->nextPageUrl() }}">Next</a></li>
     </ul>
 </nav>
-</div>
-
 @endsection
 
 @section('footer')
@@ -82,56 +76,50 @@
 @endpush
 
 @push('scripts')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-// Ambil elemen div "list-prt"
-var listPrt = document.querySelector('.list-prt');
+    // Fungsi untuk menampilkan data prt sesuai hasil pencarian
+    function showFilteredData(prts) {
+        var prtItems = $('.prt-item');
+        prtItems.hide(); // Sembunyikan semua prt-item
 
-// Ambil elemen pagination
-var pagination = document.querySelector('.pagination');
-
-// Fungsi untuk menetapkan posisi pagination
-function setPaginationPosition() {
-  var listPrtHeight = listPrt.offsetHeight;
-  var paginationHeight = pagination.offsetHeight;
-
-  pagination.style.top = listPrtHeight + 'px';
-}
-
-// Panggil fungsi setPaginationPosition saat halaman berubah
-document.addEventListener('DOMContentLoaded', function() {
-  setPaginationPosition();
-});
-
-// Juga panggil fungsi setPaginationPosition saat halaman berpindah
-pagination.addEventListener('click', function() {
-  setTimeout(setPaginationPosition, 0);
-});
-
-// Fungsi untuk melakukan pencarian
-function performSearch() {
-  var keyword = document.getElementById('search-input').value.toLowerCase().trim();
-  var prtItems = document.getElementsByClassName('prt-item');
-
-  for (var i = 0; i < prtItems.length; i++) {
-    var prtItem = prtItems[i];
-    var namaPRT = prtItem.getElementsByClassName('nama-prt')[0].textContent.toLowerCase();
-
-    if (namaPRT.includes(keyword)) {
-      prtItem.style.display = 'block';
-    } else {
-      prtItem.style.display = 'none';
+        $.each(prts, function(index, prt) {
+            var prtItem = $('.prt-item[data-nama="' + prt.nama + '"][data-lokasi="' + prt.lokasi + '"]');
+            prtItem.show(); // Tampilkan prt-item yang cocok dengan hasil pencarian
+        });
     }
-  }
-}
 
-// Mendapatkan tombol pencarian
-var searchButton = document.getElementById('search-button');
+    // Fungsi untuk melakukan pencarian
+    function performSearch() {
+        var keyword = $('#search-input').val().toLowerCase().trim();
 
-// Menambahkan event listener untuk tombol pencarian
-searchButton.addEventListener('click', function() {
-  performSearch();
-  setPaginationPosition();
-});
+        // Kirim permintaan pencarian ke backend
+        $.ajax({
+            url: '{{ route('pencarian.post') }}',
+            type: 'POST',
+            data: { keyword: keyword },
+            success: function(response) {
+                showFilteredData(response.prts); // Tampilkan hasil pencarian
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+    }
+
+    // Mendapatkan tombol pencarian
+    var searchButton = document.getElementById('search-button');
+
+    // Menambahkan event listener untuk tombol pencarian
+    searchButton.addEventListener('click', function() {
+        performSearch();
+    });
+
+    // Menghubungkan event keyup pada input pencarian
+    $('#search-input').keyup(function(e) {
+        if (e.keyCode === 13) {
+            performSearch();
+        }
+    });
 </script>
 @endpush
-
