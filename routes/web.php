@@ -22,7 +22,7 @@ Route::get('/register', [PendaftaranController::class, 'showRegistrationForm'])-
 
 Route::post('/register', [PendaftaranController::class, 'register'])->name('register.post'); // Menangani permintaan pendaftaran melalui metode POST
 
-Route::middleware(['auth'])->group(function () {
+// Route::middleware(['auth'])->group(function () {
     Route::get('cariPRT', [FilterController::class, 'filterPRT'])->name('cariPRT'); // Menghandle permintaan pencarian PRT
     Route::get('/filter', [FilterController::class, 'filter'])->name('filter');
     Route::get('/daftarpekerja', [KontrakController::class, 'showDaftarPekerja'])->name('daftarpekerja');
@@ -37,7 +37,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/redeem', [TransaksiController::class, 'showRedeem'])->name('redeem');
     Route::post('/redeem', [TransaksiController::class, 'redeemSubmit'])->name('redeem.submit');
     Route::get('/topup', [TransaksiController::class, 'showTopup'])->name('topup');
-});
+// });
 
 Auth::routes(); // Menambahkan rute otorisasi bawaan Laravel
 
@@ -46,6 +46,10 @@ Route::post('/reset-password', [ResetController::class, 'resetPassword'])->name(
 Route::get('/input-new-password/{token}', [ResetController::class, 'showInputNewPassword'])->name('input.newpassword'); // Menampilkan halaman input password baru
 Route::post('/update-password', [ResetController::class, 'updatePassword'])->name('update.password'); // Menangani permintaan update password melalui metode POST
 
+Route::get('edit-profile', function() {
+    return view('editprofile');
+})->name('edit-profil');
+Route::post('update-profile',[LoginController::class,'update'])->name('update-profil');
 Route::fallback(function () {
 return redirect('/dashboard'); // Mengarahkan ke halaman dashboard jika rute tidak ditemukan
 });
