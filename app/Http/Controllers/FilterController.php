@@ -8,7 +8,7 @@ class FilterController extends Controller
 {
     public function filterPRT()
     {
-        return view('cariPRT');
+        return view('pencarian');
     }
 
 
