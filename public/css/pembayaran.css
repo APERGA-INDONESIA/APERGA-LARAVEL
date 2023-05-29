@@ -109,7 +109,6 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 0px;
-    gap: 142px;
     width: 430px;
     height: 30px;
     flex: none;
@@ -119,7 +118,7 @@
 
 .total-tagihan-text,
 .biaya-layanan-text {
-    width: 97px;
+    width: 200px;
     height: 22px;
     font-family: 'Poppins';
     font-style: normal;
@@ -135,7 +134,7 @@
 
 .total-tagihan,
 .biaya-layanan {
-    width: 120px;
+    width: 150px;
     height: 22px;
     font-family: 'Poppins';
     font-style: normal;
@@ -158,7 +157,7 @@
     flex-grow: 0;
 }
 .total-bayar-title {
-    width: 128px;
+    width: 150px;
     height: 33px;
     font-family: 'Poppins';
     font-style: normal;
@@ -177,7 +176,6 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 0px;
-    gap: 37px;
     width: 430px;
     height: 33px;
     flex: none;
