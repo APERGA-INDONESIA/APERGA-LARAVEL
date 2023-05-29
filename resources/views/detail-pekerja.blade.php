@@ -63,9 +63,10 @@
             <button class="WABtn" onClick="window.location.href = 'http://localhost:8000/waadmin';">
                 <span>Whatsapp</span>
             </button>
-            <button class="order" onClick="window.location.href = '{{ route('pembayaran', ['id' => $prt->id]) }}                ';">
+            <button class="order" onClick="window.location.href = '{{ route('mulaikontrak', ['id' => $prt->id]) }}';">
                 <span>Pesan Sekarang</span>
             </button>
+
         </div>
 
     </div>

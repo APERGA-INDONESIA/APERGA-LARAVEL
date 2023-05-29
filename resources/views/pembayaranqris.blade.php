@@ -5,8 +5,8 @@
 @endsection
 
 @section('konten')
-<div class="transfer-virtual-account">Transfer Virtual Account</div>
 <div class="kotak-hitam">
+<div class="transfer-virtual-account">Transfer Virtual Account</div>
     <div class="content">
         <div class="qr-code">
             <img src="{{ asset('images/barcode-virtual-account.png') }}" alt="Barcode Virtual Account" class="qr-code-img">

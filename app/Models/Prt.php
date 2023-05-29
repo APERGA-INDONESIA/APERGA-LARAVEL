@@ -39,4 +39,10 @@ class Prt extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function orderTransactions()
+    {
+        return $this->hasMany(OrderTransaction::class);
+    }
+
 }

@@ -49,7 +49,7 @@
                 <p class="lokasi">{{ $prt['lokasi'] }}</p>
                 <img src="{{ asset('images/rating.png') }}" class="rating-img" alt="Rating Icon">
                 <p class="ratingtext">{{ $prt['rating'] }}/5</p>
-                <a href="{{ url('daftar-pekerja', $prt['id']) }}" class="cek-selengkapnya">
+                <a href="{{ url('detail-pekerja', $prt['id']) }}" class="cek-selengkapnya">
                     Cek Selengkapnya
                 </a>
             </div>

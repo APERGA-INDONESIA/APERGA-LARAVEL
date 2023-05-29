@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Prt;
+use App\Models\User;
+use App\Models\OrderTransaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
