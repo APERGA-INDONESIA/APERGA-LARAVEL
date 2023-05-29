@@ -17,6 +17,11 @@
     width: 129px;
     height: 53px;
     margin-left: 40px;
+    transition: transform 0.7s ease;
+  }
+
+  .navbar .logo:hover {
+    transform: rotate(360deg);
   }
 
   .navbar-nav .nav-item .nav-link {
@@ -26,6 +31,11 @@
     font-size: 16px;
     line-height: 24px;
     color: #000000 !important;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-nav .nav-item .nav-link:hover {
+    color: #135589 !important;
   }
 
   .navbar-nav {
