@@ -36,6 +36,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/pembayaranqris', [MencariPekerjaController::class, 'showQRIS'])->name('pembayaranqris');
     Route::get('/pembayaran', [MencariPekerjaController::class, 'showPesanan'])->name('pembayaran'); // Menampilkan halaman pembayaran
+    Route::get('/pembayaran-terverifikasi', [MencariPekerjaController::class, 'verifikasiPembayaran'])->name('pembayaran-terverifikasi');
     Route::get('/bantuan', [BantuanController::class, 'showBantuan'])->name('bantuan'); // Menampilkan halaman bantuan
     Route::get('/tentangaplikasi', [TentangAplikasiController::class, 'showTentangAplikasi'])->name('tentangaplikasi'); // Menampilkan halaman tentang aplikasi
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard'); // Menampilkan halaman dashboard setelah login

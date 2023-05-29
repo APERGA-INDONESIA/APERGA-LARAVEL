@@ -16,4 +16,9 @@ class MencariPekerjaController extends Controller
         return view('pembayaranqris');
     }
 
+    public function verifikasiPembayaran()
+    {
+        return view('pembayaran-terverifikasi');
+    }
+
 }
