@@ -42,7 +42,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/redeem', [TransaksiController::class, 'showRedeem'])->name('redeem');
     Route::post('/redeem', [TransaksiController::class, 'redeemSubmit'])->name('redeem.submit');
     Route::get('/topup', [TransaksiController::class, 'showTopup'])->name('topup');
-    Route::get('/detail-pekerja', [DetailPekerjaController::class, 'showDetailPekerja'])->name('detail-pekerja');
+    Route::get('/daftar-pekerja/{id}', [DetailPekerjaController::class, 'showDetailPekerja']);
+
 });
 
 Auth::routes(); // Menambahkan rute otorisasi bawaan Laravel
@@ -58,6 +59,11 @@ return redirect('/dashboard'); // Mengarahkan ke halaman dashboard jika rute tid
 
 
 Route::get('/404', 'App\Http\Controllers\NotFoundController@index')->name('notfound');
+
+Route::get('/detailpekerja/{id}', 'PekerjaController@show')
+    ->middleware('pekerja.ownership')
+    ->name('detail.pekerja');
+
 
 
 

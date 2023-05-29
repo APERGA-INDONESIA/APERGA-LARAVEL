@@ -8,7 +8,7 @@
 
 @section('konten')
     <div class="dashboard-kotak">
-        <a href="http://localhost:8000/profil">
+        <a href="">
             <img src="{{ asset('images/profile 1.png') }}" alt="Profile Image" class="profile-img">
             <p class="greeting">Halo, Selamat Datang</p>
             <p class="username">{{ Auth::user()->name }}</p>
@@ -26,7 +26,7 @@
         @endphp
 
         <p class="TotalPoin">{{ number_format($totalPoin, 0, ',', '.') }} AP Point</p>
-        <button class="redeem" onclick="location.href='http://localhost:8000/redeem'">
+        <button class="redeem" onclick="location.href='{{ route('redeem') }}'">
             <p class="redeemtext">Redeem</p>
         </button>
     </div>
@@ -40,13 +40,13 @@
         @endphp
 
         <p class="TotalSaldo">Rp {{ number_format($saldo, 0, ',', '.') }}</p>
-        <button class="isiulang" onclick="location.href='http://localhost:8000/topup'">
+        <button class="isiulang" onclick="location.href='{{ route('topup') }}'">
             <p class="isiulangtext">Isi Ulang</p>
         </button>
     </div>
 
     <div class="dashboard-kotak-3">
-        <a href="http://localhost:8000/daftarpekerja">
+        <a href="{{ route('daftarpekerja') }}">
             <img src="{{ asset('images/worker.png') }}" alt="Profile Image" class="profile-img">
             <p class="jumlahpekerja-text">Jumlah Pekerja</p>
             @php

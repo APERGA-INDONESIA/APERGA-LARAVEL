@@ -258,7 +258,27 @@
     color: #FFFFFF;
     text-decoration: none; /* Remove underline on hover */
     cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
+
+.cek-selengkapnya:hover {
+    background-color: #0e4163;
+}
+
+.cek-selengkapnya:focus,
+.cek-selengkapnya:active {
+    outline: none;
+}
+
+.cek-selengkapnya:visited {
+    color: #FFFFFF;
+}
+.cek-selengkapnya:hover {
+    background-color: #0e4163;
+    text-decoration: none;
+}
+
 
 .cek-selengkapnya:hover {
     background: #135589; /* Specify the same background color as normal state */
