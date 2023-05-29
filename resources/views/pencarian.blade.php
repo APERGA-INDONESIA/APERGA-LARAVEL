@@ -24,9 +24,10 @@
         </form>
     </div>
 
-    <div class="filter-button">
+    <button class="filter-button" onclick="window.location.href='/dashboard'">
         <img src="{{ asset('images/filterr.png') }}" class="filter-img" alt="Filter Icon">
-    </div>
+    </button>
+
 </div>
 
 <div class="list-prt">

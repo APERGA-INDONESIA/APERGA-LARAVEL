@@ -3,23 +3,21 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use App\Models\User;
-use App\Models\prt;
+use App\Models\Prt;
 
 class CheckPekerjaOwnership
 {
     public function handle($request, Closure $next)
     {
         $pekerjaId = $request->route('id'); // Mengambil nilai 'id' dari URL
+        $userId = auth()->id(); // Mengambil ID pengguna yang telah login
 
-        $user = auth()->user(); // Mengambil instance user yang sedang login
-
-        $prt = prt::where('id', $pekerjaId)
-            ->where('user_id', $user->id) // Memeriksa apakah 'user_id' pada prt sesuai dengan user yang login
+        $pekerja = Prt::where('id', $pekerjaId)
+            ->where('user_id', $userId) // Memeriksa apakah 'user_id' pada 'prts' sama dengan ID pengguna yang telah login
             ->first();
 
-        if (!$prt) {
-            abort(404); // Jika prt tidak ditemukan atau user tidak memiliki hak akses, alihkan ke halaman 404
+        if (!$pekerja) {
+            abort(404); // Jika pekerja tidak ditemukan atau tidak sesuai dengan pengguna yang login, alihkan ke halaman 404
         }
 
         return $next($request);

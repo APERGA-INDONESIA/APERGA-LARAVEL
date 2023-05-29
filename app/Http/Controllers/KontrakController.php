@@ -25,8 +25,6 @@ class KontrakController extends Controller
         return view('detailpekerja', compact('pekerja'));
     }
 
-
-
     public function batalkanKontrak($id)
     {
         $pekerja = Prt::findOrFail($id);
@@ -50,6 +48,4 @@ class KontrakController extends Controller
             return response()->json(['message' => 'Gagal membatalkan kontrak.'], 500);
         }
     }
-
-
 }

@@ -60,9 +60,10 @@ return redirect('/dashboard'); // Mengarahkan ke halaman dashboard jika rute tid
 
 Route::get('/404', 'App\Http\Controllers\NotFoundController@index')->name('notfound');
 
-Route::get('/detailpekerja/{id}', 'PekerjaController@show')
+Route::get('/detailpekerja/{id}', [KontrakController::class, 'showDetailPekerja'])
     ->middleware('pekerja.ownership')
     ->name('detail.pekerja');
+
 
 
 
