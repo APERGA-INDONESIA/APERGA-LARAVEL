@@ -2,8 +2,8 @@
     position: relative;
     display: flex;
     align-items: center;
-    margin-top: 20px;
-    margin-left: 198px;
+    margin-top: 120px;
+    margin-left: 183px;
 }
 
 .pekerja-text {
@@ -35,10 +35,10 @@
 
 .kotak-hitam {
     position: absolute;
-    width: 919px;
+    width: 906px;
     height: 71px;
     left: 170px;
-    top: 137px;
+    top: 157px;
     background: #1B2223;
     box-shadow: 0px 4px 4px rgba(63, 61, 86, 0.2);
     border-radius: 20px;
@@ -74,7 +74,7 @@
 .List-Pekerja {
     position: absolute;
     left: 170px;
-    top: 285px;
+    top: 325px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -90,6 +90,7 @@
 }
 
 .tombol-detail {
+    position: relative;
     display: flex;
     align-items: center;
     padding: 5px 20px;
@@ -121,7 +122,7 @@
 }
 
 .nama-pekerja {
-    position: absolute;
+    position: relative;
     width: 700px;
     height: 25px;
     left: 99px;
@@ -136,7 +137,55 @@
 }
 
 .pagination {
-    position: absolute;
-    left: 325px;
-    bottom: -55px;
+    position: relative;
+    left: 220px;
+    margin-bottom: 50px;
+
 }
+
+.pagination .page-item .page-link {
+    background-color: #135589;
+    color: #FFFFFF;
+    border: none;
+    font-family: 'Poppins';
+    font-size: 14px;
+}
+
+.pagination .page-item .page-link:hover {
+    background-color: #FFFFFF;
+    color: #135589;
+}
+
+
+
+.footer {
+    width: 1366px;
+    height: 100px;
+}
+
+.no-prt {
+    position: relative;
+    width: 598px;
+    height: 409px;
+    left: 250px;
+    top: -50px;
+
+}
+.noprt-text {
+    position: relative;
+    width: 460px;
+    height: 100px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 32px;
+    margin-top: 15px;
+    text-align: center;
+
+    /* Black */
+    color: #1B2223;
+
+
+}
+

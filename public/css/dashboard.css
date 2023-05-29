@@ -182,13 +182,18 @@
 .isiulang {
     position: absolute;
     left: 465px;
-    top: 30px;
-    position: absolute;
+    top: 38px;
     width: 150px;
     height: 45px;
     background: #FFFFFF;
     box-shadow: 0px 6.06421px 6.06421px rgba(63, 61, 86, 0.2);
     border-radius: 19.7087px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.isiulang:hover {
+    background-color: #F2F2F2;
+    transform: translateY(-2px);
 }
 
 .isiulangtext {
@@ -212,13 +217,18 @@
 .redeem {
     position: absolute;
     left: 465px;
-    top: 30px;
-    position: absolute;
+    top: 38px;
     width: 150px;
     height: 45px;
     background: #FFFFFF;
     box-shadow: 0px 6.06421px 6.06421px rgba(106, 105, 117, 0.2);
     border-radius: 19.7087px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.redeem:hover {
+    background-color: #F2F2F2;
+    transform: translateY(-2px);
 }
 
 .redeemtext {

@@ -26,6 +26,7 @@ class CreatePrtTable extends Migration
             $table->string('no_telepon');
             $table->string('profile_image')->nullable(); // Kolom untuk menyimpan gambar profil
             $table->timestamps();
+            $table->string('deskripsi')->nullable();
         });
     }
 

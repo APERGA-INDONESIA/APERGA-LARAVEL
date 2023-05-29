@@ -22,12 +22,10 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            // $table->float('saldo')->default(0);
+            // $table->integer('poin')->default(0);
             $table->timestamps();
-            $table->decimal('saldo', 10, 2)->default(0);
-            $table->integer('poin')->default(0);
         });
-
-
     }
 
     /**
@@ -40,3 +38,4 @@ return new class extends Migration
         Schema::dropIfExists('users');
     }
 };
+

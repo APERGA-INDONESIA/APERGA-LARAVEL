@@ -1,0 +1,327 @@
+.kotak-hitam {
+    position: absolute;
+    width: 100%;
+    height: 2500px;
+    left: 0;
+    top: 166px;
+    background: #1B2223;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 050);
+}
+
+.carikan {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 80px;
+    z-index: 2;
+}
+
+.arrows-img {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 15.5px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.cari-title {
+    width: 300px;
+    height: 64px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 64px;
+    color: #ffffff;
+    margin-left: 45px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.kotakpencarian {
+    position: relative;
+    width: 597px;
+    height: 55px;
+    margin-left: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(63, 61, 86, 0.2);
+    border-radius: 45px;
+    display: flex;
+    align-items: center;
+    padding-left: 22px;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.kotakpencarian:hover {
+    transform: scale(1.1);
+}
+
+.search-img {
+    width: 43px;
+    height: 43px;
+    margin-right: 13px;
+}
+
+.search-bar {
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #1B2223;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.kotakpencarian form {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.kotakpencarian form .search-bar {
+    flex: 1;
+}
+
+.kotakpencarian form .tombolcari {
+    margin-left: 15px;
+}
+
+.kotakpencarian form .tombolcari-button {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: #FFFFFF;
+    background: #135589;
+    border: none;
+    width: 130px;
+    border-radius: 45px;
+    height: 55px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.kotakpencarian form .tombolcari-button:hover {
+    background-color: #0d436e;
+}
+
+.filter-button {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    background: #135589;
+    border-radius: 10px;
+    left: 708px;
+    top: 135.5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease, left 0.3s ease;
+    z-index: 2;
+}
+
+.filter-button:hover {
+    background-color: #0d436e;
+}
+
+.filter-img {
+    width: 26px;
+    height: 26px;
+    left: 10px;
+}
+
+.kotakpencarian:hover ~ .filter-button {
+    left: 750px; /* Sesuaikan jarak pergeseran yang diinginkan */
+}
+
+
+
+.list-prt {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-left: 50px;
+
+    z-index: 1;
+}
+
+.prt-item {
+    position: relative;
+    padding: 20px;
+    width: 180px;
+    height: 290px;
+    top: 440px;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    margin-right: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.person-img {
+    width: 140px;
+    height: 120px;
+
+    border-radius: 20px;
+}
+
+.nama-prt {
+    font-family: 'Poppins';
+    font-style: normal;
+    width: 180px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    color: #1B2223;
+}
+
+.lokasi-img {
+    position: absolute;
+    top: 170px;
+    left: 32px;
+    width: 24px;
+    height: 24px;
+}
+
+.lokasi {
+    position: absolute;
+    width: 90px;
+    height: 18px;
+    left: 65px;
+    top: 174px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 18px;
+
+    color: #1B2223;
+
+
+}
+
+.rating-img {
+    position: absolute;
+    top: 200px;
+    left: 56px;
+    width: 20px;
+    height: 20px;
+}
+
+.ratingtext {
+    position: absolute;
+    width: 90px;
+    height: 19px;
+    left: 84px;
+    top: 202px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 18px;
+
+    color: #1B2223;
+
+
+}
+
+.cek-selengkapnya {
+    position: absolute;
+    width: 150px;
+    height: 40px;
+    left: 15px;
+    top: 228px;
+    background: #135589;
+    box-shadow: 0px 4px 4px rgba(63, 61, 86, 0.2);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+    text-decoration: none; /* Remove underline on hover */
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.cek-selengkapnya:hover {
+    background-color: #0e4163;
+}
+
+.cek-selengkapnya:focus,
+.cek-selengkapnya:active {
+    outline: none;
+}
+
+.cek-selengkapnya:visited {
+    color: #FFFFFF;
+}
+.cek-selengkapnya:hover {
+    background-color: #0e4163;
+    text-decoration: none;
+}
+
+
+.cek-selengkapnya:hover {
+    background: #135589; /* Specify the same background color as normal state */
+    color: #FFFFFF; /* Specify the same text color as normal state */
+}
+
+
+.prt-item:hover {
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in-out;
+}
+
+
+
+.pagination {
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 450px;
+}
+
+.pagination .page-item .page-link {
+    background-color: #135589;
+    color: #FFFFFF;
+    border: none;
+    font-family: 'Poppins';
+    font-size: 16px;
+}
+
+.pagination .page-item .page-link:hover {
+    background-color: #FFFFFF;
+    color: #135589;
+}

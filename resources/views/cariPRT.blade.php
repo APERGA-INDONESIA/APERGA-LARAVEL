@@ -18,7 +18,6 @@
 
     <div class="btn-group" role="group" aria-label="Filter">
 
-        <div>
         <p class="filter-text">filter berdasarkan</p>
         <button class="filter-button" type="submit" name="filter" value="gaji" class="btn btn-primary">Gaji</button>
         <button class="filter-button" type="submit" name="filter" value="umur" class="btn btn-primary">Umur</button>
@@ -27,8 +26,8 @@
 </form>
 
 <div class="container">
-    <div class="row">
-      <div class="col-md-6">
+    <div class="row justify-content-between">
+      <div class="col-md-1">
         <div class="card">
           <img src="gambar1.jpg" class="card-img-top" alt="Gambar 1">
           <div class="card-body">
@@ -39,7 +38,7 @@
         </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-1">
         <div class="card">
           <img src="gambar3.jpg" class="card-img-top" alt="Gambar 3">
           <div class="card-body">
@@ -49,9 +48,150 @@
           </div>
         </div>
       </div>
+
+      <div class="col-md-1">
+        <div class="card">
+          <img src="gambar3.jpg" class="card-img-top" alt="Gambar 3">
+          <div class="card-body">
+            <h5 class="card-title">Card 3</h5>
+            <p class="card-text">Deskripsi card ini.</p>
+            <a href="#" class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-1">
+        <div class="card">
+          <img src="gambar3.jpg" class="card-img-top" alt="Gambar 3">
+          <div class="card-body">
+            <h5 class="card-title">Card 3</h5>
+            <p class="card-text">Deskripsi card ini.</p>
+            <a href="#" class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-1">
+        <div class="card">
+          <img src="gambar3.jpg" class="card-img-top" alt="Gambar 3">
+          <div class="card-body">
+            <h5 class="card-title">Card 3</h5>
+            <p class="card-text">Deskripsi card ini.</p>
+            <a href="#" class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-1">
+        <div class="card">
+          <img src="gambar3.jpg" class="card-img-top" alt="Gambar 3">
+          <div class="card-body">
+            <h5 class="card-title">Card 3</h5>
+            <p class="card-text">Deskripsi card ini.</p>
+            <a href="#" class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-1">
+        <div class="card">
+          <img src="gambar3.jpg" class="card-img-top" alt="Gambar 3">
+          <div class="card-body">
+            <h5 class="card-title">Card 3</h5>
+            <p class="card-text">Deskripsi card ini.</p>
+            <a href="#" class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+
+
     </div>
 
+    <div class="row justify-content-between">
+        <div class="col-md-1">
+          <div class="card">
+            <img src="gambar1.jpg" class="card-img-top" alt="Gambar 1">
+            <div class="card-body">
+              <h5 class="card-title">Card 1</h5>
+              <p class="card-text">Deskripsi card ini.</p>
+              <a href="#" class="btn btn-primary">Button</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-1">
+          <div class="card">
+            <img src="gambar3.jpg" class="card-img-top" alt="Gambar 3">
+            <div class="card-body">
+              <h5 class="card-title">Card 3</h5>
+              <p class="card-text">Deskripsi card ini.</p>
+              <a href="#" class="btn btn-primary">Button</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-1">
+          <div class="card">
+            <img src="gambar3.jpg" class="card-img-top" alt="Gambar 3">
+            <div class="card-body">
+              <h5 class="card-title">Card 3</h5>
+              <p class="card-text">Deskripsi card ini.</p>
+              <a href="#" class="btn btn-primary">Button</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-1">
+          <div class="card">
+            <img src="gambar3.jpg" class="card-img-top" alt="Gambar 3">
+            <div class="card-body">
+              <h5 class="card-title">Card 3</h5>
+              <p class="card-text">Deskripsi card ini.</p>
+              <a href="#" class="btn btn-primary">Button</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-1">
+          <div class="card">
+            <img src="gambar3.jpg" class="card-img-top" alt="Gambar 3">
+            <div class="card-body">
+              <h5 class="card-title">Card 3</h5>
+              <p class="card-text">Deskripsi card ini.</p>
+              <a href="#" class="btn btn-primary">Button</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-1">
+          <div class="card">
+            <img src="gambar3.jpg" class="card-img-top" alt="Gambar 3">
+            <div class="card-body">
+              <h5 class="card-title">Card 3</h5>
+              <p class="card-text">Deskripsi card ini.</p>
+              <a href="#" class="btn btn-primary">Button</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-1">
+          <div class="card">
+            <img src="gambar3.jpg" class="card-img-top" alt="Gambar 3">
+            <div class="card-body">
+              <h5 class="card-title">Card 3</h5>
+              <p class="card-text">Deskripsi card ini.</p>
+              <a href="#" class="btn btn-primary">Button</a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
 </div>
+
+
 
 
 

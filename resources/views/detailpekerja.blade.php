@@ -23,12 +23,23 @@
             $imageURL = asset('images/bigprofile.png');
         }
         ?>
-        <img src="{{ $imageURL }}" alt="Big Profile" class="big-profile-img" style="width: 509px; height: 436px; border-radius: 23px;">
+        <img src="{{ $imageURL }}" alt="Big Profile" class="big-profile-img">
     </div>
     <div class="deskripsi">
         <div class="nama-pekerja">{{ $pekerja->nama }}</div>
         <div class="rating">
-            <img src="{{ asset('images/star.png') }}" alt="Star" class="star-img">
+            <?php
+            $rating = $pekerja->rating ?? 0;
+            $ratingStars = min(5, max(0, $rating));
+            ?>
+
+            @for ($i = 0; $i < $ratingStars; $i++)
+                <img src="{{ asset('images/star.png') }}" alt="Star" class="star-img">
+            @endfor
+
+            @if ($rating > $ratingStars)
+                <img src="{{ asset('images/star-half.png') }}" alt="Star" class="star-img">
+            @endif
             <span class="rating-text">{{ $pekerja->rating }}/5</span>
         </div>
         <div class="deskripsi-jam-kerja">
@@ -78,10 +89,22 @@
                         <input type="hidden" name="pekerjaId" value="{{ $pekerja->id }}">
                     </form>
                     <button id="confirmBtn">Kembali</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<div id="successPopup" class="popup">
+    <div class="popup-field">
+      <div class="popup-content">
+        <img src="{{ asset('images/centang.png') }}" alt="centang" class="centang">
+        <p>Kontrak berhasil dibatalkan. Silahkan periksa kembali daftar pekerja anda</p>
+      </div>
+      <button id="OKBtn">OK</button> <!-- Tombol OK ditempatkan di luar button-container -->
+    </div>
+  </div>
+
 
 @endsection
 
@@ -100,55 +123,6 @@
 @endpush
 
 @push('scripts')
-<script>
-    // Mendapatkan tombol batalkanKontrakBtn
-    var batalkanKontrakBtn = document.getElementById('batalkanKontrakBtn');
+<script src="{{ asset('js/batalkankontrak.js') }}"></script>
 
-    // Mendapatkan elemen popup
-    var popup = document.getElementById('popup');
-
-    // Mendapatkan tombol cancelBtn di dalam popup
-    var cancelBtn = document.getElementById('cancelBtn');
-
-    // Menambahkan event listener untuk klik pada tombol batalkanKontrakBtn
-    batalkanKontrakBtn.addEventListener('click', function() {
-        // Menampilkan popup
-        popup.style.display = 'block';
-    });
-
-    // Menambahkan event listener untuk klik pada tombol cancelBtn di dalam popup
-    cancelBtn.addEventListener('click', function() {
-        // Mendapatkan pekerja id dari atribut data-pekerja-id
-        var pekerjaId = batalkanKontrakBtn.getAttribute('data-pekerja-id');
-
-        // Mengirim permintaan HTTP POST ke endpoint yang mengubah user_id menjadi 0
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/update-pekerja', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                // Sukses mengubah user_id menjadi 0
-                console.log('Kontrak dibatalkan.');
-            } else {
-                // Gagal mengubah user_id menjadi 0
-                console.log('Gagal membatalkan kontrak.');
-            }
-        };
-
-        // Mengirim data pekerja id sebagai payload
-        var params = 'pekerjaId=' + encodeURIComponent(pekerjaId);
-        xhr.send(params);
-
-        // Menutup popup setelah proses selesai
-        popup.style.display = 'none';
-    });
-
-    // Menambahkan event listener untuk klik pada tombol confirmBtn di dalam popup
-    var confirmBtn = document.getElementById('confirmBtn');
-    confirmBtn.addEventListener('click', function() {
-        // Menutup popup tanpa melakukan apa pun
-        popup.style.display = 'none';
-    });
-
-</script>
 @endpush
