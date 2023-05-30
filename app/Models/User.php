@@ -52,4 +52,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Prt::class);
     }
+
+    public function orderTransactions()
+    {
+        return $this->hasMany(OrderTransaction::class);
+    }
+
 }

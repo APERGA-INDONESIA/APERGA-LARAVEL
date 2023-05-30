@@ -33,6 +33,7 @@
 <div class="list-prt">
     <div class="row">
         @php
+            $prts = \App\Models\PRT::where('user_id', 0)->paginate(36); // Mengambil semua PRT dengan user_id = 0 dan menggunakan paginasi
             $prtsArray = $prts->toArray();
             shuffle($prtsArray['data']); // Mengacak urutan data
         @endphp
@@ -49,7 +50,7 @@
                 <p class="lokasi">{{ $prt['lokasi'] }}</p>
                 <img src="{{ asset('images/rating.png') }}" class="rating-img" alt="Rating Icon">
                 <p class="ratingtext">{{ $prt['rating'] }}/5</p>
-                <a href="{{ url('daftar-pekerja', $prt['id']) }}" class="cek-selengkapnya">
+                <a href="{{ url('detail-pekerja', $prt['id']) }}" class="cek-selengkapnya">
                     Cek Selengkapnya
                 </a>
             </div>
@@ -80,7 +81,7 @@
 
 @push('scripts')
 <script>
-    // Fungsi untuk menampilkan data prt sesuai hasil pencarian
+    // Fungsi untuk menampilkan data PRT sesuai hasil pencarian
     function showFilteredData(prts) {
          var prtItems = $('.prt-item');
          prtItems.hide(); // Sembunyikan semua prt-item

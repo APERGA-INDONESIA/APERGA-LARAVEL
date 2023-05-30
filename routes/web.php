@@ -13,6 +13,7 @@ use App\Http\Controllers\ResetController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\DetailPekerjaController;
+use App\Http\Controllers\PembayaranController;
 
 
 
@@ -34,16 +35,20 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/detailpekerja/{id}', [KontrakController::class, 'showDetailPekerja'])->name('detailpekerja');
     Route::post('/update-pekerja', [KontrakController::class, 'updatePekerja'])->name('update.pekerja');
 
-    Route::get('/pembayaranqris', [MencariPekerjaController::class, 'showQRIS'])->name('pembayaranqris');
-    Route::get('/pembayaran', [MencariPekerjaController::class, 'showPesanan'])->name('pembayaran'); // Menampilkan halaman pembayaran
-    Route::get('/pembayaran-terverifikasi', [MencariPekerjaController::class, 'verifikasiPembayaran'])->name('pembayaran-terverifikasi');
+    Route::get('/pembayaranqris', [PembayaranController::class, 'showQRIS'])->name('pembayaranqris');
+    Route::get('/pembayaran', [PembayaranController::class, 'showPesanan'])->name('pembayaran'); // Menampilkan halaman pembayaran
+    Route::get('/pembayaran-terverifikasi', [PembayaranController::class, 'verifikasiPembayaran'])->name('pembayaran-terverifikasi');
     Route::get('/bantuan', [BantuanController::class, 'showBantuan'])->name('bantuan'); // Menampilkan halaman bantuan
     Route::get('/tentangaplikasi', [TentangAplikasiController::class, 'showTentangAplikasi'])->name('tentangaplikasi'); // Menampilkan halaman tentang aplikasi
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard'); // Menampilkan halaman dashboard setelah login
     Route::get('/redeem', [TransaksiController::class, 'showRedeem'])->name('redeem');
     Route::post('/redeem', [TransaksiController::class, 'redeemSubmit'])->name('redeem.submit');
     Route::get('/topup', [TransaksiController::class, 'showTopup'])->name('topup');
-    Route::get('/daftar-pekerja/{id}', [DetailPekerjaController::class, 'showDetailPekerja']);
+    Route::get('/detail-pekerja/{id}', [DetailPekerjaController::class, 'showDetailPekerja']);
+Route::get('/mulai-kontrak/{id}', [MencariPekerjaController::class, 'showMulaiKontrak'])->name('mulaikontrak');
+
+Route::post('/simpan-transaksi', 'MencariPekerjaController@simpanTransaksi')->name('simpan-transaksi');
+
 
 });
 
@@ -59,11 +64,7 @@ return redirect('/dashboard'); // Mengarahkan ke halaman dashboard jika rute tid
 });
 
 
-Route::get('/404', 'App\Http\Controllers\NotFoundController@index')->name('notfound');
 
-Route::get('/detailpekerja/{id}', [KontrakController::class, 'showDetailPekerja'])
-    ->middleware('pekerja.ownership')
-    ->name('detail.pekerja');
 
 
 

@@ -5,13 +5,13 @@
 @endsection
 
 @section('konten')
-<div class="transfer-virtual-account">Transfer Virtual Account</div>
 <div class="kotak-hitam">
+<div class="transfer-virtual-account">Transfer Virtual Account</div>
     <div class="content">
         <div class="qr-code">
             <img src="{{ asset('images/barcode-virtual-account.png') }}" alt="Barcode Virtual Account" class="qr-code-img">
         </div>
-        <div class="text">Scan barcode di atas untuk melakukan pembayaran</div>
+        <div class="text">Scan barcode di atas untuk melakukan pembayaran. Lakukan pembayaran sesuai intruksi dibawah ini:</div>
         <div class="button-group">
             <button class="lanjutkan-pembayaran">Lanjutkan Pembayaran</button>
         </div>
@@ -26,4 +26,6 @@
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/pembayaranqris.css') }}">
 @endpush
+
+
 

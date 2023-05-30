@@ -17,11 +17,11 @@
     width: 129px;
     height: 53px;
     margin-left: 40px;
-    transition: transform 0.7s ease;
+    transition: transform 0.2s ease;
   }
 
   .navbar .logo:hover {
-    transform: rotate(360deg);
+    transform: rotate(-5deg);
   }
 
   .navbar-nav .nav-item .nav-link {
