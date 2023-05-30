@@ -33,12 +33,12 @@
 <div class="list-prt">
     <div class="row">
         @php
-            $prts = \App\Models\PRT::where('user_id', 0)->paginate(36); // Mengambil semua PRT dengan user_id = 0 dan menggunakan paginasi
-            $prtsArray = $prts->toArray();
-            shuffle($prtsArray['data']); // Mengacak urutan data
-        @endphp
+        $prtsArray = $prts->toArray();
+        shuffle($prtsArray['data']); // Mengacak urutan data
+    @endphp
 
-        @foreach ($prtsArray['data'] as $prt)
+    @foreach ($prts as $prt)
+
             @php
                 $imagePath = 'images/prt/prt' . $prt['id'] . '.jpg';
                 $imageURL = file_exists(public_path($imagePath)) ? asset($imagePath) : asset('images/bigprofile.png');
