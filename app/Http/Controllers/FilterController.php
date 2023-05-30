@@ -13,8 +13,11 @@ class FilterController extends Controller
 
         // Logika untuk melakukan pencarian berdasarkan kriteria
 
-        $prts = Prt::where('nama', 'like', '%' . $keyword . '%')
-            ->orWhere('lokasi', 'like', '%' . $keyword . '%')
+        $prts = Prt::where('user_id', 0)
+            ->where(function ($query) use ($keyword) {
+                $query->where('nama', 'like', '%' . $keyword . '%')
+                    ->orWhere('lokasi', 'like', '%' . $keyword . '%');
+            })
             ->paginate(36);
 
         $request->session()->put('keyword', $keyword); // Simpan keyword di session
@@ -26,8 +29,11 @@ class FilterController extends Controller
     {
         $keyword = $request->input('keyword', '');
 
-        $prts = Prt::where('nama', 'like', '%' . $keyword . '%')
-            ->orWhere('lokasi', 'like', '%' . $keyword . '%')
+        $prts = Prt::where('user_id', 0)
+            ->where(function ($query) use ($keyword) {
+                $query->where('nama', 'like', '%' . $keyword . '%')
+                    ->orWhere('lokasi', 'like', '%' . $keyword . '%');
+            })
             ->paginate(36);
 
         $request->session()->put('keyword', $keyword); // Simpan keyword di session

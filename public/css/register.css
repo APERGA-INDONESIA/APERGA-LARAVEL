@@ -16,7 +16,27 @@ body {
     box-shadow: 0px 4px 4px rgba(63, 61, 86, 0.2);
     border-radius: 20px;
     padding: 25px; /* Tambahkan padding */
+    animation-name: scaleAnimation;
+    animation-duration: 0.5s;
+    animation-delay: 0.3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    visibility: hidden;
 }
+
+@keyframes scaleAnimation {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
 
 .title {
     position: absolute;

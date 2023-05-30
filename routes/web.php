@@ -14,10 +14,10 @@ use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\DetailPekerjaController;
 use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\LandingController;
 
 
-
-Route::redirect('/', '/login'); // Mengarahkan ke halaman login jika mengakses akar situs
+Route::redirect('/', '/homepage'); // Mengarahkan ke halaman login jika mengakses akar situs
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login'); // Menampilkan halaman login
 
@@ -63,6 +63,7 @@ Route::fallback(function () {
 return redirect('/dashboard'); // Mengarahkan ke halaman dashboard jika rute tidak ditemukan
 });
 
+Route::get('/', [LandingController::class, 'showLanding'])->name('homepage');
 
 
 
