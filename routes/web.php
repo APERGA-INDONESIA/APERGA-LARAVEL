@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\DashboardController;
@@ -14,10 +15,10 @@ use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\DetailPekerjaController;
 use App\Http\Controllers\PembayaranController;
-use App\Http\Controllers\LandingController;
 
 
-Route::redirect('/', '/homepage'); // Mengarahkan ke halaman login jika mengakses akar situs
+
+
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login'); // Menampilkan halaman login
 
@@ -45,11 +46,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/redeem', [TransaksiController::class, 'redeemSubmit'])->name('redeem.submit');
     Route::get('/topup', [TransaksiController::class, 'showTopup'])->name('topup');
     Route::get('/detail-pekerja/{id}', [DetailPekerjaController::class, 'showDetailPekerja']);
-Route::get('/mulai-kontrak/{id}', [MencariPekerjaController::class, 'showMulaiKontrak'])->name('mulaikontrak');
-
-Route::post('/simpan-transaksi', 'MencariPekerjaController@simpanTransaksi')->name('simpan-transaksi');
-
-
+    Route::get('/mulai-kontrak/{id}', [MencariPekerjaController::class, 'showMulaiKontrak'])->name('mulaikontrak');
+    Route::post('/simpantransaksi', [MencariPekerjaController::class, 'simpanTransaksi'])->name('simpantransaksi');
 });
 
 Auth::routes(); // Menambahkan rute otorisasi bawaan Laravel
@@ -64,6 +62,10 @@ return redirect('/dashboard'); // Mengarahkan ke halaman dashboard jika rute tid
 });
 
 Route::get('/', [LandingController::class, 'showLanding'])->name('homepage');
+
+
+Route::redirect('/', '/homepage');
+// Mengarahkan ke halaman login jika mengakses akar situs
 
 
 

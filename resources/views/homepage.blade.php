@@ -4,7 +4,7 @@
 This code is a high-fidelity prototype.
 Get developer-friendly React or HTML/CSS code for this project at: https://projects.animaapp.com?utm_source=hosted-code
 30/05/2023 15:45:09 -->
-@extends('template2')
+@extends('template3')
 @section('title', 'Home')
 
 @section('navbar')
@@ -453,11 +453,8 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
 @endpush
 
 @push('scripts')
-<script>
-    defer
-    src="https://animaapp.s3.amazonaws.com/static/restart-btn.min.js"
-</script>
-<script id="anima-hotspots-script" src="hotspots.js"></script>
-<script id="anima-overrides-script" src="overrides.js"></script>
-<script src="https://animaapp.s3.amazonaws.com/js/timeline.js"></script>
+<script> defer src="https://animaapp.s3.amazonaws.com/static/restart-btn.min.js" </script>
+<script src="{{ asset('js/overrides.js') }}"></script>
+<script src="{{ asset('js/timeline.js') }}"></script>
+
 @endpush

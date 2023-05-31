@@ -31,17 +31,11 @@
                         <a class="nav-link" href="http://localhost:8000/tentangaplikasi">Tentang Aplikasi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:8000/bantuan">Bantuan</a>
+                        <a class="nav-link" href="http://localhost:8000/bantuan"> Pusat Bantuan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="http://localhost:8000/dashboard">Profil</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('logout') }}"
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
                     </li>
                 </ul>
             </div>

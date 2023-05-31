@@ -1,0 +1,634 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:500,700");
+
+/* The following line is used to measure usage of this code. You can remove it if you want. */
+@import url("https://px.animaapp.com/64757272c8c1239f2930e8d1.64757274fc68d363b4db58eb.wIfoByd.hch.png");
+
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+
+.screen * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+
+.component-wrapper a {
+  display: contents;
+  pointer-events: auto;
+  text-decoration: none;
+}
+
+.component-wrapper * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.component-wrapper a *,
+.component-wrapper input,
+.component-wrapper video,
+.component-wrapper iframe {
+  pointer-events: auto;
+}
+
+.component-wrapper.not-ready,
+.component-wrapper.not-ready * {
+  visibility: hidden !important;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.full-width-a {
+  width: 100%;
+}
+
+.full-height-a {
+  height: 100%;
+}
+
+.container-center-vertical {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  pointer-events: none;
+}
+
+.container-center-vertical > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+  z-index: 999;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.auto-animated div {
+  --z-index: -1;
+  opacity: 0;
+  position: absolute;
+}
+
+.auto-animated input {
+  --z-index: -1;
+  opacity: 0;
+  position: absolute;
+}
+
+.auto-animated .container-center-vertical,
+.auto-animated .container-center-horizontal {
+  opacity: 1;
+}
+
+.overlay-base {
+  display: none;
+  height: 100%;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.overlay-base.animate-appear {
+  align-items: center;
+  animation: reveal 0.3s ease-in-out 1 normal forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+}
+
+.overlay-base.animate-disappear {
+  animation: reveal 0.3s ease-in-out 1 reverse forwards;
+  display: block;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.overlay-base.animate-disappear * {
+  pointer-events: none;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-nodelay {
+  animation-delay: 0s;
+}
+
+.align-self-flex-start {
+  align-self: flex-start;
+}
+
+.align-self-flex-end {
+  align-self: flex-end;
+}
+
+.align-self-flex-center {
+  align-self: flex-center;
+}
+
+.valign-text-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.valign-text-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+input:focus {
+  outline: none;
+}
+
+.listeners-active,
+.listeners-active * {
+  pointer-events: auto;
+}
+
+.hidden,
+.hidden * {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.smart-layers-pointers,
+.smart-layers-pointers * {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.listeners-active-click,
+.listeners-active-click * {
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+:root {
+  --black: #1b2223;
+  --black-2: #000000;
+  --white: #ffffff;
+
+  --font-size-l: 20px;
+  --font-size-m: 16px;
+  --font-size-s: 14px;
+
+  --font-family-poppins: "Poppins", Helvetica;
+}
+.title {
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-s);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0px;
+}
+
+.body {
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0px;
+}
+
+.poppins-bold-white-20px {
+  color: var(--white);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 700;
+}
+
+:root {
+}
+
+/* screen - frame-386 */
+
+.frame-386 {
+  background-color: var(--white);
+  border: 1px none;
+  height: 458px;
+  mix-blend-mode: normal;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 1366px;
+}
+
+.frame-386 .group-359-BfLgLz {
+  background-color: transparent;
+  height: 458px;
+  left: 0px;
+  position: relative;
+  top: 0px;
+  width: 1366px;
+}
+
+.frame-386 .footer-XvkHiT {
+  background-color: var(--black);
+  height: 458px;
+  left: 0px;
+  mix-blend-mode: normal;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  width: 1366px;
+}
+
+.frame-386 .frame-369-XvkHiT {
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  height: auto;
+  left: 100px;
+  position: absolute;
+  top: 76px;
+  width: fit-content;
+}
+
+.frame-386 .frame-349-H7Z72H {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+  height: auto;
+  position: relative;
+  width: fit-content;
+}
+
+.frame-386 .frame-354-jyZuck {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  height: auto;
+  justify-content: space-between;
+  position: relative;
+  width: 1166px;
+}
+
+.frame-386 .frame-370-S3Dfez {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: auto;
+  position: relative;
+  width: fit-content;
+}
+
+.frame-386 .group-352-Wp9zTc {
+  background-color: transparent;
+  height: 50px;
+  min-width: 186px;
+  position: relative;
+}
+
+.frame-386 .rectangle-66-VQPd2T {
+  background-color: var(--white);
+  border-radius: 15px;
+  box-shadow: 0px 4px 4px #00000040;
+  height: 50px;
+  left: 0px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 0px;
+  width: 186px;
+}
+
+.frame-386 .group-2-1-VQPd2T {
+  background-color: transparent;
+  height: 36px;
+  left: 28px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 7px;
+  width: 129px;
+}
+
+.frame-386 .pt-adi-perkasa-guna-tbk-Wp9zTc {
+  background-color: transparent;
+  letter-spacing: 0px;
+  line-height: 24px;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.frame-386 .frame-347-S3Dfez {
+  align-items: flex-end;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: auto;
+  position: relative;
+  width: fit-content;
+}
+
+.frame-386 .frame-344-LwSrQY {
+  align-items: flex-end;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: auto;
+  position: relative;
+  width: fit-content;
+}
+
+.frame-386 .hubungi-kami-iyFSkI {
+  background-color: transparent;
+  letter-spacing: 0px;
+  line-height: 24px;
+  margin-top: -1px;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.frame-386 .frame-346-LwSrQY {
+  align-items: center;
+  background-color: transparent;
+  display: flex;
+  gap: 16px;
+  height: auto;
+  position: relative;
+  width: fit-content;
+}
+
+.frame-386 .frame-345-MMMzeo {
+  align-items: flex-start;
+  background-color: var(--white);
+  border-radius: 20px;
+  display: flex;
+  gap: 10px;
+  height: auto;
+  mix-blend-mode: normal;
+  padding: 10px;
+  position: relative;
+  width: fit-content;
+}
+
+.frame-386 .x24-call-call-phone-S6R7A6 {
+  background-color: transparent;
+  height: 24px;
+  min-width: 24px;
+  mix-blend-mode: normal;
+  position: relative;
+}
+
+.frame-386 .icon-call-FkSn0Y {
+  background-color: transparent;
+  height: 20px;
+  left: 2px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 2px;
+  width: 20px;
+}
+
+.frame-386 .frame-343-MMMzeo {
+  align-items: flex-start;
+  background-color: var(--white);
+  border-radius: 20px;
+  display: flex;
+  gap: 10px;
+  height: auto;
+  mix-blend-mode: normal;
+  padding: 10px;
+  position: relative;
+  width: fit-content;
+}
+
+.frame-386 .x24-basic-mail-CqL9Lp {
+  background-color: transparent;
+  height: 24px;
+  min-width: 24px;
+  mix-blend-mode: normal;
+  position: relative;
+}
+
+.frame-386 .icon-mail-kilgEo {
+  background-color: transparent;
+  height: 18px;
+  left: 1px;
+  mix-blend-mode: normal;
+  position: absolute;
+  top: 3px;
+  width: 22px;
+}
+
+.frame-386 .vector-12-jyZuck {
+  background-color: transparent;
+  height: 2px;
+  min-width: 1165px;
+  position: relative;
+}
+
+.frame-386 .frame-367-jyZuck {
+  align-self: stretch;
+  justify-content: space-between;
+}
+
+.frame-386 .frame-365-RD4Byd {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  height: auto;
+  position: relative;
+  width: fit-content;
+}
+
+.frame-386 .tentang-kami-hrbFiw {
+  background-color: transparent;
+  letter-spacing: 0px;
+  line-height: 24px;
+  margin-top: -1px;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.frame-386 .platform-penyedia-ja-Kyh3yR {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 500;
+  height: 56px;
+  line-height: 24px;
+  margin-top: -1px;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  width: 393px;
+}
+
+.frame-386 .frame-366-RD4Byd {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  height: auto;
+  position: relative;
+  width: fit-content;
+}
+
+.frame-386 .syarat-dan-ketentuan-mFUhqz {
+  background-color: transparent;
+  letter-spacing: 0px;
+  line-height: 24px;
+  margin-top: -1px;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.frame-386 .pelanggan-XpgcdW {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: -1px;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.frame-386 .mitra-XpgcdW {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.frame-386 .frame-367-RD4Byd {
+  flex-direction: column;
+  gap: 17px;
+  width: fit-content;
+}
+
+.frame-386 .program-kami-Dylx5u {
+  background-color: transparent;
+  letter-spacing: 0px;
+  line-height: 24px;
+  margin-top: -1px;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.frame-386 .kerja-sama-mitra-YTN0aJ {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: -1px;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.frame-386 .pencarian-prt-YTN0aJ {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.frame-386 .copyright-aperga-202-H7Z72H {
+  background-color: transparent;
+  color: var(--white);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: 1166px;
+}
+
+.frame-386 .frame-364 {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: auto;
+  position: relative;
+  width: fit-content;
+}
+
+.frame-386 .frame-367 {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  height: auto;
+  position: relative;
+}

@@ -1,4 +1,4 @@
-@extends('template')
+@extends('template2')
 @section('title', 'Mulai Kontrak')
 
 @section('navbar')
@@ -73,7 +73,7 @@
         </div>
         <div class="button-group">
             <button id="confirmBtn" class="confirm">Kembali</button>
-            <form id="simpanTransaksiForm" action="{{ route('simpan-transaksi') }}" method="POST">
+            <form id="simpanTransaksiForm" action="{{ route('simpantransaksi') }}" method="POST">
                 @csrf
                 <input type="hidden" name="prt_id" value="{{ $prt->id }}">
                 <input type="hidden" name="jam_kerja" id="jam_kerja" value="">
