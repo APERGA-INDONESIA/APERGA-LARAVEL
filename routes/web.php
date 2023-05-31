@@ -29,9 +29,7 @@ Route::get('/register', [PendaftaranController::class, 'showRegistrationForm'])-
 Route::post('/register', [PendaftaranController::class, 'register'])->name('register.post'); // Menangani permintaan pendaftaran melalui metode POST
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('pencarian', [FilterController::class, 'filterPRT'])->name('pencarian'); // Menghandle permintaan pencarian PRT
-    Route::post('/pencarian', [FilterController::class, 'filterPRTPost'])->name('pencarian.post');
-    Route::post('/pencarian', [FilterPRTController::class, 'search'])->name('pencarian.search');
+
 
 
     Route::get('/daftarpekerja', [KontrakController::class, 'showDaftarPekerja'])->name('daftarpekerja');
@@ -42,7 +40,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/pembayaran', [PembayaranController::class, 'showPesanan'])->name('pembayaran'); // Menampilkan halaman pembayaran
     Route::get('/pembayaran-terverifikasi', [PembayaranController::class, 'verifikasiPembayaran'])->name('pembayaran-terverifikasi');
     Route::get('/bantuan', [BantuanController::class, 'showBantuan'])->name('bantuan'); // Menampilkan halaman bantuan
-    Route::get('/tentangaplikasi', [TentangAplikasiController::class, 'showTentangAplikasi'])->name('tentangaplikasi'); // Menampilkan halaman tentang aplikasi
+
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard'); // Menampilkan halaman dashboard setelah login
     Route::get('/redeem', [TransaksiController::class, 'showRedeem'])->name('redeem');
     Route::post('/redeem', [TransaksiController::class, 'redeemSubmit'])->name('redeem.submit');
@@ -58,6 +56,7 @@ Route::get('/reset', [ResetController::class, 'showReset'])->name('reset.show');
 Route::post('/reset-password', [ResetController::class, 'resetPassword'])->name('reset.password'); // Menangani permintaan reset password melalui metode POST
 Route::get('/input-new-password/{token}', [ResetController::class, 'showInputNewPassword'])->name('input.newpassword'); // Menampilkan halaman input password baru
 Route::post('/update-password', [ResetController::class, 'updatePassword'])->name('update.password'); // Menangani permintaan update password melalui metode POST
+Route::get('/tentangaplikasi', [TentangAplikasiController::class, 'showTentangAplikasi'])->name('tentangaplikasi'); // Menampilkan halaman tentang aplikasi
 
 Route::fallback(function () {
 return redirect('/dashboard'); // Mengarahkan ke halaman dashboard jika rute tidak ditemukan
@@ -69,12 +68,14 @@ Route::get('/', [LandingController::class, 'showLanding'])->name('homepage');
 Route::redirect('/', '/homepage');
 // Mengarahkan ke halaman login jika mengakses akar situs
 
-Route::get('/carisekarang', function () {
-    return view('carisekarang');
-});
+// Route::get('/search', function () {
+    // return view('search');
+// });
 
 
-
+    Route::get('pencarian', [FilterController::class, 'filterPRT'])->name('pencarian'); // Menghandle permintaan pencarian PRT
+    Route::post('/pencarian', [FilterController::class, 'filterPRTPost'])->name('pencarian.post');
+    Route::post('/pencarian', [FilterPRTController::class, 'search'])->name('pencarian.search');
 
 
 

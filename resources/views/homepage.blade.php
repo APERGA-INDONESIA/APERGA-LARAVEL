@@ -44,7 +44,7 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
             </div>
           </div>
         </div>
-        <div class="super-toroid-2-0MUxxh" data-id="974:8044">
+        <div id="super-toroid-2-0MUxxh" class="super-toroid-2-0MUxxh" data-id="974:8044">
           <img
             class="super-toroid-purple-glossy-DkHmCC"
             data-id="I974:8044;8:248"
@@ -85,14 +85,11 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
                       </a>
                   </div>
 
-                  <div class="button-white-HWPG9y" data-id="959:7197">
-                        <div
-                        class="text-only-nk3xZh text-only"
-                        data-id="I959:7197;83:6705"
-                        >
+                  <a href="#super-toroid-2-0MUxxh" class="button-white-HWPG9y" data-id="959:7197">
+                    <div class="text-only-nk3xZh text-only" data-id="I959:7197;83:6705" onclick="location.href='#frame-337-brJS1s'">
                         Kenali Lebih Lanjut!
-                        </div>
-                  </div>
+                    </div>
+                </a>
                 </div>
               </div>
 

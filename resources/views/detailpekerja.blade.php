@@ -65,7 +65,7 @@
             </div>
         </div>
         <div class="rincian-biaya">
-            <div class="subtotal-biaya">Subtotal Biaya: <br> Rp.{{ number_format($pekerja->harga, 2, ',', '.') }}</div>
+            <div class="subtotal-biaya">Subtotal Biaya: <br> Rp.{{ number_format($pekerja->gaji, 2, ',', '.') }}</div>
         </div>
         <div class="button-group">
             <button id="batalkanKontrakBtn" data-pekerja-id="{{ $pekerja->id }}">Batalkan Kontrak</button>

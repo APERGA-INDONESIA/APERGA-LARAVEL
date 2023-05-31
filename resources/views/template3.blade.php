@@ -15,7 +15,7 @@
 <body>
     <div class="container-fluid">
         <nav class="navbar navbar-expand navbar-dark bg-white sticky-top">
-            <a href="http://localhost:8000/dashboard">
+            <a href="{{ route('homepage') }}">
                 <img src="{{ asset('images/aperga.png') }}" alt="Logo" class="logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -25,16 +25,16 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:8000/pencarian">Cari PRT</a>
+                        <a class="nav-link" href="{{ route('pencarian') }}">Cari PRT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:8000/tentangaplikasi">Tentang Aplikasi</a>
+                        <a class="nav-link" href="{{ route('tentangaplikasi') }}">Tentang Aplikasi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:8000/bantuan"> Pusat Bantuan</a>
+                        <a class="nav-link" href="{{ route('bantuan') }}"> Pusat Bantuan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:8000/dashboard">Masuk</a>
+                        <a class="nav-link" href="{{ route('login') }}">Masuk</a>
                     </li>
                     </li>
                 </ul>

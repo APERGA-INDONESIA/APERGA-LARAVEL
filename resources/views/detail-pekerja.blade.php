@@ -35,18 +35,20 @@
         <div class="rating">
             <?php
             $rating = $prt->rating ?? 0;
-            $ratingStars = min(5, max(0, $rating));
+            $roundedRating = floor($rating); // Rating yang telah dibulatkan ke bawah
+            $ratingStars = min(5, max(0, $roundedRating));
+            $hasHalfStar = $rating > $roundedRating;
             ?>
 
             @for ($i = 0; $i < $ratingStars; $i++)
                 <img src="{{ asset('images/star.png') }}" alt="Star" class="star-img">
             @endfor
 
-            @if ($rating > $ratingStars)
-                <img src="{{ asset('images/star-half.png') }}" alt="Star" class="star-img">
-            @endif
-            <span class="rating-text">{{ $prt->rating }}/5</span>
+
+
+            <span class="rating-text">{{ $roundedRating }}/5</span>
         </div>
+
 
         <div class="infopekerja">
             <p class="lokasi"><strong>Lokasi Pekerja:</strong> {{ $prt->lokasi ?? 'Lokasi tidak tersedia' }}</p>
