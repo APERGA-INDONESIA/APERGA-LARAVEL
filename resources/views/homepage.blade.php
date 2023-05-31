@@ -183,37 +183,29 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
           </div>
           <div class="frame-385-vnT4oI" data-id="974:8056">
             <div class="frame-384-c64Tff" data-id="974:8053">
-              <div
-                class="x1500-Ddw6LT poppins-extra-bold-white-72px"
-                data-id="974:8054"
-              >
-                1500+
+              <div class="x1500-Ddw6LT poppins-extra-bold-white-72px" data-id="974:8054">
+                <span class="counter" data-target="1500">0</span>+
               </div>
               <div class="kontrak-dilakukan-Ddw6LT" data-id="974:8055">
                 Kontrak Dilakukan
               </div>
             </div>
             <div class="frame-382-c64Tff" data-id="974:8049">
-              <div
-                class="x2000-M8ckGD poppins-extra-bold-white-72px"
-                data-id="974:8048"
-              >
-                2000+
+              <div class="x2000-M8ckGD poppins-extra-bold-white-72px" data-id="974:8048">
+                <span class="counter" data-target="2000">0</span>+
               </div>
               <div class="pelanggan-M8ckGD pelanggan" data-id="974:8047">
                 Pelanggan
               </div>
             </div>
             <div class="frame-383-c64Tff" data-id="974:8050">
-              <div
-                class="x250-JKWnYH poppins-extra-bold-white-72px"
-                data-id="974:8051"
-              >
-                250
+              <div class="x250-JKWnYH poppins-extra-bold-white-72px" data-id="974:8051">
+                <span class="counter" data-target="250">0</span>
               </div>
               <div class="mitra-prt-JKWnYH" data-id="974:8052">Mitra PRT</div>
             </div>
           </div>
+
           <div class="desktop-31-vnT4oI" data-id="959:7179">
             <div class="frame-336-H64BZz" data-id="959:7192">
               <img
@@ -301,11 +293,8 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
           </div>
           <img
             class="wallet-with-credit-card-YbxAIm"
-            data-id="959:7203"
-            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-            anima-src="https://cdn.animaapp.com/projects/647613b113722780cca57256/releases/64761436d97d1659d114e577/img/wallet-with-credit-card.png"
-            alt="wallet with credit card"
-          />
+            src="{{ asset('images/wallet-with-credit-card.png') }}" alt="Logo" class="logo">
+        </a>
         </div>
         <div class="group-356-0MUxxh" data-id="974:7925">
           <div class="group-359-6Ce5yG" data-id="997:8059">
@@ -456,5 +445,67 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
 <script> defer src="https://animaapp.s3.amazonaws.com/static/restart-btn.min.js" </script>
 <script src="{{ asset('js/overrides.js') }}"></script>
 <script src="{{ asset('js/timeline.js') }}"></script>
+<script>
+    function animateCounterOnScroll() {
+      const counterElements = document.querySelectorAll('.counter');
+      const animationTriggerOffset = window.innerHeight * 0.8; // Ubah offset sesuai kebutuhan
 
+      function startCounting() {
+        counterElements.forEach((counterElement) => {
+          const targetNumber = parseInt(counterElement.dataset.target);
+          const duration = 1000; // Durasi animasi dalam milidetik (misalnya 2000ms)
+
+          animateCounter(counterElement, targetNumber, duration);
+        });
+
+        window.removeEventListener('scroll', startCounting);
+      }
+
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > animationTriggerOffset) {
+          startCounting();
+        }
+      });
+    }
+
+    function animateCounter(element, targetNumber, duration) {
+      const startNumber = 0;
+      const increment = Math.ceil(targetNumber / (duration / 10));
+      let currentNumber = 0;
+
+      const counterInterval = setInterval(() => {
+        if (currentNumber >= targetNumber) {
+          clearInterval(counterInterval);
+          element.textContent = targetNumber;
+        } else {
+          currentNumber += increment;
+          element.textContent = currentNumber;
+        }
+      }, 10);
+    }
+
+    animateCounterOnScroll();
+  </script>
+
+<script>
+function animateOnScroll() {
+  const element = document.querySelector('.wallet-with-credit-card-YbxAIm');
+  const animationTriggerOffset = window.innerHeight * 0.8; // Ubah offset sesuai kebutuhan
+
+  function startAnimation() {
+    element.classList.add('animated');
+    window.removeEventListener('scroll', startAnimation);
+  }
+
+  window.addEventListener('scroll', () => {
+    const elementTop = element.getBoundingClientRect().top;
+    if (elementTop - window.innerHeight < -animationTriggerOffset) {
+      startAnimation();
+    }
+  });
+}
+
+animateOnScroll();
+
+</script>
 @endpush

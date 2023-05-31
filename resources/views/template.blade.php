@@ -112,7 +112,7 @@
                           class="icon-call-FkSn0Y"
                           data-id="I1072:7209;83:9226"
                           src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                          anima-src="https://cdn.animaapp.com/projects/64762f96a65ca39b4b48b5a8/releases/64763004891772db8d3b21c6/img/icon.svg"
+                          anima-src="
                           alt="icon-call"
                         />
                       </div>
@@ -120,12 +120,10 @@
                     <div class="frame-343-MMMzeo" data-id="1072:7210">
                       <div class="x24-basic-mail-CqL9Lp" data-id="1072:7211">
                         <img
-                          class="icon-mail-kilgEo"
-                          data-id="I1072:7211;83:6769"
-                          src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                          anima-src="https://cdn.animaapp.com/projects/64762f96a65ca39b4b48b5a8/releases/64763004891772db8d3b21c6/img/icon-1.svg"
-                          alt="icon-mail"
-                        />
+                            class="icon-mail-kilgEo"
+                            data-id="I1072:7211;83:6769"
+                          src="{{ asset('images/mail.svg') }}" alt="Logo" class="logo">
+                      </a>
                       </div>
                     </div>
                   </div>

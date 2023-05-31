@@ -776,6 +776,8 @@ input:focus {
     rgb(19.0000007674098, 85.0000025331974, 137.00000703334808) 0%,
     rgb(27.000000290572643, 34.00000177323818, 35.00000171363354) 100%
   );
+
+
   background-color: transparent;
   border: 2px solid;
   border-color: var(--blue);
@@ -1241,13 +1243,30 @@ input:focus {
 }
 
 .landing-page .wallet-with-credit-card-YbxAIm {
-  background-color: transparent;
-  height: 552px;
-  min-width: 347px;
-  mix-blend-mode: normal;
-  object-fit: cover;
-  position: relative;
-}
+    background-color: transparent;
+    height: 552px;
+    min-width: 347px;
+    mix-blend-mode: normal;
+    object-fit: cover;
+    position: relative;
+    animation-name: shakeAnimation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  @keyframes shakeAnimation {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(5deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+
 
 .landing-page .group-356-0MUxxh {
   background-color: transparent;
@@ -1687,3 +1706,34 @@ input:focus {
   text-align: center;
   width: fit-content;
 }
+
+
+/* Number Counter Animasi */
+@keyframes numberCounter {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Animasi untuk Angka 1500+ */
+  .frame-384-c64Tff .x1500-Ddw6LT {
+    animation: numberCounter 1s ease-out forwards;
+    animation-delay: 0.2s; /* Waktu tunda animasi */
+  }
+
+  /* Animasi untuk Angka 2000+ */
+  .frame-382-c64Tff .x2000-M8ckGD {
+    animation: numberCounter 1s ease-out forwards;
+    animation-delay: 0.4s; /* Waktu tunda animasi */
+  }
+
+  /* Animasi untuk Angka 250 */
+  .frame-383-c64Tff .x250-JKWnYH {
+    animation: numberCounter 1s ease-out forwards;
+    animation-delay: 0.6s; /* Waktu tunda animasi */
+  }

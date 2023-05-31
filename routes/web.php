@@ -15,7 +15,7 @@ use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\DetailPekerjaController;
 use App\Http\Controllers\PembayaranController;
-
+use App\Http\Controllers\FilterPRTController;
 
 
 
@@ -31,6 +31,8 @@ Route::post('/register', [PendaftaranController::class, 'register'])->name('regi
 Route::middleware(['auth'])->group(function () {
     Route::get('pencarian', [FilterController::class, 'filterPRT'])->name('pencarian'); // Menghandle permintaan pencarian PRT
     Route::post('/pencarian', [FilterController::class, 'filterPRTPost'])->name('pencarian.post');
+    Route::post('/pencarian', [FilterPRTController::class, 'search'])->name('pencarian.search');
+
 
     Route::get('/daftarpekerja', [KontrakController::class, 'showDaftarPekerja'])->name('daftarpekerja');
     Route::get('/detailpekerja/{id}', [KontrakController::class, 'showDetailPekerja'])->name('detailpekerja');
