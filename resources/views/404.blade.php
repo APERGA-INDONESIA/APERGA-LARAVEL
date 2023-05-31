@@ -4,6 +4,7 @@
     <title>Halaman 404</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/404.css') }}">
     <style>
+        @import url("https://fonts.googleapis.com/css?family=Poppins:400,600,800,500,700");
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
         .countdown {

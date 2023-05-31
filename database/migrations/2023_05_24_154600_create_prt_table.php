@@ -18,7 +18,7 @@ class CreatePrtTable extends Migration
             $table->string('nama');
             $table->integer('gaji');
             $table->integer('umur');
-            $table->integer('rating');
+            $table->decimal('rating', 3, 1)->change();
             $table->string('lokasi');
             $table->integer('durasi');
             $table->string('catatan')->nullable();

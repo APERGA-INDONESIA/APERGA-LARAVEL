@@ -28,7 +28,7 @@
 <body>
     <div class="container-fluid">
         <nav class="navbar navbar-expand navbar-dark bg-white sticky-top">
-            <a href="http://localhost:8000/dashboard">
+            <a href="{{ route('homepage') }}">
                 <img src="{{ asset('images/aperga.png') }}" alt="Logo" class="logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -38,16 +38,16 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:8000/pencarian">Cari PRT</a>
+                        <a class="nav-link" href="{{ route('pencarian') }}">Cari PRT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:8000/tentangaplikasi">Tentang Aplikasi</a>
+                        <a class="nav-link" href="{{ route('tentangaplikasi') }}">Tentang Aplikasi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:8000/bantuan">Bantuan</a>
+                        <a class="nav-link" href="{{ route('bantuan') }}">Bantuan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost:8000/dashboard">Profil</a>
+                        <a class="nav-link" href="{{ route('dashboard') }}">Profil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}"
@@ -111,8 +111,7 @@
                         <img
                           class="icon-call-FkSn0Y"
                           data-id="I1072:7209;83:9226"
-                          src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                          anima-src="
+                          src="{{ asset('images/phone.svg') }}" alt="Logo" class="logo"
                           alt="icon-call"
                         />
                       </div>
@@ -132,8 +131,7 @@
               <img
                 class="vector-12-jyZuck"
                 data-id="1072:7212"
-
-                alt="Vector 12"
+                src="{{ asset('images/garisfooter.svg') }}" alt="garis"
               />
               <div class="frame-367-jyZuck frame-367" data-id="1072:7213">
                 <div class="frame-365-RD4Byd" data-id="1072:7214">

@@ -86,12 +86,12 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
                   </div>
 
                   <div class="button-white-HWPG9y" data-id="959:7197">
-                    <div
-                      class="text-only-nk3xZh text-only"
-                      data-id="I959:7197;83:6705"
-                    >
-                      Kenali Lebih Lanjut!
-                    </div>
+                        <div
+                        class="text-only-nk3xZh text-only"
+                        data-id="I959:7197;83:6705"
+                        >
+                        Kenali Lebih Lanjut!
+                        </div>
                   </div>
                 </div>
               </div>
@@ -211,9 +211,7 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
               <img
                 class="img-VxyuoF img"
                 data-id="959:7257"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                anima-src="https://cdn.animaapp.com/projects/647613b113722780cca57256/releases/64761a029e54023c8a39e66a/img/img@2x.png"
-                alt="img"
+                src="{{ asset('images/block.png') }}" alt="block"
               />
               <div class="frame-335-VxyuoF" data-id="959:7191">
                 <p
@@ -338,8 +336,7 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
                           <img
                             class="icon-call-HlXCU3"
                             data-id="I977:7342;83:9226"
-                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                            anima-src="https://cdn.animaapp.com/projects/647613b113722780cca57256/releases/64761436d97d1659d114e577/img/icon.svg"
+                            src="{{ asset('images/phone.svg') }}" alt="Logo" class="logo"
                             alt="icon-call"
                           />
                         </div>
@@ -349,8 +346,7 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
                           <img
                             class="icon-mail-O0FOIL"
                             data-id="I977:7344;83:6769"
-                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                            anima-src="https://cdn.animaapp.com/projects/647613b113722780cca57256/releases/64761436d97d1659d114e577/img/icon-1.svg"
+                            src="{{ asset('images/mail.svg') }}" alt="Logo" class="logo"
                             alt="icon-mail"
                           />
                         </div>
@@ -361,10 +357,8 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
                 <img
                   class="vector-12-fzMkWp"
                   data-id="959:7209"
-                  src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                  anima-src="https://cdn.animaapp.com/projects/647613b113722780cca57256/releases/64761436d97d1659d114e577/img/vector-12.svg"
-                  alt="Vector 12"
-                />
+                  src="{{ asset('images/garisfooter.svg') }}" alt="garis"
+                  />
                 <div class="frame-367-fzMkWp frame-367" data-id="974:7907">
                   <div class="frame-365-teNKeH" data-id="974:7900">
                     <div
