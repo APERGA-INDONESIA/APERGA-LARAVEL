@@ -50,6 +50,11 @@ class MencariPekerjaController extends Controller
         // Mengarahkan pengguna ke halaman pembayaran dengan menggunakan ID transaksi
         return redirect()->route('pembayaran', ['id' => $transactionId]);
     }
+    
+    public function showBank()
+    {
+        return view('pembayaranbank');
+    }
 
 }
 
