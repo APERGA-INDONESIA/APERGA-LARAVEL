@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.kotak-hitam {
+    position: absolute;
+    width: 100%;
+    height: 2500px;
+    left: 0;
+    top: 200px;
+    background: #1B2223;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 050);
+}
+
+.tulisan-pembayaran{
+    position: absolute;
+    width: 900px;
+    height: 68px;
+    top: -50px;
+    left: 400px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 49px;
+    text-align: right;
+    color: #1B2223;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    line-height:16px;
+    z-index: 2;
+}
+
+.rekening-bank{
+position: absolute;
+width: 350px;
+height: 55px;
+left: 124px;
+top: 80px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 900;
+font-size: 40px;
+line-height: 55px;
+text-align: center;
+color: #FFFFFF;
+}
+
+.ringkasanpembayaran{
+position: absolute;
+width: 350px;
+height: 37px;
+left: 511px;
+top: 150px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 900;
+font-size: 27px;
+line-height: 37px;
+text-align: center;
+color: #FFFFFF;
+}
+
+.deskripsi{
+    position: absolute;
+    width: 363.99px;
+    height: 68.01px;
+    left: 565px;
+    top: 192px;
+}
+
+.total-tagihan-box,
+.biaya-layanan-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+    width: 450px;
+    height: 30px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.total-tagihan-text, 
+.biaya-layanan-text{
+    width: 238px;
+    height: 31px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 31px;
+    text-align: left;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.total-tagihan,
+.biaya-layanan {
+    width: 341px;
+    height: 31px;
+    left: 700px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22.776px;
+    line-height: 31px;
+    text-align: right;
+    color: #FFFFFF;
+}
+
+.total-bayar{
+    position: absolute;
+    width: 251px;
+    height: 37px;
+    left: 404px;
+    top: 293px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 27px;
+    line-height: 37px;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+.harga-total-bayar{
+    position: absolute;
+    width: 251px;
+    height: 37px;
+    left: 851px;
+    top: 293px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 27px;
+    line-height: 41px;
+    text-align: center;
+    color: #E88A33;
+}
+
+select {
+    /* styling */
+    position: absolute;
+    background-color: #135589;
+    border: thin solid #FFFFFF;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+    width: 537px;
+    height: 65px;
+    left: 462px;
+    top: 380px;
+    
+  
+    /* reset */
+  
+    margin: 0;      
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    
+  }
+  
+select.round {
+    background-image:
+      linear-gradient(45deg, transparent 50%, #06385e 50%),
+      linear-gradient(135deg, gray 50%, transparent 50%),
+      radial-gradient(#ddd 70%, transparent 72%);
+    background-position:
+      calc(100% - 20px) calc(1em + 2px),
+      calc(100% - 15px) calc(1em + 2px),
+      calc(100% - .5em) .5em;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1.5em 1.5em;
+    background-repeat: no-repeat;
+  }
+  
+  select.round:focus {
+    background-image:
+      linear-gradient(45deg, white 50%, transparent 50%),
+      linear-gradient(135deg, transparent 50%, white 50%),
+      radial-gradient(gray 70%, transparent 72%);
+    background-position:
+      calc(100% - 15px) 1em,
+      calc(100% - 20px) 1em,
+      calc(100% - .5em) .5em;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1.5em 1.5em;
+    background-repeat: no-repeat;
+    border-color: green;
+    outline: 0;
+  }
+  
+  select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #FFFFFF;
+  }
+  
+  body {
+    background-color: rgb(0,159,214);
+    font: bold 1em/100% Poppins;
+    padding: 2em 0;
+    text-align: center;
+  }
+
+  .button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+    width: 427px;
+    height: 36px;
+    margin-top: 15px;
+    flex: none;
+    order: 4;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.button-group button {
+    width: 194px;
+    height: 36px;
+    border: 2px solid rgba(19, 85, 137, 1);
+    border-radius: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #1B2223;
+}
+
+.button-group button.bayar {
+    position: absolute;
+    width: 400px;
+    height: 48px;
+    left: 520px;
+    top: 490px;
+    background: #135589;
+    box-shadow: 0px 4px 4px rgba(255, 253, 253, 0.2);
+    border-radius: 20px;
+    color: #ffffff;
+}
+
+.button-group button.bayar:hover {
+    background: #0f456e;
+}
