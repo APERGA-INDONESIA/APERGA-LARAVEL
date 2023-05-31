@@ -39,6 +39,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/update-pekerja', [KontrakController::class, 'updatePekerja'])->name('update.pekerja');
 
     Route::get('/pembayaranqris', [PembayaranController::class, 'showQRIS'])->name('pembayaranqris');
+    Route::get('/pembayaranbank', [MencariPekerjaController::class, 'showBank'])->name('pembayaranBank');
     Route::get('/pembayaran', [PembayaranController::class, 'showPesanan'])->name('pembayaran'); // Menampilkan halaman pembayaran
     Route::get('/pembayaran-terverifikasi', [PembayaranController::class, 'verifikasiPembayaran'])->name('pembayaran-terverifikasi');
     Route::get('/bantuan', [BantuanController::class, 'showBantuan'])->name('bantuan'); // Menampilkan halaman bantuan
