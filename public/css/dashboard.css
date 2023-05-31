@@ -12,6 +12,14 @@
     justify-content: center;
 }
 
+.dashboard {
+    position: absolute;
+    width: 700px;
+    height: 150px;
+    margin-top: 50px;
+    left: 10px ;
+}
+
 
 .dashboard-kotak {
     position: absolute;

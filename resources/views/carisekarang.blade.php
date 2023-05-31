@@ -25,53 +25,17 @@
             </form>
         </div>
 
-        <button class="filter-button">
+        <button class="filter-button" onclick="window.location.href='/dashboard'">
             <img src="{{ asset('images/filterr.png') }}" class="filter-img" alt="Filter Icon">
         </button>
-
 
     </div>
 
     <div class="list-prt">
         <div class="row">
-            @php
-                $prtsArray = $prts->toArray();
-                shuffle($prtsArray['data']); // Mengacak urutan data
-            @endphp
-
-            @foreach ($prts as $prt)
-                @php
-                    $imagePath = 'images/prt/prt' . $prt['id'] . '.jpg';
-                    $imageURL = file_exists(public_path($imagePath)) ? asset($imagePath) : asset('images/bigprofile.png');
-                @endphp
-                <div class="prt-item" data-nama="{{ $prt['nama'] }}" data-lokasi="{{ $prt['lokasi'] }}">
-                    <img src="{{ $imageURL }}" alt="Profile Image" class="person-img">
-                    <p class="nama-prt">{{ $prt['nama'] }}</p>
-                    <img src="{{ asset('images/location.png') }}" class="lokasi-img" alt="Location Icon">
-                    <p class="lokasi">{{ $prt['lokasi'] }}</p>
-                    <img src="{{ asset('images/rating.png') }}" class="rating-img" alt="Rating Icon">
-                    <p class="ratingtext">{{ $prt['rating'] }}/5</p>
-                    <a href="{{ url('detail-pekerja', $prt['id']) }}" class="cek-selengkapnya">
-                        Cek Selengkapnya
-                    </a>
-                </div>
-            @endforeach
         </div>
     </div>
-
-    <nav aria-label="Page navigation example">
-        <ul class="pagination pagination-sm">
-            <li class="page-item"><a class="page-link" href="{{ $prts->previousPageUrl() }}">Previous</a></li>
-            @foreach (range(1, $prts->lastPage()) as $page)
-                <li class="page-item"><a class="page-link"
-                        href="{{ $prts->url($page) }}&amp;keyword={{ session('keyword') }}">{{ $page }}</a></li>
-            @endforeach
-            <li class="page-item"><a class="page-link" href="{{ $prts->nextPageUrl() }}">Next</a></li>
-        </ul>
-    </nav>
-
-    <div id="filter-component" class="frame-387 screen" data-id="1085:7202">
-
+<div class="popup-filter">
         <body style="margin: 0; background: #ffffff00">
             <input type="hidden" id="anPageName" name="page" value="frame-387" />
             <div class="container-center-horizontal">
@@ -89,8 +53,7 @@
                             </div>
                             <div class="group-363-JEr4fS group-363" data-id="1085:7209">
                                 <div class="rectangle-67" data-id="1085:7210"></div>
-                                <p class="pilih-rating-yang-kamu-mau-DRbp9n poppins-normal-log-cabin-16px"
-                                    data-id="1085:7211">
+                                <p class="pilih-rating-yang-kamu-mau-DRbp9n poppins-normal-log-cabin-16px" data-id="1085:7211">
                                     Pilih rating yang kamu mau
                                 </p>
                             </div>
@@ -99,8 +62,7 @@
                             src="{{ asset('images/dropdown.png') }}" alt="arrow-down-sign-to-navigate 1" />
                         <div class="group-367-h7LbzO" data-id="1085:7213">
                             <div class="group-365-RleJMF" data-id="1085:7214">
-                                <div class="gaji-pembantu-rumah-tangga poppins-semi-bold-log-cabin-16px"
-                                    data-id="1085:7215">
+                                <div class="gaji-pembantu-rumah-tangga poppins-semi-bold-log-cabin-16px" data-id="1085:7215">
                                     Gaji Pembantu Rumah Tangga
                                 </div>
                                 <div class="group-363-pYorlK group-363" data-id="1085:7216">
@@ -112,8 +74,7 @@
                                 </div>
                             </div>
                             <div class="group-366-RleJMF group-366" data-id="1085:7219">
-                                <div class="gaji-pembantu-rumah-tangga poppins-semi-bold-log-cabin-16px"
-                                    data-id="1085:7220">
+                                <div class="gaji-pembantu-rumah-tangga poppins-semi-bold-log-cabin-16px" data-id="1085:7220">
                                     Gaji Pembantu Rumah Tangga
                                 </div>
                                 <div class="group-363-cTywxZ group-363" data-id="1085:7221">
@@ -162,103 +123,16 @@
                 </div>
             </div>
     </div>
+    @endsection
 
-@endsection
+    @section('footer')
+        <div class="space"></div>
+    @endsection
 
-@section('footer')
-    <div class="space"></div>
-@endsection
+    @push('styles')
+        <link rel="stylesheet" href="{{ asset('css/popup.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/cari.css') }}">
+    @endpush
 
-@push('styles')
-    <link rel="stylesheet" href="{{ asset('css/cari.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/popup.css') }}">
-    <style>
-        #filter-component {
-            display: none;
-        }
-    </style>
-@endpush
-
-@push('scripts')
-    <script>
-        // Fungsi untuk menampilkan data PRT sesuai hasil pencarian
-        function showFilteredData(prts) {
-            var prtItems = $('.prt-item');
-            prtItems.hide(); // Sembunyikan semua prt-item
-
-            $.each(prts, function(index, prt) {
-                var prtItem = $('.prt-item[data-nama="' + prt.nama + '"][data-lokasi="' + prt.lokasi + '"]');
-                prtItem.show(); // Tampilkan prt-item yang cocok dengan hasil pencarian
-            });
-        }
-
-        // Fungsi untuk melakukan pencarian
-        function performSearch() {
-            var keyword = $('#search-input').val().toLowerCase().trim();
-
-            // Ubah URL dengan keyword pencarian
-            var searchURL = '{{ route('pencarian') }}' + '?keyword=' + keyword;
-            history.pushState(null, '', searchURL); // Ubah URL di browser
-
-            // Kirim permintaan pencarian ke backend
-            $.ajax({
-                url: searchURL,
-                type: 'GET',
-                success: function(response) {
-                    showFilteredData(response.prts); // Tampilkan hasil pencarian
-                },
-                error: function(xhr, status, error) {
-                    console.error(error);
-                }
-            });
-        }
-
-        // Mendapatkan tombol pencarian
-        var searchButton = document.getElementById('search-button');
-
-        // Menambahkan event listener untuk tombol pencarian
-        searchButton.addEventListener('click', function() {
-            performSearch();
-        });
-
-        // Menghubungkan event keyup pada input pencarian
-        $('#search-input').keyup(function(e) {
-            if (e.keyCode === 13) {
-                performSearch();
-            }
-        });
-
-        // Mengambil keyword pencarian dari URL saat halaman dimuat
-        $(document).ready(function() {
-            var searchURLParams = new URLSearchParams(window.location.search);
-            var keyword = searchURLParams.get('keyword');
-            if (keyword) {
-                $('#search-input').val(keyword);
-                performSearch();
-            }
-        });
-    </script>
-
-<script>
-    // Mendapatkan tombol filter
-    var filterButton = document.querySelector('.filter-button');
-
-    // Mendapatkan elemen popup yang ingin ditampilkan
-    var popupElement = document.getElementById('filter-component');
-
-    // Variabel untuk mengontrol status tampilan popup
-    var popupVisible = false;
-
-    // Menambahkan event listener pada tombol filter
-    filterButton.addEventListener('click', function() {
-        if (popupVisible) {
-            popupElement.style.display = 'none'; // Sembunyikan popup jika sudah terlihat
-            popupVisible = false; // Set status tampilan popup menjadi false
-        } else {
-            popupElement.style.display = 'block'; // Tampilkan popup jika belum terlihat
-            popupVisible = true; // Set status tampilan popup menjadi true
-        }
-    });
-</script>
-
-@endpush
+    @push('scripts')
+    @endpush

@@ -67,6 +67,9 @@ Route::get('/', [LandingController::class, 'showLanding'])->name('homepage');
 Route::redirect('/', '/homepage');
 // Mengarahkan ke halaman login jika mengakses akar situs
 
+Route::get('/carisekarang', function () {
+    return view('carisekarang');
+});
 
 
 

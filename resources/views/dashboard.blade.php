@@ -7,6 +7,7 @@
 @endsection
 
 @section('konten')
+<div class="dashboard">
     <div class="dashboard-kotak">
         <a href="">
             <img src="{{ asset('images/profile 1.png') }}" alt="Profile Image" class="profile-img">
@@ -60,43 +61,11 @@
             <p class="jumlahpekerja">{{ $jumlahPekerja }} Orang</p>
         </a>
     </div>
+</div>
 @endsection
 
 @section('footer')
-<div class="container-fluid">
-    <nav class="navbar navbar-expand navbar-dark bg-white sticky-top">
-        <a href="http://localhost:8000/dashboard">
-            <img src="{{ asset('images/aperga.png') }}" alt="Logo" class="logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8000/pencarian">Cari PRT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8000/tentangaplikasi">Tentang Aplikasi</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8000/bantuan">Bantuan</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8000/dashboard">Profil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('logout') }}"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log Out</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</div>
+
 @endsection
 
 @push('styles')
