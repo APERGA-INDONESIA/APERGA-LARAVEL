@@ -36,9 +36,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/detailpekerja/{id}', [KontrakController::class, 'showDetailPekerja'])->name('detailpekerja');
     Route::post('/update-pekerja', [KontrakController::class, 'updatePekerja'])->name('update.pekerja');
 
-    Route::get('/pembayaran/qris', [PembayaranController::class, 'showQRIS'])->name('pembayaranqris');
-    Route::get('/pembayaran/bank', [MencariPekerjaController::class, 'showBank'])->name('pembayaranBank');
-    Route::get('/pembayaran', [PembayaranController::class, 'showPesanan'])->name('pembayaran'); // Menampilkan halaman pembayaran
+    Route::get('/pembayaran/{id}', [PembayaranController::class, 'showPesanan'])->name('pembayaran');
+    Route::get('/pembayaran/bank/{id}', [PembayaranController::class, 'showBank'])->name('pembayaran.bank');
+    Route::get('/pembayaran/ewallet/{id}', [PembayaranController::class, 'showEwallet'])->name('pembayaran.ewallet');
+    Route::get('/pembayaran/other/{id}', [PembayaranController::class, 'showOther'])->name('pembayaran.other');
+    Route::post('/pembayaran/bayar/{id}', [PembayaranController::class, 'bayar'])->name('pembayaran.bayar');    
+
+
     Route::get('/pembayaran/sukses', [PembayaranController::class, 'verifikasiPembayaran'])->name('pembayaran-terverifikasi');
     Route::get('/bantuan', [BantuanController::class, 'showBantuan'])->name('bantuan'); // Menampilkan halaman bantuan
 
