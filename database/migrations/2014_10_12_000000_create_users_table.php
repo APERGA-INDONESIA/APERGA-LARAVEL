@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('profile_image')->nullable(); // Kolom untuk menyimpan gambar profil
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('profile_image')->nullable();
             $table->rememberToken();
             // $table->float('saldo')->default(0);
             // $table->integer('poin')->default(0);

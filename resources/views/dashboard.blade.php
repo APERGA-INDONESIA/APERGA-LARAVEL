@@ -7,12 +7,16 @@
 @endsection
 
 @section('konten')
+@php
+    $user = auth()->user();
+@endphp
+
 <div class="dashboard">
     <div class="dashboard-kotak">
         <a href="">
-            <img src="{{ asset('images/profile 1.png') }}" alt="Profile Image" class="profile-img">
+            <img src="{{ $user->profile_image ? asset('images/' . $user->profile_image) : asset('images/profil.png') }}" alt="Profile Image" class="profile-img" style="border-radius: 100px;">
             <p class="greeting">Halo, Selamat Datang</p>
-            <p class="username">{{ Auth::user()->name }}</p>
+            <p class="username">{{ $user->name }}</p>
         </a>
     </div>
 
@@ -55,7 +59,7 @@
 
                 $userId = auth()->id();
                 $jumlahPekerja = Prt::where('user_id', $userId)
-                    ->whereBetween('id', [16, 269])
+                    ->whereBetween('id', [1, 269])
                     ->count();
             @endphp
             <p class="jumlahpekerja">{{ $jumlahPekerja }} Orang</p>

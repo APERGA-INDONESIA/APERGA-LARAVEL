@@ -15,7 +15,7 @@
 <body>
     <div class="container-fluid">
         <nav class="navbar navbar-expand navbar-dark bg-white sticky-top">
-            <a href="{{ route('homepage') }}">
+            <a href="{{ route('dashboard') }}">
                 <img src="{{ asset('images/aperga.png') }}" alt="Logo" class="logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -34,23 +34,19 @@
                         <a class="nav-link" href="{{ route('bantuan') }}"> Pusat Bantuan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Masuk</a>
+                        <a class="nav-link" href="{{ route('dashboard') }}">Masuk</a>
                     </li>
                     </li>
                 </ul>
             </div>
         </nav>
 
-        <div class="content">
-            @yield('konten')
-        </div>
 
-        <br />
-        <br />
+@yield('konten')
 
-        @yield('footer')
 
-    </div>
+@yield('footer')
+
 
     <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>

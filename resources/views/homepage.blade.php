@@ -7,8 +7,6 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
 @extends('template3')
 @section('title', 'Home')
 
-@section('navbar')
-@endsection
 
 @section('konten')
 <body style="margin: 0; background: #ffffff">
@@ -107,9 +105,8 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
                     <img
                       class="img-1RcbzG img"
                       data-id="974:8010"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                      anima-src="https://cdn.animaapp.com/projects/647613b113722780cca57256/releases/64761436d97d1659d114e577/img/img@2x.png"
-                      alt="img"
+                      src="{{ asset('images/trophy.png') }}"
+                      alt="trophy"
                     />
                     <div class="terpercaya-1RcbzG heading-6" data-id="974:8013">
                       Terpercaya
@@ -120,8 +117,8 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
                       class="img-uuLVrX img"
                       data-id="974:8004"
                       src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                      anima-src="https://cdn.animaapp.com/projects/647613b113722780cca57256/releases/64761436d97d1659d114e577/img/img-1@2x.png"
-                      alt="img"
+                      src="{{ asset('images/thunder.png') }}"
+                      alt="thunder"
                     />
                     <div class="terjangkau-uuLVrX heading-6" data-id="974:8007">
                       Terjangkau
@@ -131,8 +128,7 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
                     <img
                       class="icon-shield-ojFa5j"
                       data-id="974:7997"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                      anima-src="https://cdn.animaapp.com/projects/647613b113722780cca57256/releases/64761436d97d1659d114e577/img/img-2@2x.png"
+                      src="{{ asset('images/shield.png') }}"
                       alt="icon-shield"
                     />
                     <div class="aman-ojFa5j heading-6" data-id="974:7990">
@@ -143,9 +139,8 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
                     <img
                       class="img-z2xUd6 img"
                       data-id="974:8016"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                      anima-src="https://cdn.animaapp.com/projects/647613b113722780cca57256/releases/64761436d97d1659d114e577/img/img-3@2x.png"
-                      alt="img"
+                      src="{{ asset('images/bitcoin.png') }}"
+                      alt="bitcoin"
                     />
                     <div class="praktis-z2xUd6 heading-6" data-id="974:8019">
                       Praktis
@@ -173,9 +168,8 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
             <img
               class="group-362-2-u99Ddw"
               data-id="1063:7199"
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-              anima-src="https://cdn.animaapp.com/projects/647613b113722780cca57256/releases/64761a029e54023c8a39e66a/img/group-362-2.png"
-              alt="Group 362 2"
+              src="{{ asset('images/apergascreen.png') }}"
+              alt="Aperga Features"
             />
           </div>
           <div class="frame-385-vnT4oI" data-id="974:8056">
@@ -303,9 +297,8 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
                       <img
                         class="group-2-1-8Z4Hno group-2-1"
                         data-id="977:7355"
-                        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                        anima-src="https://cdn.animaapp.com/projects/647613b113722780cca57256/releases/64761436d97d1659d114e577/img/group-2-1-1@2x.png"
-                        alt="Group 2 1"
+                        src="{{ asset('images/aperga-footer.png') }}"
+                        alt="Aperga Logo"
                       />
                     </div>
                     <p

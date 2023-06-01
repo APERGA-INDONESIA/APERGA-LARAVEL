@@ -13,15 +13,20 @@
             <h1 class="pekerja-anda">Pekerja Anda</h1>
         </div>
     </div>
+    @php
+    $user = auth()->user();
+    @endphp
+
     <div class="kotak-hitam">
-        <img src="{{ asset('images/Profile 1.png') }}" alt="Profile 1" class="profile-image">
+        <img src="{{ $user->profile_image ? asset('images/' . $user->profile_image) : asset('images/profil.png') }}" alt="Profile Image" class="profile-image" style="border-radius: 100px;">
         <p class="halo-username">Halo, {{ Auth::user()->name }}</p>
     </div>
+
     <div class="List-Pekerja">
         @php
             $userId = auth()->id();
             $pekerja = App\Models\Prt::where('user_id', $userId)
-                ->whereBetween('id', [16, 269])
+                ->whereBetween('id', [1, 269])
                 ->paginate(20);
         @endphp
 

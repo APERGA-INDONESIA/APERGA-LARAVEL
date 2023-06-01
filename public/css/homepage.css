@@ -1527,6 +1527,7 @@ input:focus {
   line-height: 24px;
   margin-top: -1px;
   width: 393px;
+
 }
 
 .landing-page .frame-366-teNKeH {
@@ -1674,7 +1675,7 @@ input:focus {
 .landing-page .platform-penyedia-ja {
   background-color: transparent;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 550;
   mix-blend-mode: normal;
   position: relative;
   text-align: left;

@@ -12,7 +12,7 @@ use App\Http\Controllers\MencariPekerjaController;
 use App\Http\Controllers\TentangAplikasiController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\TransaksiController;
-use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\EditProfilController;
 use App\Http\Controllers\DetailPekerjaController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\FilterPRTController;
@@ -36,11 +36,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/detailpekerja/{id}', [KontrakController::class, 'showDetailPekerja'])->name('detailpekerja');
     Route::post('/update-pekerja', [KontrakController::class, 'updatePekerja'])->name('update.pekerja');
 
-    Route::get('/pembayaranqris', [PembayaranController::class, 'showQRIS'])->name('pembayaranqris');
-    Route::get('/pembayaranbank', [MencariPekerjaController::class, 'showBank'])->name('pembayaranBank');
+    Route::get('/pembayaran/qris', [PembayaranController::class, 'showQRIS'])->name('pembayaranqris');
+    Route::get('/pembayaran/bank', [MencariPekerjaController::class, 'showBank'])->name('pembayaranBank');
     Route::get('/pembayaran', [PembayaranController::class, 'showPesanan'])->name('pembayaran'); // Menampilkan halaman pembayaran
-    Route::get('/pembayaran-terverifikasi', [PembayaranController::class, 'verifikasiPembayaran'])->name('pembayaran-terverifikasi');
+    Route::get('/pembayaran/sukses', [PembayaranController::class, 'verifikasiPembayaran'])->name('pembayaran-terverifikasi');
     Route::get('/bantuan', [BantuanController::class, 'showBantuan'])->name('bantuan'); // Menampilkan halaman bantuan
+
+    Route::get('/profil/edit', [EditProfilController::class, 'showEditForm'])->name('profil.edit');
+    Route::post('/profil/edit', [EditProfilController::class, 'update'])->name('profil.update');
 
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard'); // Menampilkan halaman dashboard setelah login
     Route::get('/redeem', [TransaksiController::class, 'showRedeem'])->name('redeem');
@@ -69,9 +72,6 @@ Route::get('/', [LandingController::class, 'showLanding'])->name('homepage');
 Route::redirect('/', '/homepage');
 // Mengarahkan ke halaman login jika mengakses akar situs
 
-// Route::get('/search', function () {
-    // return view('search');
-// });
 
 
     Route::get('pencarian', [FilterController::class, 'filterPRT'])->name('pencarian'); // Menghandle permintaan pencarian PRT

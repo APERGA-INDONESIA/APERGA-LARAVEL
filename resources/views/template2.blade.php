@@ -9,6 +9,7 @@
     <meta name="twitter:card" content="photo" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/navbar.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>@yield('title', 'Dashboard')</title>
 </head>
 

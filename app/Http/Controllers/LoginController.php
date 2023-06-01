@@ -21,36 +21,4 @@ class LoginController extends Controller
     }
 
 
-    public function update(Request $request)
-    {
-        $id = Auth::user()->id;
-        $user = User::find($id);
-
-        $file = $request->file('profile_image');
-
-        $fileName = $file->getClientOriginalName();
-        $fileSave = $request->name . '-' . $fileName;
-
-        $path = 'Images/Profile Image/';
-
-        if ($request->has('profile_image')) {
-            if (File::exists($path . $user->profile_image)) {
-                File::delete($path . $user->profile_image);
-                $file->move($path, $fileSave);
-            } else {
-                $file->move($path, $fileSave);
-            }
-        }
-
-        $user->update(
-            [
-                'name' => $request->name,
-                'gaji' => $request->gaji,
-                'phone' => $request->phone,
-                'profile_image' => $fileSave,
-            ]
-        );
-
-        return redirect()->back();
-    }
 }
