@@ -27,7 +27,6 @@ class OrderTransaction extends Model
 
     public function prt()
     {
-        return $this->belongsTo(Prt::class);
+        return $this->belongsTo(Prt::class, 'prt_id');
     }
 }
-

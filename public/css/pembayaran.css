@@ -10,10 +10,9 @@
     height: 77px;
     background: #1B2223;
     border-radius: 12px;
-    margin-top: 130px;
+    margin-top: 180px;
     margin-bottom: 20px;
-    margin-left: 198px;
-    margin-right: 198px;
+    margin-left: 60px;
 }
 
 .pembayaran {
@@ -27,12 +26,14 @@
 
 .debit-kredit-img,
 .virtual-account-img {
-    width: 50px;
-    height: 40px;
+    width: 40px;
+    height: 30px;
+    top: 20;
     opacity: 0.5;
     flex: none;
     order: 0;
     flex-grow: 0;
+
 }
 
 .btn,
@@ -73,8 +74,8 @@
 .infopekerja {
     display: flex;
     gap: 40px;
-    margin-top: 40px;
-    margin-left: 198px;
+    margin-top: 60px;
+    margin-left: 60px;
 }
 
 .big-profile {
@@ -194,10 +195,11 @@
 }
 
 .total-bayar {
-    width: 200px;
+    width: 300px;
     height: 33px;
     font-family: 'Poppins';
-    font-weight: 800;
+    padding-right: 20px;
+    font-weight: 700;
     font-size: 24px;
     line-height: 33px;
     text-align: right;
@@ -301,9 +303,18 @@
     display: none;
     width: 100%;
     padding: 8px 0;
-    background: #135589;
+    background: #0069d9;
     border-radius: 20px;
   }
+
+  .btn-primary {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px 36px 8px 56px;
+    height: 58px;
+  }
+
 
   .dropdown-menu label {
     display: block;
@@ -316,15 +327,19 @@
   }
 
   .dropdown-menu label:hover {
-    background: #0f456e;
+    background: #0069d9;
   }
 
   .dropdown-menu input[type="radio"] {
     display: none;
   }
 
+.dropdown-toggle :hover{
+    background: #0069d9;
+}
+
   .dropdown-menu input[type="radio"]:checked + label {
-    background: #0f456e;
+    background: #0069d9;
   }
 
   .dropdown-menu::after {

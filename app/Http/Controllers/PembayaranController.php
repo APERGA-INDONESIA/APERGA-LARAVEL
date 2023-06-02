@@ -21,8 +21,11 @@ class PembayaranController extends Controller
         // Mengambil ID prt dari transaksi pesanan
         $id_prt = $orderTransaction->prt_id;
 
-        // Membangun path gambar berdasarkan ID prt
-        $imagePath = 'images/prt/prt' . $id_prt . '.png';
+        // Menghapus karakter non-digit dari ID prt
+        $id_prt_number = preg_replace('/[^0-9]/', '', $id_prt);
+
+        // Membangun path gambar berdasarkan ID prt yang sudah diubah
+        $imagePath = 'images/prt/prt' . $id_prt_number . '.jpg';
 
         // Memeriksa apakah gambar tersedia di path yang diberikan
         if (file_exists(public_path($imagePath))) {
@@ -53,41 +56,119 @@ class PembayaranController extends Controller
         ]);
     }
 
-    public function showQRIS()
-    {
-        return view('pembayaranqris');
-    }
+        public function showBank($id)
+        {
+            return view('pembayaranbank', ['id' => $id]);
+        }
 
-    public function verifikasiPembayaran()
-    {
-        return view('pembayaran-terverifikasi');
-    }
+        public function showEwallet($id)
+        {
+            return view('pembayaranewallet', ['id' => $id]);
+        }
+
+        public function showSaldo($id)
+        {
+            return view('pembayaransaldo', ['id' => $id]);
+        }
+
+        public function showQRIS($id)
+        {
+            // Mendapatkan data order transaction berdasarkan ID
+            $orderTransaction = OrderTransaction::findOrFail($id);
+
+            // Mendapatkan data prt berdasarkan id_prt dari order transaction
+            $prt = Prt::findOrFail($orderTransaction->prt_id);
+
+            // Menghitung total bayar
+            $gaji = $prt->gaji;
+            $totalBayar = $gaji + ($gaji * 0.05);
+
+            return view('pembayaranqris', compact('orderTransaction', 'totalBayar'));
+        }
+
+        public function processPaymentQRIS($id)
+        {
+            // Mengupdate status transaksi menjadi "Pembayaran Selesai" pada tabel order transactions
+            $orderTransaction = OrderTransaction::find($id);
+            if (!$orderTransaction) {
+                // Handle jika transaksi tidak ditemukan
+                abort(404);
+            }
+
+            $prt = Prt::find($orderTransaction->prt_id);
+            if (!$prt) {
+                // Handle jika data prt tidak ditemukan
+                abort(404);
+            }
+
+            // Menambah nilai pada kolom jam_kerja, durasi_kerja, dan catatan_khusus pada tabel prts
+            $prt->jamkerja += $orderTransaction->jam_kerja;
+            $prt->durasi += $orderTransaction->durasi_kerja;
+            $prt->catatan .= $orderTransaction->catatan_khusus;
+            $prt->user_id = $orderTransaction->user_id;
+            $prt->save();
+
+            // Mengupdate status transaksi menjadi "Pembayaran Selesai" pada tabel order transactions
+            $orderTransaction->status_transaksi = "Pembayaran Selesai";
+            $orderTransaction->tipe_pembayaran = "QRIS";
+            $orderTransaction->save();
+
+            // Redirect atau tampilkan halaman berhasil pembayaran
+            return redirect()->route('pembayaran.sukses', ['id' => $orderTransaction->id]);
+        }
+
+        public function verifikasiPembayaran($id)
+        {
+            // Lakukan verifikasi pembayaran
+            // ...
+
+            // Tampilkan halaman pembayaran terverifikasi
+            return view('pembayaran-terverifikasi', ['id' => $id]);
+        }
+
 
     public function bayar(Request $request, $id)
     {
         // Mengupdate status transaksi menjadi "Mulai Pembayaran"
         $orderTransaction = OrderTransaction::find($id);
         if ($orderTransaction) {
-            $orderTransaction->status = "Mulai Pembayaran";
+            $orderTransaction->status_transaksi = "Mulai Pembayaran";
             $orderTransaction->save();
         }
-
-        // Menambahkan nilai baru pada kolom status transaksi dengan nilai "Menunggu Pembayaran"
-        $orderTransaction->status = "Menunggu Pembayaran";
-        $orderTransaction->save();
 
         // Lakukan pengalihan ke halaman pembayaran yang sesuai berdasarkan metode pembayaran yang dipilih
         $metodePembayaran = $request->input('metode_pembayaran');
 
+
         switch ($metodePembayaran) {
-            case "TRANSFER BANK":
-                return redirect()->route('pembayaran.bank', ['id' => $id]);
-            case "DOMPET DIGITAL":
-                return redirect()->route('pembayaran.ewallet', ['id' => $id]);
-            case "PEMBAYARAN LAIN":
-                return redirect()->route('pembayaran.other', ['id' => $id]);
+            case 'pembayaransaldo.process':
+                return redirect()->route('pembayaransaldo', ['id' => $id]);
+            case 'pembayaranbank.process':
+                return redirect()->route('pembayaranbank', ['id' => $id]);
+            case 'pembayaranewallet.process':
+                return redirect()->route('pembayaranewallet', ['id' => $id]);
+            case 'pembayaranqris.process':
+                return redirect()->route('pembayaranqris', ['id' => $id]);
             default:
                 return redirect()->back();
         }
+
+
+
     }
+
+    public function bayarSaldo($id)
+    {
+        // Mengupdate status transaksi menjadi "Mulai Pembayaran"
+        $orderTransaction = OrderTransaction::find($id);
+        if ($orderTransaction) {
+            $orderTransaction->status_transaksi = "Mulai Pembayaran";
+            $orderTransaction->save();
+        }
+
+        // Lakukan pengalihan ke halaman pembayaransaldo
+        return redirect()->route('pembayaransaldo', ['id' => $id]);
+    }
+
+
 }

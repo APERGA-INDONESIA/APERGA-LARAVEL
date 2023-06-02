@@ -1,4 +1,4 @@
-@extends('template4')
+@extends('template')
 @section('title', 'Tentang Aplikasi')
 
 @section('navbar')
@@ -33,8 +33,7 @@
     <a href="#" class="download-button">Download Disini</a>
 </div>
 
-<div class="space">
-</div>
+
 @endsection
 
 @section('footer')

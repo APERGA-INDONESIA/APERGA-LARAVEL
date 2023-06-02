@@ -1,4 +1,4 @@
-@extends('template2')
+@extends('template3')
 
 @section('title', 'Bantuan')
 
@@ -109,9 +109,12 @@
             </div>
         </div>
     </div>
+
+ 
 @endsection
 
 @section('footer')
+
 @endsection
 
 @push('styles')

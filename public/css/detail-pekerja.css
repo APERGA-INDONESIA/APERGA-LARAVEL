@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,600,800,500,700");
-
 .kotak-hitam {
     display: flex;
     justify-content: center;
@@ -8,10 +6,9 @@
     height: 77px;
     background: #1B2223;
     border-radius: 12px;
-    margin-top: 130px;
+    margin-top: 180px;
     margin-bottom: 20px;
-    margin-left: 198px;
-    margin-right: 198px;
+    margin-left: 60px;
 }
 
 .detail-pekerja {
@@ -27,8 +24,8 @@
 .info-pekerja {
     display: flex;
     gap: 40px;
-    margin-top: 40px;
-    margin-left: 198px;
+    margin-bottom: 20px;
+    margin-left: 60px;
 }
 
 .big-profile {
@@ -38,12 +35,20 @@
     flex: none;
     order: 0;
     flex-grow: 0;
+    margin-top: 40px;
 }
 
 .deskripsi {
     width: 420px;
     height: 440px;
+    margin-top: 40px;
+
 }
+
+strong {
+    font-weight: bold;
+  }
+
 
 .nama-pekerja {
     width: 400px;
@@ -93,9 +98,10 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
     padding: 0px;
     gap: 5px;
-    width: 250px;
+    width: 300px;
     height: 90px;
     margin-top: 30px;
     margin-bottom: 20px;
@@ -107,6 +113,14 @@
 
 .infopekerja p {
     margin: 0;
+    width: 300px;
+    height: 22px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #1B2223;
 }
 
 .deskripsi-pekerja {

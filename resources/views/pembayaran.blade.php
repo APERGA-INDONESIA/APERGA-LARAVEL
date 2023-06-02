@@ -1,4 +1,4 @@
-@extends('template2')
+@extends('template')
 @section('title', 'Pembayaran')
 
 @section('navbar')
@@ -13,26 +13,34 @@
 
 <div class="infopekerja">
     @php
-    $id_prt = $orderTransaction->id_prt; // Ganti $orderTransaction dengan variabel yang sesuai untuk mendapatkan ID PRT dari tabel order transactions
-
-    $imagePath = 'images/prt/prt' . $id_prt . '.png';
+    $id_prt = $orderTransaction->prt_id;
+    $id_prt_number = preg_replace('/[^0-9]/', '', $id_prt);
+    $imagePath = 'images/prt/prt' . $id_prt_number . '.jpg';
 
     if (file_exists(public_path($imagePath))) {
         $imageUrl = asset($imagePath);
     } else {
-        $imageUrl = asset('images/bigprofile.png');
+        $defaultImagePath = 'images/bigprofile.png';
+        $imageUrl = asset($defaultImagePath);
     }
-    @endphp
+
+    $saldoApergaRoute = route('pembayaransaldo', ['id' => $orderTransaction->id]);
+    $bankRoute = route('pembayaranbank', ['id' => $orderTransaction->id]);
+    $ewalletRoute = route('pembayaranewallet', ['id' => $orderTransaction->id]);
+    $qrisRoute = route('pembayaranqris', ['id' => $orderTransaction->id]);
+@endphp
+
 
 
     <div class="big-profile">
-        <img src="{{ $imageUrl }}" alt="Big Profile" class="big-profile-img">
+        <img src="{{ $imageUrl }}" alt="Big Profile" class="big-profile-img"
+            style="width: 509px; height: 436px; border-radius: 23px;">
     </div>
+
     <div class="deskripsi">
         <div class="metode-pembayaran-title">Metode Pembayaran</div>
         <div class="debit-kredit-button">
-            <button type="button" class="btn btn-primary btn-lg btn-block">
-                <img src="{{ asset('images/debit-kredit.svg') }}" alt="Debit-Kredit" class="debit-kredit-img">
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="saldoApergaBtn">
                 SALDO APERGA
             </button>
         </div>
@@ -40,9 +48,9 @@
         <div class="dropdown">
             <select class="btn btn-primary btn-lg btn-block dropdown-toggle" id="dropdownMenuButton">
                 <option value="" disabled selected>NON SALDO APERGA</option>
-                <option value="{{ route('pembayaran.bank', ['id' => $orderTransaction->id]) }}">TRANSFER BANK</option>
-                <option value="{{ route('pembayaran.ewallet', ['id' => $orderTransaction->id]) }}">DOMPET DIGITAL</option>
-                <option value="{{ route('pembayaran.other', ['id' => $orderTransaction->id]) }}">PEMBAYARAN LAIN</option>
+                <option value="{{ $bankRoute }}">TRANSFER BANK</option>
+                <option value="{{ $ewalletRoute }}">DOMPET DIGITAL</option>
+                <option value="{{ $qrisRoute }}">PEMBAYARAN QRIS</option>
             </select>
         </div>
         <br>
@@ -64,45 +72,32 @@
         </div>
         <div class="button-group">
             <button class="kembali">Kembali</button>
-            <button class="bayar" onclick="bayar({{ $orderTransaction->id }})">Bayar</button>
+            <form id="bayarForm" method="POST" action="">
+                @csrf
+                <button type="submit" class="bayar">Bayar</button>
+            </form>
         </div>
     </div>
 </div>
 @endsection
 
-@section('footer')
-@endsection
-
-@push('script')
-<script>
-function bayar(id) {
-    // Mendapatkan token CSRF
-    let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
-    // Memperbarui nilai kolom status transaksi di tabel order transactions menjadi "Mulai Pembayaran"
-    let url_perbarui_status = "{{ route('pembayaran.bayar', ':id') }}".replace(':id', id);
-    // Mengirim permintaan AJAX ke URL yang sesuai
-    axios.post(url_perbarui_status, { status: "Mulai Pembayaran" }, {
-        headers: {
-            'X-CSRF-TOKEN': token
-        }
-    })
-        .then(response => {
-            // Berhasil memperbarui status transaksi
-            console.log(response.data);
-            // Mengalihkan ke halaman pembayaran dengan ID transaksi
-            let url_pembayaran = "{{ route('pembayaran.bayar', ':id') }}".replace(':id', id);
-            window.location.href = url_pembayaran;
-        })
-        .catch(error => {
-            // Gagal memperbarui status transaksi
-            console.error(error);
-        });
-}
-
-</script>
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/pembayaran.css') }}">
 @endpush
 
-@push('styles')
-<link rel="stylesheet" href="{{ asset('css/pembayaran.css') }}">
+@push('scripts')
+<script>
+    document.getElementById('dropdownMenuButton').addEventListener('change', function() {
+        var selectedOption = this.value;
+        document.getElementById('bayarForm').setAttribute('action', selectedOption);
+    });
+
+    document.getElementById('bayarForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var form = document.getElementById('bayarForm');
+        var action = form.getAttribute('action');
+        window.location.href = action;
+    });
+
+</script>
 @endpush

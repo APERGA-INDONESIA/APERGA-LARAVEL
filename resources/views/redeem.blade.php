@@ -1,4 +1,4 @@
-@extends('template2')
+@extends('template')
 
 @section('title', 'Redeem Point')
 
@@ -35,6 +35,8 @@
 </div>
 
 
+
+
 @endsection
 
 @section('footer')
@@ -42,6 +44,7 @@
 @endsection
 
 @push('styles')
+<link rel="stylesheet" href="{{ asset('css/.css') }}">
 <link rel="stylesheet" href="{{ asset('css/redeem.css') }}">
 @endpush
 

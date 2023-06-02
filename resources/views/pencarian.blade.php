@@ -1,4 +1,4 @@
-@extends('template2')
+@extends('template3')
 
 @section('title', 'Pencarian PRT')
 
@@ -463,3 +463,5 @@ document.getElementById('search-btn').addEventListener('click', function () {
 
 
 @endpush
+
+

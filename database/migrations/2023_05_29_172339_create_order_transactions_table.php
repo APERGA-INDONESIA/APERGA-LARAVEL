@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('prt_id');
-            $table->unsignedBigInteger('tipe_pembayaran')->nullable();
+            $table->string('tipe_pembayaran')->nullable();
             $table->date('tanggal_transaksi')->nullable();
             $table->string('jam_kerja')->nullable();
             $table->string('durasi_kerja')->nullable();

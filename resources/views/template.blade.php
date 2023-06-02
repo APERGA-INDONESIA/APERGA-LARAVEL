@@ -28,7 +28,7 @@
 <body>
     <div class="container-fluid">
         <nav class="navbar navbar-expand navbar-dark bg-white sticky-top">
-            <a href="{{ route('dashboard') }}">
+            <a href="{{ route('homepage') }}">
                 <img src="{{ asset('images/aperga.png') }}" alt="Logo" class="logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"

@@ -41,7 +41,7 @@ class MencariPekerjaController extends Controller
             'jam_kerja' => $validatedData['jam_kerja'],
             'durasi_kerja' => $validatedData['durasi_kerja'],
             'catatan_khusus' => $validatedData['catatan_khusus'],
-            'status_transaksi' => 'Ongoing',
+            'status_transaksi' => 'Memilih Pembayaran',
         ]);
 
         // Mendapatkan ID baru dari transaksi yang disimpan
@@ -50,7 +50,7 @@ class MencariPekerjaController extends Controller
         // Mengarahkan pengguna ke halaman pembayaran dengan menggunakan ID transaksi
         return redirect()->route('pembayaran', ['id' => $transactionId]);
     }
-    
+
     public function showBank()
     {
         return view('pembayaranbank');

@@ -37,10 +37,19 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/update-pekerja', [KontrakController::class, 'updatePekerja'])->name('update.pekerja');
 
     Route::get('/pembayaran/{id}', [PembayaranController::class, 'showPesanan'])->name('pembayaran');
-    Route::get('/pembayaran/bank/{id}', [PembayaranController::class, 'showBank'])->name('pembayaran.bank');
-    Route::get('/pembayaran/ewallet/{id}', [PembayaranController::class, 'showEwallet'])->name('pembayaran.ewallet');
-    Route::get('/pembayaran/other/{id}', [PembayaranController::class, 'showOther'])->name('pembayaran.other');
-    Route::post('/pembayaran/bayar/{id}', [PembayaranController::class, 'bayar'])->name('pembayaran.bayar');    
+    Route::get('/pembayaran/qris/{id}', [PembayaranController::class, 'showQRIS'])->name('pembayaranqris');
+    Route::get('/pembayaran/bank/{id}', [PembayaranController::class, 'showBank'])->name('pembayaranbank');
+    Route::get('/pembayaran/ewallet/{id}', [PembayaranController::class, 'showEwallet'])->name('pembayaranewallet');
+    Route::get('/pembayaransaldo/{id}', [PembayaranController::class, 'showSaldo'])->name('pembayaransaldo');
+    Route::post('/pembayaran/{id}', [PembayaranController::class, 'bayar'])->name('pembayaran.process');
+    Route::post('/pembayaran/ewallet/{id}', [PembayaranController::class, 'bayar'])->name('pembayaranewallet.process');
+    Route::post('/pembayaran/bank/{id}', [PembayaranController::class, 'bayar'])->name('pembayaranbank.process');
+    Route::post('/pembayaran/qris/{id}', [PembayaranController::class, 'bayar'])->name('pembayaranqris.process');
+    Route::post('/pembayaransaldo/{id}', [PembayaranController::class, 'bayarSaldo'])->name('pembayaransaldo.process');
+    Route::post('/pembayaran/sukses/{id}', [PembayaranController::class, 'verifikasiPembayaran'])->name('pembayaran.sukses');
+    Route::get('/pembayaran/sukses/{id}', [PembayaranController::class, 'verifikasiPembayaran'])->name('pembayaran.sukses');
+    Route::post('/pembayaran/sukses/{id}', [PembayaranController::class, 'processPaymentQRIS'])->name('pembayaran.sukses.submit');
+
 
 
     Route::get('/pembayaran/sukses', [PembayaranController::class, 'verifikasiPembayaran'])->name('pembayaran-terverifikasi');

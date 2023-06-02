@@ -8,10 +8,9 @@
     height: 77px;
     background: #1B2223;
     border-radius: 12px;
-    margin-top: 130px;
+    margin-top: 180px;
     margin-bottom: 20px;
-    margin-left: 198px;
-    margin-right: 198px;
+    margin-left: 60px;
 }
 
 .detail-pekerja {
@@ -27,8 +26,9 @@
 .infopekerja {
     display: flex;
     gap: 40px;
-    margin-top: 40px;
-    margin-left: 198px;
+    margin-top: 60px;
+    margin-left: 60px;
+
 }
 
 .big-profile {
@@ -344,9 +344,9 @@
     align-items: flex-start;
     padding: 0px;
     gap: 15px;
-
     width: 179px;
     height: 10px;
+
 
 
     /* Inside auto layout */
