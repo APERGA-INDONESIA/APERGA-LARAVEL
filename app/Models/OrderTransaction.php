@@ -13,12 +13,14 @@ class OrderTransaction extends Model
         'user_id',
         'prt_id',
         'tipe_pembayaran',
+        'total_harga',
         'tanggal_transaksi',
         'jam_kerja',
         'durasi_kerja',
         'catatan_khusus',
         'status_transaksi',
     ];
+
 
     public function user()
     {
@@ -29,4 +31,10 @@ class OrderTransaction extends Model
     {
         return $this->belongsTo(Prt::class, 'prt_id');
     }
+
+
+    protected $casts = [
+        'total_harga' => 'integer',
+    ];
+
 }

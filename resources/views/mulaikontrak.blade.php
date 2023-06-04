@@ -103,6 +103,7 @@
         document.getElementById('durasi_kerja').value = durasiKerjaInput;
         document.getElementById('catatan_khusus').value = catatanKhususInput;
 
+
         // Memasukkan ID pekerja ke dalam form
         const prtIdInput = document.createElement('input');
         prtIdInput.type = 'hidden';

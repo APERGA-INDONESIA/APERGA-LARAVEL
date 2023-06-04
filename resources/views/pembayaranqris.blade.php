@@ -1,5 +1,5 @@
 @extends('template3')
-@section('title', 'Pembayaran Qris')
+@section('title', 'Pembayaran QRIS')
 
 @section('navbar')
 @endsection

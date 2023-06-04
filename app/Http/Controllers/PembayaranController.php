@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\OrderTransaction;
 use App\Models\Prt;
+use App\Models\User;
+
 
 class PembayaranController extends Controller
 {
@@ -108,10 +110,32 @@ class PembayaranController extends Controller
             $prt->user_id = $orderTransaction->user_id;
             $prt->save();
 
-            // Mengupdate status transaksi menjadi "Pembayaran Selesai" pada tabel order transactions
+            // Mengupdate status transaksi menjadi "Pembayaran Selesai" dan tipe pembayaran menjadi "QRIS" pada tabel order transactions
             $orderTransaction->status_transaksi = "Pembayaran Selesai";
             $orderTransaction->tipe_pembayaran = "QRIS";
             $orderTransaction->save();
+
+            // Menghitung total harga
+            $gaji = $prt->gaji;
+            $biayaLayanan = $orderTransaction->biaya_layanan;
+            $totalHarga = $gaji + $biayaLayanan;
+
+            // Update nilai total_harga pada tabel order transactions
+            $orderTransaction->total_harga = $totalHarga;
+            $orderTransaction->save();
+
+            // Menghitung nilai poin
+            $poin = ($totalHarga * 0.05) * 10;
+
+            // Simpan nilai poin pada sesi
+            session(['poin' => $poin]);
+
+            // Mengupdate nilai poin pada tabel users
+            $user = User::find($orderTransaction->user_id);
+            if ($user) {
+                $user->poin += $poin;
+                $user->save();
+            }
 
             // Redirect atau tampilkan halaman berhasil pembayaran
             return redirect()->route('pembayaran.sukses', ['id' => $orderTransaction->id]);
@@ -127,48 +151,61 @@ class PembayaranController extends Controller
         }
 
 
-    public function bayar(Request $request, $id)
-    {
-        // Mengupdate status transaksi menjadi "Mulai Pembayaran"
-        $orderTransaction = OrderTransaction::find($id);
-        if ($orderTransaction) {
-            $orderTransaction->status_transaksi = "Mulai Pembayaran";
+        public function bayar(Request $request, $id)
+        {
+            $orderTransaction = OrderTransaction::findOrFail($id);
+            $statusTransaksi = 'Mulai Pembayaran';
+            $totalHarga = intval($request->input('total_harga'));
+
+            // Mengupdate nilai kolom status_transaksi dan total_harga
+            $orderTransaction->status_transaksi = $statusTransaksi;
+            $orderTransaction->total_harga = $totalHarga;
+
+            // Menyimpan perubahan ke dalam database
             $orderTransaction->save();
-        }
 
-        // Lakukan pengalihan ke halaman pembayaran yang sesuai berdasarkan metode pembayaran yang dipilih
-        $metodePembayaran = $request->input('metode_pembayaran');
-
-
-        switch ($metodePembayaran) {
-            case 'pembayaransaldo.process':
-                return redirect()->route('pembayaransaldo', ['id' => $id]);
-            case 'pembayaranbank.process':
-                return redirect()->route('pembayaranbank', ['id' => $id]);
-            case 'pembayaranewallet.process':
-                return redirect()->route('pembayaranewallet', ['id' => $id]);
-            case 'pembayaranqris.process':
-                return redirect()->route('pembayaranqris', ['id' => $id]);
-            default:
-                return redirect()->back();
+            // Redirect ke halaman sukses pembayaran
+            return redirect()->route('pembayaran.sukses', ['id' => $id]);
         }
 
 
 
-    }
+        public function bayarSaldo($id)
+        {
+            // Mengupdate status transaksi menjadi "Mulai Pembayaran"
+            $orderTransaction = OrderTransaction::find($id);
+            if ($orderTransaction) {
+                $orderTransaction->status_transaksi = "Mulai Pembayaran";
+                $orderTransaction->save();
+            }
 
-    public function bayarSaldo($id)
-    {
-        // Mengupdate status transaksi menjadi "Mulai Pembayaran"
-        $orderTransaction = OrderTransaction::find($id);
-        if ($orderTransaction) {
-            $orderTransaction->status_transaksi = "Mulai Pembayaran";
+            // Mengupdate nilai total_harga pada tabel order_transactions
+            $gaji = $orderTransaction->gaji; // Mengambil nilai gaji dari model OrderTransaction
+            $biayaLayanan = $orderTransaction->biaya_layanan; // Mengambil nilai biaya layanan dari model OrderTransaction
+
+            $totalHarga = $gaji + $biayaLayanan;
+            $totalHargaInt = intval($totalHarga);
+
+            $orderTransaction->total_harga = $totalHargaInt;
             $orderTransaction->save();
+
+            // Lakukan pengalihan ke halaman pembayaransaldo
+            return redirect()->route('pembayaransaldo', ['id' => $id]);
         }
 
-        // Lakukan pengalihan ke halaman pembayaransaldo
-        return redirect()->route('pembayaransaldo', ['id' => $id]);
-    }
+        public function batal(Request $request, $id)
+        {
+            $orderTransaction = OrderTransaction::find($id);
+
+            if (!$orderTransaction) {
+                return redirect()->back()->with('error', 'Transaksi tidak ditemukan.');
+            }
+
+            $orderTransaction->status_transaksi = 'Transaksi Dibatalkan';
+            $orderTransaction->save();
+
+            return redirect()->route('dashboard')->with('success', 'Transaksi berhasil dibatalkan.');
+        }
 
 
 }

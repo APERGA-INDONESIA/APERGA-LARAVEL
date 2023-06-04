@@ -28,9 +28,7 @@
     $bankRoute = route('pembayaranbank', ['id' => $orderTransaction->id]);
     $ewalletRoute = route('pembayaranewallet', ['id' => $orderTransaction->id]);
     $qrisRoute = route('pembayaranqris', ['id' => $orderTransaction->id]);
-@endphp
-
-
+    @endphp
 
     <div class="big-profile">
         <img src="{{ $imageUrl }}" alt="Big Profile" class="big-profile-img"
@@ -71,15 +69,20 @@
             <div class="total-bayar">Rp {{ number_format($gaji + $biayaLayanan, 2, ',', '.') }}</div>
         </div>
         <div class="button-group">
-            <button class="kembali">Kembali</button>
-            <form id="bayarForm" method="POST" action="">
+            <button class="kembali" id="kembaliBtn">Kembali</button>
+            <form id="bayarForm" method="POST"
+                action="{{ route('pembayaran.process', ['id' => $orderTransaction->id]) }}">
                 @csrf
+                <input type="hidden" name="_method" value="PUT">
+                <input type="hidden" name="total_harga" value="{{ $gaji + $biayaLayanan }}">
+                <input type="hidden" name="status_transaksi" value="Transaksi Dibatalkan">
                 <button type="submit" class="bayar">Bayar</button>
             </form>
         </div>
     </div>
 </div>
 @endsection
+
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/pembayaran.css') }}">
@@ -96,8 +99,39 @@
         event.preventDefault();
         var form = document.getElementById('bayarForm');
         var action = form.getAttribute('action');
-        window.location.href = action;
+        var totalHargaInput = document.querySelector('input[name="total_harga"]');
+        var totalHargaValue = totalHargaInput.value;
+        var statusTransaksiInput = document.querySelector('input[name="status_transaksi"]');
+        var statusTransaksiValue = statusTransaksiInput.value;
+        window.location.href = action + '?total_harga=' + totalHargaValue + '&status_transaksi=' + statusTransaksiValue;
     });
 
+    document.getElementById('kembaliBtn').addEventListener('click', function() {
+    fetch('/pembayaran/batal/{{ $orderTransaction->id }}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        },
+        body: JSON.stringify({
+            status_transaksi: 'Transaksi Dibatalkan'
+        })
+    })
+    .then(function(response) {
+        if (response.ok) {
+            // Redirect ke halaman dashboard setelah berhasil memperbarui
+            window.location.href = '/dashboard';
+        } else {
+            // Tampilkan pesan atau tangani jika ada kesalahan dalam pembaruan
+            console.error('Terjadi kesalahan saat memperbarui status transaksi.');
+        }
+    })
+    .catch(function(error) {
+        console.error('Terjadi kesalahan saat memperbarui status transaksi.', error);
+    });
+    });
+
+
 </script>
+
 @endpush

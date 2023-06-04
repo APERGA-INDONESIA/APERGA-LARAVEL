@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('jam_kerja')->nullable();
             $table->string('durasi_kerja')->nullable();
             $table->text('catatan_khusus')->nullable();
+            $table->integer('total_harga')->length(11);
             $table->string('status_transaksi')->nullable();
             $table->timestamps()->nullable();
 

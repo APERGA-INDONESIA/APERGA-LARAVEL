@@ -51,7 +51,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/pembayaran/sukses/{id}', [PembayaranController::class, 'processPaymentQRIS'])->name('pembayaran.sukses.submit');
 
 
-
+    Route::put('/pembayaran/batal/{id}', [PembayaranController::class, 'batal'])->name('pembayaran.batal');
     Route::get('/pembayaran/sukses', [PembayaranController::class, 'verifikasiPembayaran'])->name('pembayaran-terverifikasi');
     Route::get('/bantuan', [BantuanController::class, 'showBantuan'])->name('bantuan'); // Menampilkan halaman bantuan
 

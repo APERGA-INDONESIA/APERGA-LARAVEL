@@ -588,6 +588,7 @@ input:focus {
   animation: slideFromBottom 0.5s ease forwards;
 }
 
+
 @keyframes slideFromBottom {
   0% {
     transform: translateY(100%);

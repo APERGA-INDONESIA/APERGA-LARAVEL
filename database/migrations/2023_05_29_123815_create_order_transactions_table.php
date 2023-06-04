@@ -18,10 +18,11 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('prt_id');
             $table->date('tanggal_transaksi');
+            $table->integer('total_harga')->length(11);
+            $table->string('status_transaksi')->nullable();
             $table->time('jam_kerja');
             $table->integer('durasi_kerja');
             $table->text('catatan_khusus')->nullable();
-            $table->string('status_transaksi');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

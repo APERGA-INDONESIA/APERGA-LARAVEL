@@ -1,23 +1,23 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,600,800,500,700,900.");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,600,800,500,700");
 
- .kotak-hitam {
+.kotak-hitam {
     position: absolute;
     width: 100%;
-    height: 600px;
+    height: 3000px;
     left: 0;
-    top: 225px;
+    top: 166px;
     background: #1B2223;
     border-top-left-radius: 45px;
     border-top-right-radius: 45px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 050);
 }
 
-.pembayaran-terverifikasi{
+.transfer-virtual-account {
     position: absolute;
     width: 900px;
     height: 68px;
-    top: 160px;
-    left: 450px;
+    left: calc(50% - 280px);
+    top: -40px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
@@ -28,7 +28,8 @@
     flex: none;
     order: 0;
     flex-grow: 0;
-    line-height:16px;
+    line-height: 16px;
+    z-index: 2;
 }
 
 .content {
@@ -37,22 +38,33 @@
     gap: 40px;
     margin-top: 40px;
     margin-left: 198px;
+    flex-direction: column;
+    align-items: center;
 }
 
-.logo {
+.qr-code {
     position: absolute;
-    width: 440px;
-    height: 440px;
-    top: 0px;
-    left: 440px;
+    width: 368px;
+    height: 368px;
+    top: 30px;
+    left: calc(50% - 280px);
+    background-size: cover;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 25px;
+    scale: 0.5;
+    transition: transform 0.08s ease-in-out;
+}
+
+.qr-code:hover {
+    transform: scale(1.2);
 }
 
 .text {
     position: absolute;
     width: 750px;
-    height: 37px;
-    left: 340px;
-    top: 405px;
+    height: 45px;
+    left: calc(50% - 350px);
+    top: 500px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 900;
@@ -61,6 +73,8 @@
     text-align: center;
     color: #FFFFFF;
 }
+
+
 .button-group {
     display: flex;
     flex-direction: row;
@@ -70,15 +84,16 @@
     gap: 12px;
     width: 427px;
     height: 36px;
-    margin-top: 15px;
+    margin-top: 30px;
     flex: none;
     order: 4;
     align-self: stretch;
     flex-grow: 0;
+    margin-bottom: 30px;
 }
 
 .button-group button {
-    width: 194px;
+    width: 150px;
     height: 36px;
     border: 2px solid rgba(19, 85, 137, 1);
     border-radius: 20px;
@@ -88,21 +103,63 @@
     font-size: 16px;
     line-height: 22px;
     text-align: center;
-    color: #1B2223;
-}
-
-.button-group button.kembali {
-    position: absolute;
-    width: 400px;
-    height: 48px;
-    left: 520px;
-    top: 490px;
-    background: #135589;
-    box-shadow: 0px 4px 4px rgba(255, 253, 253, 0.2);
-    border-radius: 20px;
     color: #ffffff;
 }
 
-.button-group button.kembali:hover {
+.button-group button.lanjutkan-pembayaran {
+    position: absolute;
+    width: 360px;
+    height: 48px;
+    left: calc(50% - 170px);
+    top: 750px;
+    background: #135589;
+    mix-blend-mode: normal;
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));
+    border-radius: 20px;
+}
+
+.button-group button.lanjutkan-pembayaran:hover {
     background: #0f456e;
+}
+
+.sukses-img {
+    position: absolute;
+    left: calc(50% - 430px);
+    top: 100px;
+}
+
+.TempatCoin {
+    position: absolute;
+    width: 300px;
+    height: 64px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    left: calc(50% - 140px);
+    top: 650px;
+}
+
+.coin {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 16px;
+    background: url(coin.png);
+
+}
+
+.hasilpoin {
+    position: absolute;
+    width: 512px;
+    height: 27px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    top: 20px;
+    left: -85px;
 }
