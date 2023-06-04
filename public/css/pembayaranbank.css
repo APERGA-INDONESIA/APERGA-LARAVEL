@@ -1,222 +1,254 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,600,800,500,700");
 
 .kotak-hitam {
     position: absolute;
     width: 100%;
-    height: 2500px;
+    height: 3000px;
     left: 0;
-    top: 200px;
+    top: 166px;
     background: #1B2223;
     border-top-left-radius: 45px;
     border-top-right-radius: 45px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 050);
 }
 
-.tulisan-pembayaran{
+.bank-title {
     position: absolute;
     width: 900px;
     height: 68px;
-    top: -50px;
-    left: 400px;
+    left: calc(50% - 280px);
+    top: -40px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 30px;
     line-height: 49px;
     text-align: right;
     color: #1B2223;
     flex: none;
     order: 0;
     flex-grow: 0;
-    line-height:16px;
+    line-height: 16px;
     z-index: 2;
 }
 
-.rekening-bank{
-position: absolute;
-width: 350px;
-height: 55px;
-left: 124px;
-top: 80px;
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 900;
-font-size: 40px;
-line-height: 55px;
-text-align: center;
-color: #FFFFFF;
-}
-
-.ringkasanpembayaran{
-position: absolute;
-width: 350px;
-height: 37px;
-left: 511px;
-top: 150px;
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 900;
-font-size: 27px;
-line-height: 37px;
-text-align: center;
-color: #FFFFFF;
-}
-
-.deskripsi{
-    position: absolute;
-    width: 363.99px;
-    height: 68.01px;
-    left: 565px;
-    top: 192px;
-}
-
-.total-tagihan-box,
-.biaya-layanan-box {
+.content {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 10px;
-    width: 450px;
-    height: 30px;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+    text-align: center;
+    gap: 40px;
+    margin-top: 40px;
+    margin-left: 198px;
+    flex-direction: column;
+    align-items: center;
 }
 
-.total-tagihan-text, 
-.biaya-layanan-text{
-    width: 238px;
-    height: 31px;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 23px;
-    line-height: 31px;
-    text-align: left;
-    color: #FFFFFF;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-}
 
-.total-tagihan,
-.biaya-layanan {
-    width: 341px;
-    height: 31px;
-    left: 700px;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 22.776px;
-    line-height: 31px;
-    text-align: right;
-    color: #FFFFFF;
-}
-
-.total-bayar{
+.banktext {
     position: absolute;
-    width: 251px;
-    height: 37px;
-    left: 404px;
-    top: 293px;
+    width: 800px;
+    height: 45px;
+    left: calc(50% - 400px);
+    top: 70px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 900;
-    font-size: 27px;
+    font-size: 52px;
+    line-height: 55px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-text {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 340px);
+    top: 790px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-hour {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 480px);
+    top: 840px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-minute {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 345px);
+    top: 840px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timersplit {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 412px);
+    top: 836px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-split {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 275px);
+    top: 836px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-desc {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 480px);
+    top: 898px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-desc-1 {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 345px);
+    top: 900px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-desc-2 {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 195px);
+    top: 900px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-second {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 200px);
+    top: 840px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+
+
+.total-pembayaran {
+    position: relative;
+    width: 500px;
+    height: 41px;
+    left: calc(50% - 260px);
+    top: 280px;
+    gap: 20px;
+}
+
+.total-pembayaran-text {
+    position: absolute;
+    width: 350px;
+    height: 37px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 32px;
     line-height: 37px;
-    text-align: center;
     color: #FFFFFF;
-
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
-.harga-total-bayar{
+.total-pembayaran-text {
     position: absolute;
-    width: 251px;
+    width: 350px;
     height: 37px;
-    left: 851px;
-    top: 293px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 900;
-    font-size: 27px;
-    line-height: 41px;
-    text-align: center;
-    color: #E88A33;
+    font-size: 32px;
+    line-height: 37px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
-select {
-    /* styling */
-    position: absolute;
-    background-color: #135589;
-    border: thin solid #FFFFFF;
-    border-radius: 4px;
-    display: inline-block;
-    font: inherit;
-    line-height: 1.5em;
-    padding: 0.5em 3.5em 0.5em 1em;
-    width: 537px;
-    height: 65px;
-    left: 462px;
-    top: 380px;
-    
-  
-    /* reset */
-  
-    margin: 0;      
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    
-  }
-  
-select.round {
-    background-image:
-      linear-gradient(45deg, transparent 50%, #06385e 50%),
-      linear-gradient(135deg, gray 50%, transparent 50%),
-      radial-gradient(#ddd 70%, transparent 72%);
-    background-position:
-      calc(100% - 20px) calc(1em + 2px),
-      calc(100% - 15px) calc(1em + 2px),
-      calc(100% - .5em) .5em;
-    background-size:
-      5px 5px,
-      5px 5px,
-      1.5em 1.5em;
-    background-repeat: no-repeat;
-  }
-  
-  select.round:focus {
-    background-image:
-      linear-gradient(45deg, white 50%, transparent 50%),
-      linear-gradient(135deg, transparent 50%, white 50%),
-      radial-gradient(gray 70%, transparent 72%);
-    background-position:
-      calc(100% - 15px) 1em,
-      calc(100% - 20px) 1em,
-      calc(100% - .5em) .5em;
-    background-size:
-      5px 5px,
-      5px 5px,
-      1.5em 1.5em;
-    background-repeat: no-repeat;
-    border-color: green;
-    outline: 0;
-  }
-  
-  select:-moz-focusring {
-    color: transparent;
-    text-shadow: 0 0 0 #FFFFFF;
-  }
-  
-  body {
-    background-color: rgb(0,159,214);
-    font: bold 1em/100% Poppins;
-    padding: 2em 0;
-    text-align: center;
-  }
 
-  .button-group {
+.total-bayar {
+    position: absolute;
+    width: 300px;
+    height: 41px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 32px;
+    margin-left: 36px;
+    line-height: 41px;
+    padding-right: 50px;
+
+    color: #E88A33;
+    left: 320px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.button-group {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -225,15 +257,16 @@ select.round {
     gap: 12px;
     width: 427px;
     height: 36px;
-    margin-top: 15px;
+    margin-top: 30px;
     flex: none;
     order: 4;
     align-self: stretch;
     flex-grow: 0;
+    margin-bottom: 30px;
 }
 
 .button-group button {
-    width: 194px;
+    width: 150px;
     height: 36px;
     border: 2px solid rgba(19, 85, 137, 1);
     border-radius: 20px;
@@ -243,21 +276,271 @@ select.round {
     font-size: 16px;
     line-height: 22px;
     text-align: center;
-    color: #1B2223;
-}
-
-.button-group button.bayar {
-    position: absolute;
-    width: 400px;
-    height: 48px;
-    left: 520px;
-    top: 490px;
-    background: #135589;
-    box-shadow: 0px 4px 4px rgba(255, 253, 253, 0.2);
-    border-radius: 20px;
     color: #ffffff;
 }
 
-.button-group button.bayar:hover {
+
+.button-group button.lanjutkan-pembayaran {
+    position: absolute;
+    width: 360px;
+    height: 48px;
+    left: calc(50% - 170px);
+    top: 1480px;
+    background: #135589;
+    mix-blend-mode: normal;
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));
+    border-radius: 20px;
+}
+
+
+.button-group button.lanjutkan-pembayaran:hover {
     background: #0f456e;
 }
+
+.instruksi {
+    position: relative;
+    width: 650px;
+    height: 470px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 35px;
+    left: calc(50% - 310px);
+    top: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.instruksi-pembayaran {
+    position: absolute;
+    font-family: 'Poppins';
+    font-style: normal;
+    width: 500px;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 40px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.deskripsi-pembayaran {
+    width: 550px;
+    position: absolute;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 32px;
+    color: #FFFFFF;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: justify;
+}
+
+.deskripsi-pembayaran::before {
+    content: '';
+    display: inline-block;
+    width: 0%;
+}
+
+.deskripsi-pembayaran::after {
+    content: '';
+    display: inline-block;
+    width: 50%;
+}
+
+
+.bankoption {
+    position: relative;
+    z-index: 2;
+    width: 580px;
+    height: 92.67px;
+    left: calc(50% - 280px);
+    top: 160px;
+    background: #135589;
+    border-radius: 25px;
+    box-shadow: 0px 4px 4px rgba(63, 61, 86, 0.2);
+}
+
+.bank-logo {
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 40px;
+    width: 68px;
+    height: 61px;
+}
+
+.bank-text {
+    position: absolute;
+    width: 350px;
+    height: 33px;
+    left: 120px;
+    top: 32px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 33px;
+    color: #FFFFFF;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 580px;
+    left: calc(50% - 280px);
+    top: 250px;
+    background: #C4E3FB;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(63, 61, 86, 0.2);
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: 580px;
+    border-bottom: 3px solid #000;
+}
+
+.dropdown-item:last-child {
+    padding-top: 20px;
+    border-bottom: none; /* Menghilangkan garis pembatas di dropdown menu item terakhir */
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.dropdown-item input[type="radio"] {
+    margin-right: 20px;
+    display: none;
+}
+
+.dropdown-item label {
+    position: relative;
+    padding-left: 30px;
+    margin-left: 20px; /* Mengubah jarak antara icon radio button dan teks menjadi 20px */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 24px;
+    color: #135589;
+    background-color: transparent;
+}
+
+.dropdown-item label:before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border: 4px solid #135589;
+    border-radius: 50%;
+}
+
+.dropdown-item input[type="radio"]:checked + label:before {
+    background: #fff; /* Mengubah warna latar belakang radio button menjadi putih saat diklik */
+    border-color: #135589;
+}
+
+.dropdown-item input[type="radio"]:hover + label:before {
+    background: #fff; /* Mengubah warna latar belakang radio button menjadi putih saat dihover */
+}
+
+.dropdown-item:hover {
+    background: #135589;
+}
+
+.dropdown-item:hover label {
+    color: #FFFFFF;
+}
+
+.dropdown-item:hover label:before {
+    border-color: #FFFFFF;
+}
+
+.arrow {
+    position: absolute;
+    width: 44px;
+    height: 24px;
+    left:480px;
+    top: 38px;
+
+}
+
+.bankprofile {
+    position: relative;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+    width: 550px;
+    height: 330px;
+    left: calc(50% - 260px);
+    top: 240px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bank-logo-item {
+    position: absolute;
+    left: 75px;
+    top: 45px;
+    width: 366px;
+    height: 117px;
+}
+
+.payment-number-text {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 32px;
+    top: 175px;
+    text-align: center;
+    color: #1B2223;
+}
+
+.payment-number {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    margin-top: 8px;
+    top: 205px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 44px;
+    text-align: center;
+    color: #135589;
+    }
+
+    .payment-owner {
+        position: absolute;
+        top: 260px;
+        width: 100%;
+        height: 30px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 22px;
+        line-height: 32px;
+        text-align: center;
+        color: #4D4A4A;
+    }
+
+

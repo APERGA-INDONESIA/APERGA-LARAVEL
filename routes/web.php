@@ -91,6 +91,9 @@ Route::redirect('/', '/homepage');
     Route::post('/pencarian', [FilterController::class, 'filterPRTPost'])->name('pencarian.post');
     Route::post('/pencarian', [FilterPRTController::class, 'search'])->name('pencarian.search');
 
+    Route::get('/pembayaranbank', function () {
+        return view('pembayaranbank');
+    });
 
 
 

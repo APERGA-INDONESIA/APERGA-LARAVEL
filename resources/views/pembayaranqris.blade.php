@@ -6,7 +6,7 @@
 
 @section('konten')
 <div class="kotak-hitam">
-    <div class="transfer-virtual-account">Transfer QRIS Bar Code</div>
+    <div class="transfer-virtual-account">Pembayaran: Scan QRIS</div>
     <div class="content">
         <div class="qr-code">
             <img src="{{ asset('images/barcode-virtual-account.png') }}" alt="Barcode Virtual Account" class="qr-code-img">

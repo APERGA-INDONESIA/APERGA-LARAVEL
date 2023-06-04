@@ -12,7 +12,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 050);
 }
 
-.transfer-virtual-account {
+.transaksi-title {
     position: absolute;
     width: 900px;
     height: 68px;
@@ -106,7 +106,7 @@
     color: #ffffff;
 }
 
-.button-group button.lanjutkan-pembayaran {
+.button-group button.done-button {
     position: absolute;
     width: 360px;
     height: 48px;
@@ -118,7 +118,7 @@
     border-radius: 20px;
 }
 
-.button-group button.lanjutkan-pembayaran:hover {
+.button-group button.done-button:hover {
     background: #0f456e;
 }
 

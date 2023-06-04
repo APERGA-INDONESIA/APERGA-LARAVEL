@@ -12,7 +12,7 @@
 @endphp
 
 <div class="kotak-hitam">
-    <div class="transfer-virtual-account">Transaksi {{ $idFormatted }} Sukses</div>
+    <div class="transaksi-title">Transaksi {{ $idFormatted }} Sukses</div>
     <img src="{{ asset('images/sukses.png') }}" alt="sukses" class="sukses-img" width="918" height="362">
     <div class="text">Pembayaran Anda Telah Berhasil. Silahkan Cek PRT Anda Di Daftar Pekerja. Berikut Ini Adalah Total Poin Yang Anda Dapatkan:
 
@@ -25,7 +25,7 @@
 
 
     <div class="button-group">
-        <button id="kembali-button" class="lanjutkan-pembayaran">Kembali ke Dashboard</button>
+        <button id="balik" class="done-button">Kembali ke Dashboard</button>
     </div>
 </div>
 @endsection
@@ -36,7 +36,7 @@
 
 @push('scripts')
 <script>
-    document.getElementById('kembali-button').addEventListener('click', function() {
+    document.getElementById('balik').addEventListener('click', function() {
         window.location.href = "{{ route('dashboard') }}";
     });
 </script>

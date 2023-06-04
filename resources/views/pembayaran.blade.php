@@ -75,7 +75,7 @@
                 @csrf
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="total_harga" value="{{ $gaji + $biayaLayanan }}">
-                <input type="hidden" name="status_transaksi" value="Transaksi Dibatalkan">
+                <input type="hidden" name="status_transaksi" value="Pembayaran">
                 <button type="submit" class="bayar">Bayar</button>
             </form>
         </div>
@@ -114,7 +114,7 @@
             'X-CSRF-TOKEN': '{{ csrf_token() }}'
         },
         body: JSON.stringify({
-            status_transaksi: 'Transaksi Dibatalkan'
+            status_transaksi: 'Pembayaran'
         })
     })
     .then(function(response) {

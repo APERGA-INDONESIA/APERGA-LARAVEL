@@ -44,10 +44,17 @@ class KontrakController extends Controller
 
         // Melakukan pembaruan pada database
         try {
-            Prt::where('id', $pekerjaId)->update(['user_id' => 0]);
+            Prt::where('id', $pekerjaId)->update([
+                'user_id' => 0,
+                'durasi' => 0,
+                'jamkerja' => 0,
+                'catatan' => ''
+            ]);
+
             return response()->noContent();
         } catch (\Exception $e) {
             return response()->json(['message' => 'Gagal membatalkan kontrak.'], 500);
         }
     }
+
 }
