@@ -21,7 +21,7 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 44px;
     line-height: 49px;
     text-align: right;
     color: #1B2223;
@@ -149,7 +149,7 @@
     width: 360px;
     height: 48px;
     left: calc(50% - 170px);
-    top: 1100px;
+    top: 1300px;
     background: #135589;
     mix-blend-mode: normal;
     filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));
@@ -202,4 +202,140 @@
     color: #FFFFFF;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     text-align: left;
+}
+
+
+.timer-text {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 340px);
+    top: 1100px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-hour {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 480px);
+    top: 1160px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-minute {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 345px);
+    top: 1162px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timersplit {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 412px);
+    top: 1155px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-split {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 275px);
+    top: 1155px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-desc {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 480px);
+    top: 1215px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-desc-1 {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 345px);
+    top: 1215px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-desc-2 {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 195px);
+    top: 1215px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-second {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 200px);
+    top: 1163px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
 }

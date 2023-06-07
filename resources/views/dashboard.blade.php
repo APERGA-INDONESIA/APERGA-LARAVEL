@@ -13,11 +13,14 @@
 
 <div class="dashboard">
     <div class="dashboard-kotak">
-        <a href="">
-            <img src="{{ $user->profile_image ? asset('images/' . $user->profile_image) : asset('images/profil.png') }}" alt="Profile Image" class="profile-img" style="border-radius: 100px;">
+        <a href="{{ route('profil') }}">
+            <img src="{{ $user->profile_image ? asset('Images/Profile Image/' . $user->profile_image) : asset('images/profil.png') }}" alt="Profile Image" class="profile-img" style="border-radius: 100px;">
             <p class="greeting">Halo, Selamat Datang</p>
             <p class="username">{{ $user->name }}</p>
         </a>
+        <a href="{{ route('profil.edit') }}">
+            <img src="{{ asset('images/settings.png') }}" alt="Poin" class="setting">
+          </a>
     </div>
 
 
@@ -63,6 +66,9 @@
                     ->count();
             @endphp
             <p class="jumlahpekerja">{{ $jumlahPekerja }} Orang</p>
+            <button class="tambah" onclick="location.href='{{ route('pencarian') }}'">
+                <p class="tambahtext">Tambah</p>
+            </button>
         </a>
     </div>
 </div>

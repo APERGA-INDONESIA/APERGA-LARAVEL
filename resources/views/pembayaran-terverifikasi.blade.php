@@ -14,7 +14,7 @@
 <div class="kotak-hitam">
     <div class="transaksi-title">Transaksi {{ $idFormatted }} Sukses</div>
     <img src="{{ asset('images/sukses.png') }}" alt="sukses" class="sukses-img" width="918" height="362">
-    <div class="text">Pembayaran Anda Telah Berhasil. Silahkan Cek PRT Anda Di Daftar Pekerja. Berikut Ini Adalah Total Poin Yang Anda Dapatkan:
+    <div class="text">Pembayaran Anda Telah Berhasil. Silahkan Cek PRT Anda Di Daftar Pekerja. Ada Poin Gratis Buat Kamu:
 
     </div>
     <div class="TempatCoin">

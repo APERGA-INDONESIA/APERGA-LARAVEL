@@ -10,73 +10,69 @@
     <div class="banktext">TRANSFER BANK</div>
     <div class="bankoption" onclick="toggleDropdown()">
         <img src="{{ asset('images/banks.png') }}" alt="Bank Logo" class="bank-logo">
-        <span class="bank-text">PILIH BANK ANDA</span>
+        <span class="bank-text" id="selectedBankText">PILIH BANK ANDA</span>
         <img src="{{ asset('images/blackarrow.png') }}" alt="arrow" class="arrow">
     </div>
     <div class="dropdown-container">
         <div class="dropdown-menu" id="bankDropdown">
+            @foreach ($infoPayments as $infoPayment)
             <div class="dropdown-item">
-                <input type="radio" id="bca" name="bank" value="BANK CENTRAL ASIA">
-                <label for="bca">BANK CENTRAL ASIA (BCA) </label>
+                <input type="radio" id="{{ $infoPayment->id }}" name="bank" value="{{ $infoPayment->tipe_pembayaran }}">
+                <label for="{{ $infoPayment->id }}">BANK {{ $infoPayment->tipe_pembayaran }}</label>
+                <input type="hidden" id="bank-{{ $infoPayment->id }}" value="{{ json_encode($infoPayment) }}">
             </div>
-            <div class="dropdown-item">
-                <input type="radio" id="bni" name="bank" value="BANK BNI">
-                <label for="bni">BANK NEGARA INDONESIA (BNI) </label>
-            </div>
-            <div class="dropdown-item">
-                <input type="radio" id="bri" name="bank" value="BANK BRI">
-                <label for="bri">BANK RAKYAT INDONESIA (BRI) </label>
-            </div>
-            <div class="dropdown-item">
-                <input type="radio" id="mandiri" name="bank" value="BANK MANDIRI">
-                <label for="mandiri">BANK MANDIRI</label>
-            </div>
-            <div class="dropdown-item">
-                <input type="radio" id="bsi" name="bank" value="BANK BSI SYARIAH">
-                <label for="bsi">BSI SYARIAH</label>
-            </div>
+        @endforeach
+
+
         </div>
     </div>
     <div class="bankprofile hidden">
-        <img src="{{ asset('images/BCA.png') }}" alt="Bank Logo" class="bank-logo-item">
+        <img src="{{ asset('images/ilust_bank.png') }}" alt="Default Bank Logo" class="bank-logo-item">
         <span class="payment-number-text">Nomor Rekening Pembayaran:</span>
-        <span class="payment-number">600032023</span>
-        <span class="payment-owner">A/N: PT Adi Perkasa Guna</span>
+        <span class="payment-number">{{ optional($selectedBank)->nomor_pembayaran }}</span>
+        <span class="payment-owner">A/N: {{ optional($selectedBank)->nama_pemilik }}</span>
     </div>
+
+
     <div class="total-pembayaran hidden">
         <p class="total-pembayaran-text">Total Pembayaran:</p>
-        <p class="total-bayar">Rp 2.000.000</p>
+        <p class="total-bayar">Rp {{ number_format($totalBayar, 2, ',', '.') }}</p>
     </div>
     <p class="timer-text hidden">Selesaikan dalam waktu:</p>
 
     <p class="timersplit hidden">:</p>
     <p class="timer-split hidden">:</p>
-    <p class="timer-hour hidden">24</p>
-    <p class="timer-minute hidden">60</p>
-    <p class="timer-second hidden">60</p>
+    <p class="timer-hour hidden">23</p>
+    <p class="timer-minute hidden">59</p>
+    <p class="timer-second hidden">59</p>
     <p class="timer-desc hidden">Jam</p>
     <p class="timer-desc-1 hidden">Menit</p>
     <p class="timer-desc-2 hidden">Detik</p>
 
     <div class="instruksi hidden">
         <p class="instruksi-pembayaran">Instruksi Pembayaran</p>
-        <p class="deskripsi-pembayaran">
-            1. Unduh dan instal aplikasi dompet digital.
-            <br>
-            2. Buka aplikasi dompet digital dan lakukan pendaftaran atau masuk ke akun Anda.
-            <br>
-            3. Cari opsi "Pembayaran" atau "Scan QR" di dalam aplikasi dompet digital.
-            <br>
-            4. Pilih opsi "Pembayaran" atau "Scan QR" dan aktifkan kamera ponsel Anda.
-            <br>
-            5. Arahkan kamera ke kode QR yang ingin Anda bayar.
-        </p>
+        <div class="deskripsi-pembayaran">
+            @if ($selectedBank)
+                @php
+                    $instruksiPembayaran = explode('. ', optional($selectedBank)->instruksi_pembayaran);
+                @endphp
+                @foreach ($instruksiPembayaran as $kalimat)
+                    {{ $kalimat }}.<br>
+                @endforeach
+            @endif
+        </div>
     </div>
 
+
     <div class="button-group">
-        <button type="submit" class="lanjutkan-pembayaran">Konfirmasi Pembayaran</button>
+        <!-- Add a form to send data to the controller function -->
+        <form action="{{ route('pembayaran.sukses.submit.bank', ['id' => $orderTransaction->id]) }}" method="POST">
+            @csrf
+            <button type="submit" class="lanjutkan-pembayaran">Konfirmasi Pembayaran</button>
+        </form>
     </div>
 </div>
+
 @endsection
 
 @section('footer')
@@ -84,6 +80,11 @@
 
 @push('scripts')
 <script src="{{ asset('js/dropdownbank.js') }}"></script>
+<script>
+
+
+</script>
+
 
 @endpush
 
@@ -98,13 +99,12 @@
     .timer-hour, .timer-minute,
     .timer-second, .timer-desc,
     .timer-desc-1, .timer-desc-2
-     {
+    {
         display: none;
     }
 
     .show {
-      display: block;
+        display: block;
     }
-    </style>
-
+</style>
 @endpush

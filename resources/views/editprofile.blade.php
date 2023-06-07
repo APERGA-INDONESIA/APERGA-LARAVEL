@@ -1,153 +1,13 @@
-@extends('template')
+@extends('template5')
 @section('title', 'Edit Profile')
 
 @section('favicon')
 
 @section('navbar')
+
 @endsection
 
 @section('konten')
-
-<style>
-    * {
-        font-family: 'Poppins';
-    }
-
-    #edit-profil {
-    margin-top: 20vh;
-    display: flex;
-    align-items: center;
-}
-
-    #edit-profil img {
-        margin-right: 15px;
-        margin-bottom: 25px;
-    }
-
-    .edit-title {
-        margin: 0;
-        margin-bottom: 25px;
-    }
-
-    #profile-img {
-        position: absolute;
-        width: 185px;
-        height: 185px;
-        left: 20vh;
-        top: 20vh;
-        border-radius: 100px;
-    }
-
-    #header-img {
-        width: 100%;
-        height: 235px;
-        object-fit: cover;
-        border-radius: 50px 50px 0px 0px;
-    }
-
-    #form-input {
-        position: relative;
-        top: 15vh;
-    }
-
-    .form-control {
-        border-radius: 20px;
-    }
-
-    .btn {
-        border-radius: 20px;
-    }
-
-    .btn {
-        width: 123px;
-    }
-
-    .btn-blue {
-        background-color: #135589;
-        color: white;
-    }
-
-    .btn-outline-white {
-        border: 1px solid #135589;
-        color: #135589;
-    }
-
-    #profile-header {
-        width: auto;
-        height: 235px;
-    }
-
-    #edit-box {
-        padding: 10vh 0;
-        height: 120vh; /* Atur tinggi sesuai kebutuhan */
-        margin: 0 auto; /* Untuk mengatur elemen menjadi berada di tengah */
-    }
-
-    /* Custom CSS */
-    label {
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 1.5;
-        color: #1B2223;
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .col-lg-2 label {
-        margin-bottom: 0;
-        text-align: left;
-    }
-
-    .col-lg-2.navbar-main {
-        position: relative;
-        width: 133px;
-        height: 38px;
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 1.5;
-        text-align: center;
-        color: #141414;
-    }
-
-    .col-lg-2.navbar-main .nav-link {
-        margin-right: 0;
-        text-align: left;
-    }
-
-    .navbar-main .nav-link:hover {
-        background: rgba(217, 217, 217, 0.5);
-        border-radius: 15px;
-    }
-
-    /* Additional CSS */
-    #edit-box:before {
-        content: "";
-        display: inline-block;
-        background-image: url("arrow.png");
-        width: 20px;
-        height: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        position: absolute;
-        left: -40px;
-    }
-
-    .edit-title {
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 32px;
-        line-height: 64px;
-        color: #000000;
-        margin-left: 16px;
-    }
-
-</style>
-
 <div class="container2">
     <div class="container-fluid" id="edit-box" style="margin-top: -100px;">
         <div class="row">
@@ -159,33 +19,26 @@
                     <p class="edit-title">Pengaturan Profil</p>
                 </div>
             </div>
-
         </div>
         <div class="row">
             <div class="col-lg-2 navbar-main">
                 <nav class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link text-dark font-weight-bold" href="#">Profil Saya</a>
+                        <a class="nav-link text-dark font-weight-bold" id="profil-saya-nav" href="javascript:void(0);" onclick="showProfile()">Profil Saya</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark font-weight-bold" href="#">Keamanan Akun</a>
+                        <a class="nav-link text-dark font-weight-bold" id="keamanan-akun-nav" href="javascript:void(0);" onclick="showSecurity()">Keamanan Akun</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark font-weight-bold" href="#">Riwayat</a>
-                    </li>
+                        <a class="nav-link text-dark font-weight-bold" id="histori-nav" href="javascript:void(0);" onclick="showHistori()">Riwayat</a>
+                      </li>
                 </nav>
             </div>
             <div class="col-lg-10">
                 <div class="row">
                     <div class="col-lg-12" id="profile-header">
-                        @php
-                            $headerImage = $user->header_image;
-                            $headerImagePath = $headerImage ? asset('images/' . $headerImage) : asset('images/header.png');
-                            $profileImage = $user->profile_image;
-                            $imagePath = $profileImage ? asset('images/' . $profileImage) : asset('images/profil.png');
-                        @endphp
-                        <img src="{{ $headerImagePath }}" id="header-img">
-                        <img src="{{ $imagePath }}" id="profile-img">
+                        <img src="{{ $user->profile_image ? asset('Images/Profile Image/' . $user->profile_image) : asset('images/profil.png') }}" alt="Profile Image" id="profile-img">
+                        <img src="{{ $user->header_image ? asset('Images/Header Image/' . $user->header_image) : asset('images/header.png') }}" alt="Profile Image" id="header-img">
                     </div>
                 </div>
             </div>
@@ -195,48 +48,199 @@
                 <!-- Kosongkan kolom ini agar form input berada di sebelah kanan navbar -->
             </div>
             <div class="col-lg-10">
-                <form action="{{ route('profil.update') }}" enctype="multipart/form-data" id="form-input" method="POST">
-                    @csrf
-                    <div class="row mb-2">
+                <!-- Profil Saya Section -->
+                <div id="profile-section">
+                    <form action="{{ route('profil.update') }}" enctype="multipart/form-data" id="form-input" method="POST">
+                        @csrf
+                        <div class="row mb-2">
+                            <div class="col-lg-2">
+                                <label for="name" class="font-weight-bold">Nama</label>
+                            </div>
+                            <div class="col-lg-10">
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Masukkan nama lengkap anda">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-lg-2">
+                                <label for="address" class="font-weight-bold">Alamat</label>
+                            </div>
+                            <div class="col-lg-10">
+                                <input type="text" name="address" id="address" class="form-control" placeholder="Masukkan alamat email lengkap anda">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-lg-2">
+                                <label for="pekerjaan" class="font-weight-bold">Pekerjaan</label>
+                            </div>
+                            <div class="col-lg-10">
+                                <input type="text" name="pekerjaan" id="pekerjaan" class="form-control" placeholder="Masukkan nama pekerjaan anda">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-lg-2">
+                                <label for="birthdate" class="font-weight-bold">Tanggal Lahir</label>
+                            </div>
+                            <div class="col-lg-10">
+                                <input type="date" name="birthdate" id="birthdate" class="form-control" placeholder="Masukkan tanggal lahir anda">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-lg-2">
+                                <label for="profile_image" class="font-weight-bold">Foto Profil</label>
+                            </div>
+                            <div class="col-lg-10">
+                                <input type="file" name="profile_image" id="profile_image" class="form-control" placeholder="Unggah foto profil anda, ukuran maksimal 2mb">
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-lg-2">
+                                <label for="header_image" class="font-weight-bold">Foto Header</label>
+                            </div>
+                            <div class="col-lg-10">
+                                <input type="file" name="header_image" id="header_image" class="form-control" placeholder="Unggah foto header anda, ukuran maksimal 2mb">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-end mt-4">
+                            <a href="" class="btn btn-outline-white mx-2 shadow">Batalkan</a>
+                            <button type="submit" class="btn btn-blue shadow">Simpan</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Keamanan Akun Section -->
+                <div id="security-section">
+                    <form action="{{ route('profil.update') }}" enctype="multipart/form-data" id="form-input" method="POST">
+                      @csrf
+                      <!-- Bagian lain dari form -->
+
+                      <div class="row mb-2">
                         <div class="col-lg-2">
-                            <label for="" class="font-weight-bold">Nama</label>
+                          <label for="email" class="font-weight-bold">Alamat Email</label>
                         </div>
                         <div class="col-lg-10">
-                            <input type="text" name="name" id="" class="form-control">
+                          <input type="email" name="email" id="email" class="form-control" placeholder="Masukkan alamat email anda">
                         </div>
-                    </div>
-                    <div class="row mb-2">
+                      </div>
+
+                      <div class="row mb-2">
                         <div class="col-lg-2">
-                            <label for="" class="font-weight-bold">No Telpon</label>
+                          <label for="phone" class="font-weight-bold">Nomor HP</label>
                         </div>
                         <div class="col-lg-10">
-                            <input type="number" name="phone" id="" class="form-control">
+                          <input type="tel" name="phone" id="phone" class="form-control" placeholder="Masukkan nomor telepon anda">
                         </div>
-                    </div>
-                    <div class="row mb-2">
+                      </div>
+
+                      <div class="row mb-2">
                         <div class="col-lg-2">
-                            <label for="" class="font-weight-bold">Foto Profil</label>
+                          <label for="new_password" class="font-weight-bold">Kata Sandi</label>
                         </div>
                         <div class="col-lg-10">
-                            <input type="file" name="profile_image" id="" class="form-control">
+                          <input type="password" name="new_password" id="new_password" class="form-control" placeholder="Masukkan password baru">
                         </div>
-                    </div>
-                    <div class="row mb-2">
-                        <div class="col-lg-2">
-                            <label for="" class="font-weight-bold">Foto Header</label>
-                        </div>
-                        <div class="col-lg-10">
-                            <input type="file" name="header_image" id="" class="form-control">
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-end mt-4">
-                        <a href="" class="btn btn-outline-white mx-2 shadow">Batalkan</a>
+                      </div>
+
+                      <div class="d-flex justify-content-end mt-4">
+                        <a href="" class="btn btn-outline-white mx-2 shadow">Kembali</a>
                         <button type="submit" class="btn btn-blue shadow">Simpan</button>
-                    </div>
-                </form>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <div id="histori-section" style="display: none;">
+                </div>
+
             </div>
         </div>
     </div>
 </div>
 
 @endsection
+
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/editprofile.css') }}">
+@endpush
+
+@push('scripts')
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Ambil elemen-elemen yang diperlukan
+  const profilSayaNavItem = document.querySelector(".nav-link#profil-saya-nav");
+  const keamananAkunNavItem = document.querySelector(".nav-link#keamanan-akun-nav");
+  const historiNavItem = document.querySelector(".nav-link#histori-nav");
+  const profilSayaSection = document.querySelector("#profile-section");
+  const keamananAkunSection = document.querySelector("#security-section");
+  const historiSection = document.querySelector("#histori-section");
+
+  // Tampilkan halaman "Profil Saya" secara default
+  profilSayaNavItem.classList.add("active");
+  keamananAkunSection.style.display = "none";
+  historiSection.style.display = "none";
+
+  // Tambahkan event listener untuk klik pada navbar item
+  profilSayaNavItem.addEventListener("click", function() {
+    profilSayaNavItem.classList.add("active");
+    keamananAkunNavItem.classList.remove("active");
+    historiNavItem.classList.remove("active");
+    profilSayaSection.style.display = "block";
+    keamananAkunSection.style.display = "none";
+    historiSection.style.display = "none";
+  });
+
+  keamananAkunNavItem.addEventListener("click", function() {
+    keamananAkunNavItem.classList.add("active");
+    profilSayaNavItem.classList.remove("active");
+    historiNavItem.classList.remove("active");
+    profilSayaSection.style.display = "none";
+    keamananAkunSection.style.display = "block";
+    historiSection.style.display = "none";
+  });
+
+  historiNavItem.addEventListener("click", function() {
+    historiNavItem.classList.add("active");
+    profilSayaNavItem.classList.remove("active");
+    keamananAkunNavItem.classList.remove("active");
+    profilSayaSection.style.display = "none";
+    keamananAkunSection.style.display = "none";
+    historiSection.style.display = "block";
+  });
+});
+
+function showSecurity() {
+  const profilSayaNavItem = document.querySelector(".nav-link#profil-saya-nav");
+  const keamananAkunNavItem = document.querySelector(".nav-link#keamanan-akun-nav");
+  const historiNavItem = document.querySelector(".nav-link#histori-nav");
+  const profilSayaSection = document.querySelector("#profile-section");
+  const keamananAkunSection = document.querySelector("#security-section");
+  const historiSection = document.querySelector("#histori-section");
+
+  profilSayaNavItem.classList.remove("active");
+  keamananAkunNavItem.classList.add("active");
+  historiNavItem.classList.remove("active");
+  profilSayaSection.style.display = "none";
+  keamananAkunSection.style.display = "block";
+  historiSection.style.display = "none";
+}
+
+function showHistori() {
+  const profilSayaNavItem = document.querySelector(".nav-link#profil-saya-nav");
+  const keamananAkunNavItem = document.querySelector(".nav-link#keamanan-akun-nav");
+  const historiNavItem = document.querySelector(".nav-link#histori-nav");
+  const profilSayaSection = document.querySelector("#profile-section");
+  const keamananAkunSection = document.querySelector("#security-section");
+  const historiSection = document.querySelector("#histori-section");
+
+  profilSayaNavItem.classList.remove("active");
+  keamananAkunNavItem.classList.remove("active");
+  historiNavItem.classList.add("active");
+  profilSayaSection.style.display = "none";
+  keamananAkunSection.style.display = "none";
+  historiSection.style.display = "block";
+}
+
+    </script>
+
+
+@endpush
+

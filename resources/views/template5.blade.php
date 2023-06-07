@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +20,7 @@
             width: 100%;
             height: 0px;
             z-index: 0;
-            margin-top: 200px;
+            margin-top: 300px;
         }
     </style>
 </head>
@@ -66,6 +65,7 @@
 @yield('konten')
 </div>
 
+@yield('footer')
 <div class="footer">
 <body style="margin: 0; background: #ffffff">
     <input type="hidden" id="anPageName" name="page" value="frame-386" />

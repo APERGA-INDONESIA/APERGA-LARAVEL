@@ -29,13 +29,23 @@
             <p class="total-pembayaran-text">Total Pembayaran:</p>
             <p class="total-bayar">Rp {{ number_format($totalBayar, 2, ',', '.') }}</p>
         </div>
+
+        <p class="timer-text">Selesaikan dalam waktu:</p>
+
+        <p class="timersplit">:</p>
+        <p class="timer-split">:</p>
+        <p class="timer-hour">23</p>
+        <p class="timer-minute">59</p>
+        <p class="timer-second">59</p>
+        <p class="timer-desc">Jam</p>
+        <p class="timer-desc-1">Menit</p>
+        <p class="timer-desc-2">Detik</p>
+
         <div class="button-group">
-            <form id="konfirmasiForm" method="POST" action="{{ route('pembayaran.sukses', ['id' => $orderTransaction->id]) }}">
+            <form id="konfirmasiForm" method="POST" action="{{ route('pembayaran.sukses.submit.qris', ['id' => $orderTransaction->id]) }}">
                 @csrf
                 <button type="submit" class="lanjutkan-pembayaran">Konfirmasi Pembayaran</button>
             </form>
-
-
         </div>
     </div>
 </div>
@@ -43,6 +53,47 @@
 
 @section('footer')
 @endsection
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var hourElement = document.querySelector('.timer-hour');
+      var minuteElement = document.querySelector('.timer-minute');
+      var secondElement = document.querySelector('.timer-second');
+
+      var hour = parseInt(hourElement.textContent);
+      var minute = parseInt(minuteElement.textContent);
+      var second = parseInt(secondElement.textContent);
+
+      var timer = setInterval(function() {
+        if (hour === 0 && minute === 0 && second === 0) {
+          clearInterval(timer);
+          // Lakukan tindakan setelah waktu berakhir
+          console.log('Waktu telah berakhir');
+        } else {
+          if (second === 0) {
+            if (minute === 0) {
+              if (hour > 0) {
+                hour--;
+                minute = 59;
+                second = 59;
+              }
+            } else {
+              minute--;
+              second = 59;
+            }
+          } else {
+            second--;
+          }
+
+          hourElement.textContent = hour < 10 ? '0' + hour : hour;
+          minuteElement.textContent = minute < 10 ? '0' + minute : minute;
+          secondElement.textContent = second < 10 ? '0' + second : second;
+        }
+      }, 1000);
+    });
+  </script>
+@endpush
 
 @push('styles')
 <link rel="stylesheet" href="{{ asset('css/pembayaranqris.css') }}">

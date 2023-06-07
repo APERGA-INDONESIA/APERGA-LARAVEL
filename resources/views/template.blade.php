@@ -19,7 +19,7 @@
             bottom: 0;
             width: 100%;
             height: 0px;
-            z-index: 0;
+            z-index: 2;
             margin-bottom: -250px;
         }
     </style>

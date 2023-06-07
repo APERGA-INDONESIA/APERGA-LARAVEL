@@ -4,7 +4,7 @@
     position: absolute;
     width: 659px;
     height: 106px;
-    left: 340px;
+    left: calc(50% - 150px);
     top: 400px;
     background: #1B2223;
     border-radius: 20px;
@@ -14,7 +14,7 @@
 }
 
 .dashboard {
-    position: absolute;
+    position: relative;
     width: 700px;
     height: 150px;
     margin-top: 50px;
@@ -26,7 +26,7 @@
     position: absolute;
     width: 659px;
     height: 106px;
-    left: 340px;
+    left: calc(50% - 150px);
     top: 120px;
     background: #1B2223;
     border-radius: 20px;
@@ -40,7 +40,7 @@
     position: absolute;
     width: 659px;
     height: 106px;
-    left: 340px;
+    left: calc(50% - 150px);
     top: 260px;
     background: #1B2223;
     border-radius: 20px;
@@ -76,12 +76,19 @@
 
 .MyPoin {
     position: absolute;
-    width: 56px;
-    height: 55px;
+    width: 58px;
+    height: 58px;
     left: 35px;
     top: 25px;
 }
 
+.setting {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    left: 545px;
+    top: 25px;
+}
 
 .profile-img {
     position: absolute;
@@ -124,7 +131,7 @@
     position: absolute;
     width: 659px;
     height: 106px;
-    left: 340px;
+    left: calc(50% - 150px);
     top: 540px;
     background: #1B2223;
     border-radius: 20px;
@@ -254,5 +261,35 @@
     text-align: center;
 
     color: #1B2223;
+
+}
+
+.tambahtext {
+    position: absolute;
+    width: 109px;
+    height: 26px;
+    top: 4px;
+    left: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 33px;
+    text-align: center;
+
+    color: #1B2223;
+
+}
+
+.tambah {
+        position: absolute;
+        left: 465px;
+        top: 38px;
+        width: 150px;
+        height: 45px;
+        background: #FFFFFF;
+        box-shadow: 0px 6.06421px 6.06421px rgba(63, 61, 86, 0.2);
+        border-radius: 19.7087px;
+        transition: background-color 0.1s, transform 0.1s;
 
 }

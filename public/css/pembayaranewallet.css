@@ -12,7 +12,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 050);
 }
 
-.bank-title {
+.dompet-title {
     position: absolute;
     width: 900px;
     height: 68px;
@@ -43,7 +43,7 @@
 }
 
 
-.banktext {
+.dompettext {
     position: absolute;
     width: 800px;
     height: 45px;
@@ -51,7 +51,7 @@
     top: 70px;
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 900;
+    font-weight: 700;
     font-size: 52px;
     line-height: 55px;
     text-align: center;
@@ -63,7 +63,7 @@
     width: 700px;
     height: 45px;
     left: calc(50% - 340px);
-    top: 840px;
+    top: 790px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
@@ -78,7 +78,7 @@
     width: 700px;
     height: 45px;
     left: calc(50% - 480px);
-    top: 895px;
+    top: 840px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 900;
@@ -93,7 +93,7 @@
     width: 700px;
     height: 45px;
     left: calc(50% - 345px);
-    top: 895px;
+    top: 840px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 900;
@@ -108,7 +108,7 @@
     width: 700px;
     height: 45px;
     left: calc(50% - 412px);
-    top: 890px;
+    top: 836px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
@@ -123,7 +123,7 @@
     width: 700px;
     height: 45px;
     left: calc(50% - 275px);
-    top: 890px;
+    top: 836px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
@@ -138,7 +138,7 @@
     width: 700px;
     height: 45px;
     left: calc(50% - 480px);
-    top: 945px;
+    top: 898px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
@@ -153,7 +153,7 @@
     width: 700px;
     height: 45px;
     left: calc(50% - 345px);
-    top: 945px;
+    top: 900px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
@@ -168,7 +168,7 @@
     width: 700px;
     height: 45px;
     left: calc(50% - 195px);
-    top: 945px;
+    top: 900px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
@@ -183,7 +183,7 @@
     width: 700px;
     height: 45px;
     left: calc(50% - 200px);
-    top: 895px;
+    top: 840px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 900;
@@ -285,7 +285,7 @@
     width: 360px;
     height: 48px;
     left: calc(50% - 170px);
-    top: 300px;
+    top: 1380px;
     background: #135589;
     mix-blend-mode: normal;
     filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));
@@ -328,7 +328,7 @@
 }
 
 .deskripsi-pembayaran {
-    width: 550px;
+    width: 445px;
     position: absolute;
     font-family: 'Poppins';
     font-style: normal;
@@ -356,7 +356,7 @@
 }
 
 
-.bankoption {
+.dompetoption {
     position: relative;
     z-index: 2;
     width: 580px;
@@ -368,15 +368,15 @@
     box-shadow: 0px 4px 4px rgba(63, 61, 86, 0.2);
 }
 
-.bank-logo {
+.dompet-logo {
     position: absolute;
-    margin-top: 15px;
+    margin-top: 18px;
     margin-left: 40px;
-    width: 68px;
-    height: 61px;
+    width: 55px;
+    height: 55px;
 }
 
-.bank-text {
+.dompet-text {
     position: absolute;
     width: 350px;
     height: 33px;
@@ -477,12 +477,12 @@
 
 }
 
-.bankprofile {
+.dompetprofile {
     position: relative;
     background: #FFFFFF;
     box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
     width: 550px;
-    height: 400px;
+    height: 330px;
     left: calc(50% - 260px);
     top: 240px;
     border-radius: 20px;
@@ -492,12 +492,12 @@
     justify-content: center;
 }
 
-.bank-logo-item {
+.dompet-logo-item {
     position: absolute;
-    left: 95px;
+    left: 75px;
     top: 45px;
-    width: 355px;
-    height: 206px;
+    width: 366px;
+    height: 150px;
 }
 
 .payment-number-text {
@@ -509,8 +509,7 @@
     font-weight: 800;
     font-size: 28px;
     line-height: 32px;
-    left: 10px;
-    top: 260px;
+    top: 175px;
     text-align: center;
     color: #1B2223;
 }
@@ -519,8 +518,8 @@
     position: absolute;
     width: 100%;
     height: 40px;
-    top:295px;
-    left: 12px;
+    margin-top: 8px;
+    top: 205px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 900;
@@ -532,10 +531,9 @@
 
     .payment-owner {
         position: absolute;
-        top: 340px;
+        top: 260px;
         width: 100%;
         height: 30px;
-        left: 5px;
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 800;

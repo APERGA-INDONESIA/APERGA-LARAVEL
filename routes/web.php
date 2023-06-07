@@ -13,6 +13,7 @@ use App\Http\Controllers\TentangAplikasiController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\EditProfilController;
+use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\DetailPekerjaController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\FilterPRTController;
@@ -40,21 +41,23 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/pembayaran/qris/{id}', [PembayaranController::class, 'showQRIS'])->name('pembayaranqris');
     Route::get('/pembayaran/bank/{id}', [PembayaranController::class, 'showBank'])->name('pembayaranbank');
     Route::get('/pembayaran/ewallet/{id}', [PembayaranController::class, 'showEwallet'])->name('pembayaranewallet');
-    Route::get('/pembayaransaldo/{id}', [PembayaranController::class, 'showSaldo'])->name('pembayaransaldo');
+    Route::get('/pembayaran/saldo/{id}', [PembayaranController::class, 'showSaldo'])->name('pembayaransaldo');
     Route::post('/pembayaran/{id}', [PembayaranController::class, 'bayar'])->name('pembayaran.process');
     Route::post('/pembayaran/ewallet/{id}', [PembayaranController::class, 'bayar'])->name('pembayaranewallet.process');
     Route::post('/pembayaran/bank/{id}', [PembayaranController::class, 'bayar'])->name('pembayaranbank.process');
     Route::post('/pembayaran/qris/{id}', [PembayaranController::class, 'bayar'])->name('pembayaranqris.process');
-    Route::post('/pembayaransaldo/{id}', [PembayaranController::class, 'bayarSaldo'])->name('pembayaransaldo.process');
+    Route::post('/pembayaran/saldo/{id}', [PembayaranController::class, 'bayarSaldo'])->name('pembayaransaldo.process');
     Route::post('/pembayaran/sukses/{id}', [PembayaranController::class, 'verifikasiPembayaran'])->name('pembayaran.sukses');
-    Route::get('/pembayaran/sukses/{id}', [PembayaranController::class, 'verifikasiPembayaran'])->name('pembayaran.sukses');
-    Route::post('/pembayaran/sukses/{id}', [PembayaranController::class, 'processPaymentQRIS'])->name('pembayaran.sukses.submit');
+    Route::get('/pembayaran/sukses/{id}', [PembayaranController::class, 'verifikasiPembayaran'])->name('pembayaran.sukses.get');
+    Route::post('/pembayaran/sukses/submit/qris/{id}', [PembayaranController::class, 'processPaymentQRIS'])->name('pembayaran.sukses.submit.qris');
+    Route::post('/pembayaran/sukses/submit/bank/{id}', [PembayaranController::class, 'processPaymentBank'])->name('pembayaran.sukses.submit.bank');
+    Route::post('/pembayaran/sukses/submit/dompet/{id}', [PembayaranController::class, 'processPaymentDompet'])->name('pembayaran.sukses.submit.dompet');
 
-
-    Route::put('/pembayaran/batal/{id}', [PembayaranController::class, 'batal'])->name('pembayaran.batal');
+    Route::post('/pembayaran/batal/{id}', [PembayaranController::class, 'batal'])->name('pembayaran.batal');
     Route::get('/pembayaran/sukses', [PembayaranController::class, 'verifikasiPembayaran'])->name('pembayaran-terverifikasi');
     Route::get('/bantuan', [BantuanController::class, 'showBantuan'])->name('bantuan'); // Menampilkan halaman bantuan
 
+    Route::get('/profil', [ProfilController::class, 'showProfil'])->name('profil');
     Route::get('/profil/edit', [EditProfilController::class, 'showEditForm'])->name('profil.edit');
     Route::post('/profil/edit', [EditProfilController::class, 'update'])->name('profil.update');
 
@@ -85,15 +88,16 @@ Route::get('/', [LandingController::class, 'showLanding'])->name('homepage');
 Route::redirect('/', '/homepage');
 // Mengarahkan ke halaman login jika mengakses akar situs
 
+Route::get('/pembayaransaldo', function () {
+    return view('pembayaransaldo');
+})->name('pembayaran.index');
+
+
 
 
     Route::get('pencarian', [FilterController::class, 'filterPRT'])->name('pencarian'); // Menghandle permintaan pencarian PRT
     Route::post('/pencarian', [FilterController::class, 'filterPRTPost'])->name('pencarian.post');
     Route::post('/pencarian', [FilterPRTController::class, 'search'])->name('pencarian.search');
-
-    Route::get('/pembayaranbank', function () {
-        return view('pembayaranbank');
-    });
 
 
 

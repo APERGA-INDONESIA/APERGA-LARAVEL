@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\OrderTransaction;
 use App\Models\Prt;
 use App\Models\User;
-
+use App\Models\InfoPayment;
 
 class PembayaranController extends Controller
 {
@@ -58,15 +58,50 @@ class PembayaranController extends Controller
         ]);
     }
 
-        public function showBank($id)
-        {
-            return view('pembayaranbank', ['id' => $id]);
-        }
+    public function showBank($id)
+    {
+        // Mendapatkan data order transaction berdasarkan ID
+        $orderTransaction = OrderTransaction::findOrFail($id);
 
-        public function showEwallet($id)
-        {
-            return view('pembayaranewallet', ['id' => $id]);
-        }
+        // Mendapatkan data prt berdasarkan id_prt dari order transaction
+        $prt = Prt::findOrFail($orderTransaction->prt_id);
+
+        // Menghitung total bayar
+        $gaji = $prt->gaji;
+        $totalBayar = $gaji + ($gaji * 0.05);
+
+        // Mendapatkan data info pembayaran dengan kanal_pembayaran = 'bank'
+        $infoPayments = InfoPayment::where('kanal_pembayaran', 'bank')->get();
+
+        // Mendapatkan data info pembayaran berdasarkan ID terpilih
+        $selectedBank = InfoPayment::find($id);
+
+        return view('pembayaranbank', compact('orderTransaction', 'infoPayments', 'selectedBank', 'totalBayar'));
+    }
+
+
+    public function showEwallet($id)
+    {
+        // Mendapatkan data order transaction berdasarkan ID
+        $orderTransaction = OrderTransaction::findOrFail($id);
+
+        // Mendapatkan data prt berdasarkan id_prt dari order transaction
+        $prt = Prt::findOrFail($orderTransaction->prt_id);
+
+        // Menghitung total bayar
+        $gaji = $prt->gaji;
+        $totalBayar = $gaji + ($gaji * 0.05);
+
+        // Mendapatkan data info pembayaran dengan kanal_pembayaran = 'ewallet'
+        $infoPayments = InfoPayment::where('kanal_pembayaran', 'ewallet')->get();
+
+        // Mendapatkan data info pembayaran terpilih
+        $selectedDompet = InfoPayment::find($id);
+
+        return view('pembayaranewallet', compact('orderTransaction', 'infoPayments', 'selectedDompet', 'totalBayar'));
+    }
+
+
 
         public function showSaldo($id)
         {
@@ -87,6 +122,113 @@ class PembayaranController extends Controller
 
             return view('pembayaranqris', compact('orderTransaction', 'totalBayar'));
         }
+
+        public function processPaymentDompet($id)
+        {
+            // Mengupdate status transaksi menjadi "Pembayaran Selesai" pada tabel order transactions
+            $orderTransaction = OrderTransaction::find($id);
+            if (!$orderTransaction) {
+                // Handle jika transaksi tidak ditemukan
+                abort(404);
+            }
+
+            $prt = Prt::find($orderTransaction->prt_id);
+            if (!$prt) {
+                // Handle jika data prt tidak ditemukan
+                abort(404);
+            }
+
+            // Menambah nilai pada kolom jam_kerja, durasi_kerja, dan catatan_khusus pada tabel prts
+            $prt->jamkerja += $orderTransaction->jam_kerja;
+            $prt->durasi += $orderTransaction->durasi_kerja;
+            $prt->catatan .= $orderTransaction->catatan_khusus;
+            $prt->user_id = $orderTransaction->user_id;
+            $prt->save();
+
+            // Mengupdate status transaksi menjadi "Pembayaran Selesai" dan tipe pembayaran menjadi "Bank" pada tabel order transactions
+            $orderTransaction->status_transaksi = "Pembayaran Selesai";
+            $orderTransaction->tipe_pembayaran = "Dompet Digital";
+            $orderTransaction->save();
+
+            // Menghitung total harga
+            $gaji = $prt->gaji;
+            $biayaLayanan = $orderTransaction->biaya_layanan;
+            $totalHarga = $gaji + $biayaLayanan;
+
+            // Update nilai total_harga pada tabel order transactions
+            $orderTransaction->total_harga = $totalHarga;
+            $orderTransaction->save();
+
+            // Menghitung nilai poin
+            $poin = ($totalHarga * 0.05) * 10;
+
+            // Simpan nilai poin pada sesi
+            session(['poin' => $poin]);
+
+            // Mengupdate nilai poin pada tabel users
+            $user = User::find($orderTransaction->user_id);
+            if ($user) {
+                $user->poin += $poin;
+                $user->save();
+            }
+
+            // Redirect atau tampilkan halaman berhasil pembayaran
+            return redirect()->route('pembayaran.sukses', ['id' => $orderTransaction->id]);
+        }
+
+        public function processPaymentBank($id)
+        {
+            // Mengupdate status transaksi menjadi "Pembayaran Selesai" pada tabel order transactions
+            $orderTransaction = OrderTransaction::find($id);
+            if (!$orderTransaction) {
+                // Handle jika transaksi tidak ditemukan
+                abort(404);
+            }
+
+            $prt = Prt::find($orderTransaction->prt_id);
+            if (!$prt) {
+                // Handle jika data prt tidak ditemukan
+                abort(404);
+            }
+
+            // Menambah nilai pada kolom jam_kerja, durasi_kerja, dan catatan_khusus pada tabel prts
+            $prt->jamkerja += $orderTransaction->jam_kerja;
+            $prt->durasi += $orderTransaction->durasi_kerja;
+            $prt->catatan .= $orderTransaction->catatan_khusus;
+            $prt->user_id = $orderTransaction->user_id;
+            $prt->save();
+
+            // Mengupdate status transaksi menjadi "Pembayaran Selesai" dan tipe pembayaran menjadi "Bank" pada tabel order transactions
+            $orderTransaction->status_transaksi = "Pembayaran Selesai";
+            $orderTransaction->tipe_pembayaran = "Bank";
+            $orderTransaction->save();
+
+            // Menghitung total harga
+            $gaji = $prt->gaji;
+            $biayaLayanan = $orderTransaction->biaya_layanan;
+            $totalHarga = $gaji + $biayaLayanan;
+
+            // Update nilai total_harga pada tabel order transactions
+            $orderTransaction->total_harga = $totalHarga;
+            $orderTransaction->save();
+
+            // Menghitung nilai poin
+            $poin = ($totalHarga * 0.05) * 10;
+
+            // Simpan nilai poin pada sesi
+            session(['poin' => $poin]);
+
+            // Mengupdate nilai poin pada tabel users
+            $user = User::find($orderTransaction->user_id);
+            if ($user) {
+                $user->poin += $poin;
+                $user->save();
+            }
+
+            // Redirect atau tampilkan halaman berhasil pembayaran
+            return redirect()->route('pembayaran.sukses', ['id' => $orderTransaction->id]);
+        }
+
 
         public function processPaymentQRIS($id)
         {
@@ -143,13 +285,11 @@ class PembayaranController extends Controller
 
         public function verifikasiPembayaran($id)
         {
-            // Lakukan verifikasi pembayaran
-            // ...
+            // Mendapatkan data order transaction berdasarkan ID
+            $orderTransaction = OrderTransaction::findOrFail($id);
 
-            // Tampilkan halaman pembayaran terverifikasi
-            return view('pembayaran-terverifikasi', ['id' => $id]);
+            return view('pembayaran-terverifikasi', compact('orderTransaction'));
         }
-
 
         public function bayar(Request $request, $id)
         {
@@ -206,6 +346,7 @@ class PembayaranController extends Controller
 
             return redirect()->route('dashboard')->with('success', 'Transaksi berhasil dibatalkan.');
         }
+
 
 
 }

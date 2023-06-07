@@ -1,4 +1,4 @@
-@extends('template')
+@extends('template6')
 @section('title', 'Mulai Kontrak')
 
 @section('navbar')
@@ -69,7 +69,7 @@
             </div>
         </div>
         <div class="rincian-biaya">
-            <div class="subtotal-biaya">Subtotal Biaya: <br> Rp.{{ number_format($prt->gaji, 0, ',', '.') }}</div>
+            <div class="subtotal-biaya">Subtotal Biaya: <br> Rp.{{ number_format($prt->gaji, 0, ',', '.') }} / Bulan</div>
         </div>
         <div class="button-group">
             <button id="confirmBtn" class="confirm">Kembali</button>

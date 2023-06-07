@@ -18,7 +18,7 @@
     @endphp
 
     <div class="kotak-hitam">
-        <img src="{{ $user->profile_image ? asset('images/' . $user->profile_image) : asset('images/profil.png') }}" alt="Profile Image" class="profile-image" style="border-radius: 100px;">
+        <img src="{{ $user->profile_image ? asset('Images/Profile Image/' . $user->profile_image) : asset('images/profil.png') }}" alt="Profile Image" class="profile-image" style="border-radius: 100px;">
         <p class="halo-username">Halo, {{ Auth::user()->name }}</p>
     </div>
 

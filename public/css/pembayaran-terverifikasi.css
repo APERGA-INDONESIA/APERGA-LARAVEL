@@ -21,7 +21,7 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 44px;
     line-height: 49px;
     text-align: right;
     color: #1B2223;
@@ -63,7 +63,7 @@
     position: absolute;
     width: 750px;
     height: 45px;
-    left: calc(50% - 350px);
+    left: calc(50% - 385px);
     top: 500px;
     font-family: 'Poppins';
     font-style: normal;
@@ -108,10 +108,10 @@
 
 .button-group button.done-button {
     position: absolute;
-    width: 360px;
+    width: 320px;
     height: 48px;
-    left: calc(50% - 170px);
-    top: 750px;
+    left: calc(50% - 163px);
+    top: 715px;
     background: #135589;
     mix-blend-mode: normal;
     filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.5));
@@ -124,7 +124,7 @@
 
 .sukses-img {
     position: absolute;
-    left: calc(50% - 430px);
+    left: calc(50% - 450px);
     top: 100px;
 }
 
@@ -135,8 +135,8 @@
     padding: 20px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
-    left: calc(50% - 140px);
-    top: 650px;
+    left: calc(50% - 156px);
+    top: 600px;
 }
 
 .coin {

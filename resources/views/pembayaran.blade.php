@@ -69,11 +69,10 @@
             <div class="total-bayar">Rp {{ number_format($gaji + $biayaLayanan, 2, ',', '.') }}</div>
         </div>
         <div class="button-group">
-            <button class="kembali" id="kembaliBtn">Kembali</button>
-            <form id="bayarForm" method="POST"
-                action="{{ route('pembayaran.process', ['id' => $orderTransaction->id]) }}">
+            <button class="kembali" onclick="batalTransaksi({{ $orderTransaction->id }})">Kembali</button>
+            <form id="bayarForm" method="POST" action="{{ route('pembayaran.process', ['id' => $orderTransaction->id]) }}">
                 @csrf
-                <input type="hidden" name="_method" value="PUT">
+                <input type="hidden" name="_method" value="POST">
                 <input type="hidden" name="total_harga" value="{{ $gaji + $biayaLayanan }}">
                 <input type="hidden" name="status_transaksi" value="Pembayaran">
                 <button type="submit" class="bayar">Bayar</button>
@@ -134,4 +133,37 @@
 
 </script>
 
+<script>
+    document.getElementById('saldoApergaBtn').addEventListener('click', function() {
+        window.location.href = "{{ $saldoApergaRoute }}";
+    });
+</script>
+
+<script>
+function batalTransaksi() {
+    fetch('/pembayaran/batal/{{ $orderTransaction->id }}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        },
+        body: JSON.stringify({
+            status_transaksi: 'Transaksi Dibatalkan'
+        })
+    })
+    .then(function(response) {
+        if (response.ok) {
+            // Redirect ke halaman dashboard setelah berhasil memperbarui
+            window.location.href = '/dashboard';
+        } else {
+            // Tampilkan pesan atau tangani jika ada kesalahan dalam pembaruan
+            console.error('Terjadi kesalahan saat memperbarui status transaksi.');
+        }
+    })
+    .catch(function(error) {
+        console.error('Terjadi kesalahan saat memperbarui status transaksi.', error);
+    });
+}
+
+</script>
 @endpush

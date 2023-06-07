@@ -1,4 +1,4 @@
-@extends('template')
+@extends('template6')
 @section('title', 'Detail Pekerja')
 
 @section('navbar')
