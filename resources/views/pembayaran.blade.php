@@ -54,20 +54,40 @@
         <br>
 
         <div class="ringkasan-pembayaran-title">Ringkasan Pembayaran</div>
+        <?php
+        function abbreviateNumber($number)
+        {
+            if ($number >= 1e9) {
+                return number_format($number / 1e9, 1) . ' Milliar';
+            }
+            if ($number >= 1e6) {
+                return number_format($number / 1e6, 1) . ' Juta';
+            }
+
+            return number_format($number);
+        }
+        ?>
+
         <div class="total-tagihan-box">
-            <div class="total-tagihan-text">Total Tagihan</div>
-            <div class="total-tagihan">Rp {{ number_format($gaji, 2, ',', '.') }}</div>
+            <div class="total-tagihan-text">
+                <span style="font-weight: bold;">Total Tagihan</span> (Untuk {{ $orderTransaction->durasi_kerja }} Bulan)
+            </div>
+            <div class="total-tagihan">Rp {{ abbreviateNumber($gaji * $orderTransaction->durasi_kerja) }}</div>
         </div>
+
         <div class="biaya-layanan-box">
-            <div class="biaya-layanan-text">Biaya Layanan</div>
-            <div class="biaya-layanan">Rp {{ number_format($biayaLayanan, 2, ',', '.') }}</div>
+            <div class="biaya-layanan-text">
+                <span style="font-weight: bold;">Biaya Layanan</span> (5% Tagihan)
+            </div>
+            <div class="biaya-layanan">Rp {{ abbreviateNumber($biayaLayanan) }}</div>
         </div>
 
         <div class="line"></div>
         <div class="total-bayar-box">
             <div class="total-bayar-title">Total Bayar</div>
-            <div class="total-bayar">Rp {{ number_format($gaji + $biayaLayanan, 2, ',', '.') }}</div>
+            <div class="total-bayar">Rp {{ abbreviateNumber(($gaji * $durasi_kerja) + $biayaLayanan) }}</div>
         </div>
+
         <div class="button-group">
             <button class="kembali" onclick="batalTransaksi({{ $orderTransaction->id }})">Kembali</button>
             <form id="bayarForm" method="POST" action="{{ route('pembayaran.process', ['id' => $orderTransaction->id]) }}">

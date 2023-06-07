@@ -51,7 +51,7 @@
     top: 70px;
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 52px;
     line-height: 55px;
     text-align: center;
@@ -63,7 +63,7 @@
     width: 700px;
     height: 45px;
     left: calc(50% - 340px);
-    top: 790px;
+    top: 840px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
@@ -78,7 +78,7 @@
     width: 700px;
     height: 45px;
     left: calc(50% - 480px);
-    top: 840px;
+    top: 895px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 900;
@@ -93,7 +93,7 @@
     width: 700px;
     height: 45px;
     left: calc(50% - 345px);
-    top: 840px;
+    top: 895px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 900;
@@ -108,7 +108,7 @@
     width: 700px;
     height: 45px;
     left: calc(50% - 412px);
-    top: 836px;
+    top: 890px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
@@ -123,7 +123,7 @@
     width: 700px;
     height: 45px;
     left: calc(50% - 275px);
-    top: 836px;
+    top: 890px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
@@ -138,7 +138,7 @@
     width: 700px;
     height: 45px;
     left: calc(50% - 480px);
-    top: 898px;
+    top: 945px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
@@ -153,7 +153,7 @@
     width: 700px;
     height: 45px;
     left: calc(50% - 345px);
-    top: 900px;
+    top: 945px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
@@ -168,7 +168,7 @@
     width: 700px;
     height: 45px;
     left: calc(50% - 195px);
-    top: 900px;
+    top: 945px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
@@ -183,7 +183,7 @@
     width: 700px;
     height: 45px;
     left: calc(50% - 200px);
-    top: 840px;
+    top: 895px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 900;
@@ -199,7 +199,7 @@
     position: relative;
     width: 500px;
     height: 41px;
-    left: calc(50% - 290px);
+    left: calc(50% - 255px);
     top: 280px;
     gap: 20px;
 }
@@ -482,7 +482,7 @@
     background: #FFFFFF;
     box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
     width: 550px;
-    height: 330px;
+    height: 400px;
     left: calc(50% - 260px);
     top: 240px;
     border-radius: 20px;
@@ -494,10 +494,10 @@
 
 .dompet-logo-item {
     position: absolute;
-    left: 75px;
+    left: 95px;
     top: 45px;
-    width: 366px;
-    height: 150px;
+    width: 355px;
+    height: 206px;
 }
 
 .payment-number-text {
@@ -509,7 +509,8 @@
     font-weight: 800;
     font-size: 28px;
     line-height: 32px;
-    top: 175px;
+    left: 10px;
+    top: 260px;
     text-align: center;
     color: #1B2223;
 }
@@ -518,8 +519,8 @@
     position: absolute;
     width: 100%;
     height: 40px;
-    margin-top: 8px;
-    top: 205px;
+    top:295px;
+    left: 12px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 900;
@@ -531,9 +532,10 @@
 
     .payment-owner {
         position: absolute;
-        top: 260px;
+        top: 340px;
         width: 100%;
         height: 30px;
+        left: 5px;
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 800;

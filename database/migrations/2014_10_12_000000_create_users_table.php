@@ -24,8 +24,8 @@ return new class extends Migration
             $table->string('profile_image')->nullable();
             $table->string('header_image')->nullable();
             $table->rememberToken();
-            // $table->float('saldo')->default(0);
-            // $table->integer('poin')->default(0);
+            $table->float('saldo')->default(0);
+            $table->bigInteger('poin')->default(0)->change;
             $table->timestamps();
         });
     }

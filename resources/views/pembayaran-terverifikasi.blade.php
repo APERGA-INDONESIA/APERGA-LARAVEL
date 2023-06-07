@@ -19,8 +19,33 @@
     </div>
     <div class="TempatCoin">
         <img src="{{ asset('images/coin.png') }}" alt="coin" class="coin">
-        <div id="hasilpoin" class="hasilpoin">{{ number_format(session('poin'), 0, ',', '.') }} AP Poin</div>
+        <div id="hasilpoin" class="hasilpoin">
+            {{ abbreviateNumber(session('poin')) }} AP Poin
+        </div>
     </div>
+
+    <?php
+    function abbreviateNumber($number)
+    {
+        if ($number >= 1e9) {
+            return number_format($number / 1e9, 1) . ' Milliar';
+        }
+        if ($number >= 1e6) {
+            return number_format($number / 1e6, 1) . ' Juta';
+        }
+
+        return number_format($number);
+    }
+
+    $gaji = 5000000; // Ganti dengan nilai gaji yang sesuai
+    $durasi_kerja = 12; // Ganti dengan nilai durasi kerja yang sesuai
+    $biayaLayanan = 0.05 * ($gaji * $durasi_kerja); // Ganti dengan perhitungan biaya layanan yang sesuai
+
+    $totalHarga = ($gaji * $durasi_kerja) + $biayaLayanan;
+    $poin = ($totalHarga * 0.05) * 10;
+
+    echo abbreviateNumber($poin);
+    ?>
 
 
 

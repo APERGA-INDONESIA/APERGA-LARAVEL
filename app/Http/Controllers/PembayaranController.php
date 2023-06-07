@@ -43,8 +43,14 @@ class PembayaranController extends Controller
         // Konversi tipe data gaji menjadi float
         $gaji = floatval($gaji);
 
+        // Mengambil durasi kerja dari transaksi pesanan
+        $durasi_kerja = $orderTransaction->durasi_kerja;
+
+        // Konversi tipe data durasi kerja menjadi float
+        $durasi_kerja = floatval($durasi_kerja);
+
         // Menghitung biaya layanan (contoh penghitungan sederhana)
-        $biayaLayanan = $gaji * 0.05; // Misalnya, biaya layanan adalah 5% dari gaji
+        $biayaLayanan = ($gaji * $durasi_kerja) * 0.05; // Misalnya, biaya layanan adalah 5% dari (gaji * durasi_kerja)
 
         // Konversi tipe data biaya layanan menjadi float
         $biayaLayanan = floatval($biayaLayanan);
@@ -54,6 +60,7 @@ class PembayaranController extends Controller
             'imageUrl' => $imageUrl,
             'orderTransaction' => $orderTransaction,
             'gaji' => $gaji,
+            'durasi_kerja' => $durasi_kerja,
             'biayaLayanan' => $biayaLayanan,
         ]);
     }
@@ -66,9 +73,27 @@ class PembayaranController extends Controller
         // Mendapatkan data prt berdasarkan id_prt dari order transaction
         $prt = Prt::findOrFail($orderTransaction->prt_id);
 
+        // Mengambil gaji dari tabel prts berdasarkan ID prt
+        $id_prt = $prt->id; // Definisikan variabel $id_prt dengan nilai dari $prt->id
+        $gaji = $prt ? $prt->gaji : 0;
+
+        // Konversi tipe data gaji menjadi float
+        $gaji = floatval($gaji);
+
+        // Mendapatkan durasi kerja dari order transaction
+        $durasi_kerja = $orderTransaction->durasi_kerja;
+
+        // Konversi tipe data durasi kerja menjadi float
+        $durasi_kerja = floatval($durasi_kerja);
+
+        // Menghitung biaya layanan (contoh penghitungan sederhana)
+        $biayaLayanan = ($gaji * $durasi_kerja) * 0.05; // Misalnya, biaya layanan adalah 5% dari (gaji * durasi_kerja)
+
+        // Konversi tipe data biaya layanan menjadi float
+        $biayaLayanan = floatval($biayaLayanan);
+
         // Menghitung total bayar
-        $gaji = $prt->gaji;
-        $totalBayar = $gaji + ($gaji * 0.05);
+        $totalBayar = ($gaji * $durasi_kerja) + $biayaLayanan;
 
         // Mendapatkan data info pembayaran dengan kanal_pembayaran = 'bank'
         $infoPayments = InfoPayment::where('kanal_pembayaran', 'bank')->get();
@@ -80,6 +105,7 @@ class PembayaranController extends Controller
     }
 
 
+
     public function showEwallet($id)
     {
         // Mendapatkan data order transaction berdasarkan ID
@@ -88,9 +114,27 @@ class PembayaranController extends Controller
         // Mendapatkan data prt berdasarkan id_prt dari order transaction
         $prt = Prt::findOrFail($orderTransaction->prt_id);
 
+        // Mengambil gaji dari tabel prts berdasarkan ID prt
+        $id_prt = $prt->id; // Definisikan variabel $id_prt dengan nilai dari $prt->id
+        $gaji = $prt ? $prt->gaji : 0;
+
+        // Konversi tipe data gaji menjadi float
+        $gaji = floatval($gaji);
+
+        // Mendapatkan durasi kerja dari order transaction
+        $durasi_kerja = $orderTransaction->durasi_kerja;
+
+        // Konversi tipe data durasi kerja menjadi float
+        $durasi_kerja = floatval($durasi_kerja);
+
+        // Menghitung biaya layanan (contoh penghitungan sederhana)
+        $biayaLayanan = ($gaji * $durasi_kerja) * 0.05; // Misalnya, biaya layanan adalah 5% dari (gaji * durasi_kerja)
+
+        // Konversi tipe data biaya layanan menjadi float
+        $biayaLayanan = floatval($biayaLayanan);
+
         // Menghitung total bayar
-        $gaji = $prt->gaji;
-        $totalBayar = $gaji + ($gaji * 0.05);
+        $totalBayar = ($gaji * $durasi_kerja) + $biayaLayanan;
 
         // Mendapatkan data info pembayaran dengan kanal_pembayaran = 'ewallet'
         $infoPayments = InfoPayment::where('kanal_pembayaran', 'ewallet')->get();
@@ -110,15 +154,33 @@ class PembayaranController extends Controller
 
         public function showQRIS($id)
         {
-            // Mendapatkan data order transaction berdasarkan ID
-            $orderTransaction = OrderTransaction::findOrFail($id);
+        // Mendapatkan data order transaction berdasarkan ID
+        $orderTransaction = OrderTransaction::findOrFail($id);
 
-            // Mendapatkan data prt berdasarkan id_prt dari order transaction
-            $prt = Prt::findOrFail($orderTransaction->prt_id);
+        // Mendapatkan data prt berdasarkan id_prt dari order transaction
+        $prt = Prt::findOrFail($orderTransaction->prt_id);
 
-            // Menghitung total bayar
-            $gaji = $prt->gaji;
-            $totalBayar = $gaji + ($gaji * 0.05);
+        // Mengambil gaji dari tabel prts berdasarkan ID prt
+        $id_prt = $prt->id; // Definisikan variabel $id_prt dengan nilai dari $prt->id
+        $gaji = $prt ? $prt->gaji : 0;
+
+        // Konversi tipe data gaji menjadi float
+        $gaji = floatval($gaji);
+
+        // Mendapatkan durasi kerja dari order transaction
+        $durasi_kerja = $orderTransaction->durasi_kerja;
+
+        // Konversi tipe data durasi kerja menjadi float
+        $durasi_kerja = floatval($durasi_kerja);
+
+        // Menghitung biaya layanan (contoh penghitungan sederhana)
+        $biayaLayanan = ($gaji * $durasi_kerja) * 0.05; // Misalnya, biaya layanan adalah 5% dari (gaji * durasi_kerja)
+
+        // Konversi tipe data biaya layanan menjadi float
+        $biayaLayanan = floatval($biayaLayanan);
+
+        // Menghitung total bayar
+        $totalBayar = ($gaji * $durasi_kerja) + $biayaLayanan;
 
             return view('pembayaranqris', compact('orderTransaction', 'totalBayar'));
         }
@@ -204,9 +266,36 @@ class PembayaranController extends Controller
             $orderTransaction->save();
 
             // Menghitung total harga
-            $gaji = $prt->gaji;
-            $biayaLayanan = $orderTransaction->biaya_layanan;
-            $totalHarga = $gaji + $biayaLayanan;
+            // Mendapatkan data order transaction berdasarkan ID
+            $orderTransaction = OrderTransaction::findOrFail($id);
+
+            // Mendapatkan data prt berdasarkan id_prt dari order transaction
+            $prt = Prt::findOrFail($orderTransaction->prt_id);
+
+            // Mengambil gaji dari tabel prts berdasarkan ID prt
+            $id_prt = $prt->id; // Definisikan variabel $id_prt dengan nilai dari $prt->id
+            $gaji = $prt ? $prt->gaji : 0;
+
+            // Konversi tipe data gaji menjadi float
+            $gaji = floatval($gaji);
+
+            // Mendapatkan durasi kerja dari order transaction
+            $durasi_kerja = $orderTransaction->durasi_kerja;
+
+            // Konversi tipe data durasi kerja menjadi float
+            $durasi_kerja = floatval($durasi_kerja);
+
+            // Menghitung biaya layanan (contoh penghitungan sederhana)
+            $biayaLayanan = ($gaji * $durasi_kerja) * 0.05; // Misalnya, biaya layanan adalah 5% dari (gaji * durasi_kerja)
+
+            // Konversi tipe data biaya layanan menjadi float
+            $biayaLayanan = floatval($biayaLayanan);
+
+            // Menghitung total bayar
+            $totalBayar = ($gaji * $durasi_kerja) + $biayaLayanan;
+
+            // Menghitung total harga
+            $totalHarga = ($gaji * $durasi_kerja) + $biayaLayanan;
 
             // Update nilai total_harga pada tabel order transactions
             $orderTransaction->total_harga = $totalHarga;
@@ -258,9 +347,36 @@ class PembayaranController extends Controller
             $orderTransaction->save();
 
             // Menghitung total harga
-            $gaji = $prt->gaji;
-            $biayaLayanan = $orderTransaction->biaya_layanan;
-            $totalHarga = $gaji + $biayaLayanan;
+            // Mendapatkan data order transaction berdasarkan ID
+            $orderTransaction = OrderTransaction::findOrFail($id);
+
+            // Mendapatkan data prt berdasarkan id_prt dari order transaction
+            $prt = Prt::findOrFail($orderTransaction->prt_id);
+
+            // Mengambil gaji dari tabel prts berdasarkan ID prt
+            $id_prt = $prt->id; // Definisikan variabel $id_prt dengan nilai dari $prt->id
+            $gaji = $prt ? $prt->gaji : 0;
+
+            // Konversi tipe data gaji menjadi float
+            $gaji = floatval($gaji);
+
+            // Mendapatkan durasi kerja dari order transaction
+            $durasi_kerja = $orderTransaction->durasi_kerja;
+
+            // Konversi tipe data durasi kerja menjadi float
+            $durasi_kerja = floatval($durasi_kerja);
+
+            // Menghitung biaya layanan (contoh penghitungan sederhana)
+            $biayaLayanan = ($gaji * $durasi_kerja) * 0.05; // Misalnya, biaya layanan adalah 5% dari (gaji * durasi_kerja)
+
+            // Konversi tipe data biaya layanan menjadi float
+            $biayaLayanan = floatval($biayaLayanan);
+
+            // Menghitung total bayar
+            $totalBayar = ($gaji * $durasi_kerja) + $biayaLayanan;
+
+            // Menghitung total harga
+            $totalHarga = ($gaji * $durasi_kerja) + $biayaLayanan;
 
             // Update nilai total_harga pada tabel order transactions
             $orderTransaction->total_harga = $totalHarga;
@@ -295,7 +411,7 @@ class PembayaranController extends Controller
         {
             $orderTransaction = OrderTransaction::findOrFail($id);
             $statusTransaksi = 'Mulai Pembayaran';
-            $totalHarga = intval($request->input('total_harga'));
+            $totalHarga = floatval(str_replace(',', '', $request->input('total_harga')));
 
             // Mengupdate nilai kolom status_transaksi dan total_harga
             $orderTransaction->status_transaksi = $statusTransaksi;

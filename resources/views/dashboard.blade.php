@@ -33,10 +33,29 @@
             $totalPoin = $user->poin;
         @endphp
 
-        <p class="TotalPoin">{{ number_format($totalPoin, 0, ',', '.') }} AP Point</p>
+        <p class="TotalPoin">{{ abbreviateNumber($totalPoin) }} AP Point</p>
         <button class="redeem" onclick="location.href='{{ route('redeem') }}'">
             <p class="redeemtext">Redeem</p>
         </button>
+
+        <?php
+        function abbreviateNumber($number)
+        {
+            if ($number >= 1e9) {
+                return number_format($number / 1e9, 1) . ' Milliar';
+            }
+            if ($number >= 1e6) {
+                return number_format($number / 1e6, 1) . ' Juta';
+            }
+
+            return number_format($number);
+        }
+
+        $totalPoin = 5000000; // Ganti dengan nilai total poin yang sesuai
+
+        echo abbreviateNumber($totalPoin);
+        ?>
+
     </div>
 
     <div class="dashboard-kotak-4">

@@ -33,8 +33,25 @@
 
     <div class="total-pembayaran hidden">
         <p class="total-pembayaran-text">Total Pembayaran:</p>
-        <p class="total-bayar">Rp {{ number_format($totalBayar, 2, ',', '.') }}</p>
+        <p class="total-bayar">Rp
+            <?php
+            function abbreviateNumber($number)
+            {
+                if ($number >= 1e9) {
+                    return number_format($number / 1e9, 1) . ' Milliar';
+                }
+                if ($number >= 1e6) {
+                    return number_format($number / 1e6, 1) . ' Juta';
+                }
+
+                return number_format($number);
+            }
+
+            echo abbreviateNumber($totalBayar);
+            ?>
+        </p>
     </div>
+    
     <p class="timer-text hidden">Selesaikan dalam waktu:</p>
 
     <p class="timersplit hidden">:</p>

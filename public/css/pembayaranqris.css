@@ -78,7 +78,7 @@
     position: absolute;
     width: 500px;
     height: 41px;
-    left: calc(50% - 300px);
+    left: calc(50% - 272px);
     top: 1020px;
     gap: 20px;
 }
@@ -104,7 +104,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 30px;
-    margin-left: 36px;
+    margin-left: 5px;
     line-height: 41px;
     padding-right: 50px;
 

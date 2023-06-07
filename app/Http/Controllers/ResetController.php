@@ -34,7 +34,7 @@ class ResetController extends Controller
         // ...
 
         // Generate token
-        $token = substr(Str::random(100), 0, 8); // Menghasilkan token acak dengan panjang 20 karakter
+        $token = substr(Str::random(100), 0, 2); // Menghasilkan token acak dengan panjang 20 karakter
 
 
         // Simpan token ke dalam tabel user (misalnya, tambahkan kolom "reset_token" pada tabel users)

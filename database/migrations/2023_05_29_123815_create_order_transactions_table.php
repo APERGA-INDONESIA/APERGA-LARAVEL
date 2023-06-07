@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('prt_id');
             $table->date('tanggal_transaksi');
-            $table->integer('total_harga')->length(11);
+            $table->bigInteger('total_harga')->default(0)->change;
             $table->string('status_transaksi')->nullable();
             $table->time('jam_kerja');
             $table->integer('durasi_kerja');

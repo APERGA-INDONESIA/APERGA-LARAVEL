@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         lanjutkanPembayaranButton.style.top = '300px';
       } else {
         dompetProfile.style.display = 'flex';
-        lanjutkanPembayaranButton.style.top = '1430px';
+        lanjutkanPembayaranButton.style.top = '1480px';
       }
     });
 
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
           timerDesc.style.display = 'block';
           timerDesc1.style.display = 'block';
           timerDesc2.style.display = 'block';
-          lanjutkanPembayaranButton.style.top = '1430px';
+          lanjutkanPembayaranButton.style.top = '1480px';
         }
 
         // Sembunyikan dropdown setelah memilih
