@@ -47,7 +47,7 @@
                 <div class="jam-kerja-title">Pilih Jam Kerja</div>
                 <div class="jam-kerja-box">
                     <div class="jam-kerja-text">
-                        <input type="text" name="jam_kerja" id="jam_kerja_input" placeholder="Durasi Kerja" />
+                        <input type="number" name="jam_kerja" id="jam_kerja_input" placeholder="Durasi Kerja" />
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                 <div class="durasi-kerja-title">Pilih Durasi Kerja</div>
                 <div class="durasi-kerja-box">
                     <div class="durasi-kerja-text">
-                        <input type="text" name="durasi_kerja" id="durasi_kerja_input" placeholder="Masa Kontrak" />
+                        <input type="number" name="durasi_kerja" id="durasi_kerja_input" placeholder="Masa Kontrak" />
                     </div>
                 </div>
             </div>

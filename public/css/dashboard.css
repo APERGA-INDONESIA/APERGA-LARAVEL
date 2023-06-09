@@ -1,10 +1,29 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,600,800,500,700");
 
+.ball {
+    position: absolute;
+    width: 376px;
+    height: 427px;;
+    left: calc(50% - 800px);
+    top: -150px;
+    transform: rotate(-180deg);
+
+}
+
+.balls {
+    position: relative;
+    width: 376px;
+    height: 427px;
+    left: calc(50% - -400px);
+    top: 720px;
+
+}
+
 .dashboard-kotak-4 {
     position: absolute;
     width: 659px;
     height: 106px;
-    left: calc(50% - 150px);
+    left: calc(50% - 130px);
     top: 400px;
     background: #1B2223;
     border-radius: 20px;
@@ -15,6 +34,7 @@
 
 .dashboard {
     position: relative;
+    top: 15px;
     width: 700px;
     height: 150px;
     margin-top: 50px;
@@ -26,7 +46,7 @@
     position: absolute;
     width: 659px;
     height: 106px;
-    left: calc(50% - 150px);
+    left: calc(50% - 130px);
     top: 120px;
     background: #1B2223;
     border-radius: 20px;
@@ -40,7 +60,7 @@
     position: absolute;
     width: 659px;
     height: 106px;
-    left: calc(50% - 150px);
+    left: calc(50% - 130px);
     top: 260px;
     background: #1B2223;
     border-radius: 20px;
@@ -131,7 +151,7 @@
     position: absolute;
     width: 659px;
     height: 106px;
-    left: calc(50% - 150px);
+    left: calc(50% - 130px);
     top: 540px;
     background: #1B2223;
     border-radius: 20px;
@@ -291,5 +311,9 @@
         box-shadow: 0px 6.06421px 6.06421px rgba(63, 61, 86, 0.2);
         border-radius: 19.7087px;
         transition: background-color 0.1s, transform 0.1s;
+    }
 
-}
+    .tambah:hover {
+        background-color: #F2F2F2;
+        transform: translateY(-4px);
+    }

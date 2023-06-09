@@ -25,7 +25,11 @@ class User extends Authenticatable
         'header_image',
         'saldo',
         'poin',
+        'profesi',
+        'alamat',
+        'tanggallahir',
     ];
+
 
     /**
      * The attributes that should be hidden for serialization.

@@ -6,6 +6,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
+use App\Models\OrderTransaction;
+
 
 class EditProfilController extends Controller
 {
@@ -44,17 +47,42 @@ class EditProfilController extends Controller
             $user->header_image = $fileSave;
         }
 
-        $user->name = $request->name;
-        $user->phone = $request->phone;
+        // Update data profil jika ada perubahan
+        if (!empty($request->name)) {
+            $user->name = $request->name;
+        }
+        if (!empty($request->alamat)) {
+            $user->alamat = $request->alamat;
+        }
+        if (!empty($request->profesi)) {
+            $user->profesi = $request->profesi;
+        }
+        if (!empty($request->tanggallahir)) {
+            $user->tanggallahir = $request->tanggallahir;
+        }
+
         $user->save();
 
-        return redirect()->back();
+        // Update data keamanan akun jika ada perubahan
+        if (!empty($request->email)) {
+            $user->email = $request->email;
+        }
+        if (!empty($request->phone)) {
+            $user->phone = $request->phone;
+        }
+        if (!empty($request->new_password)) {
+            $user->password = bcrypt($request->new_password);
+        }
+
+        $user->save();
+
+        return redirect()->back()->withSuccess('Profil berhasil diperbarui.');
     }
 
     public function showEditForm()
     {
         $user = Auth::user();
-        return view('editprofile', compact('user'));
+        $orderTransactions = OrderTransaction::where('user_id', $user->id)->get();
+        return view('editprofile', compact('user', 'orderTransactions'));
     }
-
 }

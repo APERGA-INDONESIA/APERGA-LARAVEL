@@ -52,6 +52,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/pembayaran/sukses/submit/qris/{id}', [PembayaranController::class, 'processPaymentQRIS'])->name('pembayaran.sukses.submit.qris');
     Route::post('/pembayaran/sukses/submit/bank/{id}', [PembayaranController::class, 'processPaymentBank'])->name('pembayaran.sukses.submit.bank');
     Route::post('/pembayaran/sukses/submit/dompet/{id}', [PembayaranController::class, 'processPaymentDompet'])->name('pembayaran.sukses.submit.dompet');
+    Route::post('/pembayaran/sukses/submit/saldo/{id}', [PembayaranController::class, 'processPaymentSaldo'])->name('pembayaran.sukses.submit.saldo');
 
     Route::post('/pembayaran/batal/{id}', [PembayaranController::class, 'batal'])->name('pembayaran.batal');
     Route::get('/pembayaran/sukses', [PembayaranController::class, 'verifikasiPembayaran'])->name('pembayaran-terverifikasi');

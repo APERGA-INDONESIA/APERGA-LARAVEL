@@ -21,18 +21,44 @@
         <div class="group-377-f7Eucv" data-id="1329:7527">
           <div class="rectangle-69-Ck4Xlj" data-id="1328:7491"></div>
           <div class="group-376-Ck4Xlj" data-id="1328:7485">
+            <?php
+            function shortenName($name)
+            {
+                $words = explode(' ', $name); // Membagi string menjadi array kata-kata
+
+                if (count($words) > 2) {
+                    $shortened = ucfirst($words[0]); // Mengambil kata pertama dan mengkapitalisasi huruf pertama
+
+                    for ($i = 1; $i < count($words); $i++) {
+                        if ($i >= count($words) - 2) {
+                            $shortened .= ' ' . strtoupper(substr($words[$i], 0, 1)) . '.'; // Menambahkan huruf pertama setiap kata terakhir ke depannya dengan titik
+                        } else {
+                            $shortened .= ' ' . $words[$i]; // Menambahkan kata pertama dan kedua tanpa perubahan
+                        }
+                    }
+
+                    return $shortened;
+                }
+
+                return $name;
+            }
+
+            ?>
+
             <div class="adhitya-pratama-mp-L2jF5G" data-id="1328:7486">
-              {{ $user->name }}
+              {{ shortenName($user->name) }}
             </div>
             <p class="bergabung-pada-12-mei-2023-L2jF5G" data-id="1328:7487">
               Bergabung pada {{ $user->created_at->format('d F Y') }}
             </p>
           </div>
           <img
-            class="rectangle-55-Ck4Xlj"
-            data-id="1328:7489"
-            src="{{ $user->header_image ? asset('Images/Header Image/' . $user->header_image) : asset('images/headerbg.png') }}" style="border-top-left-radius: 50px; border-top-right~-radius: 50px;"
+          class="rectangle-55-Ck4Xlj"
+          data-id="1328:7489"
+          src="{{ $user->header_image ? asset('Images/Header Image/' . $user->header_image) : asset('images/header.png') }}"
+          style="border-top-left-radius: 50px; border-top-right-radius: 50px;"
             />
+
           <img
             class="profile-2-Ck4Xlj"
             data-id="1328:7493"
@@ -78,7 +104,7 @@
           <div
             class="x16-februari-2003-Ck4Xlj nunitosans-semi-bold-eerie-black-24-7px"
             data-id="1329:7508"
-          >:  {{ $user->tanggal_lahir ?: 'Data tanggal lahir tidak tersedia' }}
+          >:  {{ $user->tanggallahir ?: 'Data tanggal lahir tidak tersedia' }}
           </div>
           <div
             class="x083192925747-Ck4Xlj nunitosans-semi-bold-eerie-black-24-7px"

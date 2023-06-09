@@ -20,7 +20,7 @@
             width: 100%;
             height: 0px;
             z-index: 0;
-            margin-top: 200px;
+            margin-top: 300px;
         }
     </style>
 </head>

@@ -258,7 +258,9 @@ input:focus {
 .frame-386 .footer-XvkHiT {
   background-color: var(--black);
   height: 458px;
+  bottom: 0px;
   left: 0px;
+  right: 0px;
   mix-blend-mode: normal;
   overflow: hidden;
   position: absolute;

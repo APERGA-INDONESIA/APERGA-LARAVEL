@@ -17,9 +17,7 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
           <img
             class="group-2-1-TCrRaf group-2-1"
             data-id="I953:7158;188:6755"
-            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-            anima-src="https://cdn.animaapp.com/projects/647613b113722780cca57256/releases/64761436d97d1659d114e577/img/group-2-1@2x.png"
-
+            src="{{ asset('images/apergaa.png') }}"
           />
           <div class="frame-255-TCrRaf" data-id="I953:7158;95:6055">
             <div class="cari-prt-S9ENff body" data-id="I953:7158;95:6050">
@@ -58,7 +56,7 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
         /><img
           class="round-cube-blue-glossy-0MUxxh"
           data-id="974:8023"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+          src="{{ asset('images/roundcube.png') }}"
 
           alt="RoundCube-Blue-Glossy"
         />
@@ -116,7 +114,6 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
                     <img
                       class="img-uuLVrX img"
                       data-id="974:8004"
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
                       src="{{ asset('images/thunder.png') }}"
                       alt="thunder"
                     />

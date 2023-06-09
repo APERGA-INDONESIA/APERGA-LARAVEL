@@ -336,6 +336,10 @@
 
   .popup-field p {
     margin-bottom: 20px;
+    font-family: 'Poppins';
+    font-size: 12px;
+    font-weight: 500;
+    color: #182223;
   }
 
   .button-container {

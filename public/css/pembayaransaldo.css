@@ -1,0 +1,391 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,600,800,500,700");
+
+.kotak-hitam {
+    position: absolute;
+    width: 100%;
+    height: 2500px;
+    left: 0;
+    top: 200px;
+    background: #1B2223;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 050);
+}
+
+.saldo {
+    position: absolute;
+    width: 900px;
+    height: 68px;
+    top: -50px;
+    left: 400px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 49px;
+    text-align: right;
+    color: #1B2223;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    line-height:16px;
+    z-index: 2;
+}
+
+.content {
+    display: flex;
+    text-align: center;
+    gap: 40px;
+    margin-top: 40px;
+    margin-left: 198px;
+}
+
+
+
+
+
+.button-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+    width: 427px;
+    height: 36px;
+    margin-top: 15px;
+    flex: none;
+    order: 4;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.button-group button {
+    width: 194px;
+    height: 36px;
+    border: 2px solid rgba(19, 85, 137, 1);
+    border-radius: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #1B2223;
+}
+
+.button-group button.lanjutkan-pembayaran {
+    position: relative;
+    width: 400px;
+    height: 48px;
+    left: 120px;
+    top: 620px;
+    background: #135589;
+    border-radius: 20px;
+    color: #ffffff;
+}
+
+.button-group button.lanjutkan-pembayaran:hover {
+    background: #0f456e;
+}
+
+
+.saldo-section {
+    position: absolute;
+    width: 616px;
+    height: 800px;
+    left: calc(50% - 290px);
+    top: 150px;
+    background: #15141B;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;
+}
+
+.saldo-header {
+    position: absolute;
+    width: 458px;
+    height: 53px;
+    top: 64px;
+    left: 79px;
+}
+
+.saldo-header img {
+    position: absolute;
+    width: 53px;
+    height: 53px;
+}
+
+.saldo-header-text {
+    position: absolute;
+    width: 385px;
+    height: 48px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 48px;
+    color: #FFFFFF;
+    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+    left: 79px;
+    top: 4px;
+}
+
+.saldo-text {
+    position: relative;
+    width: 426px;
+    height: 50px;
+    margin-top: 58px;
+    margin-left: 95px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    left: 95px;
+    top: 141px;
+}
+
+.rincian-pembayaran-text {
+    position: absolute;
+    width: 250px;
+    height: 48px;
+    left: 97px;
+    top: 212px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 48px;
+    color: #FFFFFF;
+    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.saldo-info {
+    position: absolute;
+    width: 436px;
+    height: 193px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    left: 90px;
+    top: 260px;
+}
+
+
+
+.total-harga-text {
+    position: relative;
+    left: 40px;
+    width: 200px;
+    top: 30px;
+    height: 30px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: #C1C1C1;
+}
+
+.totalharga {
+    position: relative;
+    width: 180px;
+    height: 25px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+    left: 290px;
+    top: -15px;
+}
+
+
+
+.saldo-text {
+    position: absolute;
+    width: 373px;
+    height: 31px;
+    left: 30px;
+    top: 72px;
+}
+.saldo-me-text {
+    position: relative;
+    width: 139px;
+    height: 30px;
+    left: 40px;
+    top: -10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: #C1C1C1;
+}
+
+.saldome {
+    position: relative;
+    width: 180px;
+    height: 30px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+    left: 290px;
+    top: -56px;
+}
+
+.message {
+    position: relative;
+    width: 390px;
+    height: 50px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #81CDA1;
+    left: 115px;
+    top: 385px;
+}
+
+.timer-text {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 340px);
+    top: 480px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-hour {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 480px);
+    top: 540px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-minute {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 345px);
+    top: 542px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timersplit {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 412px);
+    top: 536px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-split {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 275px);
+    top: 536px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-desc {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 480px);
+    top: 592px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-desc-1 {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 345px);
+    top: 592px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-desc-2 {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 195px);
+    top: 592px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.timer-second {
+    position: absolute;
+    width: 700px;
+    height: 45px;
+    left: calc(50% - 200px);
+    top: 542px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}

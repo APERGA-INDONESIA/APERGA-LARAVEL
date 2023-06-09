@@ -149,7 +149,41 @@ class PembayaranController extends Controller
 
         public function showSaldo($id)
         {
-            return view('pembayaransaldo', ['id' => $id]);
+            // Mendapatkan data order transaction berdasarkan ID
+            $orderTransaction = OrderTransaction::findOrFail($id);
+
+            // Mendapatkan data prt berdasarkan id_prt dari order transaction
+            $prt = Prt::findOrFail($orderTransaction->prt_id);
+
+            // Mengambil gaji dari tabel prts berdasarkan ID prt
+            $id_prt = $prt->id; // Definisikan variabel $id_prt dengan nilai dari $prt->id
+            $gaji = $prt ? $prt->gaji : 0;
+
+            // Konversi tipe data gaji menjadi float
+            $gaji = floatval($gaji);
+
+            // Mendapatkan durasi kerja dari order transaction
+            $durasi_kerja = $orderTransaction->durasi_kerja;
+
+            // Konversi tipe data durasi kerja menjadi float
+            $durasi_kerja = floatval($durasi_kerja);
+
+            // Menghitung biaya layanan (contoh penghitungan sederhana)
+            $biayaLayanan = ($gaji * $durasi_kerja) * 0.05; // Misalnya, biaya layanan adalah 5% dari (gaji * durasi_kerja)
+
+            // Konversi tipe data biaya layanan menjadi float
+            $biayaLayanan = floatval($biayaLayanan);
+
+            // Menghitung total bayar
+            $totalBayar = ($gaji * $durasi_kerja) + $biayaLayanan;
+
+            // Mendapatkan user_id dari order transaction
+            $user_id = $orderTransaction->user_id;
+
+            // Mendapatkan saldo dari tabel users berdasarkan user_id
+            $saldoUser = User::where('id', $user_id)->value('saldo');
+
+            return view('pembayaransaldo', compact('orderTransaction', 'totalBayar', 'saldoUser'));
         }
 
         public function showQRIS($id)
@@ -392,6 +426,95 @@ class PembayaranController extends Controller
             $user = User::find($orderTransaction->user_id);
             if ($user) {
                 $user->poin += $poin;
+                $user->save();
+            }
+
+            // Redirect atau tampilkan halaman berhasil pembayaran
+            return redirect()->route('pembayaran.sukses', ['id' => $orderTransaction->id]);
+        }
+
+        public function processPaymentSaldo($id)
+        {
+            // Mengupdate status transaksi menjadi "Pembayaran Selesai" pada tabel order transactions
+            $orderTransaction = OrderTransaction::find($id);
+            if (!$orderTransaction) {
+                // Handle jika transaksi tidak ditemukan
+                abort(404);
+            }
+
+            $prt = Prt::find($orderTransaction->prt_id);
+            if (!$prt) {
+                // Handle jika data prt tidak ditemukan
+                abort(404);
+            }
+
+            // Menambah nilai pada kolom jam_kerja, durasi_kerja, dan catatan_khusus pada tabel prts
+            $prt->jamkerja += $orderTransaction->jam_kerja;
+            $prt->durasi += $orderTransaction->durasi_kerja;
+            $prt->catatan .= $orderTransaction->catatan_khusus;
+            $prt->user_id = $orderTransaction->user_id;
+            $prt->save();
+
+            // Mengupdate status transaksi menjadi "Pembayaran Selesai" dan tipe pembayaran menjadi "QRIS" pada tabel order transactions
+            $orderTransaction->status_transaksi = "Pembayaran Selesai";
+            $orderTransaction->tipe_pembayaran = "SALDO APERGA";
+            $orderTransaction->save();
+
+            // Menghitung total harga
+            // Mendapatkan data order transaction berdasarkan ID
+            $orderTransaction = OrderTransaction::findOrFail($id);
+
+            // Mendapatkan data prt berdasarkan id_prt dari order transaction
+            $prt = Prt::findOrFail($orderTransaction->prt_id);
+
+            // Mengambil gaji dari tabel prts berdasarkan ID prt
+            $id_prt = $prt->id; // Definisikan variabel $id_prt dengan nilai dari $prt->id
+            $gaji = $prt ? $prt->gaji : 0;
+
+            // Konversi tipe data gaji menjadi float
+            $gaji = floatval($gaji);
+
+            // Mendapatkan durasi kerja dari order transaction
+            $durasi_kerja = $orderTransaction->durasi_kerja;
+
+            // Konversi tipe data durasi kerja menjadi float
+            $durasi_kerja = floatval($durasi_kerja);
+
+            // Menghitung biaya layanan (contoh penghitungan sederhana)
+            $biayaLayanan = ($gaji * $durasi_kerja) * 0.05; // Misalnya, biaya layanan adalah 5% dari (gaji * durasi_kerja)
+
+            // Konversi tipe data biaya layanan menjadi float
+            $biayaLayanan = floatval($biayaLayanan);
+
+            // Menghitung total bayar
+            $totalBayar = ($gaji * $durasi_kerja) + $biayaLayanan;
+
+            // Menghitung total harga
+            $totalHarga = ($gaji * $durasi_kerja) + $biayaLayanan;
+
+            // Update nilai total_harga pada tabel order transactions
+            $orderTransaction->total_harga = $totalHarga;
+            $orderTransaction->save();
+
+            // Menghitung nilai poin
+            $poin = ($totalHarga * 0.05) * 10;
+
+            // Simpan nilai poin pada sesi
+            session(['poin' => $poin]);
+
+            // Mengupdate nilai poin pada tabel users
+            $user = User::find($orderTransaction->user_id);
+            if ($user) {
+                $user->poin += $poin;
+                $user->save();
+            }
+
+            // Mengupdate nilai saldo pada tabel users
+            $user = User::find($orderTransaction->user_id);
+            if ($user) {
+                $saldoSaatIni = $user->saldo;
+                $saldoTerbaru = $saldoSaatIni - $totalHarga;
+                $user->saldo = $saldoTerbaru;
                 $user->save();
             }
 

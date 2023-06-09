@@ -14,14 +14,24 @@
     <style>
 
 
-        .footer {
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            height: 0px;
-            z-index: 0;
-            margin-top: 300px;
-        }
+.footer {
+    z-index: 0;
+    position: relative;
+    justify-content: center;
+    bottom: 0;
+    right: 0;
+    height: 458px;
+    width: 100%;
+    top: 1000px;
+    background-color: var(--black);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
     </style>
 </head>
 

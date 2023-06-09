@@ -62,26 +62,26 @@
                         </div>
                         <div class="row mb-2">
                             <div class="col-lg-2">
-                                <label for="address" class="font-weight-bold">Alamat</label>
+                                <label for="alamat" class="font-weight-bold">Alamat</label>
                             </div>
                             <div class="col-lg-10">
-                                <input type="text" name="address" id="address" class="form-control" placeholder="Masukkan alamat email lengkap anda">
+                                <input type="text" name="alamat" id="alamat" class="form-control" placeholder="Masukkan alamat email lengkap anda">
                             </div>
                         </div>
                         <div class="row mb-2">
                             <div class="col-lg-2">
-                                <label for="pekerjaan" class="font-weight-bold">Pekerjaan</label>
+                                <label for="profesi" class="font-weight-bold">Pekerjaan</label>
                             </div>
                             <div class="col-lg-10">
-                                <input type="text" name="pekerjaan" id="pekerjaan" class="form-control" placeholder="Masukkan nama pekerjaan anda">
+                                <input type="text" name="profesi" id="profesi" class="form-control" placeholder="Masukkan nama pekerjaan anda">
                             </div>
                         </div>
                         <div class="row mb-2">
                             <div class="col-lg-2">
-                                <label for="birthdate" class="font-weight-bold">Tanggal Lahir</label>
+                                <label for="tanggallahir" class="font-weight-bold">Tanggal Lahir</label>
                             </div>
                             <div class="col-lg-10">
-                                <input type="date" name="birthdate" id="birthdate" class="form-control" placeholder="Masukkan tanggal lahir anda">
+                                <input type="date" name="tanggallahir" id="tanggallahir" class="form-control" placeholder="Masukkan tanggal lahir anda">
                             </div>
                         </div>
                         <div class="row mb-2">
@@ -136,7 +136,7 @@
                           <label for="new_password" class="font-weight-bold">Kata Sandi</label>
                         </div>
                         <div class="col-lg-10">
-                          <input type="password" name="new_password" id="new_password" class="form-control" placeholder="Masukkan password baru">
+                          <input type="password" name="password" id="password" class="form-control" placeholder="Masukkan password baru">
                         </div>
                       </div>
 
@@ -148,8 +148,93 @@
                   </div>
                 </div>
 
-                <div id="histori-section" style="display: none;">
-                </div>
+                <div id="histori-section" class="col-lg-10" style="display: none;">
+                    <input type="hidden" id="anPageName" name="page" value="frame-40789" />
+                    <div class="container-center-horizontal">
+                      <div class="frame-40789 screen" data-id="1370:7393">
+                        <div class="frame-40786-zNABwQ" data-id="1232:7512">
+                          <div class="group-373-WKHWxx" data-id="1232:7974">
+                            <header class="header-qme09M" data-id="1232:7513">
+                              <div class="frame-40689-d2nYgL frame-40689" data-id="1232:7514">
+                                <div class="no-wjP5Mt valign-text-middle montserrat-semi-bold-white-14px" data-id="1232:7515">
+                                  No.
+                                </div>
+                              </div>
+                              <div class="frame-40690-d2nYgL frame-40690" data-id="1232:7516">
+                                <div class="id-transaksi-bQM5xo valign-text-middle montserrat-semi-bold-white-14px" data-id="1232:7517">
+                                  ID Transaksi
+                                </div>
+                              </div>
+                              <div class="frame-40694-d2nYgL frame-40694" data-id="1232:7518">
+                                <div class="tipe-pembyaran-vMX03o valign-text-middle montserrat-semi-bold-white-14px" data-id="1232:7519">
+                                  Tipe Pembayaran
+                                </div>
+                              </div>
+                              <div class="frame-40691-d2nYgL frame-40691" data-id="1232:7520">
+                                <div class="nominal-x7HMTp valign-text-middle montserrat-semi-bold-white-14px" data-id="1232:7521">
+                                  Nominal
+                                </div>
+                              </div>
+                              <div class="group-372-d2nYgL" data-id="1232:7794">
+                                <div class="frame-40691-d2nYgL frame-40691" data-id="1232:7522">
+                                  <div class="tanggal-transaksi-9ZkGg5 valign-text-middle montserrat-semi-bold-white-14px" data-id="1232:7523">
+                                    Tanggal Transaksi
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="frame-40691-d2nYgL frame-40691" data-id="1232:7526">
+                                <div class="detail-tim-xZyEij valign-text-middle montserrat-semi-bold-white-14px" data-id="1232:7527">
+                                  Status Transaksi
+                                </div>
+                              </div>
+                            </header>
+                            <div class="row-1-qme09M" data-id="1232:7528">
+                              @foreach ($orderTransactions as $index => $orderTransaction)
+                              <div class="frame-40689-EzLxVC frame-40689" data-id="1232:7529">
+                                <div class="x1-hUqXmf valign-text-middle montserrat-normal-eerie-black-14px" data-id="1232:7530">
+                                  {{ $index + 1 }}
+                                </div>
+                              </div>
+                              <div class="frame-40690-EzLxVC frame-40690" data-id="1232:7531">
+                                <div class="x123123123123-pxDxdi valign-text-middle montserrat-normal-eerie-black-14px" data-id="1232:7532">
+                                  {{ $orderTransaction->id }}
+                                </div>
+                              </div>
+                              <div class="frame-40691-EzLxVC frame-40691" data-id="1232:7533">
+                                <div class="debit valign-text-middle montserrat-normal-eerie-black-14px" data-id="1232:7534">
+                                  {{ $orderTransaction->tipe_pembayaran === 'Debit' ? 'Debit' : 'Tidak Tercatat' }}
+                                </div>
+                              </div>
+                              <div class="frame-40694-EzLxVC frame-40694" data-id="1232:7535">
+                                <div class="rp-5200000-9OWxt5 valign-text-middle montserrat-normal-eerie-black-14px" data-id="1232:7536">
+                                  Rp {{ number_format($orderTransaction->total_harga, 0, ',', '.') }}
+                                </div>
+                              </div>
+                              <div class="frame-40692-EzLxVC frame-40692" data-id="1232:7537">
+                                <div class="x2023-02-15 valign-text-middle montserrat-normal-eerie-black-14px" data-id="1232:7538">
+                                  {{ $orderTransaction->tanggal_transaksi }}
+                                </div>
+                              </div>
+                              <div class="frame-40695-EzLxVC frame-40695" data-id="1232:7542">
+                                <div class="badges-23v4Vt badges" data-id="1232:7978">
+                                  <div class="label inter-semi-bold-medium-carmine-14px" data-id="I1232:7978;1:386">
+                                    @if ($orderTransaction->status_transaksi === 'Transaksi Dibatalkan')
+                                    Gagal
+                                    @elseif ($orderTransaction->status_transaksi === 'Pembayaran Selesai')
+                                    Berhasil
+                                    @endif
+                                  </div>
+                                </div>
+                              </div>
+                              <hr class="solid">
+                              @endforeach
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
 
             </div>
         </div>
@@ -160,6 +245,7 @@
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/editprofile.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/tabel.css') }}">
 @endpush
 
 @push('scripts')
@@ -172,11 +258,15 @@ document.addEventListener("DOMContentLoaded", function() {
   const profilSayaSection = document.querySelector("#profile-section");
   const keamananAkunSection = document.querySelector("#security-section");
   const historiSection = document.querySelector("#histori-section");
+  const headerImg = document.querySelector("#header-img");
+  const profileImg = document.querySelector("#profile-img");
 
   // Tampilkan halaman "Profil Saya" secara default
   profilSayaNavItem.classList.add("active");
   keamananAkunSection.style.display = "none";
   historiSection.style.display = "none";
+  headerImg.style.display = "block";
+  profileImg.style.display = "block";
 
   // Tambahkan event listener untuk klik pada navbar item
   profilSayaNavItem.addEventListener("click", function() {
@@ -186,6 +276,8 @@ document.addEventListener("DOMContentLoaded", function() {
     profilSayaSection.style.display = "block";
     keamananAkunSection.style.display = "none";
     historiSection.style.display = "none";
+    headerImg.style.display = "block";
+    profileImg.style.display = "block";
   });
 
   keamananAkunNavItem.addEventListener("click", function() {
@@ -195,6 +287,8 @@ document.addEventListener("DOMContentLoaded", function() {
     profilSayaSection.style.display = "none";
     keamananAkunSection.style.display = "block";
     historiSection.style.display = "none";
+    headerImg.style.display = "block";
+    profileImg.style.display = "block";
   });
 
   historiNavItem.addEventListener("click", function() {
@@ -204,6 +298,8 @@ document.addEventListener("DOMContentLoaded", function() {
     profilSayaSection.style.display = "none";
     keamananAkunSection.style.display = "none";
     historiSection.style.display = "block";
+    headerImg.style.display = "none";
+    profileImg.style.display = "none";
   });
 });
 
@@ -214,6 +310,8 @@ function showSecurity() {
   const profilSayaSection = document.querySelector("#profile-section");
   const keamananAkunSection = document.querySelector("#security-section");
   const historiSection = document.querySelector("#histori-section");
+  const headerImg = document.querySelector("#header-img");
+  const profileImg = document.querySelector("#profile-img");
 
   profilSayaNavItem.classList.remove("active");
   keamananAkunNavItem.classList.add("active");
@@ -221,6 +319,8 @@ function showSecurity() {
   profilSayaSection.style.display = "none";
   keamananAkunSection.style.display = "block";
   historiSection.style.display = "none";
+  headerImg.style.display = "block";
+  profileImg.style.display = "block";
 }
 
 function showHistori() {
@@ -230,6 +330,8 @@ function showHistori() {
   const profilSayaSection = document.querySelector("#profile-section");
   const keamananAkunSection = document.querySelector("#security-section");
   const historiSection = document.querySelector("#histori-section");
+  const headerImg = document.querySelector("#header-img");
+  const profileImg = document.querySelector("#profile-img");
 
   profilSayaNavItem.classList.remove("active");
   keamananAkunNavItem.classList.remove("active");
@@ -237,7 +339,10 @@ function showHistori() {
   profilSayaSection.style.display = "none";
   keamananAkunSection.style.display = "none";
   historiSection.style.display = "block";
+  headerImg.style.display = "none";
+  profileImg.style.display = "none";
 }
+
 
     </script>
 

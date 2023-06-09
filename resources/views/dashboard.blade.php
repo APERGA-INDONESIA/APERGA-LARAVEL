@@ -7,6 +7,7 @@
 @endsection
 
 @section('konten')
+
 @php
     $user = auth()->user();
 @endphp
@@ -16,7 +17,32 @@
         <a href="{{ route('profil') }}">
             <img src="{{ $user->profile_image ? asset('Images/Profile Image/' . $user->profile_image) : asset('images/profil.png') }}" alt="Profile Image" class="profile-img" style="border-radius: 100px;">
             <p class="greeting">Halo, Selamat Datang</p>
-            <p class="username">{{ $user->name }}</p>
+            <p class="username">{{ shortenName($user->name) }}</p>
+
+            <?php
+            function shortenName($name)
+            {
+                $words = explode(' ', $name); // Membagi string menjadi array kata-kata
+
+                if (count($words) > 2) {
+                    $shortened = ucfirst($words[0]); // Mengambil kata pertama dan mengkapitalisasi huruf pertama
+
+                    for ($i = 1; $i < count($words); $i++) {
+                        if ($i >= count($words) - 2) {
+                            $shortened .= ' ' . strtoupper(substr($words[$i], 0, 1)) . '.'; // Menambahkan huruf pertama setiap kata terakhir ke depannya dengan titik
+                        } else {
+                            $shortened .= ' ' . $words[$i]; // Menambahkan kata pertama dan kedua tanpa perubahan
+                        }
+                    }
+
+                    return $shortened;
+                }
+
+                return $name;
+            }
+
+            ?>
+
         </a>
         <a href="{{ route('profil.edit') }}">
             <img src="{{ asset('images/settings.png') }}" alt="Poin" class="setting">
@@ -34,9 +60,6 @@
         @endphp
 
         <p class="TotalPoin">{{ abbreviateNumber($totalPoin) }} AP Point</p>
-        <button class="redeem" onclick="location.href='{{ route('redeem') }}'">
-            <p class="redeemtext">Redeem</p>
-        </button>
 
         <?php
         function abbreviateNumber($number)
@@ -51,11 +74,10 @@
             return number_format($number);
         }
 
-        $totalPoin = 5000000; // Ganti dengan nilai total poin yang sesuai
-
-        echo abbreviateNumber($totalPoin);
         ?>
-
+        <button class="redeem" onclick="location.href='{{ route('redeem') }}'">
+            <p class="redeemtext">Redeem</p>
+        </button>
     </div>
 
     <div class="dashboard-kotak-4">
@@ -66,10 +88,29 @@
             $saldo = $user->saldo;
         @endphp
 
-        <p class="TotalSaldo">Rp {{ number_format($saldo, 0, ',', '.') }}</p>
+        <p class="TotalSaldo">{{ customAbbreviateNumber($saldo) }}</p>
         <button class="isiulang" onclick="location.href='{{ route('topup') }}'">
             <p class="isiulangtext">Isi Ulang</p>
         </button>
+
+        <?php
+        function customAbbreviateNumber($number)
+        {
+            if ($number >= 1e9) {
+                return 'Rp ' . number_format($number / 1e9, 1) . ' Miliar';
+            }
+            if ($number >= 1e6) {
+                return 'Rp ' . number_format($number / 1e6, 1) . ' Juta';
+            }
+
+            return 'Rp ' . number_format($number, 0, ',', '.');
+        }
+
+        $saldo = 5000000; // Ganti dengan nilai saldo yang sesuai
+
+        echo customAbbreviateNumber($saldo);
+        ?>
+
     </div>
 
     <div class="dashboard-kotak-3">

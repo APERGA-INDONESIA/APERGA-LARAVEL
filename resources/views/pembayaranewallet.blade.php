@@ -51,7 +51,7 @@
             ?>
         </p>
     </div>
-    
+
     <p class="timer-text hidden">Selesaikan dalam waktu:</p>
 
     <p class="timersplit hidden">:</p>
