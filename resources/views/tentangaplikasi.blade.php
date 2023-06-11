@@ -1,4 +1,4 @@
-@extends('template')
+@extends('template5')
 @section('title', 'Tentang Aplikasi')
 
 @section('navbar')
@@ -30,14 +30,53 @@
 <div class="Guidebook">
     <img src="{{ asset('images/guidebook.png') }}" class="guidebook-img" alt="Guidebook">
     <div class="guidebook-text">Guidebook</div>
-    <a href="#" class="download-button">Download Disini</a>
+    <div id="pdf-container"></div>
+    <a href="{{ asset('pdf/guidebook.pdf') }}" class="download-button" target="_blank">Download Disini</a>
 </div>
+
+
+
+
 
 
 @endsection
 
 @section('footer')
 @endsection
+
+@push('scripts')
+<script src="{{ asset('pdfjs/build/pdf.js') }}"></script>
+<script src="{{ asset('js/viewer.js') }}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const pdfUrl = "{{ asset('pdf/guidebook.pdf') }}";
+        const pdfContainer = document.getElementById("pdf-container");
+
+        const viewer = new Viewer(pdfContainer, {
+            toolbar: {
+                zoomIn: 1,
+                zoomOut: 1,
+                oneToOne: 1,
+                reset: 1,
+                rotateLeft: 1,
+                rotateRight: 1,
+                prev: 1,
+                play: {
+                    show: 1,
+                    size: 'large',
+                },
+                next: 1,
+                download: 0,
+            },
+            url: pdfUrl,
+        });
+    });
+</script>
+
+
+
+
+@endpush
 
 @push('styles')
 <link rel="stylesheet" href="{{ asset('css/tentangaplikasi.css') }}">

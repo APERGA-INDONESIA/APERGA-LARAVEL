@@ -6,6 +6,8 @@
 @endsection
 
 @section('konten')
+
+
     <div class="kotak-hitam">
         <div class="carikan">
             <a href="javascript:void(0);" onclick="window.history.back();">
@@ -13,6 +15,7 @@
             </a>
             <div class="cari-title">Pencarian PRT</div>
         </div>
+
 
         <div class="kotakpencarian">
             <img src="{{ asset('images/searchblack.png') }}" class="search-img" alt="Search Icon">
@@ -31,6 +34,17 @@
 
 
     </div>
+    @php
+    $countQuery = DB::selectOne('SELECT COUNT(id) AS total FROM prts WHERE user_id = 0');
+    $x = $countQuery->total;
+
+    $latestDateQuery = DB::selectOne('SELECT updated_at AS terakhir FROM prts WHERE user_id = 0 ORDER BY updated_at DESC LIMIT 1');
+    $y = date("j F Y", strtotime($latestDateQuery->terakhir));
+
+    $imageURL = isset($imageURL) ? $imageURL : '';
+    @endphp
+
+    <p class="searchcount">Menampilkan {{ $x }} Data PRT (Terakhir diperbaharui: {{ $y }})</p>
 
     <div class="list-prt">
         <div class="row">

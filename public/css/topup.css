@@ -151,7 +151,7 @@
 .pilih-topup {
     position: absolute;
     width: 603px;
-    height: 520px;
+    height: 465px;
     left: calc(50% - 265px);
     top: 350px;
     background: #FFFFFF;
@@ -189,6 +189,16 @@
     color: #262B2A;
   }
 
+  .nominal1:hover,
+    .nominal2:hover,
+    .nominal3:hover,
+    .nominal4:hover,
+    .nominal5:hover,
+    .nominal6:hover {
+    background-color: #eaeaea;
+    cursor: pointer;
+    }
+
   .bankoption {
     position: absolute;
     width: 526px;
@@ -201,17 +211,32 @@
 
   .bankoption .placeholder {
     position: absolute;
-    width: 300px;
+    width: 600px;
     height: 21px;
-    left: 23px;
+    left: 35px;
     top: 16px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 21px;
-    text-align: center;
+    text-align: left;
     color: #262B2A;
+  }
+
+  .dropdown-menu {
+    width: 526px;
+  }
+
+  .dropdown-item {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: left;
+    color: #262B2A;
+    height: 55px;
   }
 
   .bankoption img {
@@ -355,7 +380,7 @@
   .informasi-pembayaran {
     position: absolute;
     width: 525px;
-    height: 612px;
+    height: 700px;
     background: #FFFFFF;
     box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
@@ -381,19 +406,19 @@
 
 .logo-bayar {
     position: absolute;
-    width: 383px;
+    width: 500px;
     height: 97px;
     left: 70px;
-    top: 120px;
-    background: rgba(193, 193, 193, 0.25);
+    top: 100px;
+    background: rgba(193, 193, 193, 0);
     border-radius: 12px;
 }
 
 .logo-bayar img {
-    position: absolute;
-    width: 208px;
-    height: 65px;
-    top: 16px;
+    position: relative;
+    width: 240px;
+    height: 120px;
+    top: 12px;
     left: 70px;
 }
 
@@ -430,7 +455,7 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 30px;
-    color: #686969;
+    color: #262B2A;
     left: 45px;
     top: 12px;
 }
@@ -442,24 +467,15 @@
     position: absolute;
     width: 90px;
     height: 22px;
-    border: 1px solid #135589;
+    border: 2px solid #135589;
     box-shadow: 0px 4px 4px rgba(63, 61, 86, 0.2);
     border-radius: 20px;
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 600;
 }
 
-.salin-button p {
-    position: relative;
-    width: 69px;
-    height: 16px;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 16px;
-    text-align: center;
-    color: #135589;
-    top: 5px;
-}
+
 
 .transfernow {
     position: absolute;
@@ -472,7 +488,7 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 30px;
-    color: #686969;
+    color: #262B2A;
 }
 
 .nominal-bayar {
@@ -502,3 +518,23 @@
     text-align: center;
     color: #FFFFFF;
 }
+
+.batalkan-button {
+    position: absolute;
+    left: 70px;
+    top: 575px;
+    width: 383px;
+    height: 55px;
+    border: 3px solid rgba(19, 85, 137, 1);
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(63, 61, 86, 0.2);
+    border-radius: 45px;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: center;
+    color: #000000;
+}
+

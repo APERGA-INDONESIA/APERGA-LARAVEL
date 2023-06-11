@@ -1,4 +1,4 @@
-@extends('template5')
+@extends('template4')
 @section('title', 'Edit Profile')
 
 @section('favicon')

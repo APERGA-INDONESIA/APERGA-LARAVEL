@@ -1,4 +1,4 @@
-@extends('template3')
+@extends('template5')
 
 @section('title', 'Bantuan')
 
@@ -11,12 +11,16 @@
         <img src="{{ asset('images/arrow.png') }}" class="arrow-img" alt="Arrow">
     </a>
     <div class="bantu-title">Pusat Bantuan</div>
+</div>
+<div class="bantuan">
 
-<div class="container">
-    <div class="dashboard-kotak"></div>
-    <img src="{{ asset('images/profile 1.png') }}" alt="Profile Image" class="profile-img">
-    <p class="greeting">Halo, Selamat Datang</p>
-    <p class="username">{{ Auth::user()->name }}</p>
+
+    <div class="container">
+        <div class="dashboard-kotak"></div>
+        <img src="{{ asset('images/profile 1.png') }}" alt="Profile Image" class="profile-img">
+        <p class="greeting">Halo, Selamat Datang</p>
+        <p class="username">{{ ucwords(implode(' ', array_map(function($word, $index) { return $index < 2 ? $word : strtoupper($word[0]) . '.'; }, explode(' ', Auth::user()->name), array_keys(explode(' ', Auth::user()->name))))) }}</p>
+    </div>
 
     <div class="FAQ">
         <div class="FAQ-with-Icon">
@@ -31,9 +35,9 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="faqDropdown">
                     <a class="dropdown-item" href="#">
-                        <strong> Untuk membuat akun di website ini, ikuti langkah-langkah berikut: </strong>
+                        <strong>Untuk membuat akun di website ini, ikuti langkah-langkah berikut:</strong>
                         <br>
-                            <ol>
+                        <ol>
                             <li>Buka halaman utama website.</li>
                             <li>Klik tombol "Daftar" atau "Buat Akun" yang biasanya terdapat di bagian atas kanan halaman.</li>
                             <li>Isi formulir pendaftaran dengan informasi yang diperlukan, seperti nama lengkap, alamat email, dan kata sandi.</li>
@@ -55,7 +59,7 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="faqDropdown2">
                     <a class="dropdown-item" href="#">
-                        <strong> Mencari jasa PRT yang sesuai dengan kebutuhan Anda, ikuti langkah-langkah berikut:</strong>
+                        <strong>Mencari jasa PRT yang sesuai dengan kebutuhan Anda, ikuti langkah-langkah berikut:</strong>
                         <br>
                         <ol>
                             <li>Login ke akun Anda di website.</li>
@@ -80,7 +84,7 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="faqDropdown3">
                     <a class="dropdown-item" href="#">
-                       <strong> Untuk memesan jasa PRT melalui website ini, ikuti langkah-langkah berikut:</strong>
+                        <strong>Untuk memesan jasa PRT melalui website ini, ikuti langkah-langkah berikut:</strong>
                         <br>
                         <ol>
                             <li>Cari jasa PRT yang sesuai dengan kebutuhan Anda menggunakan langkah-langkah yang telah dijelaskan sebelumnya.</li>
@@ -96,21 +100,22 @@
             </div>
         </div>
 
-    <div class="CallCenter">
-        <div class="CallCenter-with-Icon">
-            <img src="{{ asset('images/CallCenter.png') }}" alt="Call Center" class="icon">
-        </div>
-        <div class="CallCenter-items">
-            <div class="CallCenter-item">
-                <button onclick="window.open('https://wa.me/+6283111111', '_blank')">Telepon Kami</button>
+        <div class="CallCenter">
+            <div class="CallCenter-with-Icon">
+                <img src="{{ asset('images/CallCenter.png') }}" alt="Call Center" class="icon">
             </div>
-            <div class="CallCenter-item">
-                <button onclick="window.open('mailto:contoh@gmail.com', '_blank')">Email Kami</button>
+            <div class="CallCenter-items">
+                <div class="CallCenter-item">
+                    <button onclick="window.open('https://wa.me/+6283111111', '_blank')">Telepon Kami</button>
+                </div>
+                <div class="CallCenter-item">
+                    <button onclick="window.open('mailto:contoh@gmail.com', '_blank')">Email Kami</button>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
- 
 @endsection
 
 @section('footer')

@@ -14,21 +14,32 @@
     <style>
 
 
-        .footer {
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            height: 0px;
-            z-index: 0;
-            margin-top: 300px;
-        }
+.footer {
+    z-index: 0;
+    position: relative;
+    justify-content: center;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    height: 458px;
+    width: 100%;
+    margin-top: 200px;
+    background-color: var(--black);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
     </style>
 </head>
 
 <body>
     <div class="container-fluid">
         <nav class="navbar navbar-expand navbar-dark bg-white sticky-top">
-            <a href="{{ route('homepage') }}">
+            <a href="{{ route('dashboard') }}">
                 <img src="{{ asset('images/aperga.png') }}" alt="Logo" class="logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -47,7 +58,7 @@
                         <a class="nav-link" href="{{ route('bantuan') }}">Bantuan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('dashboard') }}">Profil</a>
+                        <a class="nav-link" href="{{ route('profil') }}">Profil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}"

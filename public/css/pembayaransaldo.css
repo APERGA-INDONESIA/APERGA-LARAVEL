@@ -78,7 +78,7 @@
     position: relative;
     width: 400px;
     height: 48px;
-    left: 120px;
+    left: 110px;
     top: 620px;
     background: #135589;
     border-radius: 20px;
@@ -199,7 +199,7 @@
     font-size: 20px;
     line-height: 30px;
     color: #FFFFFF;
-    left: 290px;
+    left: 260px;
     top: -15px;
 }
 
@@ -236,7 +236,7 @@
     font-size: 20px;
     line-height: 30px;
     color: #FFFFFF;
-    left: 290px;
+    left: 260px;
     top: -56px;
 }
 
@@ -259,7 +259,7 @@
     position: absolute;
     width: 700px;
     height: 45px;
-    left: calc(50% - 340px);
+    left: calc(50% - 350px);
     top: 480px;
     font-family: 'Poppins';
     font-style: normal;
@@ -274,7 +274,7 @@
     position: absolute;
     width: 700px;
     height: 45px;
-    left: calc(50% - 480px);
+    left: calc(50% - 500px);
     top: 540px;
     font-family: 'Poppins';
     font-style: normal;
@@ -289,7 +289,7 @@
     position: absolute;
     width: 700px;
     height: 45px;
-    left: calc(50% - 345px);
+    left: calc(50% - 365px);
     top: 542px;
     font-family: 'Poppins';
     font-style: normal;
@@ -304,7 +304,7 @@
     position: absolute;
     width: 700px;
     height: 45px;
-    left: calc(50% - 412px);
+    left: calc(50% - 432px);
     top: 536px;
     font-family: 'Poppins';
     font-style: normal;
@@ -319,7 +319,7 @@
     position: absolute;
     width: 700px;
     height: 45px;
-    left: calc(50% - 275px);
+    left: calc(50% - 295px);
     top: 536px;
     font-family: 'Poppins';
     font-style: normal;
@@ -334,7 +334,7 @@
     position: absolute;
     width: 700px;
     height: 45px;
-    left: calc(50% - 480px);
+    left: calc(50% - 500px);
     top: 592px;
     font-family: 'Poppins';
     font-style: normal;
@@ -349,7 +349,7 @@
     position: absolute;
     width: 700px;
     height: 45px;
-    left: calc(50% - 345px);
+    left: calc(50% - 365px);
     top: 592px;
     font-family: 'Poppins';
     font-style: normal;
@@ -364,7 +364,7 @@
     position: absolute;
     width: 700px;
     height: 45px;
-    left: calc(50% - 195px);
+    left: calc(50% - 215px);
     top: 592px;
     font-family: 'Poppins';
     font-style: normal;
@@ -379,7 +379,7 @@
     position: absolute;
     width: 700px;
     height: 45px;
-    left: calc(50% - 200px);
+    left: calc(50% - 220px);
     top: 542px;
     font-family: 'Poppins';
     font-style: normal;

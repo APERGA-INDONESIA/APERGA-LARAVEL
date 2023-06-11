@@ -35,7 +35,7 @@
                     <a class="nav-link" href="{{ route('bantuan') }}">Bantuan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('dashboard') }}">Profil</a>
+                    <a class="nav-link" href="{{ route('profil') }}">Profil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}"

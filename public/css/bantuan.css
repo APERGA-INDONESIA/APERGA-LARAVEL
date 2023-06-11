@@ -1,11 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,600,800,500,700");
 
+.bantuan {
+    position: relative;
+    top: 150px;
+    left: 115px;
+}
 .bantu {
     position: absolute;
     display: flex;
     align-items: center;
     top: 120px;
-    left: 199px;
+    left: calc(50% - 477px);
     width: 500px;
 }
 
@@ -16,6 +21,10 @@
     top: 50%;
     transform: translateY(-50%);
     left: -25px;
+}
+
+.dropdown-item strong {
+    font-weight: bold;
 }
 
 .bantu-title {

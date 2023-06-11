@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     margin-top: 95px;
-    margin-left: 200px;
+    margin-left: calc(50% - 475px);
 }
 
 .pekerja-text {
@@ -45,7 +45,7 @@
     position: absolute;
     width: 906px;
     height: 71px;
-    left: 218px;
+    left: calc(50% - 460px);
     top: 175px;
     background: #1B2223;
     box-shadow: 0px 4px 4px rgba(63, 61, 86, 0.2);
@@ -81,7 +81,7 @@
 
 .List-Pekerja {
     position: absolute;
-    left: 218px;
+    left: calc(50% - 460px);
     top: 325px;
     display: flex;
     flex-direction: column;
@@ -118,8 +118,14 @@
     color: #FFFFFF;
     text-decoration: none;
     margin-top: -85px;
-    margin-left: 825px; /* Menambahkan jarak sebelah kiri tombol-detail */
-}
+    margin-left: 825px;
+    transition: background-color 0.5s ease;
+  }
+
+  .tombol-detail:hover {
+    background-color: #0b3b5e;
+  }
+
 
 .tombol-detail a {
     color: #FFFFFF;

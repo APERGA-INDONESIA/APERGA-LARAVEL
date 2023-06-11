@@ -99,9 +99,9 @@
     <div class="popup-field">
       <div class="popup-content">
         <img src="{{ asset('images/centang.png') }}" alt="centang" class="centang">
-        <p>Kontrak berhasil dibatalkan. Silahkan periksa kembali daftar pekerja anda</p>
+        <p>Kontrak berhasil dibatalkan. Silahkan periksa kembali daftar pekerja anda :)</p>
       </div>
-      <button id="OKBtn">OK</button> <!-- Tombol OK ditempatkan di luar button-container -->
+      <button id="OKBtn">OKE MIN</button> <!-- Tombol OK ditempatkan di luar button-container -->
     </div>
   </div>
 
@@ -114,6 +114,7 @@
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/detailpekerja.css') }}">
     <style>
+        
         .big-profile-img {
             width: 509px;
             height: 436px;

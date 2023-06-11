@@ -1,4 +1,4 @@
-@extends('template')
+@extends('template6')
 @section('title', 'Pembayaran')
 
 @section('navbar')
@@ -63,7 +63,9 @@
             if ($number >= 1e6) {
                 return number_format($number / 1e6, 1) . ' Juta';
             }
-
+            if ($number >= 1e3) {
+                return number_format($number / 1e6, 1) . ' Ribu';
+            }
             return number_format($number);
         }
         ?>

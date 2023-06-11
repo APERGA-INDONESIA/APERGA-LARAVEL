@@ -64,6 +64,13 @@
         <?php
         function abbreviateNumber($number)
         {
+            if ($number >= 1e15) {
+                return number_format($number / 1e15, 1) . ' Kuadriliun';
+            }
+
+            if ($number >= 1e12) {
+                return number_format($number / 1e12, 1) . ' Triliun';
+            }
             if ($number >= 1e9) {
                 return number_format($number / 1e9, 1) . ' Milliar';
             }

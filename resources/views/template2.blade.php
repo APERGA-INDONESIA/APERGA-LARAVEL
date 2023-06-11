@@ -34,7 +34,7 @@
                         <a class="nav-link" href="{{ route('bantuan') }}"> Pusat Bantuan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('dashboard') }}">Masuk</a>
+                        <a class="nav-link" href="{{ route('profil') }}">Masuk</a>
                     </li>
                     </li>
                 </ul>

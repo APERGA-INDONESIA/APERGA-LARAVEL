@@ -337,7 +337,7 @@
   .popup-field p {
     margin-bottom: 20px;
     font-family: 'Poppins';
-    font-size: 12px;
+    font-size: 18px;
     font-weight: 500;
     color: #182223;
   }
@@ -346,10 +346,11 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: 0px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     gap: 15px;
-    width: 179px;
-    height: 10px;
+    width: 200px;
+    height: 18px;
 
 
 
@@ -372,8 +373,9 @@
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
-    line-height: 21px;
+    line-height: 32px;
     text-align: center;
+    margin-left: 8px;
   }
 
   #cancelBtn {
@@ -419,7 +421,7 @@
     flex-grow: 0;
     position: absolute; /* Tambahkan baris ini */
     bottom: 20px; /* Sesuaikan posisi vertikal sesuai kebutuhan */
-    left: 50%; /* Sesuaikan posisi horizontal sesuai kebutuhan */
+    left: 70%; /* Sesuaikan posisi horizontal sesuai kebutuhan */
     transform: translateX(-50%); /* Menggeser elemen ke tengah secara horizontal */
   }
 
@@ -439,7 +441,7 @@
     text-align: center;
   }
 
-  .successPopup button#OKBtn {
+  #OKBtn {
     margin-top: 10px; /* Atur jarak dengan elemen sebelumnya */
     width: 120px;
     height: 35px;
@@ -449,9 +451,12 @@
     color: #ffffff;
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 14px;
     line-height: 21px;
     text-align: center;
     top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    left: -30px;
   }

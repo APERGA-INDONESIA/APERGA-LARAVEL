@@ -66,6 +66,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/redeem', [TransaksiController::class, 'showRedeem'])->name('redeem');
     Route::post('/redeem', [TransaksiController::class, 'redeemSubmit'])->name('redeem.submit');
     Route::get('/topup', [TransaksiController::class, 'showTopup'])->name('topup');
+    Route::post('/topup', [TransaksiController::class, 'topup'])->name('topup.submit');
+
     Route::get('/detail-pekerja/{id}', [DetailPekerjaController::class, 'showDetailPekerja']);
     Route::get('/mulai-kontrak/{id}', [MencariPekerjaController::class, 'showMulaiKontrak'])->name('mulaikontrak');
     Route::post('/simpantransaksi', [MencariPekerjaController::class, 'simpanTransaksi'])->name('simpantransaksi');

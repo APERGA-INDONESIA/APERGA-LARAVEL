@@ -1,4 +1,4 @@
-@extends('template')
+@extends('template5')
 
 @section('title', 'Redeem Point')
 
@@ -19,7 +19,7 @@
     <div class="total-points-label">Total Poin Ditukarkan:</div>
     <div class="TempatRedeem">
         <img src="{{ asset('images/coin.png') }}" alt="Coin" class="coin-img">
-        <input type="number" id="redeemPoints" name="redeemPoints" class="masukkan-poin" placeholder="Masukan poin" min="1000" required>
+        <input type="number" id="redeemPoints" name="redeemPoints" class="masukkan-poin" placeholder="Masukan poin" min="10000" required>
         <div class="minimal-poin">Minimal 1000 Poin</div>
     </div>
     <div class="total-saldo-label">Total Saldo didapatkan:</div>
@@ -40,7 +40,6 @@
 @endsection
 
 @section('footer')
-<div class="space"></div>
 @endsection
 
 @push('styles')
