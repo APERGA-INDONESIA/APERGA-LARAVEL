@@ -149,7 +149,7 @@
 input[name="jam_kerja"],
 input[name="durasi_kerja"] {
   width: 11.5ch; /* Mengatur lebar input menjadi 3 karakter */
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
   font-size: 16px; /* Mengatur ukuran font menjadi 16px */
   color: #FFFFFF; /* Mengatur warna font menjadi putih */
   background-color: transparent; /* Mengatur background menjadi transparan */
@@ -178,13 +178,13 @@ input[name="catatan_khusus"]::placeholder {
 
   .catatan-khusus-textbox {
     width: 100%;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     position: relative;
   }
 
   .catatan-khusus-textbox span {
     position: relative;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
     font-size: 18px;

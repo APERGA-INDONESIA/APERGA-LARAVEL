@@ -14,10 +14,12 @@
 </div>
 <div class="bantuan">
 
-
+    @php
+    $user = auth()->user();
+    @endphp
     <div class="container">
         <div class="dashboard-kotak"></div>
-        <img src="{{ asset('images/profile 1.png') }}" alt="Profile Image" class="profile-img">
+        <img src="{{ $user->profile_image ? asset('Images/Profile Image/' . $user->profile_image) : asset('images/profil.png') }}" alt="Profile Image" class="profile-img" style="border-radius: 90px;">
         <p class="greeting">Halo, Selamat Datang</p>
         <p class="username">{{ ucwords(implode(' ', array_map(function($word, $index) { return $index < 2 ? $word : strtoupper($word[0]) . '.'; }, explode(' ', Auth::user()->name), array_keys(explode(' ', Auth::user()->name))))) }}</p>
     </div>

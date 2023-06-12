@@ -61,7 +61,7 @@ body {
 }
 
 .form-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-weight: bold;
     font-size: 32px;
     line-height: 48px;
@@ -74,7 +74,7 @@ body {
 }
 
 .form-input {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
@@ -169,7 +169,7 @@ body {
 }
 
 .belum-password {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-weight: 400;
     font-size: 10px;
     line-height: 15px;

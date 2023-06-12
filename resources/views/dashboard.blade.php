@@ -15,7 +15,12 @@
 <div class="dashboard">
     <div class="dashboard-kotak">
         <a href="{{ route('profil') }}">
-            <img src="{{ $user->profile_image ? asset('Images/Profile Image/' . $user->profile_image) : asset('images/profil.png') }}" alt="Profile Image" class="profile-img" style="border-radius: 100px;">
+            @if($user->profile_image)
+            <img src="{{ asset('Images/Profile Image/' . $user->profile_image) }}" alt="Profile Image" class="profile-img" style="border-radius: 100px;">
+            @else
+            <img src="{{ asset('images/profil.png') }}" alt="Default Profile Image" class="profile-img" style="border-radius: 100px;">
+            @endif
+
             <p class="greeting">Halo, Selamat Datang</p>
             <p class="username">{{ shortenName($user->name) }}</p>
 
@@ -45,7 +50,7 @@
 
         </a>
         <a href="{{ route('profil.edit') }}">
-            <img src="{{ asset('images/settings.png') }}" alt="Poin" class="setting">
+            <img src="{{ asset('images/settings.png') }}" alt="Poin" class="setting" id="setting-element">
           </a>
     </div>
 
@@ -144,6 +149,10 @@
 @section('footer')
 
 @endsection
+
+@push('scripts')
+
+@endpush
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">

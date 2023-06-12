@@ -52,7 +52,7 @@
 }
 
 .btn-blue {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-size: 14px;
     font-weight: 500;
     background-color: #135589;
@@ -60,7 +60,7 @@
 }
 
 .btn-outline-white {
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins";
     font-size: 14px;
     font-weight: 500;
     border: 1px solid #135589;
@@ -151,14 +151,14 @@ label {
 }
 
 ::placeholder {
-font-family: "Poppins", sans-serif;
+font-family: "Poppins";
 font-weight: 400;
 font-size: 16px;
 margin-left: 15px;
 }
 
 input[type="file"]::placeholder {
-font-family: "Poppins", sans-serif;
+font-family: "Poppins";
 font-weight: 400;
 font-size: 12px;
 }

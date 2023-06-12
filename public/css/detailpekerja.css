@@ -166,7 +166,7 @@
 .catatan-khusus-textbox {
     width: 200px;
     height: 25px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     position: relative;
 }
 
@@ -176,7 +176,7 @@
     height: 100%;
     left: 0px;
     top: 0px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
     font-size: 18px;

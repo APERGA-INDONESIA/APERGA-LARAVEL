@@ -247,32 +247,27 @@ Get developer-friendly React or HTML/CSS code for this project at: https://proje
               <img
                 class="image-1-xVncyQ"
                 data-id="974:7874"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                anima-src="https://cdn.animaapp.com/projects/647613b113722780cca57256/releases/64761436d97d1659d114e577/img/image-1@2x.png"
+                src="{{ asset('images/bank/qris.png') }}"
                 alt="image 1"
               /><img
                 class="image-2-xVncyQ"
                 data-id="974:7884"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                anima-src="https://cdn.animaapp.com/projects/647613b113722780cca57256/releases/64761436d97d1659d114e577/img/image-2@2x.png"
+                src="{{ asset('images/bank/bca.png') }}"
                 alt="image 2"
               /><img
                 class="image-3-xVncyQ"
                 data-id="974:7886"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                anima-src="https://cdn.animaapp.com/projects/647613b113722780cca57256/releases/64761436d97d1659d114e577/img/image-3@2x.png"
+                src="{{ asset('images/bank/bri.png') }}"
                 alt="image 3"
               /><img
                 class="image-4-xVncyQ"
                 data-id="974:7888"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                anima-src="https://cdn.animaapp.com/projects/647613b113722780cca57256/releases/64761436d97d1659d114e577/img/image-4@2x.png"
+                src="{{ asset('images/bank/mandiri.png') }}"
                 alt="image 4"
               /><img
                 class="image-5-xVncyQ"
                 data-id="974:7890"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
-                anima-src="https://cdn.animaapp.com/projects/647613b113722780cca57256/releases/64761436d97d1659d114e577/img/image-5@2x.png"
+                src="{{ asset('images/bank/bsi.png') }}"
                 alt="image 5"
               />
             </div>

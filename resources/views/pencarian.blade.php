@@ -44,7 +44,7 @@
     $imageURL = isset($imageURL) ? $imageURL : '';
     @endphp
 
-    <p class="searchcount">Menampilkan {{ $x }} Data PRT (Terakhir diperbaharui: {{ $y }})</p>
+    <p class="searchcount">Menampilkan {{ $x }} data PRT yang tersedia (Terakhir diperbaharui: {{ $y }})</p>
 
     <div class="list-prt">
         <div class="row">

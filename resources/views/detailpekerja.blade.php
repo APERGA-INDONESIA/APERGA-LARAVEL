@@ -61,7 +61,7 @@
                 <span>Catatan Khusus</span>
             </div>
             <div class="deskripsi-catatan-khusus">
-                <p>{{ $pekerja->catatan }}</p>
+                <p>{{ !empty($pekerja->catatan) ? $pekerja->catatan : 'PRT ini tidak memiliki catatan khusus yang diberikan oleh anda' }}</p>
             </div>
         </div>
         <div class="rincian-biaya">
@@ -114,7 +114,7 @@
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/detailpekerja.css') }}">
     <style>
-        
+
         .big-profile-img {
             width: 509px;
             height: 436px;

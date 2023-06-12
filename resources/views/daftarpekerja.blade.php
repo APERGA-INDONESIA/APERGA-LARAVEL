@@ -17,10 +17,13 @@
     $user = auth()->user();
     @endphp
 
-    <div class="kotak-hitam">
-        <img src="{{ $user->profile_image ? asset('Images/Profile Image/' . $user->profile_image) : asset('images/profil.png') }}" alt="Profile Image" class="profile-image" style="border-radius: 100px;">
-        <p class="halo-username">Halo, {{ Auth::user()->name }}</p>
-    </div>
+    <a href="{{ route('profil') }}" class="profile-link">
+        <div class="kotak-hitam">
+            <img src="{{ $user->profile_image ? asset('Images/Profile Image/' . $user->profile_image) : asset('images/profil.png') }}" alt="Profile Image" class="profile-image" style="border-radius: 100px;">
+            <p class="halo-username">Halo, {{ Auth::user()->name }}</p>
+        </div>
+    </a>
+
 
     <div class="List-Pekerja">
         @php
@@ -45,7 +48,17 @@
                         }
                         ?>
                         <img src="{{ $imageURL }}" alt="Profile Image" class="profile-img" style="position: absolute; width: 46px; height: 45px; left: 30px; top: 50%; transform: translateY(-50%); border-radius: 50%;">
-                        <p class="nama-pekerja">{{ $prt->nama }}</p>
+                        @php
+                        $startDate = \Carbon\Carbon::parse($prt->updated_at);
+                        $elapsedDays = $startDate->diffInDays(\Carbon\Carbon::now());
+                        $totalDuration = $prt->durasi * 30; // Assuming each month has 30 days
+                        $remainingDays = $totalDuration - $elapsedDays;
+                        $remainingText = $remainingDays > 0 ? "Tersisa {$remainingDays} hari lagi" : "0 hari lagi";
+                        @endphp
+
+                        <p class="nama-pekerja"><strong>{{ $prt->nama }}</strong> (Masa kontrak tersisa: {{ $remainingText }})</p>
+
+
                     </div>
                 </div>
                 <div class="tombol-detail">
