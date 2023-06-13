@@ -1180,6 +1180,20 @@ input:focus {
   width: 40px;
 }
 
+.tabel .outline-button-r6fdjce {
+    align-items: center;
+    background-color: var(--white);
+    border: 1px solid;
+    border-color: var(--mystic);
+    border-radius: 8px;
+    display: flex;
+    gap: 4px;
+    height: 40px;
+    justify-content: center;
+    padding: 11px;
+    width: 40px;
+  }
+
 .tabel .outline-button-siAxuU {
   background-color: transparent;
   letter-spacing: 0px;

@@ -76,34 +76,38 @@
     </div>
 </div>
 
-<div id="popup" class="popup">
-    <div class="popup-field">
-        <div class="popup-content">
-            <img src="{{ asset('images/alert-triangle.png') }}" alt="alert-triangle" class="star-img">
-            <p>Apakah Anda yakin ingin membatalkan kontrak?</p>
-            <div class="button-container">
-                <div class="button-group">
-                    <form action="{{ route('update.pekerja') }}" method="POST">
-                        @csrf
-                        <button type="submit" id="cancelBtn">Batalkan</button>
-                        <input type="hidden" name="pekerjaId" value="{{ $pekerja->id }}">
-                    </form>
-                    <button id="confirmBtn">Kembali</button>
+<div id="overlay" class="overlay" onclick="closePopup()"></div>
+
+    <div id="popup" class="popup">
+        <div class="popup-field">
+            <div class="popup-content">
+                <img src="{{ asset('images/alert-triangle.png') }}" alt="alert-triangle" class="star-img">
+                <p>Apakah Anda yakin ingin membatalkan kontrak?</p>
+                <div class="button-container">
+                    <div class="button-group">
+                        <form action="{{ route('update.pekerja') }}" method="POST">
+                            @csrf
+                            <button type="submit" id="cancelBtn">Batalkan</button>
+                            <input type="hidden" name="pekerjaId" value="{{ $pekerja->id }}">
+                        </form>
+                        <button id="confirmBtn">Kembali</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<div id="successPopup" class="popup">
-    <div class="popup-field">
-      <div class="popup-content">
-        <img src="{{ asset('images/centang.png') }}" alt="centang" class="centang">
-        <p>Kontrak berhasil dibatalkan. Silahkan periksa kembali daftar pekerja anda :)</p>
+    <div id="successPopup" class="popup">
+        <div class="popup-field">
+          <div class="popup-content">
+            <img src="{{ asset('images/centang.png') }}" alt="centang" class="centang">
+            <p>Kontrak berhasil dibatalkan. Silahkan periksa kembali daftar pekerja anda :)</p>
+          </div>
+          <button id="OKBtn">OKE MIN</button> <!-- Tombol OK ditempatkan di luar button-container -->
+        </div>
       </div>
-      <button id="OKBtn">OKE MIN</button> <!-- Tombol OK ditempatkan di luar button-container -->
-    </div>
-  </div>
+
+
 
 
 @endsection

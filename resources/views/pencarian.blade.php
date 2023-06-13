@@ -85,6 +85,8 @@
         </ul>
     </nav>
 
+    <div id="overlay" class="overlay" onclick="closePopup()"></div>
+
     <body style="margin: 0; background: #ffffff00">
         <div id="filter-component" class="frame-387 screen" data-id="1085:7202">
           <input type="hidden" id="anPageName" name="page" value="frame-387" />
@@ -306,6 +308,27 @@
             popupVisible = true; // Set status tampilan popup menjadi true
         }
     });
+
+    // Mendapatkan elemen overlay
+var overlay = document.getElementById('overlay');
+
+// Mendapatkan elemen popup
+var popup = document.getElementById('filter-component');
+
+// Menambahkan event listener pada tombol filterButton
+filterButton.addEventListener('click', function() {
+    // Menampilkan overlay dan popup
+    overlay.style.display = 'block';
+    popup.style.display = 'block';
+});
+
+// Menambahkan event listener pada overlay untuk menutup popup
+overlay.addEventListener('click', function() {
+    // Menutup overlay dan popup
+    overlay.style.display = 'none';
+    popup.style.display = 'none';
+});
+
 </script>
 
 <script>

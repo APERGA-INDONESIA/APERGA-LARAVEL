@@ -131,6 +131,11 @@ label {
     left: -40px;
 }
 
+.nav-link.text-dark.font-weight-bold {
+  color: darkblue;
+}
+
+
 .edit-title {
     font-family: 'Poppins';
     font-style: normal;
@@ -139,6 +144,18 @@ label {
     line-height: 64px;
     color: #000000;
     margin-left: 16px;
+}
+
+.histori-title {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 40px;
+    color: #333232;
+    left: 220px;
+    top: -245px;
+    position: relative;
+    z-index: 6;
 }
 
 /* Show/hide sections */

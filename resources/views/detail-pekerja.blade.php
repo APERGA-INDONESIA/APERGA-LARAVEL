@@ -62,7 +62,7 @@
         </div>
 
         <div class="button-group">
-            <button class="WABtn" onClick="window.location.href = 'http://localhost:8000/waadmin';">
+            <button class="WABtn" onclick="openPopup()">
                 <span>Whatsapp</span>
             </button>
             <button class="order" onClick="window.location.href = '{{ route('mulaikontrak', ['id' => $prt->id]) }}';">
@@ -72,8 +72,38 @@
         </div>
 
     </div>
-</div>
+    <div id="overlay" class="overlay" onclick="closePopup()"></div>
+    <div id="popup" class="wa-admin-1">
+        <div class="header-wa">
+            <img src="{{ asset('images/wamin.png') }}">
+            <p class="header-wa-title">Chat Admin Support</p>
+            <p class="header-wa-text">Menjawab semua keluhan anda</p>
+        </div>
+        <p class="admin-support-text">Pilih admin support</p>
+        <div class="admin-1">
+            <img src="{{ asset('images/admin.jpg')}}">
+            <p class="nama-admin">Luthfi Hakim</p>
+            <p class="title-admin">Support Admin #1</p>
+            <div class="kirim-pesan">
+                <span>Kirim Pesan</span>
+            </div>
+        </div>
 
+        <div class="admin-2">
+            <img src="{{ asset('images/admin.jpg')}}">
+            <p class="nama-admin">Ananda Surya</p>
+            <p class="title-admin">Support Admin #2</p>
+            <div class="kirim-pesan">
+                <span>Kirim Pesan</span>
+            </div>
+        </div>
+        <div class="button">
+            <span>Batalkan</span>
+        </div>
+    </div>
+
+
+</div>
 @endsection
 
 @section('footer')
@@ -84,5 +114,20 @@
 @endpush
 
 @push('scripts')
+<script>
+function openPopup() {
+    var popup = document.getElementById("popup");
+    var overlay = document.getElementById("overlay");
+    popup.style.display = "block";
+    overlay.style.display = "block";
+}
+
+function closePopup() {
+    var popup = document.getElementById("popup");
+    var overlay = document.getElementById("overlay");
+    popup.style.display = "none";
+    overlay.style.display = "none";
+}
+    </script>
 
 @endpush

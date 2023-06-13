@@ -147,7 +147,7 @@
     <script src="launchpad-js/launchpad-banner.js" async></script>
     <script
     defer
-    src="https://animaapp.s3.amazonaws.com/static/restart-btn.min.js"
+    src=""
     ></script>
     <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
