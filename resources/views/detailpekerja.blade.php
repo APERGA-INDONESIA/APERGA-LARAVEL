@@ -30,18 +30,15 @@
         <div class="rating">
             <?php
             $rating = $pekerja->rating ?? 0;
-            $ratingStars = min(5, max(0, $rating));
+            $ratingStars = floor($rating);
             ?>
 
             @for ($i = 0; $i < $ratingStars; $i++)
                 <img src="{{ asset('images/star.png') }}" alt="Star" class="star-img">
             @endfor
-
-            @if ($rating > $ratingStars)
-                <img src="{{ asset('images/star-half.png') }}" alt="Star" class="star-img">
-            @endif
-            <span class="rating-text">{{ $pekerja->rating }}/5</span>
+            <span class="rating-text">{{ $rating }}/5</span>
         </div>
+
         <div class="deskripsi-jam-kerja">
             <div class="jam-kerja">
                 <div class="jam-kerja-title">Jam Kerja</div>

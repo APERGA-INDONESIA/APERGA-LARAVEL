@@ -11,6 +11,15 @@ use Illuminate\Support\Facades\Redirect;
 
 class MencariPekerjaController extends Controller
 {
+
+    public function showDetailPekerja($id, Request $request)
+    {
+        $userId = $request->query('user_id');
+        $prt = Prt::find($id);
+
+        return view('detail-pekerja', ['userId' => $userId, 'prt' => $prt]);
+    }
+    
     public function showMulaiKontrak($id)
     {
         $prt = Prt::find($id);
@@ -55,6 +64,8 @@ class MencariPekerjaController extends Controller
     {
         return view('pembayaranbank');
     }
+
+
 
 }
 

@@ -30,18 +30,20 @@
         <div class="rating">
             <?php
             $rating = $prt->rating ?? 0;
-            $ratingStars = min(5, max(0, $rating));
+            $roundedRating = floor($rating); // Rating yang telah dibulatkan ke bawah
+            $ratingStars = min(5, max(0, $roundedRating));
+            $hasHalfStar = $rating > $roundedRating;
             ?>
 
             @for ($i = 0; $i < $ratingStars; $i++)
                 <img src="{{ asset('images/star.png') }}" alt="Star" class="star-img">
             @endfor
 
-            @if ($rating > $ratingStars)
-                <img src="{{ asset('images/star-half.png') }}" alt="Star" class="star-img">
-            @endif
-            <span class="rating-text">{{ $prt->rating }}/5</span>
+
+
+            <span class="rating-text">{{ $rating}}/5</span>
         </div>
+
         <div class="deskripsi-jam-kerja">
             <div class="jam-kerja">
                 <div class="jam-kerja-title">Pilih Jam Kerja</div>
@@ -72,7 +74,7 @@
             <div class="subtotal-biaya">Subtotal Biaya: <br> Rp.{{ number_format($prt->gaji, 0, ',', '.') }} / Bulan</div>
         </div>
         <div class="button-group">
-            <button id="confirmBtn" class="confirm">Kembali</button>
+            <button id="confirmBtn" class="confirm" onclick="window.history.back()">Kembali</button>
             <form id="simpanTransaksiForm" action="{{ route('simpantransaksi') }}" method="POST">
                 @csrf
                 <input type="hidden" name="prt_id" value="{{ $prt->id }}">

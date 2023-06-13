@@ -68,7 +68,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/topup', [TransaksiController::class, 'showTopup'])->name('topup');
     Route::post('/topup', [TransaksiController::class, 'topup'])->name('topup.submit');
 
-    Route::get('/detail-pekerja/{id}', [DetailPekerjaController::class, 'showDetailPekerja']);
+    Route::get('/detail-pekerja/{id}', [MencariPekerjaController::class, 'showDetailPekerja']);
     Route::get('/mulai-kontrak/{id}', [MencariPekerjaController::class, 'showMulaiKontrak'])->name('mulaikontrak');
     Route::post('/simpantransaksi', [MencariPekerjaController::class, 'simpanTransaksi'])->name('simpantransaksi');
 });
